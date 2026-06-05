@@ -1,0 +1,7 @@
+/* Custom CSS to override PyData Sphinx Theme styles */
+
+/* Remove the external link arrow icon from navbar items */
+.nav-link.nav-external::after {
+    content: none !important;
+    margin-left: 0 !important;
+}
