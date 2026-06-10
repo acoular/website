@@ -14,12 +14,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
-
       - name: Set up uv
-        uses: astral-sh/setup-uv@v7
-        with:
-          python-version-file: .python-version
-
+        uses: astral-sh/setup-uv@v8.2.0
       - name: Build docs
         env:
           DOCS_BASEURL: "https://acoular.org/"
