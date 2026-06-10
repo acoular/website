@@ -1,9 +1,14 @@
 [project]
 name = "website"
 version = "0.1.0"
-description = "Add your description here"
+description = "Acoular organization website"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "acoular-sphinx",
     "pydata-sphinx-theme>=0.18.0",
+    "sphinx-design>=0.6.1",
 ]
+
+[tool.uv.sources]
+acoular-sphinx = { git = "https://github.com/acoular/ci.git", branch = "feat/orga-docs-frame", subdirectory = "packages/acoular-sphinx" }
