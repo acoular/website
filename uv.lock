@@ -17,11 +17,7 @@ wheels = [
 [[package]]
 name = "acoular-sphinx"
 version = "0.1.0"
-source = { git = "https://github.com/acoular/ci.git?subdirectory=packages%2Facoular-sphinx&branch=feat%2Forga-docs-frame#229641b6c49d6f018340210a3c08b2cb4a478d10" }
-dependencies = [
-    { name = "pydata-sphinx-theme" },
-    { name = "sphinx-design" },
-]
+source = { git = "https://github.com/acoular/ci.git?subdirectory=packages%2Facoular-sphinx&branch=feat%2Forga-docs-frame#186ba9e0a1b430b8b8f0f781dc82bc0a43112fad" }
 
 [[package]]
 name = "alabaster"
@@ -378,11 +374,13 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "acoular-sphinx" },
-    { name = "sphinx" },
+    { name = "pydata-sphinx-theme" },
+    { name = "sphinx-design" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "acoular-sphinx", git = "https://github.com/acoular/ci.git?subdirectory=packages%2Facoular-sphinx&branch=feat%2Forga-docs-frame" },
-    { name = "sphinx", specifier = ">=9.1.0" },
+    { name = "pydata-sphinx-theme", specifier = ">=0.18.0" },
+    { name = "sphinx-design", specifier = ">=0.6.1" },
 ]
