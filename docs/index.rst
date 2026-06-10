@@ -21,13 +21,13 @@ Package Documentation
       Acoustic testing and source mapping software.
 
    .. grid-item-card:: SpectAcoular
-      :link: /spectacoular/
+      :link: https://acoular.github.io/spectacoular/
       :link-type: url
 
       Extension for in-browser GUI applications with Acoular at minimal programming effort.
 
    .. grid-item-card:: AcouPipe
-      :link: /acoupipe/
+      :link: https://adku1173.github.io/acoupipe/
       :link-type: url
 
       Extension for large-scale microphone array data simulation to solve deep learning tasks.
