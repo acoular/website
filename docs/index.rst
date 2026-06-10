@@ -1,7 +1,7 @@
-Welcome to the Acoular Orga Website
-===================================
+Welcome to the Acoular Organization!
+====================================
 
-This Home Page is a structural draft for the Acoular Orga Website. Narrative content will be added later.
+This Home Page is currently under construction.
 
 .. toctree::
    :hidden:
@@ -18,19 +18,19 @@ Package Documentation
       :link: /acoular/
       :link-type: url
 
-      Acoustic beamforming framework documentation.
+      Acoustic testing and source mapping software.
 
    .. grid-item-card:: SpectAcoular
       :link: /spectacoular/
       :link-type: url
 
-      Spectral and interactive acoustics tooling documentation.
+      Extension for in-browser GUI applications with Acoular at minimal programming effort.
 
    .. grid-item-card:: AcouPipe
       :link: /acoupipe/
       :link-type: url
 
-      Pipeline and workflow tooling documentation.
+      Extension for large-scale microphone array data simulation to solve deep learning tasks.
 
 Orga Resources
 --------------
