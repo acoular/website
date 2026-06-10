@@ -6,8 +6,7 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "acoular-sphinx",
-    "sphinx>=9.1.0",
 ]
 
 [tool.uv.sources]
-acoular-sphinx = { git = "https://github.com/acoular/ci.git", branch = "feat/orga-docs-frame", subdirectory = "packages/acoular-sphinx" }
+acoular-sphinx = { git = "https://github.com/acoular/ci.git", branch = "main", subdirectory = "packages/acoular-sphinx" }
