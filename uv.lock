@@ -17,7 +17,7 @@ wheels = [
 [[package]]
 name = "acoular-sphinx"
 version = "0.1.0"
-source = { git = "https://github.com/acoular/ci.git?subdirectory=packages%2Facoular-sphinx&branch=main#f75e9bf4fab8ed6c8d7177c352f9f80c8f9d9d69" }
+source = { git = "https://github.com/acoular/ci.git?subdirectory=packages%2Facoular-sphinx&branch=main#113d23f89eeba6d0cf5ee3a0294d0d05666b189b" }
 dependencies = [
     { name = "graphviz" },
     { name = "ipython" },
