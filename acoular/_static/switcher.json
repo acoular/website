@@ -1,22 +1,16 @@
 [
   {
-    "name": "stable",
-    "version": "26.04",
-    "url": "/acoular/",
-    "type": "tag",
-    "preferred": true
-  },
-  {
     "name": "dev",
     "version": "dev",
     "url": "/acoular/dev/",
     "type": "branch"
   },
   {
-    "name": "v26.04",
+    "name": "v26.04 (stable)",
     "version": "26.04",
-    "url": "/acoular/v26.04/",
-    "type": "tag"
+    "url": "/acoular/",
+    "type": "tag",
+    "preferred": true
   },
   {
     "name": "v26.01",
