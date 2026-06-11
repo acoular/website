@@ -9,4 +9,4 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-acoular-sphinx = { git = "https://github.com/acoular/ci.git", branch = "main", subdirectory = "packages/acoular-sphinx" }
+acoular-sphinx = { git = "https://github.com/acoular/ci.git", tag = "sphinx-v1.2", subdirectory = "packages/acoular-sphinx" }

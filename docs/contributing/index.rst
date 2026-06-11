@@ -1,5 +1,5 @@
-Contribute
-==========
+Contributing
+============
 
 This page is a placeholder for organization-level contribution guidance.
 

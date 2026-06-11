@@ -6,7 +6,7 @@ This Home Page is currently under construction.
 .. toctree::
    :hidden:
 
-   Contribute <contribute/index>
+   Contributing <contributing/index>
 
 Package Documentation
 ---------------------
@@ -50,8 +50,8 @@ Orga Resources
 
       Discussions, questions, and community exchange.
 
-   .. grid-item-card:: Contribute
-      :link: contribute/index
+   .. grid-item-card:: Contributing
+      :link: contributing/index
       :link-type: doc
 
       Organization-level contribution guidance placeholder.
