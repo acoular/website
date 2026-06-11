@@ -21,7 +21,7 @@ Package Documentation
       Acoustic testing and source mapping software.
 
    .. grid-item-card:: SpectAcoular
-      :link: https://acoular.github.io/spectacoular/
+      :link: https://acoular.org/spectacoular/
       :link-type: url
 
       Extension for in-browser GUI applications with Acoular at minimal programming effort.
