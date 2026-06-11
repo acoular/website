@@ -1,0 +1,21 @@
+[
+  {
+    "name": "stable",
+    "version": "26.01",
+    "url": "/acoular/",
+    "type": "tag",
+    "preferred": true
+  },
+  {
+    "name": "dev",
+    "version": "dev",
+    "url": "/acoular/dev/",
+    "type": "branch"
+  },
+  {
+    "name": "v26.01",
+    "version": "26.01",
+    "url": "/acoular/v26.01/",
+    "type": "tag"
+  }
+]
