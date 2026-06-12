@@ -1,0 +1,1687 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dprocess &#8212; SpectAcoular  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx_gallery.css?v=f3715e10" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=30646c52"></script>
+    <script src="../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api_ref/generated/spectacoular.dprocess';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/spectacoular/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://acoular.org/spectacoular/dev/api_ref/generated/spectacoular.dprocess.html" />
+    <link rel="icon" href="../../_static/acoular_logo.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="BasePresenter" href="generated/spectacoular.dprocess.BasePresenter.html" />
+    <link rel="prev" title="controller" href="spectacoular.controller.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="26.04" />
+    <meta name="docbuild:last-update" content="Jun 12, 2026"/>
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/acoular_logo_light.png" class="logo__image only-light" alt="SpectAcoular - Home"/>
+    <img src="../../_static/acoular_logo_dark.png" class="logo__image only-dark pst-js-only" alt="SpectAcoular - Home"/>
+  
+  
+    <p class="title logo__title">SpectAcoular</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/acoular/">
+        Acoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
+        SpectAcoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://adku1173.github.io/acoupipe/">
+        AcouPipe
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://blog.acoular.org">
+        Blog
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://github.com/orgs/acoular/discussions">
+        Community
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/contributing/">
+        Contributing
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/acoular/spectacoular" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/spectacoular" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item"><nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/acoular/">
+        Acoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
+        SpectAcoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://adku1173.github.io/acoupipe/">
+        AcouPipe
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://blog.acoular.org">
+        Blog
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://github.com/orgs/acoular/discussions">
+        Community
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/contributing/">
+        Contributing
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/acoular/spectacoular" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/spectacoular" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user_guide/index.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../auto_examples/basic_mic_geom_plot.html">Basic plotting with Bokeh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto_examples/basic_mic_geom_widgets.html">Basic widget building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto_examples/interactive_apps.html">Basic interactive applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/micgeomexample.html">MicGeom example</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index_apiref.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="spectacoular.bokehview.html"><code class="docutils literal notranslate"><span class="pre">bokehview</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.bokehview.add_bokeh_attr.html"><code class="docutils literal notranslate"><span class="pre">add_bokeh_attr</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="spectacoular.consumer.html"><code class="docutils literal notranslate"><span class="pre">consumer</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.consumer.TimeConsumer.html"><code class="docutils literal notranslate"><span class="pre">TimeConsumer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.consumer.TimeBandsConsumer.html"><code class="docutils literal notranslate"><span class="pre">TimeBandsConsumer</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="spectacoular.controller.html"><code class="docutils literal notranslate"><span class="pre">controller</span></code></a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">dprocess</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.dprocess.BasePresenter.html"><code class="docutils literal notranslate"><span class="pre">BasePresenter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.dprocess.MicGeomPresenter.html"><code class="docutils literal notranslate"><span class="pre">MicGeomPresenter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.dprocess.BeamformerPresenter.html"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.dprocess.PointSpreadFunctionPresenter.html"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.dprocess.TimeSamplesPresenter.html"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="spectacoular.factory.html"><code class="docutils literal notranslate"><span class="pre">factory</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectacoular.layouts.html"><code class="docutils literal notranslate"><span class="pre">layouts</span></code></a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="spectacoular.lprocess.html"><code class="docutils literal notranslate"><span class="pre">lprocess</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.lprocess.TimeSamplesPhantom.html"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPhantom</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.lprocess.TimeOutPresenter.html"><code class="docutils literal notranslate"><span class="pre">TimeOutPresenter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.lprocess.CalibHelper.html"><code class="docutils literal notranslate"><span class="pre">CalibHelper</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.lprocess.TimeSamplesPlayback.html"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPlayback</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news/index.html">What's new</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index_apiref.html" class="nav-link">Reference Manual</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="docutils literal notranslate"><span class="pre">dprocess</span></code></span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-spectacoular.dprocess">
+<span id="dprocess"></span><h1><code class="docutils literal notranslate"><span class="pre">dprocess</span></code><a class="headerlink" href="#module-spectacoular.dprocess" title="Link to this heading">#</a></h1>
+<p>Implements data processing classes.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter" title="spectacoular.dprocess.BasePresenter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BasePresenter</span></code></a></p></td>
+<td><p>Provide a base presenter between Acoular models and a user interface.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter" title="spectacoular.dprocess.MicGeomPresenter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MicGeomPresenter</span></code></a></p></td>
+<td><p>Provide data for visualization of a microphone geometry.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter" title="spectacoular.dprocess.BeamformerPresenter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BeamformerPresenter</span></code></a></p></td>
+<td><p>Provide data for visualization of beamformed data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter" title="spectacoular.dprocess.PointSpreadFunctionPresenter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter</span></code></a></p></td>
+<td><p>Provide data for visualization of a point spread function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter" title="spectacoular.dprocess.TimeSamplesPresenter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeSamplesPresenter</span></code></a></p></td>
+<td><p>Provide selected channel data for visualization.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BasePresenter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">spectacoular.dprocess.</span></span><span class="sig-name descname"><span class="pre">BasePresenter</span></span><a class="headerlink" href="#spectacoular.dprocess.BasePresenter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a></p>
+<p>Provide a base presenter between Acoular models and a user interface.</p>
+<p>This class provides methods for filtering and translating data of an
+Acoular class into the format of a <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> that can be
+consumed by plots and glyphs of the interface. Interactive elements
+(widgets) that can be used to control the data transformation can be
+accessed via the <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.get_widgets" title="spectacoular.dprocess.BasePresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> method.</p>
+<p>This class has no real functionality on its own and should not be used.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BasePresenter.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#spectacoular.dprocess.BasePresenter.source" title="Link to this definition">#</a></dt>
+<dd><p>Data source (Model)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BasePresenter.cdsource">
+<span class="sig-name descname"><span class="pre">cdsource</span></span><a class="headerlink" href="#spectacoular.dprocess.BasePresenter.cdsource" title="Link to this definition">#</a></dt>
+<dd><p>ColumnDataSource that holds data that can be consumed by plots and glyphs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BasePresenter.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">optional_items</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.BasePresenter.update" title="Link to this definition">#</a></dt>
+<dd><p>Update the <code class="docutils literal notranslate"><span class="pre">cdsource</span></code> attribute.</p>
+<p>No processing happens here, since <code class="docutils literal notranslate"><span class="pre">BasePresenter</span></code> only represents a
+base class to derive other classes from.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BasePresenter.get_widgets">
+<span class="sig-name descname"><span class="pre">get_widgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trait_widget_mapper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trait_widget_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.BasePresenter.get_widgets" title="Link to this definition">#</a></dt>
+<dd><p>Create a mapping between several class trait attributes and Bokeh widgets.</p>
+<p>This function is implemented in all SpectAcoular classes and is added to
+Acoular’s classes via the <a class="reference internal" href="../spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a> module. For each
+attribute provided, it builds a corresponding Bokeh widget.</p>
+<p>The function handles multiple cases of View construction:</p>
+<ul>
+<li><p><strong>Default View:</strong> the function is called as a method by a
+<a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance without
+specifying <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.trait_widget_mapper" title="spectacoular.dprocess.BasePresenter.trait_widget_mapper"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_mapper</span></code></a> and <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.trait_widget_args" title="spectacoular.dprocess.BasePresenter.trait_widget_args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_args</span></code></a>
+explicitly as function arguments. In this case, the default widget mapping, defined in
+<a class="reference internal" href="../spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a>, will be used:</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-bd558234fc9646edb65d0c3e0dfff47c-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-bd558234fc9646edb65d0c3e0dfff47c-api_ref-generated-spectacoular.dprocess.js" id="fd3c777c-e432-409d-aa0b-14ff56750a3d"></script></li>
+<li><p><strong>No Predefined View:</strong> <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.get_widgets" title="spectacoular.dprocess.BasePresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called and a HasTraits derived instance
+is given as the first argument to the function without any further arguments.
+In this case, a default mapping is created from all editable traits to create the view.</p></li>
+</ul>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-0daf13e0d5684020bdc8803ea751f1d4-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-0daf13e0d5684020bdc8803ea751f1d4-api_ref-generated-spectacoular.dprocess.js" id="df44bc25-fdd2-4365-8e72-988ebf08bc3d"></script><ul>
+<li><p><strong>Custom View:</strong> <a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called by a
+<a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance and an
+explicit mapping is given. In this case, the instance attributes
+(<code class="docutils literal notranslate"><span class="pre">self.trait_widget_mapper</span></code>, <code class="docutils literal notranslate"><span class="pre">self.trait_widget_args</span></code>) are superseded.</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-21a4e2d2bed34b35add8ea4b575e221d-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">trait_widget_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="n">Slider</span><span class="p">}</span>
+<span class="n">trait_widget_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;X Min&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}}</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span>
+      <span class="n">trait_widget_mapper</span><span class="o">=</span><span class="n">trait_widget_mapper</span><span class="p">,</span>
+      <span class="n">trait_widget_args</span><span class="o">=</span><span class="n">trait_widget_args</span>
+<span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-21a4e2d2bed34b35add8ea4b575e221d-api_ref-generated-spectacoular.dprocess.js" id="ad3f5fed-ad96-47d4-a056-5ae3dee13a9d"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
+classes that are not part of SpectAcoular:</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-075f787e879c434bb978fe36e0cdf8e0-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">trait_widget_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="n">Slider</span><span class="p">}</span>
+<span class="n">trait_widget_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;X Min&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}}</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span>
+      <span class="n">trait_widget_mapper</span><span class="o">=</span><span class="n">trait_widget_mapper</span><span class="p">,</span>
+      <span class="n">trait_widget_args</span><span class="o">=</span><span class="n">trait_widget_args</span>
+<span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-075f787e879c434bb978fe36e0cdf8e0-api_ref-generated-spectacoular.dprocess.js" id="f1e85278-c874-4082-b3fe-f5cc5cd185f0"></script></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>trait_widget_mapper</strong><span class="classifier">dict, optional</span></dt><dd><p>contains the desired mapping of a variable name (dict key)
+to a Bokeh widget type (dict value), by default {}</p>
+</dd>
+<dt><strong>trait_widget_args</strong><span class="classifier">dict, optional</span></dt><dd><dl class="simple">
+<dt>contains the desired widget kwargs (dict values) for each variable name (dict key),</dt><dd><p>by default {}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p>A dictionary containing the variable names as the key and the Bokeh widget
+instance as value.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BasePresenter.set_widgets">
+<span class="sig-name descname"><span class="pre">set_widgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.BasePresenter.set_widgets" title="Link to this definition">#</a></dt>
+<dd><p>Set instances of Bokeh widgets to certain trait attributes.</p>
+<p>This function is implemented in all SpectAcoular classes and is added to
+Acoular’s classes in bokehview.py.
+It allows to reference an existing widget to a certain class trait attribute.
+Expects a class traits name as parameter and the widget instance as
+value.</p>
+<dl>
+<dt>For example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Select</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sl</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;10.0&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span><span class="o">.</span><span class="n">set_widgets</span><span class="p">(</span><span class="n">x_max</span><span class="o">=</span><span class="n">sl</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>The value of the trait attribute changes to the widgets value when it is
+different.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>**kwargs</strong></dt><dd><p>The name of the class trait attributes. Depends on the class.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BasePresenter.trait_widget_mapper">
+<span class="sig-name descname"><span class="pre">trait_widget_mapper</span></span><a class="headerlink" href="#spectacoular.dprocess.BasePresenter.trait_widget_mapper" title="Link to this definition">#</a></dt>
+<dd><p>dictionary containing the mapping between a class trait attribute and
+a Bokeh widget. Keys: name of the trait attribute. Values: Bokeh widget.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BasePresenter.trait_widget_args">
+<span class="sig-name descname"><span class="pre">trait_widget_args</span></span><a class="headerlink" href="#spectacoular.dprocess.BasePresenter.trait_widget_args" title="Link to this definition">#</a></dt>
+<dd><p>dictionary containing arguments that belongs to a widget that is created
+from a trait attribute and should be considered when the widget is built.
+For example: {“traitname”:{‘disabled’:True,’background_color’:’red’,…}}.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spectacoular.dprocess.MicGeomPresenter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">spectacoular.dprocess.</span></span><span class="sig-name descname"><span class="pre">MicGeomPresenter</span></span><a class="headerlink" href="#spectacoular.dprocess.MicGeomPresenter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter" title="spectacoular.dprocess.BasePresenter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePresenter</span></code></a></p>
+<p>Provide data for visualization of a microphone geometry.</p>
+<p>The data of its <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> fits different Bokeh glyphs, for
+example <code class="docutils literal notranslate"><span class="pre">circle</span></code>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.MicGeomPresenter.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#spectacoular.dprocess.MicGeomPresenter.source" title="Link to this definition">#</a></dt>
+<dd><p>Data source; <code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code> or derived object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.MicGeomPresenter.cdsource">
+<span class="sig-name descname"><span class="pre">cdsource</span></span><a class="headerlink" href="#spectacoular.dprocess.MicGeomPresenter.cdsource" title="Link to this definition">#</a></dt>
+<dd><p>ColumnDataSource that holds data that can be consumed by plots and glyphs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.MicGeomPresenter.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">optional_items</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.MicGeomPresenter.update" title="Link to this definition">#</a></dt>
+<dd><p>Update the <code class="docutils literal notranslate"><span class="pre">cdsource</span></code> attribute with microphone geometry data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.MicGeomPresenter.get_widgets">
+<span class="sig-name descname"><span class="pre">get_widgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trait_widget_mapper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trait_widget_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.MicGeomPresenter.get_widgets" title="Link to this definition">#</a></dt>
+<dd><p>Create a mapping between several class trait attributes and Bokeh widgets.</p>
+<p>This function is implemented in all SpectAcoular classes and is added to
+Acoular’s classes via the <a class="reference internal" href="../spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a> module. For each
+attribute provided, it builds a corresponding Bokeh widget.</p>
+<p>The function handles multiple cases of View construction:</p>
+<ul>
+<li><p><strong>Default View:</strong> the function is called as a method by a
+<a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance without
+specifying <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.trait_widget_mapper" title="spectacoular.dprocess.MicGeomPresenter.trait_widget_mapper"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_mapper</span></code></a> and <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.trait_widget_args" title="spectacoular.dprocess.MicGeomPresenter.trait_widget_args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_args</span></code></a>
+explicitly as function arguments. In this case, the default widget mapping, defined in
+<a class="reference internal" href="../spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a>, will be used:</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-165d7fdddbd34baaa4345c4895eb17d6-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-165d7fdddbd34baaa4345c4895eb17d6-api_ref-generated-spectacoular.dprocess.js" id="a9daade5-9e49-4f5e-9526-4c5499aeef56"></script></li>
+<li><p><strong>No Predefined View:</strong> <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.get_widgets" title="spectacoular.dprocess.MicGeomPresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called and a HasTraits derived instance
+is given as the first argument to the function without any further arguments.
+In this case, a default mapping is created from all editable traits to create the view.</p></li>
+</ul>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-dd8d91e80aad401ea28b37c721327cbc-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-dd8d91e80aad401ea28b37c721327cbc-api_ref-generated-spectacoular.dprocess.js" id="d32b877b-567b-40a0-922b-f252a40c6e82"></script><ul>
+<li><p><strong>Custom View:</strong> <a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called by a
+<a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance and an
+explicit mapping is given. In this case, the instance attributes
+(<code class="docutils literal notranslate"><span class="pre">self.trait_widget_mapper</span></code>, <code class="docutils literal notranslate"><span class="pre">self.trait_widget_args</span></code>) are superseded.</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-f9e871238db9427a98670e7f89129022-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">trait_widget_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="n">Slider</span><span class="p">}</span>
+<span class="n">trait_widget_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;X Min&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}}</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span>
+      <span class="n">trait_widget_mapper</span><span class="o">=</span><span class="n">trait_widget_mapper</span><span class="p">,</span>
+      <span class="n">trait_widget_args</span><span class="o">=</span><span class="n">trait_widget_args</span>
+<span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-f9e871238db9427a98670e7f89129022-api_ref-generated-spectacoular.dprocess.js" id="f4f8a38a-50ed-4485-ad65-0ce2db27b394"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
+classes that are not part of SpectAcoular:</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-b7589cd4177941cba5f36a330a3d04b1-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">trait_widget_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="n">Slider</span><span class="p">}</span>
+<span class="n">trait_widget_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;X Min&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}}</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span>
+      <span class="n">trait_widget_mapper</span><span class="o">=</span><span class="n">trait_widget_mapper</span><span class="p">,</span>
+      <span class="n">trait_widget_args</span><span class="o">=</span><span class="n">trait_widget_args</span>
+<span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-b7589cd4177941cba5f36a330a3d04b1-api_ref-generated-spectacoular.dprocess.js" id="d4223619-3555-4923-8425-51b2fafa75da"></script></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>trait_widget_mapper</strong><span class="classifier">dict, optional</span></dt><dd><p>contains the desired mapping of a variable name (dict key)
+to a Bokeh widget type (dict value), by default {}</p>
+</dd>
+<dt><strong>trait_widget_args</strong><span class="classifier">dict, optional</span></dt><dd><dl class="simple">
+<dt>contains the desired widget kwargs (dict values) for each variable name (dict key),</dt><dd><p>by default {}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p>A dictionary containing the variable names as the key and the Bokeh widget
+instance as value.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.MicGeomPresenter.set_widgets">
+<span class="sig-name descname"><span class="pre">set_widgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.MicGeomPresenter.set_widgets" title="Link to this definition">#</a></dt>
+<dd><p>Set instances of Bokeh widgets to certain trait attributes.</p>
+<p>This function is implemented in all SpectAcoular classes and is added to
+Acoular’s classes in bokehview.py.
+It allows to reference an existing widget to a certain class trait attribute.
+Expects a class traits name as parameter and the widget instance as
+value.</p>
+<dl>
+<dt>For example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Select</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sl</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;10.0&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span><span class="o">.</span><span class="n">set_widgets</span><span class="p">(</span><span class="n">x_max</span><span class="o">=</span><span class="n">sl</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>The value of the trait attribute changes to the widgets value when it is
+different.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>**kwargs</strong></dt><dd><p>The name of the class trait attributes. Depends on the class.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.MicGeomPresenter.trait_widget_mapper">
+<span class="sig-name descname"><span class="pre">trait_widget_mapper</span></span><a class="headerlink" href="#spectacoular.dprocess.MicGeomPresenter.trait_widget_mapper" title="Link to this definition">#</a></dt>
+<dd><p>dictionary containing the mapping between a class trait attribute and
+a Bokeh widget. Keys: name of the trait attribute. Values: Bokeh widget.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.MicGeomPresenter.trait_widget_args">
+<span class="sig-name descname"><span class="pre">trait_widget_args</span></span><a class="headerlink" href="#spectacoular.dprocess.MicGeomPresenter.trait_widget_args" title="Link to this definition">#</a></dt>
+<dd><p>dictionary containing arguments that belongs to a widget that is created
+from a trait attribute and should be considered when the widget is built.
+For example: {“traitname”:{‘disabled’:True,’background_color’:’red’,…}}.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BeamformerPresenter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">spectacoular.dprocess.</span></span><span class="sig-name descname"><span class="pre">BeamformerPresenter</span></span><a class="headerlink" href="#spectacoular.dprocess.BeamformerPresenter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter" title="spectacoular.dprocess.BasePresenter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePresenter</span></code></a></p>
+<p>Provide data for visualization of beamformed data.</p>
+<p>The data of its <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> fits Bokeh’s image glyph.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BeamformerPresenter.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#spectacoular.dprocess.BeamformerPresenter.source" title="Link to this definition">#</a></dt>
+<dd><p>Data source; <code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerBase</span></code> or derived object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BeamformerPresenter.cdsource">
+<span class="sig-name descname"><span class="pre">cdsource</span></span><a class="headerlink" href="#spectacoular.dprocess.BeamformerPresenter.cdsource" title="Link to this definition">#</a></dt>
+<dd><p>ColumnDataSource that holds data that can be consumed by plots and glyphs</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BeamformerPresenter.num">
+<span class="sig-name descname"><span class="pre">num</span></span><a class="headerlink" href="#spectacoular.dprocess.BeamformerPresenter.num" title="Link to this definition">#</a></dt>
+<dd><p>Trait to set the width of the frequency bands considered.
+defaults to 0 (single frequency line).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BeamformerPresenter.freq">
+<span class="sig-name descname"><span class="pre">freq</span></span><a class="headerlink" href="#spectacoular.dprocess.BeamformerPresenter.freq" title="Link to this definition">#</a></dt>
+<dd><p>Trait to set the band center frequency to be considered.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BeamformerPresenter.trait_widget_mapper">
+<span class="sig-name descname"><span class="pre">trait_widget_mapper</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.ClassVar" title="(in Python v3.14)"><span class="pre">ClassVar</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.14)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#spectacoular.dprocess.BeamformerPresenter.trait_widget_mapper" title="Link to this definition">#</a></dt>
+<dd><p>dictionary containing the mapping between a class trait attribute and
+a Bokeh widget. Keys: name of the trait attribute. Values: Bokeh widget.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BeamformerPresenter.trait_widget_args">
+<span class="sig-name descname"><span class="pre">trait_widget_args</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.ClassVar" title="(in Python v3.14)"><span class="pre">ClassVar</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#spectacoular.dprocess.BeamformerPresenter.trait_widget_args" title="Link to this definition">#</a></dt>
+<dd><p>dictionary containing arguments that belongs to a widget that is created
+from a trait attribute and should be considered when the widget is built.
+For example: {“traitname”:{‘disabled’:True,’background_color’:’red’,…}}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BeamformerPresenter.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">optional_items</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.BeamformerPresenter.update" title="Link to this definition">#</a></dt>
+<dd><p>Update the keys and values of <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.cdsource" title="spectacoular.dprocess.BeamformerPresenter.cdsource"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cdsource</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BeamformerPresenter.get_widgets">
+<span class="sig-name descname"><span class="pre">get_widgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trait_widget_mapper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trait_widget_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.BeamformerPresenter.get_widgets" title="Link to this definition">#</a></dt>
+<dd><p>Create a mapping between several class trait attributes and Bokeh widgets.</p>
+<p>This function is implemented in all SpectAcoular classes and is added to
+Acoular’s classes via the <a class="reference internal" href="../spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a> module. For each
+attribute provided, it builds a corresponding Bokeh widget.</p>
+<p>The function handles multiple cases of View construction:</p>
+<ul>
+<li><p><strong>Default View:</strong> the function is called as a method by a
+<a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance without
+specifying <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.trait_widget_mapper" title="spectacoular.dprocess.BeamformerPresenter.trait_widget_mapper"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_mapper</span></code></a> and <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.trait_widget_args" title="spectacoular.dprocess.BeamformerPresenter.trait_widget_args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_args</span></code></a>
+explicitly as function arguments. In this case, the default widget mapping, defined in
+<a class="reference internal" href="../spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a>, will be used:</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-200226eb4a6d43f792bee4fc605a99df-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-200226eb4a6d43f792bee4fc605a99df-api_ref-generated-spectacoular.dprocess.js" id="c1d8c395-21da-4d6a-8812-676a4bd85843"></script></li>
+<li><p><strong>No Predefined View:</strong> <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.get_widgets" title="spectacoular.dprocess.BeamformerPresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called and a HasTraits derived instance
+is given as the first argument to the function without any further arguments.
+In this case, a default mapping is created from all editable traits to create the view.</p></li>
+</ul>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-17fb160e79a249568c0d22522655eded-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-17fb160e79a249568c0d22522655eded-api_ref-generated-spectacoular.dprocess.js" id="e77d55c5-a0cf-4ebc-9de0-4d6cc85910fc"></script><ul>
+<li><p><strong>Custom View:</strong> <a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called by a
+<a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance and an
+explicit mapping is given. In this case, the instance attributes
+(<code class="docutils literal notranslate"><span class="pre">self.trait_widget_mapper</span></code>, <code class="docutils literal notranslate"><span class="pre">self.trait_widget_args</span></code>) are superseded.</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-df4cc0c8d9b0447f9cd968b1ebb1c98a-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">trait_widget_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="n">Slider</span><span class="p">}</span>
+<span class="n">trait_widget_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;X Min&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}}</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span>
+      <span class="n">trait_widget_mapper</span><span class="o">=</span><span class="n">trait_widget_mapper</span><span class="p">,</span>
+      <span class="n">trait_widget_args</span><span class="o">=</span><span class="n">trait_widget_args</span>
+<span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-df4cc0c8d9b0447f9cd968b1ebb1c98a-api_ref-generated-spectacoular.dprocess.js" id="e86f0789-eb37-49b9-a008-5a005f835c43"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
+classes that are not part of SpectAcoular:</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-9327bcbcf7294c03a43b2d013c82f7b6-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">trait_widget_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="n">Slider</span><span class="p">}</span>
+<span class="n">trait_widget_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;X Min&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}}</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span>
+      <span class="n">trait_widget_mapper</span><span class="o">=</span><span class="n">trait_widget_mapper</span><span class="p">,</span>
+      <span class="n">trait_widget_args</span><span class="o">=</span><span class="n">trait_widget_args</span>
+<span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-9327bcbcf7294c03a43b2d013c82f7b6-api_ref-generated-spectacoular.dprocess.js" id="ce55d8c7-9d65-466a-9200-d5f6a9ae9dcc"></script></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>trait_widget_mapper</strong><span class="classifier">dict, optional</span></dt><dd><p>contains the desired mapping of a variable name (dict key)
+to a Bokeh widget type (dict value), by default {}</p>
+</dd>
+<dt><strong>trait_widget_args</strong><span class="classifier">dict, optional</span></dt><dd><dl class="simple">
+<dt>contains the desired widget kwargs (dict values) for each variable name (dict key),</dt><dd><p>by default {}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p>A dictionary containing the variable names as the key and the Bokeh widget
+instance as value.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.BeamformerPresenter.set_widgets">
+<span class="sig-name descname"><span class="pre">set_widgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.BeamformerPresenter.set_widgets" title="Link to this definition">#</a></dt>
+<dd><p>Set instances of Bokeh widgets to certain trait attributes.</p>
+<p>This function is implemented in all SpectAcoular classes and is added to
+Acoular’s classes in bokehview.py.
+It allows to reference an existing widget to a certain class trait attribute.
+Expects a class traits name as parameter and the widget instance as
+value.</p>
+<dl>
+<dt>For example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Select</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sl</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;10.0&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span><span class="o">.</span><span class="n">set_widgets</span><span class="p">(</span><span class="n">x_max</span><span class="o">=</span><span class="n">sl</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>The value of the trait attribute changes to the widgets value when it is
+different.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>**kwargs</strong></dt><dd><p>The name of the class trait attributes. Depends on the class.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spectacoular.dprocess.PointSpreadFunctionPresenter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">spectacoular.dprocess.</span></span><span class="sig-name descname"><span class="pre">PointSpreadFunctionPresenter</span></span><a class="headerlink" href="#spectacoular.dprocess.PointSpreadFunctionPresenter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter" title="spectacoular.dprocess.BasePresenter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePresenter</span></code></a></p>
+<p>Provide data for visualization of a point spread function.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.PointSpreadFunctionPresenter.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.source" title="Link to this definition">#</a></dt>
+<dd><p>Data source; <code class="xref py py-class docutils literal notranslate"><span class="pre">PointSpreadFunction</span></code> or derived object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.PointSpreadFunctionPresenter.cdsource">
+<span class="sig-name descname"><span class="pre">cdsource</span></span><a class="headerlink" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.cdsource" title="Link to this definition">#</a></dt>
+<dd><p>ColumnDataSource that holds data that can be consumed by plots and glyphs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.PointSpreadFunctionPresenter.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">optional_items</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.update" title="Link to this definition">#</a></dt>
+<dd><p>Update the keys and values of <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.cdsource" title="spectacoular.dprocess.PointSpreadFunctionPresenter.cdsource"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cdsource</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.PointSpreadFunctionPresenter.get_widgets">
+<span class="sig-name descname"><span class="pre">get_widgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trait_widget_mapper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trait_widget_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.get_widgets" title="Link to this definition">#</a></dt>
+<dd><p>Create a mapping between several class trait attributes and Bokeh widgets.</p>
+<p>This function is implemented in all SpectAcoular classes and is added to
+Acoular’s classes via the <a class="reference internal" href="../spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a> module. For each
+attribute provided, it builds a corresponding Bokeh widget.</p>
+<p>The function handles multiple cases of View construction:</p>
+<ul>
+<li><p><strong>Default View:</strong> the function is called as a method by a
+<a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance without
+specifying <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_mapper" title="spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_mapper"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_mapper</span></code></a> and <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_args" title="spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_args</span></code></a>
+explicitly as function arguments. In this case, the default widget mapping, defined in
+<a class="reference internal" href="../spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a>, will be used:</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-e3b9147b5abb422f9588fb5811663c7b-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-e3b9147b5abb422f9588fb5811663c7b-api_ref-generated-spectacoular.dprocess.js" id="e1136659-b22a-4fc6-bdf8-358815f1da8b"></script></li>
+<li><p><strong>No Predefined View:</strong> <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.get_widgets" title="spectacoular.dprocess.PointSpreadFunctionPresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called and a HasTraits derived instance
+is given as the first argument to the function without any further arguments.
+In this case, a default mapping is created from all editable traits to create the view.</p></li>
+</ul>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-9bc6cee2cb0245219cc81c4e4c4499f5-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-9bc6cee2cb0245219cc81c4e4c4499f5-api_ref-generated-spectacoular.dprocess.js" id="e051945d-2956-49bd-b0e7-686626e0da2b"></script><ul>
+<li><p><strong>Custom View:</strong> <a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called by a
+<a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance and an
+explicit mapping is given. In this case, the instance attributes
+(<code class="docutils literal notranslate"><span class="pre">self.trait_widget_mapper</span></code>, <code class="docutils literal notranslate"><span class="pre">self.trait_widget_args</span></code>) are superseded.</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-7e15aff9bf584410bf9090e80a006336-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">trait_widget_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="n">Slider</span><span class="p">}</span>
+<span class="n">trait_widget_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;X Min&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}}</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span>
+      <span class="n">trait_widget_mapper</span><span class="o">=</span><span class="n">trait_widget_mapper</span><span class="p">,</span>
+      <span class="n">trait_widget_args</span><span class="o">=</span><span class="n">trait_widget_args</span>
+<span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-7e15aff9bf584410bf9090e80a006336-api_ref-generated-spectacoular.dprocess.js" id="f2e03435-565e-42e9-a316-3608893b888a"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
+classes that are not part of SpectAcoular:</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-9ffc003952ad4e8bae8e22a33c472875-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">trait_widget_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="n">Slider</span><span class="p">}</span>
+<span class="n">trait_widget_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;X Min&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}}</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span>
+      <span class="n">trait_widget_mapper</span><span class="o">=</span><span class="n">trait_widget_mapper</span><span class="p">,</span>
+      <span class="n">trait_widget_args</span><span class="o">=</span><span class="n">trait_widget_args</span>
+<span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-9ffc003952ad4e8bae8e22a33c472875-api_ref-generated-spectacoular.dprocess.js" id="d4a81c24-20ba-45eb-9363-5d7c72d3400a"></script></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>trait_widget_mapper</strong><span class="classifier">dict, optional</span></dt><dd><p>contains the desired mapping of a variable name (dict key)
+to a Bokeh widget type (dict value), by default {}</p>
+</dd>
+<dt><strong>trait_widget_args</strong><span class="classifier">dict, optional</span></dt><dd><dl class="simple">
+<dt>contains the desired widget kwargs (dict values) for each variable name (dict key),</dt><dd><p>by default {}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p>A dictionary containing the variable names as the key and the Bokeh widget
+instance as value.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.PointSpreadFunctionPresenter.set_widgets">
+<span class="sig-name descname"><span class="pre">set_widgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.set_widgets" title="Link to this definition">#</a></dt>
+<dd><p>Set instances of Bokeh widgets to certain trait attributes.</p>
+<p>This function is implemented in all SpectAcoular classes and is added to
+Acoular’s classes in bokehview.py.
+It allows to reference an existing widget to a certain class trait attribute.
+Expects a class traits name as parameter and the widget instance as
+value.</p>
+<dl>
+<dt>For example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Select</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sl</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;10.0&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span><span class="o">.</span><span class="n">set_widgets</span><span class="p">(</span><span class="n">x_max</span><span class="o">=</span><span class="n">sl</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>The value of the trait attribute changes to the widgets value when it is
+different.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>**kwargs</strong></dt><dd><p>The name of the class trait attributes. Depends on the class.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_mapper">
+<span class="sig-name descname"><span class="pre">trait_widget_mapper</span></span><a class="headerlink" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_mapper" title="Link to this definition">#</a></dt>
+<dd><p>dictionary containing the mapping between a class trait attribute and
+a Bokeh widget. Keys: name of the trait attribute. Values: Bokeh widget.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_args">
+<span class="sig-name descname"><span class="pre">trait_widget_args</span></span><a class="headerlink" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_args" title="Link to this definition">#</a></dt>
+<dd><p>dictionary containing arguments that belongs to a widget that is created
+from a trait attribute and should be considered when the widget is built.
+For example: {“traitname”:{‘disabled’:True,’background_color’:’red’,…}}.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spectacoular.dprocess.TimeSamplesPresenter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">spectacoular.dprocess.</span></span><span class="sig-name descname"><span class="pre">TimeSamplesPresenter</span></span><a class="headerlink" href="#spectacoular.dprocess.TimeSamplesPresenter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter" title="spectacoular.dprocess.BasePresenter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePresenter</span></code></a></p>
+<p>Provide selected channel data for visualization.</p>
+<p>The data of its <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> fits Bokeh’s <code class="docutils literal notranslate"><span class="pre">MultiLine</span></code> glyph.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.TimeSamplesPresenter.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#spectacoular.dprocess.TimeSamplesPresenter.source" title="Link to this definition">#</a></dt>
+<dd><p>Data source; <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSamples</span></code> or derived object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.TimeSamplesPresenter.cdsource">
+<span class="sig-name descname"><span class="pre">cdsource</span></span><a class="headerlink" href="#spectacoular.dprocess.TimeSamplesPresenter.cdsource" title="Link to this definition">#</a></dt>
+<dd><p>ColumnDataSource that holds data that can be consumed by plots and glyphs</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.TimeSamplesPresenter.channels">
+<span class="sig-name descname"><span class="pre">channels</span></span><a class="headerlink" href="#spectacoular.dprocess.TimeSamplesPresenter.channels" title="Link to this definition">#</a></dt>
+<dd><p>Indices of channel to be considered for updating of ColumnDataSource</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.TimeSamplesPresenter.trait_widget_mapper">
+<span class="sig-name descname"><span class="pre">trait_widget_mapper</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.ClassVar" title="(in Python v3.14)"><span class="pre">ClassVar</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.14)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_mapper" title="Link to this definition">#</a></dt>
+<dd><p>dictionary containing the mapping between a class trait attribute and
+a Bokeh widget. Keys: name of the trait attribute. Values: Bokeh widget.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spectacoular.dprocess.TimeSamplesPresenter.trait_widget_args">
+<span class="sig-name descname"><span class="pre">trait_widget_args</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.ClassVar" title="(in Python v3.14)"><span class="pre">ClassVar</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_args" title="Link to this definition">#</a></dt>
+<dd><p>dictionary containing arguments that belongs to a widget that is created
+from a trait attribute and should be considered when the widget is built.
+For example: {“traitname”:{‘disabled’:True,’background_color’:’red’,…}}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.TimeSamplesPresenter.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">optional_items</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.TimeSamplesPresenter.update" title="Link to this definition">#</a></dt>
+<dd><p>Update the keys and values of <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.cdsource" title="spectacoular.dprocess.TimeSamplesPresenter.cdsource"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cdsource</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.TimeSamplesPresenter.get_widgets">
+<span class="sig-name descname"><span class="pre">get_widgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trait_widget_mapper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trait_widget_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.TimeSamplesPresenter.get_widgets" title="Link to this definition">#</a></dt>
+<dd><p>Create a mapping between several class trait attributes and Bokeh widgets.</p>
+<p>This function is implemented in all SpectAcoular classes and is added to
+Acoular’s classes via the <a class="reference internal" href="../spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a> module. For each
+attribute provided, it builds a corresponding Bokeh widget.</p>
+<p>The function handles multiple cases of View construction:</p>
+<ul>
+<li><p><strong>Default View:</strong> the function is called as a method by a
+<a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance without
+specifying <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_mapper" title="spectacoular.dprocess.TimeSamplesPresenter.trait_widget_mapper"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_mapper</span></code></a> and <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_args" title="spectacoular.dprocess.TimeSamplesPresenter.trait_widget_args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_args</span></code></a>
+explicitly as function arguments. In this case, the default widget mapping, defined in
+<a class="reference internal" href="../spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a>, will be used:</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-4e528180179b428d93af3d959271e445-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-4e528180179b428d93af3d959271e445-api_ref-generated-spectacoular.dprocess.js" id="fde450aa-6876-4a3e-b6f7-b0ec4aede4f7"></script></li>
+<li><p><strong>No Predefined View:</strong> <a class="reference internal" href="../spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.get_widgets" title="spectacoular.dprocess.TimeSamplesPresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called and a HasTraits derived instance
+is given as the first argument to the function without any further arguments.
+In this case, a default mapping is created from all editable traits to create the view.</p></li>
+</ul>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-09f10254337147b8a328d6f9129d70dc-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-09f10254337147b8a328d6f9129d70dc-api_ref-generated-spectacoular.dprocess.js" id="a9e072e9-427d-4dbe-b08d-2a2ab2228d25"></script><ul>
+<li><p><strong>Custom View:</strong> <a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called by a
+<a class="reference internal" href="../spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance and an
+explicit mapping is given. In this case, the instance attributes
+(<code class="docutils literal notranslate"><span class="pre">self.trait_widget_mapper</span></code>, <code class="docutils literal notranslate"><span class="pre">self.trait_widget_args</span></code>) are superseded.</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-7c292f9aff09432bb79c15b3a207dce5-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">trait_widget_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="n">Slider</span><span class="p">}</span>
+<span class="n">trait_widget_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;X Min&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}}</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span>
+      <span class="n">trait_widget_mapper</span><span class="o">=</span><span class="n">trait_widget_mapper</span><span class="p">,</span>
+      <span class="n">trait_widget_args</span><span class="o">=</span><span class="n">trait_widget_args</span>
+<span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-7c292f9aff09432bb79c15b3a207dce5-api_ref-generated-spectacoular.dprocess.js" id="bda88204-2cfd-4b54-96a0-4784fe582152"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
+classes that are not part of SpectAcoular:</p>
+<div class="highlight-python notranslate" id="api_ref-generated-spectacoular.dprocess.bokeh-content-6ae325fa1e2640999696221a0ceecd8a-api_ref-generated-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+
+<span class="n">trait_widget_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="n">Slider</span><span class="p">}</span>
+<span class="n">trait_widget_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_min&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;X Min&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}}</span>
+
+<span class="n">widgets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span>
+      <span class="n">trait_widget_mapper</span><span class="o">=</span><span class="n">trait_widget_mapper</span><span class="p">,</span>
+      <span class="n">trait_widget_args</span><span class="o">=</span><span class="n">trait_widget_args</span>
+<span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<script src="bokeh-content-6ae325fa1e2640999696221a0ceecd8a-api_ref-generated-spectacoular.dprocess.js" id="ce583ed5-86c5-4c95-9334-d57edf237475"></script></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>trait_widget_mapper</strong><span class="classifier">dict, optional</span></dt><dd><p>contains the desired mapping of a variable name (dict key)
+to a Bokeh widget type (dict value), by default {}</p>
+</dd>
+<dt><strong>trait_widget_args</strong><span class="classifier">dict, optional</span></dt><dd><dl class="simple">
+<dt>contains the desired widget kwargs (dict values) for each variable name (dict key),</dt><dd><p>by default {}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p>A dictionary containing the variable names as the key and the Bokeh widget
+instance as value.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spectacoular.dprocess.TimeSamplesPresenter.set_widgets">
+<span class="sig-name descname"><span class="pre">set_widgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spectacoular.dprocess.TimeSamplesPresenter.set_widgets" title="Link to this definition">#</a></dt>
+<dd><p>Set instances of Bokeh widgets to certain trait attributes.</p>
+<p>This function is implemented in all SpectAcoular classes and is added to
+Acoular’s classes in bokehview.py.
+It allows to reference an existing widget to a certain class trait attribute.
+Expects a class traits name as parameter and the widget instance as
+value.</p>
+<dl>
+<dt>For example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Select</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span> <span class="o">=</span> <span class="n">RectGrid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sl</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;10.0&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span><span class="o">.</span><span class="n">set_widgets</span><span class="p">(</span><span class="n">x_max</span><span class="o">=</span><span class="n">sl</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>The value of the trait attribute changes to the widgets value when it is
+different.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>**kwargs</strong></dt><dd><p>The name of the class trait attributes. Depends on the class.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="spectacoular.controller.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">controller</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="generated/spectacoular.dprocess.BasePresenter.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">BasePresenter</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BasePresenter"><code class="docutils literal notranslate"><span class="pre">BasePresenter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BasePresenter.source"><code class="docutils literal notranslate"><span class="pre">BasePresenter.source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BasePresenter.cdsource"><code class="docutils literal notranslate"><span class="pre">BasePresenter.cdsource</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BasePresenter.update"><code class="docutils literal notranslate"><span class="pre">BasePresenter.update()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BasePresenter.get_widgets"><code class="docutils literal notranslate"><span class="pre">BasePresenter.get_widgets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BasePresenter.set_widgets"><code class="docutils literal notranslate"><span class="pre">BasePresenter.set_widgets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BasePresenter.trait_widget_mapper"><code class="docutils literal notranslate"><span class="pre">BasePresenter.trait_widget_mapper</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BasePresenter.trait_widget_args"><code class="docutils literal notranslate"><span class="pre">BasePresenter.trait_widget_args</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.MicGeomPresenter"><code class="docutils literal notranslate"><span class="pre">MicGeomPresenter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.MicGeomPresenter.source"><code class="docutils literal notranslate"><span class="pre">MicGeomPresenter.source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.MicGeomPresenter.cdsource"><code class="docutils literal notranslate"><span class="pre">MicGeomPresenter.cdsource</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.MicGeomPresenter.update"><code class="docutils literal notranslate"><span class="pre">MicGeomPresenter.update()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.MicGeomPresenter.get_widgets"><code class="docutils literal notranslate"><span class="pre">MicGeomPresenter.get_widgets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.MicGeomPresenter.set_widgets"><code class="docutils literal notranslate"><span class="pre">MicGeomPresenter.set_widgets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.MicGeomPresenter.trait_widget_mapper"><code class="docutils literal notranslate"><span class="pre">MicGeomPresenter.trait_widget_mapper</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.MicGeomPresenter.trait_widget_args"><code class="docutils literal notranslate"><span class="pre">MicGeomPresenter.trait_widget_args</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BeamformerPresenter"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BeamformerPresenter.source"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter.source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BeamformerPresenter.cdsource"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter.cdsource</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BeamformerPresenter.num"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter.num</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BeamformerPresenter.freq"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter.freq</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BeamformerPresenter.trait_widget_mapper"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter.trait_widget_mapper</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BeamformerPresenter.trait_widget_args"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter.trait_widget_args</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BeamformerPresenter.update"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter.update()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BeamformerPresenter.get_widgets"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter.get_widgets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.BeamformerPresenter.set_widgets"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter.set_widgets()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.PointSpreadFunctionPresenter"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.source"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter.source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.cdsource"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter.cdsource</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.update"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter.update()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.get_widgets"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter.get_widgets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.set_widgets"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter.set_widgets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_mapper"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter.trait_widget_mapper</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_args"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter.trait_widget_args</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.TimeSamplesPresenter"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.TimeSamplesPresenter.source"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter.source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.TimeSamplesPresenter.cdsource"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter.cdsource</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.TimeSamplesPresenter.channels"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter.channels</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_mapper"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter.trait_widget_mapper</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_args"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter.trait_widget_args</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.TimeSamplesPresenter.update"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter.update()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.TimeSamplesPresenter.get_widgets"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter.get_widgets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectacoular.dprocess.TimeSamplesPresenter.set_widgets"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter.set_widgets()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/acoular/spectacoular/edit/master/docs/api_ref/generated/spectacoular.dprocess.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2015-2026, Acoular Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
