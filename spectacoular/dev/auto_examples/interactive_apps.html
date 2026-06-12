@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Interactive Server Applications with SepctAcoular &#8212; SpectAcoular  documentation</title>
+    <title>Create three sources example &#8212; SpectAcoular  documentation</title>
   
   
   
@@ -67,7 +67,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Microphone Array Geometry App" href="../apps/micgeomexample.html" />
-    <link rel="prev" title="Creating widgets with SpectAcoular" href="basic_mic_geom_widgets.html" />
+    <link rel="prev" title="Set up the microphone geometry plot" href="basic_mic_geom_widgets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
@@ -435,9 +435,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../user_guide/index.html">User Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="basic_mic_geom_plot.html">Basic plotting with Bokeh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_mic_geom_widgets.html">Basic widget building</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Basic interactive applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_mic_geom_widgets.html">Set up the microphone geometry plot</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Create three sources example</a></li>
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../apps/micgeomexample.html">MicGeom example</a></li>
 </ul>
 </details></li>
@@ -515,7 +518,7 @@
     
     <li class="breadcrumb-item"><a href="../user_guide/index.html" class="nav-link">User Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Interactive Server Applications with SepctAcoular</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Create three sources example</span></li>
   </ul>
 </nav>
 </div>
@@ -537,32 +540,33 @@
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-interactive-apps-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code.</p>
 </div>
-<section class="sphx-glr-example-title" id="interactive-server-applications-with-sepctacoular">
-<span id="interactive-apps"></span><span id="sphx-glr-auto-examples-interactive-apps-py"></span><h1>Interactive Server Applications with SepctAcoular<a class="headerlink" href="#interactive-server-applications-with-sepctacoular" title="Link to this heading">#</a></h1>
-<p>In many cases, a standalone HTML document is not sufficient to provide full interactivity, especially
-when computations are required on the Python side to update data shown in the Browser document.
-Bokeh provides a way to host applications that can be run in a web browser, allowing for
-interactivity and real-time updates.</p>
+<p class="sphx-glr-example-title" id="sphx-glr-auto-examples-interactive-apps-py">Interactive server applications with SpectAcoular.</p>
+<p id="interactive-apps">Standalone HTML documents are often not sufficient for full interactivity,
+especially when Python-side computations are needed to update displayed
+results. Bokeh can host applications in a web browser and provide
+real-time updates.</p>
 <a class="reference internal image-reference" href="https://docs.bokeh.org/en/latest/_images/bokeh_serve.svg"><img alt="Bokeh Server Application (see: `Bokeh documentation &lt;https://docs.bokeh.org/en/latest/docs/user_guide/server/app.html#ug-server-apps&gt;`_)" class="align-center" src="https://docs.bokeh.org/en/latest/_images/bokeh_serve.svg" style="width: 600px;" />
 </a>
-<p>In this example, we are going to create an interactive application to visualize the Beamforming
-result for Acoular’s
-<a class="reference external" href="https://www.acoular.org/auto_examples/introductory_examples/example_basic_beamforming.html#sphx-glr-auto-examples-introductory-examples-example-basic-beamforming-py">three sources example</a> .
-As seen by the HTML document below, changing the frequency or grid parameters will <strong>not</strong> result
-in an update of the plot, since the HTML document is static and does not allow for interaction with
-the Python code. Instead, it is necessary to run a Bokeh server application hosting the Python code
-to which the client can listen for updates of the data.</p>
+<p>This example creates an interactive application to visualize the
+beamforming result for Acoular’s three sources example.
+See the <a class="reference external" href="https://www.acoular.org/auto_examples/introductory_examples/example_basic_beamforming.html">Acoular example documentation</a>.
+As the HTML document below shows, changing the frequency or grid
+parameters will <strong>not</strong> update the plot because the document is static and
+cannot interact with the Python code. To get updates, the Python code must
+run in a Bokeh server application to which the client can listen.</p>
 <p>To start the Bokeh server, run the following command in the terminal:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>bokeh<span class="w"> </span>serve<span class="w"> </span>--show<span class="w"> </span>examples/interactive_apps.py
 </pre></div>
 </div>
-<script src="bokeh-content-e2ac62e90130492fa3239062def64637-auto_examples-interactive_apps.js" id="bda1835d-91f3-4e97-bba5-263ae01b8e86"></script><section id="create-three-sources-example">
-<h2>Create three sources example<a class="headerlink" href="#create-three-sources-example" title="Link to this heading">#</a></h2>
-<p>Let’s begin with the necessary imports and setting up the simulation pipeline for the three sources example.</p>
+<script src="bokeh-content-cee69af56f704350a73cc4de8cb83e78-auto_examples-interactive_apps.js" id="d843203a-8fab-4dc2-a47c-07ef19829a63"></script><section id="create-three-sources-example">
+<h1>Create three sources example<a class="headerlink" href="#create-three-sources-example" title="Link to this heading">#</a></h1>
+<p>Let’s begin with the necessary imports and the simulation pipeline
+for the three sources example.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">curdoc</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span><span class="p">,</span> <span class="n">gridplot</span><span class="p">,</span> <span class="n">row</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">LinearColorMapper</span>
@@ -570,18 +574,17 @@ to which the client can listen for updates of the data.</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.palettes</span><span class="w"> </span><span class="kn">import</span> <span class="n">viridis</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">figure</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
-
 <span class="n">mg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;xml&#39;</span> <span class="o">/</span> <span class="s1">&#39;array_64.xml&#39;</span><span class="p">)</span>
 
 <span class="c1"># create time data source</span>
 <span class="n">three_sources</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">demo</span><span class="o">.</span><span class="n">create_three_sources</span><span class="p">(</span><span class="n">mg</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Next, we will define a rectangular grid (<code class="xref py py-class docutils literal notranslate"><span class="pre">RectGrid</span></code>) discretizing the source area.
-To obtain a source map at 4 kHz (one-third octave) asociated with the defined grid,
-we will utilize conventional beamforming (<code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerBase</span></code>).</p>
+<p>Next, we define a rectangular grid
+(<code class="xref py py-class docutils literal notranslate"><span class="pre">RectGrid</span></code>) that discretizes the source area.
+To obtain a source map at 4 kHz (one-third octave) associated with the
+defined grid, we use conventional beamforming
+(<code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerBase</span></code>).</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up the rectangular grid</span>
 <span class="n">rg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">RectGrid</span><span class="p">(</span><span class="n">x_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">x_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
 
@@ -597,7 +600,7 @@ we will utilize conventional beamforming (<code class="xref py py-class docutils
 </div>
 </section>
 <section id="create-widgets">
-<h2>Create widgets<a class="headerlink" href="#create-widgets" title="Link to this heading">#</a></h2>
+<h1>Create widgets<a class="headerlink" href="#create-widgets" title="Link to this heading">#</a></h1>
 <p>To enable interactive changes to the beamforming result, we will create some widgets based on the
 existing processing chain, arranged in a grid layout.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">grid_grid</span> <span class="o">=</span> <span class="n">gridplot</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">rg</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
@@ -605,12 +608,13 @@ existing processing chain, arranged in a grid layout.</p>
 </div>
 </section>
 <section id="plot-the-beamforming-result">
-<h2>Plot the beamforming result<a class="headerlink" href="#plot-the-beamforming-result" title="Link to this heading">#</a></h2>
-<p>To visualize the beamforming result, we will create figure and use Bokeh’s
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code> glyph, which allows us to display 2D source mappings.
-The <code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code> glyph requires us to specify the <em>x</em> and <em>y</em> coordinates of the bottom
-left grid corner, the width and height of the grid, and the sound pressure to be displayed.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">source_plot</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Acoular Three Sources&quot;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s2">&quot;hover,reset,pan,wheel_zoom&quot;</span><span class="p">)</span>
+<h1>Plot the beamforming result<a class="headerlink" href="#plot-the-beamforming-result" title="Link to this heading">#</a></h1>
+<p>To visualize the beamforming result, we create a figure and use
+Bokeh’s <code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code> glyph, which displays 2D source
+mappings. The <code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code> glyph requires the <em>x</em> and
+<em>y</em> coordinates of the bottom-left grid corner, the width and height of
+the grid, and the sound pressure to be displayed.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">source_plot</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Acoular Three Sources&#39;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s1">&#39;hover,reset,pan,wheel_zoom&#39;</span><span class="p">)</span>
 
 <span class="n">cds</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="p">{</span>
@@ -641,11 +645,13 @@ left grid corner, the width and height of the grid, and the sound pressure to be
 </div>
 </section>
 <section id="the-presenter-class">
-<h2>The Presenter class<a class="headerlink" href="#the-presenter-class" title="Link to this heading">#</a></h2>
-<p>SpectAcoular provides so-called Presenter classes to automatically handle updates of the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> data whenever the desired evaluation parameters change.
-Here, we will use the <code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerPresenter</span></code> class. We choose <cite>auto_update=True</cite>,
-which means that the data in the <code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> will be updated automatically
+<h1>The Presenter class<a class="headerlink" href="#the-presenter-class" title="Link to this heading">#</a></h1>
+<p>SpectAcoular provides Presenter classes that automatically handle
+updates of <code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> data whenever the
+desired evaluation parameters change. Here, we use the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerPresenter</span></code> class with
+<code class="docutils literal notranslate"><span class="pre">auto_update=True</span></code>, which means that the data in the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> is updated automatically
 whenever the internal state of the beamformer changes.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">bf_presenter</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">BeamformerPresenter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">bb</span><span class="p">,</span>
@@ -691,7 +697,6 @@ document, which allows for interaction with the widgets and the figure in a web 
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
-</section>
 
 
                 </article>
@@ -709,7 +714,7 @@ document, which allows for interaction with the widgets and the figure in a web 
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Creating widgets with SpectAcoular</p>
+        <p class="prev-next-title">Set up the microphone geometry plot</p>
       </div>
     </a>
     <a class="right-next"
@@ -740,11 +745,12 @@ document, which allows for interaction with the widgets and the figure in a web 
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-three-sources-example">Create three sources example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-widgets">Create widgets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-beamforming-result">Plot the beamforming result</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-presenter-class">The Presenter class</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Create three sources example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-widgets">Create widgets</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-beamforming-result">Plot the beamforming result</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-presenter-class">The Presenter class</a></li>
 </ul>
+
   </nav></div>
 
   <div class="sidebar-secondary-item">

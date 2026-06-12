@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Creating widgets with SpectAcoular &#8212; SpectAcoular  documentation</title>
+    <title>Set up the microphone geometry plot &#8212; SpectAcoular  documentation</title>
   
   
   
@@ -66,8 +66,8 @@
     <link rel="icon" href="../_static/acoular_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Interactive Server Applications with SepctAcoular" href="interactive_apps.html" />
-    <link rel="prev" title="Basic plotting with Bokeh" href="basic_mic_geom_plot.html" />
+    <link rel="next" title="Create three sources example" href="interactive_apps.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="basic_mic_geom_plot.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
@@ -435,9 +435,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../user_guide/index.html">User Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="basic_mic_geom_plot.html">Basic plotting with Bokeh</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Basic widget building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interactive_apps.html">Basic interactive applications</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Set up the microphone geometry plot</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="interactive_apps.html">Create three sources example</a></li>
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../apps/micgeomexample.html">MicGeom example</a></li>
 </ul>
 </details></li>
@@ -515,7 +518,7 @@
     
     <li class="breadcrumb-item"><a href="../user_guide/index.html" class="nav-link">User Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Creating widgets with SpectAcoular</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Set up the microphone geometry plot</span></li>
   </ul>
 </nav>
 </div>
@@ -537,25 +540,23 @@
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-basic-mic-geom-widgets-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code.</p>
 </div>
-<section class="sphx-glr-example-title" id="creating-widgets-with-spectacoular">
-<span id="basic-mic-geom-widgets"></span><span id="sphx-glr-auto-examples-basic-mic-geom-widgets-py"></span><h1>Creating widgets with SpectAcoular<a class="headerlink" href="#creating-widgets-with-spectacoular" title="Link to this heading">#</a></h1>
-<p>In this example, we are going to create an interactive plot of a Microphone Array Geometry with additional control widgets
-using the SpectAcoular package.</p>
-<script src="bokeh-content-db3a9788efe241e69e4f23241237f81c-auto_examples-basic_mic_geom_widgets.js" id="d07afbaf-48ef-473b-84a6-15595ea34b7f"></script><div class="admonition note">
+<p class="sphx-glr-example-title" id="sphx-glr-auto-examples-basic-mic-geom-widgets-py">Creating widgets with SpectAcoular.</p>
+<p id="basic-mic-geom-widgets">This example creates an interactive plot of a microphone array geometry
+with additional control widgets using the SpectAcoular package.</p>
+<script src="bokeh-content-304c7d93957841089fa51b126627a364-auto_examples-basic_mic_geom_widgets.js" id="ecaac75b-0fc0-4219-989d-11bad5c3a41d"></script><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This example can be rendered as a standalone Bokeh document, but full interactivity
 with Python callbacks requires running it as a Bokeh server application.</p>
 </div>
 <section id="set-up-the-microphone-geometry-plot">
-<h2>Set up the microphone geometry plot<a class="headerlink" href="#set-up-the-microphone-geometry-plot" title="Link to this heading">#</a></h2>
-<p>Similar to the <a class="reference internal" href="basic_mic_geom_plot.html#basic-mic-geom-plot"><span class="std std-ref">Basic plotting with Bokeh</span></a>, we will first import the necessary modules and set up
+<h1>Set up the microphone geometry plot<a class="headerlink" href="#set-up-the-microphone-geometry-plot" title="Link to this heading">#</a></h1>
+<p>Similar to the <span class="xref std std-ref">basic_mic_geom_plot</span>, we will first import the necessary modules and set up
 the microphone geometry plot.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">curdoc</span><span class="p">,</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span><span class="p">,</span> <span class="n">row</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">NumberEditor</span><span class="p">,</span> <span class="n">PointDrawTool</span><span class="p">,</span> <span class="n">TableColumn</span>
@@ -588,17 +589,23 @@ the microphone geometry plot.</p>
 </div>
 </section>
 <section id="create-widgets-for-micgeom">
-<h2>Create widgets for MicGeom<a class="headerlink" href="#create-widgets-for-micgeom" title="Link to this heading">#</a></h2>
-<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code> class provides several attributes, known as traits, that can be used to
-either provide additional information about the microphone array or to modify the geometry. In this example,
-we focus on the most relevant ones for widget creation: <code class="xref py py-attr docutils literal notranslate"><span class="pre">num_mics</span></code>,
-<code class="xref py py-attr docutils literal notranslate"><span class="pre">aperture</span></code>, and <code class="xref py py-attr docutils literal notranslate"><span class="pre">pos_total</span></code>.</p>
-<p>Let’s say we want to know about the number of microphones (<code class="xref py py-attr docutils literal notranslate"><span class="pre">num_mics</span></code>) and
-the aperture of the microphone array (<code class="xref py py-attr docutils literal notranslate"><span class="pre">aperture</span></code>), we can use SpectAcoular’s
-<a class="reference internal" href="../api_ref/spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> function to translate each attribute into a Bokeh widget.</p>
-<p>Defining each trait to widget mapping individually can become cumbersome, and not all
-widgets are suitable for all traits. Therefore, SpectAcoular provides default widget mapping for
-most of Acoular’s classes.</p>
+<h1>Create widgets for MicGeom<a class="headerlink" href="#create-widgets-for-micgeom" title="Link to this heading">#</a></h1>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code> class provides several
+attributes, known as traits, that can either provide additional
+information about the microphone array or modify the geometry. In this
+example, we focus on the most relevant ones for widget creation:
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">num_mics</span></code>,
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">aperture</span></code>, and
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">pos_total</span></code>.</p>
+<p>If we want to inspect the number of microphones
+(<code class="xref py py-attr docutils literal notranslate"><span class="pre">num_mics</span></code>) and the aperture of the
+microphone array (<code class="xref py py-attr docutils literal notranslate"><span class="pre">aperture</span></code>), we can
+use SpectAcoular’s <a class="reference internal" href="../api_ref/spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> function to
+translate each attribute into a Bokeh widget.</p>
+<p>Defining each trait to widget mapping individually can become
+cumbersome, and not all widgets are suitable for all traits.
+Therefore, SpectAcoular provides default widget mapping for most of
+Acoular’s classes.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">numeric_widgets</span> <span class="o">=</span> <span class="n">mics</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span>
     <span class="p">{</span><span class="s1">&#39;aperture&#39;</span><span class="p">:</span> <span class="n">NumericInput</span><span class="p">,</span> <span class="s1">&#39;num_mics&#39;</span><span class="p">:</span> <span class="n">NumericInput</span><span class="p">},</span>
     <span class="p">{</span>
@@ -643,17 +650,13 @@ Therefore, we will use the <code class="xref py py-class docutils literal notran
 </pre></div>
 </div>
 <p>Let’s create a layout that contains the figure and the widgets.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">widget_column</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span>
-    <span class="o">*</span><span class="n">numeric_widgets</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="o">*</span><span class="n">data_table_widget</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span>
-<span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">widget_column</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span><span class="o">*</span><span class="n">numeric_widgets</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="o">*</span><span class="n">data_table_widget</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 <span class="n">layout</span> <span class="o">=</span> <span class="n">row</span><span class="p">(</span><span class="n">figure</span><span class="p">,</span> <span class="n">widget_column</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>  <span class="c1"># Show the plot in a new browser window</span>
 </pre></div>
 </div>
 <p>The following code is for Bokeh server apps only.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">curdoc</span><span class="p">()</span><span class="o">.</span><span class="n">add_root</span><span class="p">(</span>
-    <span class="n">layout</span>
-<span class="p">)</span>  <span class="c1"># Add the layout to the current document for Bokeh server apps</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">curdoc</span><span class="p">()</span><span class="o">.</span><span class="n">add_root</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>  <span class="c1"># Add the layout to the current document for Bokeh server apps</span>
 </pre></div>
 </div>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-basic-mic-geom-widgets-py">
@@ -668,7 +671,6 @@ Therefore, we will use the <code class="xref py py-class docutils literal notran
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</section>
 </section>
 
 
@@ -687,7 +689,7 @@ Therefore, we will use the <code class="xref py py-class docutils literal notran
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Basic plotting with Bokeh</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
     </a>
     <a class="right-next"
@@ -695,7 +697,7 @@ Therefore, we will use the <code class="xref py py-class docutils literal notran
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Interactive Server Applications with SepctAcoular</p>
+        <p class="prev-next-title">Create three sources example</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -718,9 +720,10 @@ Therefore, we will use the <code class="xref py py-class docutils literal notran
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-the-microphone-geometry-plot">Set up the microphone geometry plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-widgets-for-micgeom">Create widgets for MicGeom</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Set up the microphone geometry plot</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-widgets-for-micgeom">Create widgets for MicGeom</a></li>
 </ul>
+
   </nav></div>
 
   <div class="sidebar-secondary-item">

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Basic plotting with Bokeh &#8212; SpectAcoular  documentation</title>
+    <title>&lt;no title&gt; &#8212; SpectAcoular  documentation</title>
   
   
   
@@ -66,7 +66,7 @@
     <link rel="icon" href="../_static/acoular_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating widgets with SpectAcoular" href="basic_mic_geom_widgets.html" />
+    <link rel="next" title="Set up the microphone geometry plot" href="basic_mic_geom_widgets.html" />
     <link rel="prev" title="User Guide" href="../user_guide/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -431,13 +431,16 @@
 
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../user_guide/index.html">User Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Basic plotting with Bokeh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_mic_geom_widgets.html">Basic widget building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interactive_apps.html">Basic interactive applications</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/index.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_mic_geom_widgets.html">Set up the microphone geometry plot</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="interactive_apps.html">Create three sources example</a></li>
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../apps/micgeomexample.html">MicGeom example</a></li>
 </ul>
 </details></li>
@@ -515,7 +518,7 @@
     
     <li class="breadcrumb-item"><a href="../user_guide/index.html" class="nav-link">User Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Basic plotting with Bokeh</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">&lt;no title&gt;</span></li>
   </ul>
 </nav>
 </div>
@@ -537,30 +540,32 @@
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-basic-mic-geom-plot-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code.</p>
 </div>
-<section class="sphx-glr-example-title" id="basic-plotting-with-bokeh">
-<span id="basic-mic-geom-plot"></span><span id="sphx-glr-auto-examples-basic-mic-geom-plot-py"></span><h1>Basic plotting with Bokeh<a class="headerlink" href="#basic-plotting-with-bokeh" title="Link to this heading">#</a></h1>
-<p>In this example, we are going to create a simple plot of a Microphone Array Geometry loaded from
-an XML file using the Acoular package and Bokeh for visualization.</p>
-<div style="height:600px;"><script src="bokeh-content-249c3c4a3c404a1c99264a7d7026b860-auto_examples-basic_mic_geom_plot.js" id="d99c3a05-28fc-45be-93c3-2ba11867a93f"></script></div><div class="admonition note">
+<p class="sphx-glr-example-title" id="sphx-glr-auto-examples-basic-mic-geom-plot-py">Basic plotting with Bokeh.</p>
+<p id="basic-mic-geom-plot">This example creates a simple plot of a microphone array geometry loaded
+from an XML file using Acoular and Bokeh.</p>
+<div style="height:600px;"><script src="bokeh-content-7e4ed40afb144d0a94648ad69589e39d-auto_examples-basic_mic_geom_plot.js" id="fe093bdf-67fd-4812-bea6-378bfe60ea14"></script></div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This example creates a standalone Bokeh document and can be run directly with Python.
 It does not require a Bokeh server.</p>
 </div>
 <p>First, we import the necessary modules.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
+
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColumnDataSource</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">figure</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
 </pre></div>
 </div>
-<p>Next, we set up the microphone geometry by using Acoular’s <code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code> class.
-For demonstration purposes, we will use a 64 channel Vogel’s spiral microphone array geometry,
-stored in an XML file that is part of the Acoular package. To locate the
-<a class="reference external" href="https://github.com/acoular/acoular/tree/master/acoular/xml">XML directory</a> in the Acoular package,
-we use the <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a> object to dynamically construct the path relative to the
-Acoular package location.</p>
+<p>Next, we set up the microphone geometry with Acoular’s
+<code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code> class.
+For demonstration purposes, we use a 64 channel Vogel’s spiral microphone
+array geometry stored in an XML file that is part of the Acoular package.
+To locate the
+<a class="reference external" href="https://github.com/acoular/acoular/tree/master/acoular/xml">XML directory</a>
+in the Acoular package, we use the <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a> object to
+dynamically construct the path relative to the Acoular package location.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mics</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;xml&#39;</span> <span class="o">/</span> <span class="s1">&#39;tub_vogel64.xml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -576,17 +581,20 @@ coordinates of each microphone in the array.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>The convenient way to provide data to a Bokeh <code class="xref py py-class docutils literal notranslate"><span class="pre">Plot</span></code> is to use a
-<code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code>, which is a data structure that allows us to easily update
-the data in the plot. Since we create a 2D plot, we only need the x and y coordinates of the microphones.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">mics</span><span class="o">.</span><span class="n">pos_total</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">mics</span><span class="o">.</span><span class="n">pos_total</span><span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
+<p>A convenient way to provide data to a Bokeh
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Plot</span></code> is to use a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code>, which allows us to update the
+data in the plot easily. Since we create a 2D plot, we only need the <em>x</em>
+and <em>y</em> coordinates of the microphones.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">mics</span><span class="o">.</span><span class="n">pos_total</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">mics</span><span class="o">.</span><span class="n">pos_total</span><span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
 </pre></div>
 </div>
 <p>In addition, we need to decide which
 <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs.html#module-bokeh.models.glyphs">glyph</a>
-to use. Glyphs are the basic building blocks of Bokeh plots, and they define how the data is visualized.
-In this case, we will use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">circle()</span></code> method to create a
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Circle</span></code> to represent the microphones.</p>
+to use. Glyphs are the basic building blocks of Bokeh plots and define
+how the data is visualized. In this case, we use the
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">circle()</span></code> method to create a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Circle</span></code> that represents the microphones.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
@@ -615,7 +623,6 @@ browser window and display the plot with the microphone positions.</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</section>
 
 
                 </article>
@@ -641,7 +648,7 @@ browser window and display the plot with the microphone positions.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Creating widgets with SpectAcoular</p>
+        <p class="prev-next-title">Set up the microphone geometry plot</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -655,6 +662,18 @@ browser window and display the plot with the microphone positions.</p>
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 
