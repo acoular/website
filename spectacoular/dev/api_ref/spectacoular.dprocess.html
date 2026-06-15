@@ -598,7 +598,7 @@ attribute provided, it builds a corresponding Bokeh widget.</p>
 specifying <a class="reference internal" href="#spectacoular.dprocess.BasePresenter.trait_widget_mapper" title="spectacoular.dprocess.BasePresenter.trait_widget_mapper"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_mapper</span></code></a> and <a class="reference internal" href="#spectacoular.dprocess.BasePresenter.trait_widget_args" title="spectacoular.dprocess.BasePresenter.trait_widget_args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_args</span></code></a>
 explicitly as function arguments. In this case, the default widget mapping, defined in
 <a class="reference internal" href="spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a>, will be used:</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-e90c913b69fc44b7ad1f327769c9597e-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-e6c095aa42b04081a2873d4d09e76672-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
 
@@ -608,12 +608,12 @@ explicitly as function arguments. In this case, the default widget mapping, defi
 <span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-e90c913b69fc44b7ad1f327769c9597e-api_ref-spectacoular.dprocess.js" id="a1ee3506-153e-409d-a285-6c5b0ddfebcb"></script></li>
+<script src="bokeh-content-e6c095aa42b04081a2873d4d09e76672-api_ref-spectacoular.dprocess.js" id="ebd19282-1df5-42d7-98e4-5e20aa698088"></script></li>
 <li><p><strong>No Predefined View:</strong> <a class="reference internal" href="#spectacoular.dprocess.BasePresenter.get_widgets" title="spectacoular.dprocess.BasePresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called and a HasTraits derived instance
 is given as the first argument to the function without any further arguments.
 In this case, a default mapping is created from all editable traits to create the view.</p></li>
 </ul>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-bd93225a691a4faf8c0ca5b133d33c9e-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-a8bead65cc4a4e5894a742e0b192f77f-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
@@ -624,12 +624,12 @@ In this case, a default mapping is created from all editable traits to create th
 <span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-bd93225a691a4faf8c0ca5b133d33c9e-api_ref-spectacoular.dprocess.js" id="e5d524b7-d7dd-4dc3-93d0-0903067b14a7"></script><ul>
+<script src="bokeh-content-a8bead65cc4a4e5894a742e0b192f77f-api_ref-spectacoular.dprocess.js" id="c87681bb-9070-450b-a05e-7ba4bcc68670"></script><ul>
 <li><p><strong>Custom View:</strong> <a class="reference internal" href="spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called by a
 <a class="reference internal" href="spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance and an
 explicit mapping is given. In this case, the instance attributes
 (<code class="docutils literal notranslate"><span class="pre">self.trait_widget_mapper</span></code>, <code class="docutils literal notranslate"><span class="pre">self.trait_widget_args</span></code>) are superseded.</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-2eab8ed4ee14461299f333cee621563a-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-6f685c78f4554355aeb9434393213d76-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
@@ -646,9 +646,9 @@ explicit mapping is given. In this case, the instance attributes
 <span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-2eab8ed4ee14461299f333cee621563a-api_ref-spectacoular.dprocess.js" id="e3e679bc-9a01-41b5-8a1e-4d135b67af34"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
+<script src="bokeh-content-6f685c78f4554355aeb9434393213d76-api_ref-spectacoular.dprocess.js" id="ab73e1a6-6317-4319-bea8-67108b751030"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
 classes that are not part of SpectAcoular:</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-6cc24eb4fdd7424aab7ed908ad2ff325-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-024a2a7400634029bb91df2e562a3aa9-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
@@ -666,7 +666,7 @@ classes that are not part of SpectAcoular:</p>
 <span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-6cc24eb4fdd7424aab7ed908ad2ff325-api_ref-spectacoular.dprocess.js" id="dea4fe04-a502-434a-8814-4e14c415a3f0"></script></li>
+<script src="bokeh-content-024a2a7400634029bb91df2e562a3aa9-api_ref-spectacoular.dprocess.js" id="b732cb73-b0ee-48a1-93f0-20df7ce50f78"></script></li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -784,7 +784,7 @@ attribute provided, it builds a corresponding Bokeh widget.</p>
 specifying <a class="reference internal" href="#spectacoular.dprocess.MicGeomPresenter.trait_widget_mapper" title="spectacoular.dprocess.MicGeomPresenter.trait_widget_mapper"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_mapper</span></code></a> and <a class="reference internal" href="#spectacoular.dprocess.MicGeomPresenter.trait_widget_args" title="spectacoular.dprocess.MicGeomPresenter.trait_widget_args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_args</span></code></a>
 explicitly as function arguments. In this case, the default widget mapping, defined in
 <a class="reference internal" href="spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a>, will be used:</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-7b8de31456a94e11943be2af374bb6c1-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-110dd36bddc14ea9b6e66e48e8e7ff12-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
 
@@ -794,12 +794,12 @@ explicitly as function arguments. In this case, the default widget mapping, defi
 <span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-7b8de31456a94e11943be2af374bb6c1-api_ref-spectacoular.dprocess.js" id="b53015b5-1194-4729-abfa-e32e8ca7f44b"></script></li>
+<script src="bokeh-content-110dd36bddc14ea9b6e66e48e8e7ff12-api_ref-spectacoular.dprocess.js" id="b47bd3e6-6fda-4ae2-90d3-0c778422644c"></script></li>
 <li><p><strong>No Predefined View:</strong> <a class="reference internal" href="#spectacoular.dprocess.MicGeomPresenter.get_widgets" title="spectacoular.dprocess.MicGeomPresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called and a HasTraits derived instance
 is given as the first argument to the function without any further arguments.
 In this case, a default mapping is created from all editable traits to create the view.</p></li>
 </ul>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-8278d0493edf49419b0999b04f7360cc-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-fcc349cf0fd34785bd74e70c38461aca-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
@@ -810,12 +810,12 @@ In this case, a default mapping is created from all editable traits to create th
 <span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-8278d0493edf49419b0999b04f7360cc-api_ref-spectacoular.dprocess.js" id="e112c64a-40fd-4d52-a674-45c7a28358d7"></script><ul>
+<script src="bokeh-content-fcc349cf0fd34785bd74e70c38461aca-api_ref-spectacoular.dprocess.js" id="b46be222-e638-4b4a-8d5b-21883b06dfe6"></script><ul>
 <li><p><strong>Custom View:</strong> <a class="reference internal" href="spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called by a
 <a class="reference internal" href="spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance and an
 explicit mapping is given. In this case, the instance attributes
 (<code class="docutils literal notranslate"><span class="pre">self.trait_widget_mapper</span></code>, <code class="docutils literal notranslate"><span class="pre">self.trait_widget_args</span></code>) are superseded.</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-853c08d6645444b6a7d726432d019cbb-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-8c8f01b87310413ead7de9cf00f8b5bf-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
@@ -832,9 +832,9 @@ explicit mapping is given. In this case, the instance attributes
 <span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-853c08d6645444b6a7d726432d019cbb-api_ref-spectacoular.dprocess.js" id="e7dfe871-445b-4171-87dd-aa1d92b4738c"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
+<script src="bokeh-content-8c8f01b87310413ead7de9cf00f8b5bf-api_ref-spectacoular.dprocess.js" id="eb5cd676-129f-4014-804b-59eb812ae6e7"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
 classes that are not part of SpectAcoular:</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-9773b5e3b9334f31bcedc6defdd299b5-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-e5cc009e51f74385913dbe74054394ed-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
@@ -852,7 +852,7 @@ classes that are not part of SpectAcoular:</p>
 <span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-9773b5e3b9334f31bcedc6defdd299b5-api_ref-spectacoular.dprocess.js" id="a56e3eb7-9530-4aac-8dfe-f1b6cab3d6d6"></script></li>
+<script src="bokeh-content-e5cc009e51f74385913dbe74054394ed-api_ref-spectacoular.dprocess.js" id="afffad28-ff89-4c1d-b4ce-32860beac141"></script></li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -997,7 +997,7 @@ attribute provided, it builds a corresponding Bokeh widget.</p>
 specifying <a class="reference internal" href="#spectacoular.dprocess.BeamformerPresenter.trait_widget_mapper" title="spectacoular.dprocess.BeamformerPresenter.trait_widget_mapper"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_mapper</span></code></a> and <a class="reference internal" href="#spectacoular.dprocess.BeamformerPresenter.trait_widget_args" title="spectacoular.dprocess.BeamformerPresenter.trait_widget_args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_args</span></code></a>
 explicitly as function arguments. In this case, the default widget mapping, defined in
 <a class="reference internal" href="spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a>, will be used:</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-2ba20902dda24048b0de0dfc15cde771-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-3ec80211508e46ec9e7838447f743705-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
 
@@ -1007,12 +1007,12 @@ explicitly as function arguments. In this case, the default widget mapping, defi
 <span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-2ba20902dda24048b0de0dfc15cde771-api_ref-spectacoular.dprocess.js" id="f3a0b69a-8b68-439b-a7e4-08dc974df7fb"></script></li>
+<script src="bokeh-content-3ec80211508e46ec9e7838447f743705-api_ref-spectacoular.dprocess.js" id="faf1de34-e5f8-4a99-9d5a-97341ed3ffd2"></script></li>
 <li><p><strong>No Predefined View:</strong> <a class="reference internal" href="#spectacoular.dprocess.BeamformerPresenter.get_widgets" title="spectacoular.dprocess.BeamformerPresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called and a HasTraits derived instance
 is given as the first argument to the function without any further arguments.
 In this case, a default mapping is created from all editable traits to create the view.</p></li>
 </ul>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-cd053497d7f246209d445c86963db49f-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-6f78f432539743a1b462aacf9e3a50f7-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
@@ -1023,12 +1023,12 @@ In this case, a default mapping is created from all editable traits to create th
 <span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-cd053497d7f246209d445c86963db49f-api_ref-spectacoular.dprocess.js" id="aca75bc7-5426-4cb0-9dfc-7f55c257f404"></script><ul>
+<script src="bokeh-content-6f78f432539743a1b462aacf9e3a50f7-api_ref-spectacoular.dprocess.js" id="d8882df8-dc5b-4659-9506-b2a1c4553d9a"></script><ul>
 <li><p><strong>Custom View:</strong> <a class="reference internal" href="spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called by a
 <a class="reference internal" href="spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance and an
 explicit mapping is given. In this case, the instance attributes
 (<code class="docutils literal notranslate"><span class="pre">self.trait_widget_mapper</span></code>, <code class="docutils literal notranslate"><span class="pre">self.trait_widget_args</span></code>) are superseded.</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-88288a9ed7584a00901c58f45c7da455-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-08ce71e111fb4e7a951c78ab728bfb0a-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
@@ -1045,9 +1045,9 @@ explicit mapping is given. In this case, the instance attributes
 <span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-88288a9ed7584a00901c58f45c7da455-api_ref-spectacoular.dprocess.js" id="c3c23231-1362-42bc-8ef9-d9b24e02b49b"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
+<script src="bokeh-content-08ce71e111fb4e7a951c78ab728bfb0a-api_ref-spectacoular.dprocess.js" id="cf6748bf-3d5e-40a8-8938-ea87f595a8d8"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
 classes that are not part of SpectAcoular:</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-77d1f9e7505540a7ab86dba4342457c1-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-d3657d63839541b5b15974151a13b10d-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
@@ -1065,7 +1065,7 @@ classes that are not part of SpectAcoular:</p>
 <span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-77d1f9e7505540a7ab86dba4342457c1-api_ref-spectacoular.dprocess.js" id="cdd675c8-bac3-4084-ba90-f7f7520112a5"></script></li>
+<script src="bokeh-content-d3657d63839541b5b15974151a13b10d-api_ref-spectacoular.dprocess.js" id="cd19a4ba-2391-4a40-996b-ded4e0f6d524"></script></li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1166,7 +1166,7 @@ attribute provided, it builds a corresponding Bokeh widget.</p>
 specifying <a class="reference internal" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_mapper" title="spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_mapper"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_mapper</span></code></a> and <a class="reference internal" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_args" title="spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_args</span></code></a>
 explicitly as function arguments. In this case, the default widget mapping, defined in
 <a class="reference internal" href="spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a>, will be used:</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-9f1c6e3a3997496787f0299d5c374899-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-80c5b43381d44b1286e474a7b1cbfd58-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
 
@@ -1176,12 +1176,12 @@ explicitly as function arguments. In this case, the default widget mapping, defi
 <span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-9f1c6e3a3997496787f0299d5c374899-api_ref-spectacoular.dprocess.js" id="ac07b64e-26d5-4100-8011-dc76710bd75c"></script></li>
+<script src="bokeh-content-80c5b43381d44b1286e474a7b1cbfd58-api_ref-spectacoular.dprocess.js" id="a3fabb2a-5d43-4c17-8251-505055e7ad9f"></script></li>
 <li><p><strong>No Predefined View:</strong> <a class="reference internal" href="#spectacoular.dprocess.PointSpreadFunctionPresenter.get_widgets" title="spectacoular.dprocess.PointSpreadFunctionPresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called and a HasTraits derived instance
 is given as the first argument to the function without any further arguments.
 In this case, a default mapping is created from all editable traits to create the view.</p></li>
 </ul>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-47ac587053994301be73f4d0a8cb0070-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-143377c6d8b14369bef8e632968e34cd-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
@@ -1192,12 +1192,12 @@ In this case, a default mapping is created from all editable traits to create th
 <span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-47ac587053994301be73f4d0a8cb0070-api_ref-spectacoular.dprocess.js" id="e34cb7fb-def4-4559-ac41-17d1340a5771"></script><ul>
+<script src="bokeh-content-143377c6d8b14369bef8e632968e34cd-api_ref-spectacoular.dprocess.js" id="f8b9ec11-a0f5-4f8c-9958-4d9301951316"></script><ul>
 <li><p><strong>Custom View:</strong> <a class="reference internal" href="spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called by a
 <a class="reference internal" href="spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance and an
 explicit mapping is given. In this case, the instance attributes
 (<code class="docutils literal notranslate"><span class="pre">self.trait_widget_mapper</span></code>, <code class="docutils literal notranslate"><span class="pre">self.trait_widget_args</span></code>) are superseded.</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-2e4947e39fd147ea8f4d8b1b7d4fa70b-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-c042e4171feb400a853b5139dc545be6-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
@@ -1214,9 +1214,9 @@ explicit mapping is given. In this case, the instance attributes
 <span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-2e4947e39fd147ea8f4d8b1b7d4fa70b-api_ref-spectacoular.dprocess.js" id="ce15083b-696b-47cf-956d-f9299532516e"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
+<script src="bokeh-content-c042e4171feb400a853b5139dc545be6-api_ref-spectacoular.dprocess.js" id="c5630e7f-4370-4441-93d5-58c181292104"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
 classes that are not part of SpectAcoular:</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-6f4eca6744704cb98da1787543757742-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-cae506fa759d4bf6b74da2301607da3d-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
@@ -1234,7 +1234,7 @@ classes that are not part of SpectAcoular:</p>
 <span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-6f4eca6744704cb98da1787543757742-api_ref-spectacoular.dprocess.js" id="f430cf41-23e8-41c7-a17b-9deea8d4a703"></script></li>
+<script src="bokeh-content-cae506fa759d4bf6b74da2301607da3d-api_ref-spectacoular.dprocess.js" id="debccef2-b039-409e-a38e-3455bfaa2de3"></script></li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1372,7 +1372,7 @@ attribute provided, it builds a corresponding Bokeh widget.</p>
 specifying <a class="reference internal" href="#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_mapper" title="spectacoular.dprocess.TimeSamplesPresenter.trait_widget_mapper"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_mapper</span></code></a> and <a class="reference internal" href="#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_args" title="spectacoular.dprocess.TimeSamplesPresenter.trait_widget_args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trait_widget_args</span></code></a>
 explicitly as function arguments. In this case, the default widget mapping, defined in
 <a class="reference internal" href="spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bokehview</span></code></a>, will be used:</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-705fc3ca43014dc4a722cbbec5a062fc-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-b50ca2087ef14e0e8cfb1208f6e2442c-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
 
@@ -1382,12 +1382,12 @@ explicitly as function arguments. In this case, the default widget mapping, defi
 <span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-705fc3ca43014dc4a722cbbec5a062fc-api_ref-spectacoular.dprocess.js" id="e995e25f-e714-427c-979b-9662fdf45b4a"></script></li>
+<script src="bokeh-content-b50ca2087ef14e0e8cfb1208f6e2442c-api_ref-spectacoular.dprocess.js" id="ab49c2aa-a62e-457f-91d9-eefcbd2c6cda"></script></li>
 <li><p><strong>No Predefined View:</strong> <a class="reference internal" href="#spectacoular.dprocess.TimeSamplesPresenter.get_widgets" title="spectacoular.dprocess.TimeSamplesPresenter.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called and a HasTraits derived instance
 is given as the first argument to the function without any further arguments.
 In this case, a default mapping is created from all editable traits to create the view.</p></li>
 </ul>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-cba21cac6d6541acbc4cf1652d6f7b9f-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-d1a822b981cd4568ad009a9ac018ab61-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridplot</span>
@@ -1398,12 +1398,12 @@ In this case, a default mapping is created from all editable traits to create th
 <span class="n">show</span><span class="p">(</span><span class="n">gridplot</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-cba21cac6d6541acbc4cf1652d6f7b9f-api_ref-spectacoular.dprocess.js" id="c884f700-5dc7-4fbd-87f3-e4e1221b72c8"></script><ul>
+<script src="bokeh-content-d1a822b981cd4568ad009a9ac018ab61-api_ref-spectacoular.dprocess.js" id="ff61112b-d72c-4ebe-88cc-99bd93a6fc41"></script><ul>
 <li><p><strong>Custom View:</strong> <a class="reference internal" href="spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> is called by a
 <a class="reference internal" href="spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> derived instance and an
 explicit mapping is given. In this case, the instance attributes
 (<code class="docutils literal notranslate"><span class="pre">self.trait_widget_mapper</span></code>, <code class="docutils literal notranslate"><span class="pre">self.trait_widget_args</span></code>) are superseded.</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-72e66a715e114b3a8a68fe278e380636-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-c6a38c64b91b4b96ac4ea62294baaad2-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
@@ -1420,9 +1420,9 @@ explicit mapping is given. In this case, the instance attributes
 <span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-72e66a715e114b3a8a68fe278e380636-api_ref-spectacoular.dprocess.js" id="b9b202ee-36a2-4e85-8380-f53a646513e5"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
+<script src="bokeh-content-c6a38c64b91b4b96ac4ea62294baaad2-api_ref-spectacoular.dprocess.js" id="d5269853-95a9-4519-a49c-55e07b91c50b"></script><p>The same functionality can also be used with <code class="docutils literal notranslate"><span class="pre">HasTraits</span></code>-derived
 classes that are not part of SpectAcoular:</p>
-<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-3712dbab801248e6834de422535efc52-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
+<div class="highlight-python notranslate" id="api_ref-spectacoular.dprocess.bokeh-content-613f9bdcf18b47cea3d98d13de021844-api_ref-spectacoular.dprocess.js"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectGrid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_widgets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
@@ -1440,7 +1440,7 @@ classes that are not part of SpectAcoular:</p>
 <span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span><span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_both&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<script src="bokeh-content-3712dbab801248e6834de422535efc52-api_ref-spectacoular.dprocess.js" id="dc077ccb-8a04-429d-8274-1f1836f18aed"></script></li>
+<script src="bokeh-content-613f9bdcf18b47cea3d98d13de021844-api_ref-spectacoular.dprocess.js" id="ab356c91-bda0-4bcb-a9a9-f31cea80ecc0"></script></li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
