@@ -54,4 +54,4 @@ Orga Resources
       :link: contributing/index
       :link-type: doc
 
-      Organization-level contribution guidance placeholder.
+      Organization-level contribution guidance for all packages.
