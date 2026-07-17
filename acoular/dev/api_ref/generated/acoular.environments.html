@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
@@ -43,10 +43,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
     <script src="../../_static/documentation_options.js?v=7a881cb0"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -58,7 +58,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api_ref/generated/acoular.environments';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/acoular/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -74,7 +74,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Jun 11, 2026"/>
+    <meta name="docbuild:last-update" content="Jul 17, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -196,7 +196,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link nav-external" href="https://acoular.org/spectacoular/">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
         SpectAcoular
       </a>
     </li>
@@ -343,7 +343,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link nav-external" href="https://acoular.org/spectacoular/">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
         SpectAcoular
       </a>
     </li>
@@ -533,7 +533,6 @@
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.grids.PolySector.html"><code class="docutils literal notranslate"><span class="pre">PolySector</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.grids.ConvexSector.html"><code class="docutils literal notranslate"><span class="pre">ConvexSector</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.grids.MultiSector.html"><code class="docutils literal notranslate"><span class="pre">MultiSector</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="generated/acoular.grids.Polygon.html"><code class="docutils literal notranslate"><span class="pre">Polygon</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.grids.in_hull.html"><code class="docutils literal notranslate"><span class="pre">in_hull</span></code></a></li>
 </ul>
 </details></li>
@@ -818,16 +817,16 @@ grip.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>gpos</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The locations of <cite>N</cite> points in the beamforming map grid in 3D cartesian coordinates,
+<dt><strong>gpos</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The locations of <cite>N</cite> points in the beamforming map grid in 3D cartesian coordinates,
 shape <cite>(3, N)</cite>.</p>
 </dd>
-<dt><strong>mpos</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The locations of <cite>M</cite> microphones in 3D cartesian coordinates, shape <cite>(3, M)</cite>.</p>
+<dt><strong>mpos</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The locations of <cite>M</cite> microphones in 3D cartesian coordinates, shape <cite>(3, M)</cite>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p>Matrix of the distances between each microphone and each point in the beamforming map grid,
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p>Matrix of the distances between each microphone and each point in the beamforming map grid,
 shape <cite>(N, M)</cite>.</p>
 </dd>
 </dl>
@@ -847,9 +846,9 @@ transformed into a modified cartesian coordinate, which has flow into positive z
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>x</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Cartesian coordinates of <cite>N</cite> points, shape <cite>(3, N)</cite>.</p>
+<dt><strong>x</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Cartesian coordinates of <cite>N</cite> points, shape <cite>(3, N)</cite>.</p>
 </dd>
-<dt><strong>Q</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a>, optional</span></dt><dd><p>Orthogonal transformation matrix, shape <cite>(3, 3)</cite>. If provided, the positional vectors are
+<dt><strong>Q</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a>, optional</span></dt><dd><p>Orthogonal transformation matrix, shape <cite>(3, 3)</cite>. If provided, the positional vectors are
 transformed via <code class="docutils literal notranslate"><span class="pre">new_x</span> <span class="pre">=</span> <span class="pre">Q</span> <span class="pre">*</span> <span class="pre">x</span></code>, before transforming those modified coordinates into
 cylindrical ones. Default is the identity matrix.</p>
 </dd>
@@ -857,7 +856,7 @@ cylindrical ones. Default is the identity matrix.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p>Cylindrical representation of given <cite>N</cite> points in cartesian coodrinates as
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p>Cylindrical representation of given <cite>N</cite> points in cartesian coodrinates as
 an array of shape <cite>(3, N)</cite> with new coordinates <span class="math notranslate nohighlight">\((\phi, r, z)\)</span>.</p>
 </dd>
 </dl>
@@ -877,9 +876,9 @@ into a cylindrical coordinate, which has flow into positive z direction.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>x</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Cylindrical coordinates of <cite>N</cite> points, shape <cite>(3, N)</cite>.</p>
+<dt><strong>x</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Cylindrical coordinates of <cite>N</cite> points, shape <cite>(3, N)</cite>.</p>
 </dd>
-<dt><strong>Q</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a>, optional</span></dt><dd><p>Orthogonal transformation matrix, shape <cite>(3, 3)</cite>. If provided, the positional vectors are
+<dt><strong>Q</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a>, optional</span></dt><dd><p>Orthogonal transformation matrix, shape <cite>(3, 3)</cite>. If provided, the positional vectors are
 transformed via <code class="docutils literal notranslate"><span class="pre">new_x</span> <span class="pre">=</span> <span class="pre">Q</span> <span class="pre">*</span> <span class="pre">x</span></code> before transforming those modified coordinates into
 cartesian ones. Default is the identity matrix.</p>
 </dd>
@@ -887,7 +886,7 @@ cartesian ones. Default is the identity matrix.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p>Cartesian representation of given <cite>N</cite> points in cylindrical coodrinates as
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p>Cartesian representation of given <cite>N</cite> points in cylindrical coodrinates as
 an array of shape <cite>(3, N)</cite> with coodinates <span class="math notranslate nohighlight">\((x, y, z)\)</span>.</p>
 </dd>
 </dl>
@@ -930,6 +929,47 @@ approximate speed of sound at 20°C in dry air at sea level, if the unit is m/s.
 Default is <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="acoular.environments.Environment.apparent_r">
+<span class="sig-name descname"><span class="pre">apparent_r</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoular.environments.Environment.apparent_r" title="Link to this definition">#</a></dt>
+<dd><p>Compute the distances between two sets of points.</p>
+<p>The distance for each of the <cite>N</cite> points in <code class="docutils literal notranslate"><span class="pre">gpos</span></code> in 3-D space to each of the <cite>M</cite> points
+in <code class="docutils literal notranslate"><span class="pre">mpos</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>gpos</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The coordinates of the first set of points. Should be of shape <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">N)</span></code>, where <cite>N</cite> is
+the number of points (x, y, z in rows).</p>
+</dd>
+<dt><strong>mpos</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a>, optional</span></dt><dd><p>The coordinates of the second set of points. If a scalar is provided, it is treated as
+the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>. If an array is given, it should have shape <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">M)</span></code>, where
+<cite>M</cite> is the number of points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>rm</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The distances between each point in <code class="docutils literal notranslate"><span class="pre">gpos</span></code> and <code class="docutils literal notranslate"><span class="pre">mpos</span></code>.
+The result is an array of</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>shape <cite>(N,)</cite> if <code class="docutils literal notranslate"><span class="pre">mpos</span></code> is a single point, or</p></li>
+<li><p>shape <cite>(N, M)</cite> if <code class="docutils literal notranslate"><span class="pre">mpos</span></code> consists of multiple points.</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#acoular.environments.dist_mat" title="acoular.environments.dist_mat"><code class="xref py py-func docutils literal notranslate"><span class="pre">dist_mat()</span></code></a></dt><dd><p>Compute distance matrix.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -963,6 +1003,44 @@ Default is <code class="docutils literal notranslate"><span class="pre">(1.0,</s
 <dt class="sig sig-object py" id="acoular.environments.UniformFlowEnvironment.digest">
 <span class="sig-name descname"><span class="pre">digest</span></span><a class="headerlink" href="#acoular.environments.UniformFlowEnvironment.digest" title="Link to this definition">#</a></dt>
 <dd><p>A unique identifier based on the environment properties. (read-only)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="acoular.environments.UniformFlowEnvironment.apparent_r">
+<span class="sig-name descname"><span class="pre">apparent_r</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoular.environments.UniformFlowEnvironment.apparent_r" title="Link to this definition">#</a></dt>
+<dd><p>Compute the apparent distances between two sets of points.</p>
+<p>This method calculates the distance between points <code class="docutils literal notranslate"><span class="pre">gpos</span></code> and <code class="docutils literal notranslate"><span class="pre">mpos</span></code> in a 3-D space,
+with an additional adjustment based on a mass term and force vector. The result is affected
+by the angle between the direction of movement and the force vector.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>gpos</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The 3-D coordinates of the first set of points, shape <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">N)</span></code>.</p>
+</dd>
+<dt><strong>mpos</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a>, optional</span></dt><dd><p>The 3-D coordinates of the second set of points. If a scalar is provided, it is
+treated as the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>. If an array is given, it should have shape
+<code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">M)</span></code>, where <cite>M</cite> is the number of points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>rm</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The distances between each point in <code class="docutils literal notranslate"><span class="pre">gpos</span></code> and <code class="docutils literal notranslate"><span class="pre">mpos</span></code>.
+The result is an array of</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>shape <cite>(N,)</cite> if <code class="docutils literal notranslate"><span class="pre">mpos</span></code> is a single point, or</p></li>
+<li><p>shape <cite>(N, M)</cite> if <code class="docutils literal notranslate"><span class="pre">mpos</span></code> consists of multiple points.</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The apparent distance accounts for the convection of sound by the uniform flow. The
+adjustment depends on the Mach number <a class="reference internal" href="#acoular.environments.UniformFlowEnvironment.ma" title="acoular.environments.UniformFlowEnvironment.ma"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ma</span></code></a> and the angle between the propagation path
+and the flow direction <a class="reference internal" href="#acoular.environments.UniformFlowEnvironment.fdv" title="acoular.environments.UniformFlowEnvironment.fdv"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fdv</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -999,7 +1077,7 @@ Default is <a class="reference external" href="https://docs.python.org/3/library
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>xx</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Location in the fluid for which to provide the data, shape (3,).</p>
+<dt><strong>xx</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Location in the fluid for which to provide the data, shape (3,).</p>
 </dd>
 </dl>
 </dd>
@@ -1079,16 +1157,16 @@ of the slot jet, while the entrainment components are assumed to be zero.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>xx</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The 3D Cartesian coordinates of the location in the fluid where the velocity field
+<dt><strong>xx</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The 3D Cartesian coordinates of the location in the fluid where the velocity field
 is to be computed, shape <cite>(3,)</cite>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl>
-<dt><strong>velocity_vector</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The velocity vector at the given location, shape <cite>(3,)</cite>.</p>
+<dt><strong>velocity_vector</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The velocity vector at the given location, shape <cite>(3,)</cite>.</p>
 </dd>
-<dt><strong>jacobian_matrix</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The Jacobian matrix of the velocity vector field at the given location, shape <cite>(3,)</cite>.</p>
+<dt><strong>jacobian_matrix</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The Jacobian matrix of the velocity vector field at the given location, shape <cite>(3,)</cite>.</p>
 </dd>
 </dl>
 </dd>
@@ -1178,16 +1256,16 @@ x-component of the flow, while the y- and z-components are assumed to be zero.</
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>xx</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The 3D Cartesian coordinates of the location in the fluid where the velocity
+<dt><strong>xx</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The 3D Cartesian coordinates of the location in the fluid where the velocity
 field is to be computed, shape <cite>(3,)</cite>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl>
-<dt><strong>velocity_vector</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The velocity vector at the specified location <code class="docutils literal notranslate"><span class="pre">xx</span></code>, shape <cite>(3,)</cite>.</p>
+<dt><strong>velocity_vector</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The velocity vector at the specified location <code class="docutils literal notranslate"><span class="pre">xx</span></code>, shape <cite>(3,)</cite>.</p>
 </dd>
-<dt><strong>jacobian_matrix</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The Jacobian matrix of the velocity vector field at the specified location <code class="docutils literal notranslate"><span class="pre">xx</span></code>,
+<dt><strong>jacobian_matrix</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The Jacobian matrix of the velocity vector field at the specified location <code class="docutils literal notranslate"><span class="pre">xx</span></code>,
 shape <cite>(3, 3)</cite>.</p>
 </dd>
 </dl>
@@ -1280,14 +1358,14 @@ x-y plane and a constant velocity component in the z-direction.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>xx</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The 3D Cartesian coordinates of the location in the fluid where the velocity
+<dt><strong>xx</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The 3D Cartesian coordinates of the location in the fluid where the velocity
 field is to be computed, shape <cite>(3,)</cite>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl>
-<dt><strong>velocity_vector</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><dl class="simple">
+<dt><strong>velocity_vector</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><dl class="simple">
 <dt>The velocity vector at the specified location <code class="docutils literal notranslate"><span class="pre">xx</span></code>, shape <cite>(3,)</cite>. The components are:</dt><dd><ul class="simple">
 <li><p>U: Velocity in the x-direction (dependent on y-coordinate and <a class="reference internal" href="#acoular.environments.RotatingFlow.omega" title="acoular.environments.RotatingFlow.omega"><code class="xref py py-attr docutils literal notranslate"><span class="pre">omega</span></code></a>).</p></li>
 <li><p>V: Velocity in the y-direction (dependent on x-coordinate and <a class="reference internal" href="#acoular.environments.RotatingFlow.omega" title="acoular.environments.RotatingFlow.omega"><code class="xref py py-attr docutils literal notranslate"><span class="pre">omega</span></code></a>).</p></li>
@@ -1296,7 +1374,7 @@ field is to be computed, shape <cite>(3,)</cite>.</p>
 </dd>
 </dl>
 </dd>
-<dt><strong>jacobian_matrix</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The Jacobian matrix of the velocity vector field at the specified location <code class="docutils literal notranslate"><span class="pre">xx</span></code>.
+<dt><strong>jacobian_matrix</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The Jacobian matrix of the velocity vector field at the specified location <code class="docutils literal notranslate"><span class="pre">xx</span></code>.
 The matrix contains partial derivatives of each velocity component with
 respect to the spatial coordinates <span class="math notranslate nohighlight">\((x, y, z)\)</span>, shape <cite>(3, 3)</cite>.</p>
 </dd>
@@ -1329,7 +1407,7 @@ direction defined by the vector <code class="docutils literal notranslate"><span
 which corresponds to a hemisphere. Smaller values result in covering
 a smaller portion of the hemisphere.</p>
 </dd>
-<dt><strong>b</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a>, optional</span></dt><dd><p>A 3D unit vector specifying the desired center direction of the distribution.
+<dt><strong>b</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a>, optional</span></dt><dd><p>A 3D unit vector specifying the desired center direction of the distribution.
 Points are mirrored such that this vector points toward the center of the sphere.
 Default is <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">1]</span></code>, which corresponds to the z-axis.</p>
 </dd>
@@ -1337,7 +1415,7 @@ Default is <code class="docutils literal notranslate"><span class="pre">[0,</spa
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p>An array of unit vectors representing points on the sphere, shape <cite>(3, N)</cite>.
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p>An array of unit vectors representing points on the sphere, shape <cite>(3, N)</cite>.
 Each column corresponds to a 3D Cartesian coordinate of a point.</p>
 </dd>
 </dl>
@@ -1389,7 +1467,7 @@ The result is interpolated within a tetrahedal grid spanned between these rays.<
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.LinearNDInterpolator.html#scipy.interpolate.LinearNDInterpolator" title="(in SciPy v1.17.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">scipy.interpolate.LinearNDInterpolator</span></code></a></dt><dd><p>Piecewise linear interpolator in N &gt; 1 dimensions.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.LinearNDInterpolator.html#scipy.interpolate.LinearNDInterpolator" title="(in SciPy v1.18.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">scipy.interpolate.LinearNDInterpolator</span></code></a></dt><dd><p>Piecewise linear interpolator in N &gt; 1 dimensions.</p>
 </dd>
 </dl>
 </div>
@@ -1425,7 +1503,7 @@ which must be an instance of <a class="reference internal" href="#acoular.enviro
 <dt class="sig sig-object py" id="acoular.environments.GeneralFlowEnvironment.Om">
 <span class="sig-name descname"><span class="pre">Om</span></span><a class="headerlink" href="#acoular.environments.GeneralFlowEnvironment.Om" title="Link to this definition">#</a></dt>
 <dd><p>The maximum solid angle (in steradians) used in the ray-tracing algorithm.
-Default is <a class="reference external" href="https://numpy.org/doc/stable/reference/constants.html#numpy.pi" title="(in NumPy v2.4)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.pi</span></code></a>.</p>
+Default is <a class="reference external" href="https://numpy.org/doc/stable/reference/constants.html#numpy.pi" title="(in NumPy v2.5)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.pi</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -1442,6 +1520,44 @@ Default is <a class="reference external" href="https://numpy.org/doc/stable/refe
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="acoular.environments.GeneralFlowEnvironment.apparent_r">
+<span class="sig-name descname"><span class="pre">apparent_r</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoular.environments.GeneralFlowEnvironment.apparent_r" title="Link to this definition">#</a></dt>
+<dd><p>Compute the apparent distance (sound travel path length) between two sets of points.</p>
+<p>This method calculates the apparent distance (multiplied by the speed of sound) between
+points <code class="docutils literal notranslate"><span class="pre">gpos</span></code> and <code class="docutils literal notranslate"><span class="pre">mpos</span></code> in a 3-D space with a generic flow field. The calculation
+uses a ray-tracing approach to account for non-uniform flow effects on sound propagation.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>gpos</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The coordinates of the first set of points (e.g., grid points). Should be of shape
+<cite>(3, N)</cite>, where <cite>N</cite> is the number of points and each row represents x, y, z coordinates.</p>
+</dd>
+<dt><strong>mpos</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a>, optional</span></dt><dd><p>The coordinates of the second set of points (e.g., microphone positions). If a scalar
+is provided, it is treated as the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>. If an array is given, it should
+have shape <cite>(3, M)</cite>, where <cite>M</cite> is the number of points. Default is <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p>The apparent distances (sound travel path lengths) between each point in <code class="docutils literal notranslate"><span class="pre">gpos</span></code> and
+<code class="docutils literal notranslate"><span class="pre">mpos</span></code>. The result is an array of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>shape <cite>(N,)</cite> if <code class="docutils literal notranslate"><span class="pre">mpos</span></code> is a single point, or</p></li>
+<li><p>shape <cite>(N, M)</cite> if <code class="docutils literal notranslate"><span class="pre">mpos</span></code> consists of multiple points.</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This method uses ray-tracing and interpolation to compute the apparent distances in a
+non-uniform flow field. The results are scaled by the speed of sound <a class="reference internal" href="#acoular.environments.GeneralFlowEnvironment.c" title="acoular.environments.GeneralFlowEnvironment.c"><code class="xref py py-attr docutils literal notranslate"><span class="pre">c</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="acoular.environments.GeneralFlowEnvironment.get_interpolator">
 <span class="sig-name descname"><span class="pre">get_interpolator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoular.environments.GeneralFlowEnvironment.get_interpolator" title="Link to this definition">#</a></dt>
 <dd><p>Generate an interpolator for ray travel times based on a region of interest.</p>
@@ -1453,17 +1569,17 @@ points within the region.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>roi</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Array representing the region of interest (ROI), where each column corresponds
+<dt><strong>roi</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Array representing the region of interest (ROI), where each column corresponds
 to a point in the 3D space <span class="math notranslate nohighlight">\((x, y, z)\)</span>, shape <cite>(3, M)</cite>.</p>
 </dd>
-<dt><strong>x0</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Array representing the location of the microphone in 3D Cartesian coordinates,
+<dt><strong>x0</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Array representing the location of the microphone in 3D Cartesian coordinates,
 shape <cite>(3,)</cite>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.LinearNDInterpolator.html#scipy.interpolate.LinearNDInterpolator" title="(in SciPy v1.17.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">scipy.interpolate.LinearNDInterpolator</span></code></a> object</dt><dd><p>A linear interpolator object for estimating travel times for 3D positions
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.LinearNDInterpolator.html#scipy.interpolate.LinearNDInterpolator" title="(in SciPy v1.18.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">scipy.interpolate.LinearNDInterpolator</span></code></a> object</dt><dd><p>A linear interpolator object for estimating travel times for 3D positions
 within the computed ray trajectories.</p>
 </dd>
 </dl>
@@ -1543,12 +1659,14 @@ Default is <a class="reference external" href="https://docs.python.org/3/library
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.Environment.digest"><code class="docutils literal notranslate"><span class="pre">Environment.digest</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.Environment.c"><code class="docutils literal notranslate"><span class="pre">Environment.c</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.Environment.roi"><code class="docutils literal notranslate"><span class="pre">Environment.roi</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.Environment.apparent_r"><code class="docutils literal notranslate"><span class="pre">Environment.apparent_r()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.UniformFlowEnvironment"><code class="docutils literal notranslate"><span class="pre">UniformFlowEnvironment</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.UniformFlowEnvironment.ma"><code class="docutils literal notranslate"><span class="pre">UniformFlowEnvironment.ma</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.UniformFlowEnvironment.fdv"><code class="docutils literal notranslate"><span class="pre">UniformFlowEnvironment.fdv</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.UniformFlowEnvironment.digest"><code class="docutils literal notranslate"><span class="pre">UniformFlowEnvironment.digest</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.UniformFlowEnvironment.apparent_r"><code class="docutils literal notranslate"><span class="pre">UniformFlowEnvironment.apparent_r()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.UniformFlowEnvironment.c"><code class="docutils literal notranslate"><span class="pre">UniformFlowEnvironment.c</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.UniformFlowEnvironment.roi"><code class="docutils literal notranslate"><span class="pre">UniformFlowEnvironment.roi</span></code></a></li>
 </ul>
@@ -1594,6 +1712,7 @@ Default is <a class="reference external" href="https://docs.python.org/3/library
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.GeneralFlowEnvironment.Om"><code class="docutils literal notranslate"><span class="pre">GeneralFlowEnvironment.Om</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.GeneralFlowEnvironment.digest"><code class="docutils literal notranslate"><span class="pre">GeneralFlowEnvironment.digest</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.GeneralFlowEnvironment.idict"><code class="docutils literal notranslate"><span class="pre">GeneralFlowEnvironment.idict</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.GeneralFlowEnvironment.apparent_r"><code class="docutils literal notranslate"><span class="pre">GeneralFlowEnvironment.apparent_r()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.GeneralFlowEnvironment.get_interpolator"><code class="docutils literal notranslate"><span class="pre">GeneralFlowEnvironment.get_interpolator()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.GeneralFlowEnvironment.c"><code class="docutils literal notranslate"><span class="pre">GeneralFlowEnvironment.c</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.environments.GeneralFlowEnvironment.roi"><code class="docutils literal notranslate"><span class="pre">GeneralFlowEnvironment.roi</span></code></a></li>
@@ -1631,8 +1750,8 @@ Default is <a class="reference external" href="https://docs.python.org/3/library
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1666,7 +1785,7 @@ Default is <a class="reference external" href="https://docs.python.org/3/library
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
 </p></div>
       
     </div>

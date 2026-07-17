@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../../../_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
@@ -43,10 +43,10 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../../../_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
     <script src="../../../../_static/documentation_options.js?v=7a881cb0"></script>
     <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -58,7 +58,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api_ref/generated/generated/generated/acoular.tools.utils.mole_fraction_of_water_vapor';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/acoular/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -74,7 +74,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Jun 11, 2026"/>
+    <meta name="docbuild:last-update" content="Jul 17, 2026"/>
   
     
     <script src="../../../../_static/searchtools.js"></script>
@@ -196,7 +196,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link nav-external" href="https://acoular.org/spectacoular/">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
         SpectAcoular
       </a>
     </li>
@@ -343,7 +343,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link nav-external" href="https://acoular.org/spectacoular/">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
         SpectAcoular
       </a>
     </li>
@@ -533,7 +533,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../acoular.grids.PolySector.html"><code class="docutils literal notranslate"><span class="pre">PolySector</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../acoular.grids.ConvexSector.html"><code class="docutils literal notranslate"><span class="pre">ConvexSector</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../acoular.grids.MultiSector.html"><code class="docutils literal notranslate"><span class="pre">MultiSector</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../acoular.grids.Polygon.html"><code class="docutils literal notranslate"><span class="pre">Polygon</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../acoular.grids.in_hull.html"><code class="docutils literal notranslate"><span class="pre">in_hull</span></code></a></li>
 </ul>
 </details></li>
@@ -775,8 +774,8 @@
 <span class="sig-prename descclassname"><span class="pre">acoular.tools.utils.</span></span><span class="sig-name descname"><span class="pre">mole_fraction_of_water_vapor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">101325</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Mole fraction of water vapor in the air for real gases.</p>
 <p>Calculates the mole fraction of water vapor in air from the relative humidity,
-based on the equations provided in the appendix of <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../../../../literature/index.html#id3" title="Owen Cramer. The variation of the specific heat ratio and the speed of sound in air with temperature, pressure, humidity, and CO2 concentration. The Journal of the Acoustical Society of America, 93(5):2510–2516, May 1993. doi:10.1121/1.405827.">21</a>]</span> and
-the enhancement factors from <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../../../../literature/index.html#id2" title="R S Davis. Equation for the determination of the density of moist air (1981/91). Metrologia, 29(1):67–70, 1992. doi:10.1088/0026-1394/29/1/008.">22</a>]</span>.</p>
+based on the equations provided in the appendix of <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../../../../literature/index.html#id3" title="Owen Cramer. The variation of the specific heat ratio and the speed of sound in air with temperature, pressure, humidity, and CO2 concentration. The Journal of the Acoustical Society of America, 93(5):2510–2516, May 1993. doi:10.1121/1.405827.">20</a>]</span> and
+the enhancement factors from <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../../../../literature/index.html#id2" title="R S Davis. Equation for the determination of the density of moist air (1981/91). Metrologia, 29(1):67–70, 1992. doi:10.1088/0026-1394/29/1/008.">21</a>]</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
@@ -809,7 +808,7 @@ the enhancement factors from <span class="bibtex-citation" id="id2">[<a class="r
 <li><p><span class="math notranslate nohighlight">\(p_{sv}\)</span> is the saturation vapor pressure of water vapor in air:</p>
 <div class="math notranslate nohighlight">
 \[p_{sv} = \exp(A \cdot t^2 + B \cdot t + C + \frac{D}{t}),\]</div>
-<p>with the updated coefficients from <span class="bibtex-citation" id="id3">[<a class="reference internal" href="../../../../literature/index.html#id2" title="R S Davis. Equation for the determination of the density of moist air (1981/91). Metrologia, 29(1):67–70, 1992. doi:10.1088/0026-1394/29/1/008.">22</a>]</span>:</p>
+<p>with the updated coefficients from <span class="bibtex-citation" id="id3">[<a class="reference internal" href="../../../../literature/index.html#id2" title="R S Davis. Equation for the determination of the density of moist air (1981/91). Metrologia, 29(1):67–70, 1992. doi:10.1088/0026-1394/29/1/008.">21</a>]</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}A = 1.2378847 \times 10^{-5}, \\
 B = -1.9121316 \times 10^{-2}, \\
@@ -891,8 +890,8 @@ D = -6.3431645 \times 10^3.\end{split}\]</div>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -926,7 +925,7 @@ D = -6.3431645 \times 10^3.\end{split}\]</div>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
 </p></div>
       
     </div>
