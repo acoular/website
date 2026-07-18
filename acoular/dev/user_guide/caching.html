@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Contribution Checklist &#8212; Acoular 26.04 documentation</title>
+    <title>Caching &#8212; Acoular 26.04 documentation</title>
   
   
   
@@ -55,7 +55,7 @@
     <script src="../_static/copybutton.js?v=30646c52"></script>
     <script src="../_static/sg-tags.js?v=d80f6fa4"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing/checklist';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/caching';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/acoular/_static/switcher.json';
@@ -64,12 +64,12 @@
             true;
         </script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <link rel="canonical" href="https://acoular.org/acoular/dev/contributing/checklist.html" />
+    <link rel="canonical" href="https://acoular.org/acoular/dev/user_guide/caching.html" />
     <link rel="icon" href="../_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Literature" href="../literature/index.html" />
-    <link rel="prev" title="Submitting a pull request" href="pull_request.html" />
+    <link rel="next" title="Reference Manual" href="../api_ref/index.html" />
+    <link rel="prev" title="Lazy Evaluation" href="lazy_evaluation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
@@ -436,10 +436,10 @@
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/index.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/get_started.html">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/lazy_evaluation.html">Lazy Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/caching.html">Caching</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">User Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="get_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazy_evaluation.html">Lazy Evaluation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Caching</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../api_ref/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -691,14 +691,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../news/index.html">What's new</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Contributing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="install.html">Developer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quality.html">Code Quality Standards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="release.html">Release Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deprecation.html">Deprecation Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pull_request.html">Submitting a pull request</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Contribution Checklist</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/install.html">Developer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/quality.html">Code Quality Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/release.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/deprecation.html">Deprecation Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/pull_request.html">Submitting a pull request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/checklist.html">Contribution Checklist</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../literature/index.html">Literature</a></li>
@@ -743,9 +743,9 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Contributing</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Contribution Checklist</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Caching</span></li>
   </ul>
 </nav>
 </div>
@@ -762,16 +762,162 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="contribution-checklist">
-<h1>Contribution Checklist<a class="headerlink" href="#contribution-checklist" title="Link to this heading">#</a></h1>
-<p>Before submitting a pull request, please make sure that you have done the following:</p>
+  <section id="caching">
+<span id="id1"></span><h1>Caching<a class="headerlink" href="#caching" title="Link to this heading">#</a></h1>
+<p>Many Acoular workflows contain expensive intermediate results. For example, a
+frequency-domain beamforming workflow may first read time data in blocks,
+calculate a cross-spectral matrix, and then calculate beamforming maps for one
+or more frequencies. Acoular avoids repeating such work by combining
+<a class="reference internal" href="lazy_evaluation.html#lazy-evaluation"><span class="std std-ref">Lazy Evaluation</span></a> with file-based caching.</p>
+<p>Lazy evaluation decides when a calculation is needed. Caching decides whether
+Acoular can reuse data from an earlier calculation. This chapter explains the
+file-based caching controls.</p>
+<section id="what-is-cached">
+<h2>What Is Cached<a class="headerlink" href="#what-is-cached" title="Link to this heading">#</a></h2>
+<p>The most important user-visible caches are HDF5 file caches. They are used by
+classes that produce results that are expensive to calculate and useful to reuse:</p>
 <ul class="simple">
-<li><p>[ ] Read the <a class="reference internal" href="index.html"><span class="doc">Contributing</span></a> section</p></li>
-<li><p>[ ] Ensure your branch is up-to-date with the <cite>main</cite> branch of the <a class="reference external" href="https://github.com/acoular/acoular">Acoular</a> repository</p></li>
-<li><p>[ ] Verify that the <a class="reference internal" href="quality.html"><span class="doc">Code Quality Standards</span></a> standards are fulfilled</p></li>
-<li><p>[ ] Updated the <a class="reference internal" href="../news/index.html"><span class="doc">What’s new</span></a> section in the <a class="reference external" href="https://github.com/acoular/acoular/blob/master/docs/news/index.rst">documentation</a> explaining the changes you made</p></li>
-<li><p>[ ] Append yourself to the author list in the <a class="reference external" href="https://github.com/acoular/acoular/blob/master/CITATION.cff">CITATION.cff</a> file</p></li>
+<li><p><a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a> can cache the cross-spectral matrix,
+eigenvalues, and eigenvectors.</p></li>
+<li><p><a class="reference internal" href="../api_ref/generated/acoular.fbeamform.html#acoular.fbeamform.BeamformerBase" title="acoular.fbeamform.BeamformerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerBase</span></code></a> and derived frequency-domain
+beamformers can cache beamforming results.</p></li>
+<li><p><a class="reference internal" href="../api_ref/generated/acoular.fbeamform.html#acoular.fbeamform.PointSpreadFunction" title="acoular.fbeamform.PointSpreadFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointSpreadFunction</span></code></a> can cache point spread
+functions.</p></li>
+<li><p><a class="reference internal" href="../api_ref/generated/acoular.process.html#acoular.process.Cache" title="acoular.process.Cache"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cache</span></code></a> explicitly caches the block-wise output of any
+source object derived from <a class="reference internal" href="../api_ref/generated/acoular.base.html#acoular.base.Generator" title="acoular.base.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a>.</p></li>
 </ul>
+<p>These caches are different from the original measurement files, such as HDF5
+files read by <a class="reference internal" href="../api_ref/generated/acoular.sources.html#acoular.sources.TimeSamples" title="acoular.sources.TimeSamples"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSamples</span></code></a>. Measurement data remains in
+the original file and is read in blocks. Cache files contain calculated results
+that can be regenerated from the source data and object settings.</p>
+</section>
+<section id="cache-files-and-cache-keys">
+<h2>Cache Files And Cache Keys<a class="headerlink" href="#cache-files-and-cache-keys" title="Link to this heading">#</a></h2>
+<p>Cache files are written to the <a class="reference internal" href="../api_ref/generated/acoular.configuration.html#acoular.configuration.Config.cache_dir" title="acoular.configuration.Config.cache_dir"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cache_dir</span></code></a>
+setting, which is available as <code class="docutils literal notranslate"><span class="pre">ac.config.cache_dir</span></code>. If no cache directory is
+set explicitly, Acoular creates and uses a directory named <code class="docutils literal notranslate"><span class="pre">cache</span></code> below the
+current working directory when the cache is first needed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
+
+<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">cache_dir</span> <span class="o">=</span> <span class="s2">&quot;my_cache&quot;</span>
+</pre></div>
+</div>
+<p>Cache files use the suffix <code class="docutils literal notranslate"><span class="pre">_cache.h5</span></code>. Where possible, the file name is based
+on the original source data. For example, processing data from
+<code class="docutils literal notranslate"><span class="pre">three_sources.h5</span></code> typically creates a cache file named
+<code class="docutils literal notranslate"><span class="pre">three_sources_cache.h5</span></code>.</p>
+<p>Inside a cache file, Acoular stores results under names that include a digest.
+The digest is calculated from the class and the traits that affect the result,
+for example the block size of <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a>, the source
+digest, the steering vector, or beamformer settings. If such a trait changes,
+the digest changes and Acoular calculates a new result instead of reusing an
+outdated one.</p>
+</section>
+<section id="global-caching-modes">
+<h2>Global Caching Modes<a class="headerlink" href="#global-caching-modes" title="Link to this heading">#</a></h2>
+<p>The global cache behavior is controlled by the
+<a class="reference internal" href="../api_ref/generated/acoular.configuration.html#acoular.configuration.Config.global_caching" title="acoular.configuration.Config.global_caching"><code class="xref py py-attr docutils literal notranslate"><span class="pre">global_caching</span></code></a> setting, which is available
+as <code class="docutils literal notranslate"><span class="pre">ac.config.global_caching</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;individual&quot;</span></code></p></td>
+<td><p>Default. Classes with a <code class="docutils literal notranslate"><span class="pre">cached</span></code> trait decide individually whether to
+use the file cache.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;all&quot;</span></code></p></td>
+<td><p>Use file caching wherever supported, even if an individual object has
+<code class="docutils literal notranslate"><span class="pre">cached=False</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code></p></td>
+<td><p>Do not use file caching and do not create cache files.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;readonly&quot;</span></code></p></td>
+<td><p>Read existing cache data if it is available, but do not create or update
+cache files.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;overwrite&quot;</span></code></p></td>
+<td><p>Recalculate supported cached results and replace existing cache entries.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For day-to-day work, the default <code class="docutils literal notranslate"><span class="pre">&quot;individual&quot;</span></code> mode is usually the most
+convenient. Use <code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code> when benchmarking or debugging and you want every
+result to be recalculated. Use <code class="docutils literal notranslate"><span class="pre">&quot;readonly&quot;</span></code> when working with a shared or
+archived cache directory that should not be modified. Use <code class="docutils literal notranslate"><span class="pre">&quot;overwrite&quot;</span></code> when
+you deliberately want to refresh existing cache entries.</p>
+</section>
+<section id="object-level-caching">
+<h2>Object-Level Caching<a class="headerlink" href="#object-level-caching" title="Link to this heading">#</a></h2>
+<p>Some classes also provide a <code class="docutils literal notranslate"><span class="pre">cached</span></code> trait. In the default
+<code class="docutils literal notranslate"><span class="pre">global_caching=&quot;individual&quot;</span></code> mode, this trait controls whether that object
+uses the file cache.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s2">&quot;Hanning&quot;</span><span class="p">)</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">cached</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># calculate PowerSpectra results without using file cache</span>
+
+<span class="n">bb</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">BeamformerBase</span><span class="p">(</span><span class="n">freq_data</span><span class="o">=</span><span class="n">ps</span><span class="p">,</span> <span class="n">steer</span><span class="o">=</span><span class="n">st</span><span class="p">,</span> <span class="n">cached</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The object-level <code class="docutils literal notranslate"><span class="pre">cached</span></code> trait is ignored by the global <code class="docutils literal notranslate"><span class="pre">&quot;all&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;readonly&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;overwrite&quot;</span></code> modes. Those modes are intended
+for session-wide control.</p>
+</section>
+<section id="explicitly-caching-a-processing-chain">
+<h2>Explicitly Caching A Processing Chain<a class="headerlink" href="#explicitly-caching-a-processing-chain" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../api_ref/generated/acoular.process.html#acoular.process.Cache" title="acoular.process.Cache"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cache</span></code></a> class is useful when a result is produced by
+a block-wise generator and will be consumed more than once. It is often used in
+time-domain processing chains, where repeating all upstream calculations would
+be expensive.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fft</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">RFFT</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+<span class="n">cached_fft</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">Cache</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">fft</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">cached_fft</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+    <span class="c1"># The first pass calculates blocks and writes them to the cache.</span>
+    <span class="c1"># Later passes can read the same blocks from the cache.</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>If a <a class="reference internal" href="../api_ref/generated/acoular.process.html#acoular.process.Cache" title="acoular.process.Cache"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cache</span></code></a> object finds an incomplete cache entry, it
+continues safely according to the global cache mode. In normal writable modes,
+it can rebuild or complete the cache. In <code class="docutils literal notranslate"><span class="pre">&quot;readonly&quot;</span></code> mode, incomplete cache
+data is not modified.</p>
+</section>
+<section id="choosing-the-hdf5-backend">
+<h2>Choosing The HDF5 Backend<a class="headerlink" href="#choosing-the-hdf5-backend" title="Link to this heading">#</a></h2>
+<p>Acoular can use either PyTables or h5py for HDF5 cache files. The backend is
+selected with the <a class="reference internal" href="../api_ref/generated/acoular.configuration.html#acoular.configuration.Config.h5library" title="acoular.configuration.Config.h5library"><code class="xref py py-attr docutils literal notranslate"><span class="pre">h5library</span></code></a> setting, which
+is available as <code class="docutils literal notranslate"><span class="pre">ac.config.h5library</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">h5library</span> <span class="o">=</span> <span class="s2">&quot;pytables&quot;</span>  <span class="c1"># default when PyTables is available</span>
+<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">h5library</span> <span class="o">=</span> <span class="s2">&quot;h5py&quot;</span>
+</pre></div>
+</div>
+<p>Both backends write HDF5 files. PyTables is preferred when available; if it is
+not installed, Acoular uses h5py.</p>
+</section>
+<section id="practical-tips">
+<h2>Practical Tips<a class="headerlink" href="#practical-tips" title="Link to this heading">#</a></h2>
+<p>Keep cache files when you expect to revisit the same analysis with the same
+settings. Remove them when disk space is more important than recalculation time.
+Because cache files contain derived data, deleting them does not delete the
+original measurement data.</p>
+<p>Close the Python session, or make sure no Acoular objects are still using a cache
+file, before deleting cache files manually. During a session, Acoular keeps open
+HDF5 file handles for objects that reference cached data.</p>
+<p>If a result does not seem to update after changing an input, first check whether
+the input is part of the object’s digest dependencies. Most user-facing traits
+that affect a calculation are included. For a forced refresh, set
+<code class="docutils literal notranslate"><span class="pre">ac.config.global_caching</span> <span class="pre">=</span> <span class="pre">&quot;overwrite&quot;</span></code> for the calculation or delete the
+corresponding cache file after the session has released it.</p>
+</section>
 </section>
 
 
@@ -785,20 +931,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pull_request.html"
+       href="lazy_evaluation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Submitting a pull request</p>
+        <p class="prev-next-title">Lazy Evaluation</p>
       </div>
     </a>
     <a class="right-next"
-       href="../literature/index.html"
+       href="../api_ref/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Literature</p>
+        <p class="prev-next-title">Reference Manual</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -814,10 +960,28 @@
 
 
   <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-cached">What Is Cached</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cache-files-and-cache-keys">Cache Files And Cache Keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-caching-modes">Global Caching Modes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-level-caching">Object-Level Caching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicitly-caching-a-processing-chain">Explicitly Caching A Processing Chain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-hdf5-backend">Choosing The HDF5 Backend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-tips">Practical Tips</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/acoular/acoular/edit/master/docs/contributing/checklist.rst">
+    <a href="https://github.com/acoular/acoular/edit/master/docs/user_guide/caching.rst">
       <i class="fa-solid fa-pencil"></i>
       
       

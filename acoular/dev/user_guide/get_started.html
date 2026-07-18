@@ -68,12 +68,12 @@
     <link rel="icon" href="../_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reference Manual" href="../api_ref/index.html" />
+    <link rel="next" title="Lazy Evaluation" href="lazy_evaluation.html" />
     <link rel="prev" title="User Guide" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Jul 17, 2026"/>
+    <meta name="docbuild:last-update" content="Jul 18, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -438,6 +438,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">User Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazy_evaluation.html">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../api_ref/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -792,7 +794,7 @@ However, a working measurement set-up is required. Thus, we will use simulated d
 </div>
 <p>The ts object now provides access to the HDF5 file and information stored in it.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="n">ts</span>
-<span class="gh">Out[5]: </span><span class="go">&lt;acoular.sources.TimeSamples at 0x7eff63a60530&gt;</span>
+<span class="gh">Out[5]: </span><span class="go">&lt;acoular.sources.TimeSamples at 0x7fb917005250&gt;</span>
 
 <span class="gp">In [6]: </span><span class="n">ts</span><span class="o">.</span><span class="n">sample_freq</span>
 <span class="gh">Out[6]: </span><span class="go">51200.0</span>
@@ -803,7 +805,7 @@ However, a working measurement set-up is required. Thus, we will use simulated d
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">ps</span> <span class="o">=</span> <span class="n">acoular</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span> <span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;Hanning&#39;</span> <span class="p">)</span>
 </pre></div>
 </div>
-<p>The data for the calculation is to be taken from the ts object that was created before. Because the calculation of the cross spectral matrix is a time consuming process, no calculation is performed at the moment, but is <strong>delayed</strong> until the result is actually needed. This concept of <strong>“lazy evaluation”</strong> is applied wherever possible throughout the Acoular library. This prevents unnecessary time-consuming computations. Another option to set the parameters for the Welch method would have been to first create a ‘blank’ or ‘default’ <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a> object and set the parameters, or traits of the object, afterwards:</p>
+<p>The data for the calculation is to be taken from the ts object that was created before. Because the calculation of the cross spectral matrix is a time consuming process, no calculation is performed at the moment, but is <strong>delayed</strong> until the result is actually needed. This concept of <a class="reference internal" href="lazy_evaluation.html#lazy-evaluation"><span class="std std-ref">Lazy Evaluation</span></a> is applied wherever possible throughout the Acoular library. This prevents unnecessary time-consuming computations. Another option to set the parameters for the Welch method would have been to first create a ‘blank’ or ‘default’ <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a> object and set the parameters, or traits of the object, afterwards:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="n">ps</span> <span class="o">=</span> <span class="n">acoular</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">()</span>
 
 <span class="gp">In [9]: </span><span class="n">ps</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">ts</span>
@@ -836,10 +838,10 @@ However, a working measurement set-up is required. Thus, we will use simulated d
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [17]: </span><span class="kn">import</span><span class="w"> </span><span class="nn">pylab</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="gp">In [18]: </span><span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span> <span class="c1"># switch on interactive plotting mode</span>
-<span class="gh">Out[18]: </span><span class="go">&lt;contextlib.ExitStack at 0x7eff63a8da90&gt;</span>
+<span class="gh">Out[18]: </span><span class="go">&lt;contextlib.ExitStack at 0x7fb917153b60&gt;</span>
 
 <span class="gp">In [19]: </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mg</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">mg</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="gh">Out[19]: </span><span class="go">[&lt;matplotlib.lines.Line2D at 0x7eff63acfb60&gt;]</span>
+<span class="gh">Out[19]: </span><span class="go">[&lt;matplotlib.lines.Line2D at 0x7fb91705bcb0&gt;]</span>
 </pre></div>
 </div>
 <figure class="align-center">
@@ -866,10 +868,10 @@ However, a working measurement set-up is required. Thus, we will use simulated d
 <span class="gh">Out[24]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [25]: </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span> <span class="n">Lm</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">Lm</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">rg</span><span class="o">.</span><span class="n">extent</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;bicubic&#39;</span><span class="p">)</span>
-<span class="gh">Out[25]: </span><span class="go">&lt;matplotlib.image.AxesImage at 0x7eff63911090&gt;</span>
+<span class="gh">Out[25]: </span><span class="go">&lt;matplotlib.image.AxesImage at 0x7fb9170c51d0&gt;</span>
 
 <span class="gp">In [26]: </span><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-<span class="gh">Out[26]: </span><span class="go">&lt;matplotlib.colorbar.Colorbar at 0x7eff6394d940&gt;</span>
+<span class="gh">Out[26]: </span><span class="go">&lt;matplotlib.colorbar.Colorbar at 0x7fb916f0da90&gt;</span>
 </pre></div>
 </div>
 <p>which shows the following map, scaled to a range between the maximum value and 10 dB below it, and with the axes scales derived from the <a class="reference internal" href="../api_ref/generated/acoular.grids.html#acoular.grids.RectGrid" title="acoular.grids.RectGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RectGrid</span></code></a> data object.</p>
@@ -1025,11 +1027,11 @@ However, a working measurement set-up is required. Thus, we will use simulated d
       </div>
     </a>
     <a class="right-next"
-       href="../api_ref/index.html"
+       href="lazy_evaluation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reference Manual</p>
+        <p class="prev-next-title">Lazy Evaluation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

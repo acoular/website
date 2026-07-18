@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Contribution Checklist &#8212; Acoular 26.04 documentation</title>
+    <title>Lazy Evaluation &#8212; Acoular 26.04 documentation</title>
   
   
   
@@ -55,7 +55,7 @@
     <script src="../_static/copybutton.js?v=30646c52"></script>
     <script src="../_static/sg-tags.js?v=d80f6fa4"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing/checklist';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/lazy_evaluation';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/acoular/_static/switcher.json';
@@ -64,12 +64,12 @@
             true;
         </script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <link rel="canonical" href="https://acoular.org/acoular/dev/contributing/checklist.html" />
+    <link rel="canonical" href="https://acoular.org/acoular/dev/user_guide/lazy_evaluation.html" />
     <link rel="icon" href="../_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Literature" href="../literature/index.html" />
-    <link rel="prev" title="Submitting a pull request" href="pull_request.html" />
+    <link rel="next" title="Caching" href="caching.html" />
+    <link rel="prev" title="Getting Started" href="get_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
@@ -436,10 +436,10 @@
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/index.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/get_started.html">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/lazy_evaluation.html">Lazy Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/caching.html">Caching</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">User Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="get_started.html">Getting Started</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../api_ref/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -691,14 +691,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../news/index.html">What's new</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Contributing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="install.html">Developer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quality.html">Code Quality Standards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="release.html">Release Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deprecation.html">Deprecation Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pull_request.html">Submitting a pull request</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Contribution Checklist</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/install.html">Developer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/quality.html">Code Quality Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/release.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/deprecation.html">Deprecation Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/pull_request.html">Submitting a pull request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/checklist.html">Contribution Checklist</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../literature/index.html">Literature</a></li>
@@ -743,9 +743,9 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Contributing</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Contribution Checklist</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Lazy Evaluation</span></li>
   </ul>
 </nav>
 </div>
@@ -762,16 +762,191 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="contribution-checklist">
-<h1>Contribution Checklist<a class="headerlink" href="#contribution-checklist" title="Link to this heading">#</a></h1>
-<p>Before submitting a pull request, please make sure that you have done the following:</p>
+  <section id="lazy-evaluation">
+<span id="id1"></span><h1>Lazy Evaluation<a class="headerlink" href="#lazy-evaluation" title="Link to this heading">#</a></h1>
+<p>Acoular uses lazy evaluation throughout its processing objects. Creating an
+object usually stores configuration only. The expensive calculation starts later,
+when a result is actually requested.</p>
+<p>This is important for acoustic array processing because a processing setup often
+contains large measurement files, cross-spectral matrices, steering vectors,
+beamforming maps, and time-domain processing chains. Lazy evaluation lets you
+assemble and adjust such a setup without repeatedly reading data or recalculating
+intermediate results.</p>
+<section id="the-basic-idea">
+<h2>The Basic Idea<a class="headerlink" href="#the-basic-idea" title="Link to this heading">#</a></h2>
+<p>Most Acoular objects describe one processing step and hold references to their
+input objects. The objects form a graph or chain, but the graph is idle until a
+result is pulled from it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
+
+<span class="n">ts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">TimeSamples</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;three_sources.h5&quot;</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s2">&quot;Hanning&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At this point, the time data is not loaded into memory and the cross-spectral
+matrix has not been calculated. The <a class="reference internal" href="../api_ref/generated/acoular.sources.html#acoular.sources.TimeSamples" title="acoular.sources.TimeSamples"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSamples</span></code></a> object
+knows where the data is, and the <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a> object
+knows how the spectra should be calculated.</p>
+<p>The calculation starts when a result property, method, or generator output is
+requested:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">csm</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">csm</span>
+</pre></div>
+</div>
+<p>This access asks <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a> for its cross-spectral
+matrix. Only then does Acoular read the source data block by block and calculate
+the matrix.</p>
+</section>
+<section id="lazy-traits-and-generators">
+<h2>Lazy Traits And Generators<a class="headerlink" href="#lazy-traits-and-generators" title="Link to this heading">#</a></h2>
+<p>Acoular uses two common lazy patterns:</p>
 <ul class="simple">
-<li><p>[ ] Read the <a class="reference internal" href="index.html"><span class="doc">Contributing</span></a> section</p></li>
-<li><p>[ ] Ensure your branch is up-to-date with the <cite>main</cite> branch of the <a class="reference external" href="https://github.com/acoular/acoular">Acoular</a> repository</p></li>
-<li><p>[ ] Verify that the <a class="reference internal" href="quality.html"><span class="doc">Code Quality Standards</span></a> standards are fulfilled</p></li>
-<li><p>[ ] Updated the <a class="reference internal" href="../news/index.html"><span class="doc">What’s new</span></a> section in the <a class="reference external" href="https://github.com/acoular/acoular/blob/master/docs/news/index.rst">documentation</a> explaining the changes you made</p></li>
-<li><p>[ ] Append yourself to the author list in the <a class="reference external" href="https://github.com/acoular/acoular/blob/master/CITATION.cff">CITATION.cff</a> file</p></li>
+<li><p>Result properties and methods, for example
+<a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra.csm" title="acoular.spectra.PowerSpectra.csm"><code class="xref py py-attr docutils literal notranslate"><span class="pre">csm</span></code></a> or
+<a class="reference internal" href="../api_ref/generated/acoular.fbeamform.html#acoular.fbeamform.BeamformerBase.synthetic" title="acoular.fbeamform.BeamformerBase.synthetic"><code class="xref py py-meth docutils literal notranslate"><span class="pre">synthetic()</span></code></a>, calculate the requested
+result on demand.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">result(num)</span></code> methods return Python generators. Calling <code class="docutils literal notranslate"><span class="pre">result(num)</span></code>
+creates the generator; the processing starts when the generator is iterated,
+for example by calling <a class="reference external" href="https://docs.python.org/3/library/functions.html#next" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">next()</span></code></a> or by using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p></li>
 </ul>
+<p>The second pattern is used heavily in time-domain processing. Each object pulls
+blocks from its source only when its own output block is requested.</p>
+</section>
+<section id="example-frequency-domain-beamforming">
+<h2>Example: Frequency-Domain Beamforming<a class="headerlink" href="#example-frequency-domain-beamforming" title="Link to this heading">#</a></h2>
+<p>The frequency-domain beamforming workflow in the getting-started tutorial is a
+good example. First, define the input data and spectral processing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">TimeSamples</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;three_sources.h5&quot;</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s2">&quot;Hanning&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then define the focus grid, microphone geometry, and steering vector:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">RectGrid</span><span class="p">(</span>
+    <span class="n">x_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">x_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">y_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">y_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">z</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span>
+    <span class="n">increment</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">mg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;array_64.xml&quot;</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">SteeringVector</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">rg</span><span class="p">,</span> <span class="n">mics</span><span class="o">=</span><span class="n">mg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, create the frequency-domain beamformer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bb</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">BeamformerBase</span><span class="p">(</span><span class="n">freq_data</span><span class="o">=</span><span class="n">ps</span><span class="p">,</span> <span class="n">steer</span><span class="o">=</span><span class="n">st</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No beamforming map has been calculated yet. In the usual workflow, the first
+calculation is triggered by asking for a map at a frequency or frequency band:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pm</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">synthetic</span><span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This single line pulls the required upstream results:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a> calculates the cross-spectral matrix if
+it is not already available.</p></li>
+<li><p><a class="reference internal" href="../api_ref/generated/acoular.fbeamform.html#acoular.fbeamform.BeamformerBase" title="acoular.fbeamform.BeamformerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerBase</span></code></a> calculates the frequency lines
+needed for the requested third-octave band.</p></li>
+<li><p>The return value is reshaped to the grid shape and contains the beamforming
+map for that band.</p></li>
+</ul>
+<p>The beamformer result itself is also lazy per frequency. Accessing
+<code class="docutils literal notranslate"><span class="pre">bb.result</span></code> prepares a lazy result object. Individual frequency lines are
+calculated only when they are indexed:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">result</span>
+<span class="n">one_line</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>      <span class="c1"># calculates frequency index 10 if needed</span>
+<span class="n">several</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>    <span class="c1"># calculates missing indices in that slice</span>
+</pre></div>
+</div>
+<p>If file caching is active, calculated frequency-domain results can also be
+stored and reused. Lazy evaluation decides <em>when</em> a calculation is needed;
+caching decides whether a previously calculated result can be loaded instead of
+being recalculated. See <a class="reference internal" href="caching.html#caching"><span class="std std-ref">Caching</span></a> for the cache controls.</p>
+</section>
+<section id="example-time-domain-beamforming-chain">
+<h2>Example: Time-Domain Beamforming Chain<a class="headerlink" href="#example-time-domain-beamforming-chain" title="Link to this heading">#</a></h2>
+<p>Time-domain processing chains are lazy in a slightly different way. The output
+is normally a stream of blocks, and each block is produced only when the final
+consumer asks for it.</p>
+<p>The following chain performs time-domain delay-and-sum beamforming with
+<a class="reference internal" href="../api_ref/generated/acoular.tbeamform.html#acoular.tbeamform.BeamformerTime" title="acoular.tbeamform.BeamformerTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerTime</span></code></a>. The beamformer produces one time
+signal per grid point. The chain then filters the beamformer output, squares it,
+and averages it block-wise to create source maps.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bt</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">BeamformerTime</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">steer</span><span class="o">=</span><span class="n">st</span><span class="p">)</span>
+<span class="n">ft</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">FiltOctave</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">bt</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="mi">4000</span><span class="p">)</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">TimePower</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ft</span><span class="p">)</span>
+<span class="n">avg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">Average</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">pt</span><span class="p">,</span> <span class="n">num_per_average</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The chain is now configured, but no samples have been processed. Even the next
+line only creates a generator object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">blocks</span> <span class="o">=</span> <span class="n">avg</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first processing work starts when output is pulled from the generator:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_map</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To create <code class="docutils literal notranslate"><span class="pre">first_map</span></code>, Acoular pulls one averaged block from
+<a class="reference internal" href="../api_ref/generated/acoular.process.html#acoular.process.Average" title="acoular.process.Average"><code class="xref py py-class docutils literal notranslate"><span class="pre">Average</span></code></a>. That object pulls the required number of
+blocks from <a class="reference internal" href="../api_ref/generated/acoular.tprocess.html#acoular.tprocess.TimePower" title="acoular.tprocess.TimePower"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimePower</span></code></a>, which pulls from
+<a class="reference internal" href="../api_ref/generated/acoular.tprocess.html#acoular.tprocess.FiltOctave" title="acoular.tprocess.FiltOctave"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiltOctave</span></code></a>, which pulls from
+<a class="reference internal" href="../api_ref/generated/acoular.tbeamform.html#acoular.tbeamform.BeamformerTime" title="acoular.tbeamform.BeamformerTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerTime</span></code></a>, which finally pulls time samples
+from <code class="docutils literal notranslate"><span class="pre">ts</span></code>.</p>
+<p>Iterating over the generator continues the chain block by block:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">maps</span> <span class="ow">in</span> <span class="n">avg</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># maps contains one averaged beamforming map per output block.</span>
+    <span class="c1"># Each loop iteration pulls only the data needed for that block.</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>This pull-based model keeps memory use bounded for long recordings. The full
+time history does not need to be present in memory at once.</p>
+</section>
+<section id="adding-a-cache-to-a-lazy-chain">
+<h2>Adding A Cache To A Lazy Chain<a class="headerlink" href="#adding-a-cache-to-a-lazy-chain" title="Link to this heading">#</a></h2>
+<p>Lazy evaluation and caching are often used together in time-domain workflows.
+Adding <a class="reference internal" href="../api_ref/generated/acoular.process.html#acoular.process.Cache" title="acoular.process.Cache"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cache</span></code></a> at the end of the chain stores blocks
+while they are pulled for the first time:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cached_avg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">Cache</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">avg</span><span class="p">)</span>
+<span class="n">first_map</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">cached_avg</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The chain is still lazy. The cache does not force calculation when it is created;
+it only changes what happens when blocks are requested. On the first pass,
+missing blocks are calculated and written to the cache. On later passes, cached
+blocks can be read instead.</p>
+</section>
+<section id="changing-parameters">
+<h2>Changing Parameters<a class="headerlink" href="#changing-parameters" title="Link to this heading">#</a></h2>
+<p>Because Acoular objects are trait based, changing a relevant trait changes the
+state of the processing object. The next request uses the new settings and
+recalculates the affected result.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span><span class="o">.</span><span class="n">block_size</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">pm</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">synthetic</span><span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, changing <code class="docutils literal notranslate"><span class="pre">ps.block_size</span></code> changes the spectral processing. The next
+request for <code class="docutils literal notranslate"><span class="pre">bb.synthetic</span></code> must use a cross-spectral matrix calculated with the
+new block size, so the affected downstream result is recalculated or looked up
+under a different cache key.</p>
+</section>
+<section id="practical-consequences">
+<h2>Practical Consequences<a class="headerlink" href="#practical-consequences" title="Link to this heading">#</a></h2>
+<p>Lazy evaluation has a few practical effects:</p>
+<ul class="simple">
+<li><p>Creating Acoular objects is usually cheap; requesting results is where the
+work happens.</p></li>
+<li><p>The first result request may take much longer than later requests if
+intermediate data has already been calculated or cached.</p></li>
+<li><p>In time-domain chains, processing follows the final consumer. If no one
+iterates over the last <code class="docutils literal notranslate"><span class="pre">result(num)</span></code> generator, the upstream chain remains
+idle.</p></li>
+<li><p>When debugging, it is useful to identify the line that first asks for data:
+often a property access, a call to <code class="docutils literal notranslate"><span class="pre">synthetic</span></code> or <code class="docutils literal notranslate"><span class="pre">integrate</span></code>, or a loop
+over <code class="docutils literal notranslate"><span class="pre">result(num)</span></code>.</p></li>
+</ul>
+</section>
 </section>
 
 
@@ -785,20 +960,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pull_request.html"
+       href="get_started.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Submitting a pull request</p>
+        <p class="prev-next-title">Getting Started</p>
       </div>
     </a>
     <a class="right-next"
-       href="../literature/index.html"
+       href="caching.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Literature</p>
+        <p class="prev-next-title">Caching</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -814,10 +989,28 @@
 
 
   <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basic-idea">The Basic Idea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lazy-traits-and-generators">Lazy Traits And Generators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-frequency-domain-beamforming">Example: Frequency-Domain Beamforming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-time-domain-beamforming-chain">Example: Time-Domain Beamforming Chain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-cache-to-a-lazy-chain">Adding A Cache To A Lazy Chain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-parameters">Changing Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-consequences">Practical Consequences</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/acoular/acoular/edit/master/docs/contributing/checklist.rst">
+    <a href="https://github.com/acoular/acoular/edit/master/docs/user_guide/lazy_evaluation.rst">
       <i class="fa-solid fa-pencil"></i>
       
       
