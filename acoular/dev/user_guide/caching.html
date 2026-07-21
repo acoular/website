@@ -73,7 +73,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Jul 18, 2026"/>
+    <meta name="docbuild:last-update" content="Jul 21, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -655,7 +655,9 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../auto_examples/index.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/introductory_examples/index.html">Introductory examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_three_sources.html">Three sources – Generate synthetic microphone array data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_lazy_evaluation.html">Lazy evaluation – Build first, calculate on demand.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_basic_beamforming.html">Basic Beamforming – Generate a map of three sources.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_caching.html">Caching – Reuse calculated results.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_3D_beamforming.html">3D Beamforming with CLEAN-SC deconvolution.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_multisector.html">MultiSector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_sectors.html">Sectors</a></li>
@@ -772,6 +774,8 @@ or more frequencies. Acoular avoids repeating such work by combining
 <p>Lazy evaluation decides when a calculation is needed. Caching decides whether
 Acoular can reuse data from an earlier calculation. This chapter explains the
 file-based caching controls.</p>
+<p>The code snippets below are taken from
+<a class="reference internal" href="../auto_examples/introductory_examples/example_caching.html"><span class="doc">Caching – Reuse calculated results.</span></a>.</p>
 <section id="what-is-cached">
 <h2>What Is Cached<a class="headerlink" href="#what-is-cached" title="Link to this heading">#</a></h2>
 <p>The most important user-visible caches are HDF5 file caches. They are used by
@@ -797,15 +801,35 @@ that can be regenerated from the source data and object settings.</p>
 setting, which is available as <code class="docutils literal notranslate"><span class="pre">ac.config.cache_dir</span></code>. If no cache directory is
 set explicitly, Acoular creates and uses a directory named <code class="docutils literal notranslate"><span class="pre">cache</span></code> below the
 current working directory when the cache is first needed.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cache_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">)</span>
+<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">cache_dir</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">cache_dir</span><span class="p">)</span>
+<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">h5library</span> <span class="o">=</span> <span class="s1">&#39;pytables&#39;</span>
+<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">global_caching</span> <span class="o">=</span> <span class="s1">&#39;individual&#39;</span>
 
-<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">cache_dir</span> <span class="o">=</span> <span class="s2">&quot;my_cache&quot;</span>
+</pre></div>
+</div>
+<p>The remaining examples on this page use the standard introductory setup:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">micgeofile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;xml&#39;</span> <span class="o">/</span> <span class="s1">&#39;array_64.xml&#39;</span>
+<span class="n">datafile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;three_sources.h5&#39;</span><span class="p">)</span>
+<span class="n">mg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">micgeofile</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">datafile</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="n">ac</span><span class="o">.</span><span class="n">demo</span><span class="o">.</span><span class="n">create_three_sources</span><span class="p">(</span><span class="n">mg</span><span class="p">,</span> <span class="n">h5savefile</span><span class="o">=</span><span class="n">datafile</span><span class="p">)</span>
+
+<span class="n">ts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">TimeSamples</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">datafile</span><span class="p">)</span>
+<span class="n">rg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">RectGrid</span><span class="p">(</span><span class="n">x_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">x_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">SteeringVector</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">rg</span><span class="p">,</span> <span class="n">mics</span><span class="o">=</span><span class="n">mg</span><span class="p">)</span>
+
 </pre></div>
 </div>
 <p>Cache files use the suffix <code class="docutils literal notranslate"><span class="pre">_cache.h5</span></code>. Where possible, the file name is based
 on the original source data. For example, processing data from
 <code class="docutils literal notranslate"><span class="pre">three_sources.h5</span></code> typically creates a cache file named
 <code class="docutils literal notranslate"><span class="pre">three_sources_cache.h5</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cache_file</span> <span class="o">=</span> <span class="n">cache_dir</span> <span class="o">/</span> <span class="s1">&#39;three_sources_cache.h5&#39;</span>
+
+</pre></div>
+</div>
 <p>Inside a cache file, Acoular stores results under names that include a digest.
 The digest is calculated from the class and the traits that affect the result,
 for example the block size of <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a>, the source
@@ -855,16 +879,25 @@ convenient. Use <code class="docutils literal notranslate"><span class="pre">&qu
 result to be recalculated. Use <code class="docutils literal notranslate"><span class="pre">&quot;readonly&quot;</span></code> when working with a shared or
 archived cache directory that should not be modified. Use <code class="docutils literal notranslate"><span class="pre">&quot;overwrite&quot;</span></code> when
 you deliberately want to refresh existing cache entries.</p>
+<p>The following example shows <code class="docutils literal notranslate"><span class="pre">&quot;overwrite&quot;</span></code> in use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">global_caching</span> <span class="o">=</span> <span class="s1">&#39;overwrite&#39;</span>
+<span class="n">pm_overwrite</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">synthetic</span><span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">global_caching</span> <span class="o">=</span> <span class="s1">&#39;individual&#39;</span>
+
+</pre></div>
+</div>
 </section>
 <section id="object-level-caching">
 <h2>Object-Level Caching<a class="headerlink" href="#object-level-caching" title="Link to this heading">#</a></h2>
 <p>Some classes also provide a <code class="docutils literal notranslate"><span class="pre">cached</span></code> trait. In the default
 <code class="docutils literal notranslate"><span class="pre">global_caching=&quot;individual&quot;</span></code> mode, this trait controls whether that object
 uses the file cache.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s2">&quot;Hanning&quot;</span><span class="p">)</span>
-<span class="n">ps</span><span class="o">.</span><span class="n">cached</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># calculate PowerSpectra results without using file cache</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;Hanning&#39;</span><span class="p">)</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">cached</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="n">bb</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">BeamformerBase</span><span class="p">(</span><span class="n">freq_data</span><span class="o">=</span><span class="n">ps</span><span class="p">,</span> <span class="n">steer</span><span class="o">=</span><span class="n">st</span><span class="p">,</span> <span class="n">cached</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pm</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">synthetic</span><span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
 </pre></div>
 </div>
 <p>The object-level <code class="docutils literal notranslate"><span class="pre">cached</span></code> trait is ignored by the global <code class="docutils literal notranslate"><span class="pre">&quot;all&quot;</span></code>,
@@ -877,13 +910,12 @@ for session-wide control.</p>
 a block-wise generator and will be consumed more than once. It is often used in
 time-domain processing chains, where repeating all upstream calculations would
 be expensive.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fft</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">RFFT</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
-<span class="n">cached_fft</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">Cache</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">fft</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">cached_fft</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
-    <span class="c1"># The first pass calculates blocks and writes them to the cache.</span>
-    <span class="c1"># Later passes can read the same blocks from the cache.</span>
-    <span class="k">pass</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bt</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">BeamformerTime</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">steer</span><span class="o">=</span><span class="n">st</span><span class="p">)</span>
+<span class="n">ft</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">FiltOctave</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">bt</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="mi">4000</span><span class="p">)</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">TimePower</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ft</span><span class="p">)</span>
+<span class="n">avg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">Average</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">pt</span><span class="p">,</span> <span class="n">num_per_average</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+<span class="n">cached_avg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">Cache</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">avg</span><span class="p">)</span>
+<span class="n">first_map</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">cached_avg</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>If a <a class="reference internal" href="../api_ref/generated/acoular.process.html#acoular.process.Cache" title="acoular.process.Cache"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cache</span></code></a> object finds an incomplete cache entry, it
@@ -896,10 +928,6 @@ data is not modified.</p>
 <p>Acoular can use either PyTables or h5py for HDF5 cache files. The backend is
 selected with the <a class="reference internal" href="../api_ref/generated/acoular.configuration.html#acoular.configuration.Config.h5library" title="acoular.configuration.Config.h5library"><code class="xref py py-attr docutils literal notranslate"><span class="pre">h5library</span></code></a> setting, which
 is available as <code class="docutils literal notranslate"><span class="pre">ac.config.h5library</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">h5library</span> <span class="o">=</span> <span class="s2">&quot;pytables&quot;</span>  <span class="c1"># default when PyTables is available</span>
-<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">h5library</span> <span class="o">=</span> <span class="s2">&quot;h5py&quot;</span>
-</pre></div>
-</div>
 <p>Both backends write HDF5 files. PyTables is preferred when available; if it is
 not installed, Acoular uses h5py.</p>
 </section>

@@ -68,12 +68,12 @@
     <link rel="icon" href="../../_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Basic Beamforming – Generate a map of three sources." href="example_basic_beamforming.html" />
+    <link rel="next" title="Lazy evaluation – Build first, calculate on demand." href="example_lazy_evaluation.html" />
     <link rel="prev" title="Introductory examples" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Jul 18, 2026"/>
+    <meta name="docbuild:last-update" content="Jul 21, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -655,7 +655,9 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Introductory examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Three sources – Generate synthetic microphone array data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example_lazy_evaluation.html">Lazy evaluation – Build first, calculate on demand.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="example_basic_beamforming.html">Basic Beamforming – Generate a map of three sources.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example_caching.html">Caching – Reuse calculated results.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="example_3D_beamforming.html">3D Beamforming with CLEAN-SC deconvolution.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="example_multisector.html">MultiSector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="example_sectors.html">Sectors</a></li>
@@ -801,16 +803,19 @@ The simulated signals are stored in a HDF5 file named ‘three_sources.h5’.</p
 </tbody>
 </table>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class"><span class="n">Path</span></a>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages.</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class"><span class="n">Path</span></a>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
 
+<span class="c1"># Define simulation setup.</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a> <span class="o">=</span> <span class="mi">51200</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">duration</span></a> <span class="o">=</span> <span class="mi">1</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">num_samples</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">duration</span></a> <span class="o">*</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a>
 <a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">micgeofile</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class"><span class="n">Path</span></a><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;xml&#39;</span> <span class="o">/</span> <span class="s1">&#39;array_64.xml&#39;</span>
 <a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">h5savefile</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class"><span class="n">Path</span></a><span class="p">(</span><span class="s1">&#39;three_sources.h5&#39;</span><span class="p">)</span>
 
+<span class="c1"># Generate and store the example data.</span>
 <span class="n">m</span> <span class="o">=</span> <a href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.HasStrictTraits" title="traits.has_traits.HasStrictTraits" class="sphx-glr-backref-module-traits-has_traits sphx-glr-backref-type-py-class"><span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span></a><span class="p">(</span><span class="n">file</span><span class="o">=</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">micgeofile</span></a><span class="p">)</span>
 <span class="n">n1</span> <span class="o">=</span> <a href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.ABCHasStrictTraits" title="traits.has_traits.ABCHasStrictTraits" class="sphx-glr-backref-module-traits-has_traits sphx-glr-backref-type-py-class"><span class="n">ac</span><span class="o">.</span><span class="n">WNoiseGenerator</span></a><span class="p">(</span><span class="n">sample_freq</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">num_samples</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">num_samples</span></a><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">n2</span> <span class="o">=</span> <a href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.ABCHasStrictTraits" title="traits.has_traits.ABCHasStrictTraits" class="sphx-glr-backref-module-traits-has_traits sphx-glr-backref-type-py-class"><span class="n">ac</span><span class="o">.</span><span class="n">WNoiseGenerator</span></a><span class="p">(</span><span class="n">sample_freq</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">num_samples</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">num_samples</span></a><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">rms</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
@@ -828,7 +833,7 @@ The simulated signals are stored in a HDF5 file named ‘three_sources.h5’.</p
 <p><a class="reference internal" href="example_basic_beamforming.html"><span class="doc">Basic Beamforming – Generate a map of three sources.</span></a> for an example on how to load and analyze the generated data
 with Beamforming.</p>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.367 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.380 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-introductory-examples-example-three-sources-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/3010af31b5cc8ff4d05fba2037594c48/example_three_sources.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">example_three_sources.ipynb</span></code></a></p>
@@ -863,11 +868,11 @@ with Beamforming.</p>
       </div>
     </a>
     <a class="right-next"
-       href="example_basic_beamforming.html"
+       href="example_lazy_evaluation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Basic Beamforming – Generate a map of three sources.</p>
+        <p class="prev-next-title">Lazy evaluation – Build first, calculate on demand.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

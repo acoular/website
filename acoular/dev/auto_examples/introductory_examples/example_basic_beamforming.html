@@ -68,12 +68,12 @@
     <link rel="icon" href="../../_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3D Beamforming with CLEAN-SC deconvolution." href="example_3D_beamforming.html" />
-    <link rel="prev" title="Three sources – Generate synthetic microphone array data." href="example_three_sources.html" />
+    <link rel="next" title="Caching – Reuse calculated results." href="example_caching.html" />
+    <link rel="prev" title="Lazy evaluation – Build first, calculate on demand." href="example_lazy_evaluation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Jul 18, 2026"/>
+    <meta name="docbuild:last-update" content="Jul 21, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -655,7 +655,9 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Introductory examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="example_three_sources.html">Three sources – Generate synthetic microphone array data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example_lazy_evaluation.html">Lazy evaluation – Build first, calculate on demand.</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Basic Beamforming – Generate a map of three sources.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example_caching.html">Caching – Reuse calculated results.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="example_3D_beamforming.html">3D Beamforming with CLEAN-SC deconvolution.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="example_multisector.html">MultiSector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="example_sectors.html">Sectors</a></li>
@@ -783,43 +785,53 @@ Beamforming and generates a map of the three sources.</p>
 <li><img src="../../_images/sphx_glr_example_basic_beamforming_001.png" srcset="../../_images/sphx_glr_example_basic_beamforming_001.png" alt="example basic beamforming" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_example_basic_beamforming_002.png" srcset="../../_images/sphx_glr_example_basic_beamforming_002.png" alt="example basic beamforming" class = "sphx-glr-multi-img"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(&#39;three_sources_cache.h5&#39;, 1)]
-[(&#39;three_sources_cache.h5&#39;, 2)]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(&#39;three_sources_cache.h5&#39;, 4)]
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class"><span class="n">Path</span></a>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages.</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class"><span class="n">Path</span></a>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
+<span class="c1"># Define paths to geometry and data.</span>
 <a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">micgeofile</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class"><span class="n">Path</span></a><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;xml&#39;</span> <span class="o">/</span> <span class="s1">&#39;array_64.xml&#39;</span>
 <a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">datafile</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class"><span class="n">Path</span></a><span class="p">(</span><span class="s1">&#39;three_sources.h5&#39;</span><span class="p">)</span>
 <span class="k">assert</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path.exists" title="pathlib.Path.exists" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-method"><span class="n">datafile</span><span class="o">.</span><span class="n">exists</span></a><span class="p">(),</span> <span class="s1">&#39;Data file not found, run example_three_sources.py first&#39;</span>
 
+<span class="c1"># Load geometry and time data.</span>
 <span class="n">mg</span> <span class="o">=</span> <a href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.HasStrictTraits" title="traits.has_traits.HasStrictTraits" class="sphx-glr-backref-module-traits-has_traits sphx-glr-backref-type-py-class"><span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span></a><span class="p">(</span><span class="n">file</span><span class="o">=</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">micgeofile</span></a><span class="p">)</span>
 <span class="n">ts</span> <span class="o">=</span> <a href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.ABCHasStrictTraits" title="traits.has_traits.ABCHasStrictTraits" class="sphx-glr-backref-module-traits-has_traits sphx-glr-backref-type-py-class"><span class="n">ac</span><span class="o">.</span><span class="n">TimeSamples</span></a><span class="p">(</span><span class="n">file</span><span class="o">=</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">datafile</span></a><span class="p">)</span>
+
+<span class="c1"># Define spectral processing.</span>
 <span class="n">ps</span> <span class="o">=</span> <a href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.ABCHasStrictTraits" title="traits.has_traits.ABCHasStrictTraits" class="sphx-glr-backref-module-traits-has_traits sphx-glr-backref-type-py-class"><span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span></a><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;Hanning&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define grid and steering vector.</span>
 <span class="n">rg</span> <span class="o">=</span> <a href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.ABCHasStrictTraits" title="traits.has_traits.ABCHasStrictTraits" class="sphx-glr-backref-module-traits-has_traits sphx-glr-backref-type-py-class"><span class="n">ac</span><span class="o">.</span><span class="n">RectGrid</span></a><span class="p">(</span><span class="n">x_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">x_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
 <span class="n">st</span> <span class="o">=</span> <a href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.HasStrictTraits" title="traits.has_traits.HasStrictTraits" class="sphx-glr-backref-module-traits-has_traits sphx-glr-backref-type-py-class"><span class="n">ac</span><span class="o">.</span><span class="n">SteeringVector</span></a><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">rg</span><span class="p">,</span> <span class="n">mics</span><span class="o">=</span><span class="n">mg</span><span class="p">)</span>
+
+<span class="c1"># Calculate beamforming result.</span>
 <span class="n">bb</span> <span class="o">=</span> <a href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.HasStrictTraits" title="traits.has_traits.HasStrictTraits" class="sphx-glr-backref-module-traits-has_traits sphx-glr-backref-type-py-class"><span class="n">ac</span><span class="o">.</span><span class="n">BeamformerBase</span></a><span class="p">(</span><span class="n">freq_data</span><span class="o">=</span><span class="n">ps</span><span class="p">,</span> <span class="n">steer</span><span class="o">=</span><span class="n">st</span><span class="p">)</span>
 <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pm</span></a> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">synthetic</span><span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Lm</span></a> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">L_p</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pm</span></a><span class="p">)</span>
 
+<span class="c1"># Plot beamforming map.</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="matplotlib.pyplot.imshow" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Lm</span><span class="o">.</span><span class="n">T</span></a><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Lm</span></a><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rg</span><span class="o">.</span><span class="n">extent</span></a><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;bicubic&#39;</span><span class="p">)</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colorbar.html#matplotlib.pyplot.colorbar" title="matplotlib.pyplot.colorbar" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span></a><span class="p">()</span>
 
+<span class="c1"># Plot microphone arrangement.</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mg</span><span class="o">.</span><span class="n">pos</span></a><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mg</span><span class="o">.</span><span class="n">pos</span></a><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axis.html#matplotlib.pyplot.axis" title="matplotlib.pyplot.axis" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axis</span></a><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.772 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.408 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-introductory-examples-example-basic-beamforming-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/dc23741282b4167cf6e2ac476798fadd/example_basic_beamforming.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">example_basic_beamforming.ipynb</span></code></a></p>
@@ -845,20 +857,20 @@ Beamforming and generates a map of the three sources.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="example_three_sources.html"
+       href="example_lazy_evaluation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Three sources – Generate synthetic microphone array data.</p>
+        <p class="prev-next-title">Lazy evaluation – Build first, calculate on demand.</p>
       </div>
     </a>
     <a class="right-next"
-       href="example_3D_beamforming.html"
+       href="example_caching.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">3D Beamforming with CLEAN-SC deconvolution.</p>
+        <p class="prev-next-title">Caching – Reuse calculated results.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

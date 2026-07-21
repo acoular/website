@@ -73,7 +73,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Jul 18, 2026"/>
+    <meta name="docbuild:last-update" content="Jul 21, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -655,7 +655,9 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../auto_examples/index.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../auto_examples/introductory_examples/index.html">Introductory examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_three_sources.html">Three sources – Generate synthetic microphone array data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_lazy_evaluation.html">Lazy evaluation – Build first, calculate on demand.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_basic_beamforming.html">Basic Beamforming – Generate a map of three sources.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_caching.html">Caching – Reuse calculated results.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_3D_beamforming.html">3D Beamforming with CLEAN-SC deconvolution.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_multisector.html">MultiSector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../auto_examples/introductory_examples/example_sectors.html">Sectors</a></li>
@@ -772,15 +774,36 @@ contains large measurement files, cross-spectral matrices, steering vectors,
 beamforming maps, and time-domain processing chains. Lazy evaluation lets you
 assemble and adjust such a setup without repeatedly reading data or recalculating
 intermediate results.</p>
+<p>The code snippets below are taken from
+<a class="reference internal" href="../auto_examples/introductory_examples/example_basic_beamforming.html"><span class="doc">Basic Beamforming – Generate a map of three sources.</span></a> and
+<a class="reference internal" href="../auto_examples/introductory_examples/example_lazy_evaluation.html"><span class="doc">Lazy evaluation – Build first, calculate on demand.</span></a>.</p>
 <section id="the-basic-idea">
 <h2>The Basic Idea<a class="headerlink" href="#the-basic-idea" title="Link to this heading">#</a></h2>
 <p>Most Acoular objects describe one processing step and hold references to their
 input objects. The objects form a graph or chain, but the graph is idle until a
 result is pulled from it.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
-<span class="n">ts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">TimeSamples</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;three_sources.h5&quot;</span><span class="p">)</span>
-<span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s2">&quot;Hanning&quot;</span><span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Define paths to geometry and data.</span>
+<span class="n">micgeofile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;xml&#39;</span> <span class="o">/</span> <span class="s1">&#39;array_64.xml&#39;</span>
+<span class="n">datafile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;three_sources.h5&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">datafile</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="s1">&#39;Data file not found, run example_three_sources.py first&#39;</span>
+
+<span class="c1"># Load geometry and time data.</span>
+<span class="n">mg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">micgeofile</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">TimeSamples</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">datafile</span><span class="p">)</span>
+
+<span class="c1"># Define spectral processing.</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;Hanning&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define grid and steering vector.</span>
+<span class="n">rg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">RectGrid</span><span class="p">(</span><span class="n">x_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">x_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">SteeringVector</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">rg</span><span class="p">,</span> <span class="n">mics</span><span class="o">=</span><span class="n">mg</span><span class="p">)</span>
+
 </pre></div>
 </div>
 <p>At this point, the time data is not loaded into memory and the cross-spectral
@@ -790,6 +813,7 @@ knows how the spectra should be calculated.</p>
 <p>The calculation starts when a result property, method, or generator output is
 requested:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">csm</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">csm</span>
+
 </pre></div>
 </div>
 <p>This access asks <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a> for its cross-spectral
@@ -814,34 +838,24 @@ blocks from its source only when its own output block is requested.</p>
 <section id="example-frequency-domain-beamforming">
 <h2>Example: Frequency-Domain Beamforming<a class="headerlink" href="#example-frequency-domain-beamforming" title="Link to this heading">#</a></h2>
 <p>The frequency-domain beamforming workflow in the getting-started tutorial is a
-good example. First, define the input data and spectral processing:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">TimeSamples</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;three_sources.h5&quot;</span><span class="p">)</span>
-<span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s2">&quot;Hanning&quot;</span><span class="p">)</span>
+good example. First, define the input data and spectral processing, then define
+the focus grid, microphone geometry, and steering vector. No beamforming map has
+been calculated yet.</p>
+<p>The beamformer result itself is also lazy per frequency. Accessing
+<code class="docutils literal notranslate"><span class="pre">bb.result</span></code> prepares a lazy result object. Individual frequency lines are
+calculated only when they are indexed:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">result</span>
+<span class="n">one_line</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+
 </pre></div>
 </div>
-<p>Then define the focus grid, microphone geometry, and steering vector:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">RectGrid</span><span class="p">(</span>
-    <span class="n">x_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">x_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">y_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">y_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">z</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span>
-    <span class="n">increment</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">mg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;array_64.xml&quot;</span><span class="p">)</span>
-<span class="n">st</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">SteeringVector</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">rg</span><span class="p">,</span> <span class="n">mics</span><span class="o">=</span><span class="n">mg</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Finally, create the frequency-domain beamformer:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bb</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">BeamformerBase</span><span class="p">(</span><span class="n">freq_data</span><span class="o">=</span><span class="n">ps</span><span class="p">,</span> <span class="n">steer</span><span class="o">=</span><span class="n">st</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>No beamforming map has been calculated yet. In the usual workflow, the first
-calculation is triggered by asking for a map at a frequency or frequency band:</p>
+<p>In the usual workflow, the first full calculation is triggered by asking for a
+map at a frequency or frequency band:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pm</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">synthetic</span><span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
 </pre></div>
 </div>
-<p>This single line pulls the required upstream results:</p>
+<p>This single request pulls the required upstream results:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a> calculates the cross-spectral matrix if
 it is not already available.</p></li>
@@ -850,14 +864,6 @@ needed for the requested third-octave band.</p></li>
 <li><p>The return value is reshaped to the grid shape and contains the beamforming
 map for that band.</p></li>
 </ul>
-<p>The beamformer result itself is also lazy per frequency. Accessing
-<code class="docutils literal notranslate"><span class="pre">bb.result</span></code> prepares a lazy result object. Individual frequency lines are
-calculated only when they are indexed:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">result</span>
-<span class="n">one_line</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>      <span class="c1"># calculates frequency index 10 if needed</span>
-<span class="n">several</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>    <span class="c1"># calculates missing indices in that slice</span>
-</pre></div>
-</div>
 <p>If file caching is active, calculated frequency-domain results can also be
 stored and reused. Lazy evaluation decides <em>when</em> a calculation is needed;
 caching decides whether a previously calculated result can be loaded instead of
@@ -876,15 +882,18 @@ and averages it block-wise to create source maps.</p>
 <span class="n">ft</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">FiltOctave</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">bt</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="mi">4000</span><span class="p">)</span>
 <span class="n">pt</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">TimePower</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ft</span><span class="p">)</span>
 <span class="n">avg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">Average</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">pt</span><span class="p">,</span> <span class="n">num_per_average</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+
 </pre></div>
 </div>
 <p>The chain is now configured, but no samples have been processed. Even the next
 line only creates a generator object:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">blocks</span> <span class="o">=</span> <span class="n">avg</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
 </pre></div>
 </div>
 <p>The first processing work starts when output is pulled from the generator:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_map</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span>
+
 </pre></div>
 </div>
 <p>To create <code class="docutils literal notranslate"><span class="pre">first_map</span></code>, Acoular pulls one averaged block from
@@ -893,13 +902,6 @@ blocks from <a class="reference internal" href="../api_ref/generated/acoular.tpr
 <a class="reference internal" href="../api_ref/generated/acoular.tprocess.html#acoular.tprocess.FiltOctave" title="acoular.tprocess.FiltOctave"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiltOctave</span></code></a>, which pulls from
 <a class="reference internal" href="../api_ref/generated/acoular.tbeamform.html#acoular.tbeamform.BeamformerTime" title="acoular.tbeamform.BeamformerTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerTime</span></code></a>, which finally pulls time samples
 from <code class="docutils literal notranslate"><span class="pre">ts</span></code>.</p>
-<p>Iterating over the generator continues the chain block by block:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">maps</span> <span class="ow">in</span> <span class="n">avg</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="c1"># maps contains one averaged beamforming map per output block.</span>
-    <span class="c1"># Each loop iteration pulls only the data needed for that block.</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
 <p>This pull-based model keeps memory use bounded for long recordings. The full
 time history does not need to be present in memory at once.</p>
 </section>
@@ -909,7 +911,7 @@ time history does not need to be present in memory at once.</p>
 Adding <a class="reference internal" href="../api_ref/generated/acoular.process.html#acoular.process.Cache" title="acoular.process.Cache"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cache</span></code></a> at the end of the chain stores blocks
 while they are pulled for the first time:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cached_avg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">Cache</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">avg</span><span class="p">)</span>
-<span class="n">first_map</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">cached_avg</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">first_cached_map</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">cached_avg</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>The chain is still lazy. The cache does not force calculation when it is created;
@@ -923,7 +925,8 @@ blocks can be read instead.</p>
 state of the processing object. The next request uses the new settings and
 recalculates the affected result.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span><span class="o">.</span><span class="n">block_size</span> <span class="o">=</span> <span class="mi">256</span>
-<span class="n">pm</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">synthetic</span><span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">pm_updated</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">synthetic</span><span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
 </pre></div>
 </div>
 <p>Here, changing <code class="docutils literal notranslate"><span class="pre">ps.block_size</span></code> changes the spectral processing. The next
