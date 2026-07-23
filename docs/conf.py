@@ -1,4 +1,9 @@
+import sys
+from pathlib import Path
+
 from acoular_sphinx import build_html_context, configure_theme_options, resolve_docs_build_config
+
+sys.path.insert(0, str(Path(__file__).parent / '_ext'))
 
 project = 'Acoular Organization'
 copyright = '2026, Acoular Organization'
@@ -8,6 +13,8 @@ language = 'en'
 extensions = [
     'acoular_sphinx',
     'sphinx_design',
+    'carousel',
+    'blog_tiles',
 ]
 
 docs_build = resolve_docs_build_config()
@@ -17,3 +24,6 @@ html_context = build_html_context()
 html_theme_options = configure_theme_options(use_edit_page_button=False)
 html_baseurl = docs_build['html_baseurl']
 exclude_patterns = ['_build']
+html_static_path = ['_static']
+html_extra_path = ['_extra']
+html_css_files = ['custom.css']

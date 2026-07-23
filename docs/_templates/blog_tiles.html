@@ -1,0 +1,110 @@
+<div class="blog-tiles" id="blogTiles" data-feed-url="{{ feed_url }}">
+  <p class="blog-tiles-fallback">
+    Latest posts on the <a href="{{ blog_url }}">Acoular blog</a>.
+  </p>
+</div>
+
+<script>
+(function () {
+  var container = document.getElementById('blogTiles');
+  if (!container || container.dataset.rendered) {
+    return;
+  }
+
+  var feedUrl = container.dataset.feedUrl;
+
+  function firstChildText(item, tagName) {
+    var el = item.getElementsByTagName(tagName)[0];
+    if (!el) {
+      return '';
+    }
+    // Quarto's "partial" feed type truncates descriptions at a
+    // <!--more--> marker but leaves the literal marker text behind.
+    return el.textContent.split('<!--more-->')[0].trim();
+  }
+
+  function thumbnailSrc(item) {
+    var media = item.getElementsByTagName('media:content')[0];
+    return media ? media.getAttribute('url') : null;
+  }
+
+  function truncateWords(text, maxWords) {
+    var words = text.split(/\s+/).filter(Boolean);
+    if (words.length <= maxWords) {
+      return text;
+    }
+    return words.slice(0, maxWords).join(' ') + ' …';
+  }
+
+  fetch(feedUrl)
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error('Unexpected response status: ' + response.status);
+      }
+      return response.text();
+    })
+    .then(function (xmlText) {
+      var xml = new window.DOMParser().parseFromString(xmlText, 'text/xml');
+      if (xml.querySelector('parsererror')) {
+        throw new Error('Could not parse blog feed.');
+      }
+
+      var items = Array.prototype.slice.call(xml.getElementsByTagName('item'));
+      if (!items.length) {
+        return;
+      }
+
+      var row = document.createElement('div');
+      row.className = 'sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3';
+
+      items.forEach(function (item) {
+        var title = firstChildText(item, 'title');
+        var link = firstChildText(item, 'link');
+        var excerpt = truncateWords(firstChildText(item, 'description'), 15);
+        var image = thumbnailSrc(item);
+
+        var col = document.createElement('div');
+        col.className = 'sd-col';
+
+        var card = document.createElement('a');
+        card.className = 'sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center blog-tile';
+        card.href = link;
+
+        if (image) {
+          var imageWrap = document.createElement('div');
+          imageWrap.className = 'ratio ratio-16x9 blog-tile-image';
+          var img = document.createElement('img');
+          img.src = image;
+          img.alt = '';
+          img.loading = 'lazy';
+          imageWrap.appendChild(img);
+          card.appendChild(imageWrap);
+        }
+
+        var body = document.createElement('div');
+        body.className = 'sd-card-body';
+
+        var titleEl = document.createElement('div');
+        titleEl.className = 'sd-card-title sd-font-weight-bold';
+        titleEl.textContent = title;
+        body.appendChild(titleEl);
+
+        var textEl = document.createElement('p');
+        textEl.className = 'sd-card-text';
+        textEl.textContent = excerpt;
+        body.appendChild(textEl);
+
+        card.appendChild(body);
+        col.appendChild(card);
+        row.appendChild(col);
+      });
+
+      container.innerHTML = '';
+      container.appendChild(row);
+      container.dataset.rendered = 'true';
+    })
+    .catch(function () {
+      // Leave the fallback link in place if the feed can't be fetched.
+    });
+})();
+</script>

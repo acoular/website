@@ -1,0 +1,165 @@
+article.bd-article > section:first-of-type > h1:first-of-type {
+  text-align: center;
+}
+
+.package-carousel {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  /* Adjust these to change the tile's vertical/horizontal padding. */
+  --carousel-tile-padding-top: 0.0rem;
+  --carousel-tile-padding-bottom: 4.5rem;
+  --carousel-tile-padding-x: clamp(1.0rem, 12%, 2rem);
+}
+
+/* Stack all slides in the same grid cell */
+.package-carousel .carousel-inner {
+  display: grid;
+}
+
+.package-carousel .carousel-item {
+  grid-area: 1 / 1;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out, visibility 0.6s;
+}
+
+.package-carousel .carousel-item.active,
+.package-carousel .carousel-item-next,
+.package-carousel .carousel-item-prev {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Tone down Bootstrap's default full-width slide (translateX 100%) to a
+   slight shift so the transition reads as a subtle nudge, not a hard
+   push, matching the crossfade above. */
+.package-carousel .carousel-item-next:not(.carousel-item-start),
+.package-carousel .active.carousel-item-end {
+  transform: translateX(5%);
+}
+
+.package-carousel .carousel-item-prev:not(.carousel-item-end),
+.package-carousel .active.carousel-item-start {
+  transform: translateX(-5%);
+}
+
+/*Force the incoming slide above the outgoing one so both
+   directions animate the same way. */
+.package-carousel .carousel-item.active {
+  z-index: 1;
+}
+
+.package-carousel .carousel-item-next,
+.package-carousel .carousel-item-prev {
+  z-index: 2;
+}
+
+.package-carousel .carousel-item-tile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--pst-color-surface);
+  border: 1px solid var(--pst-color-border);
+  border-radius: 0.6rem;
+  padding: var(--carousel-tile-padding-top) var(--carousel-tile-padding-x) var(--carousel-tile-padding-bottom);
+}
+
+.package-carousel .carousel-item-heading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.package-carousel .carousel-item-heading h5 {
+  margin-bottom: 0.75rem;
+  color: var(--pst-color-heading);
+}
+
+.package-carousel .carousel-item-heading p {
+  margin-bottom: 0;
+}
+
+.package-carousel .carousel-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.package-carousel .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--pst-color-text-muted);
+  opacity: 0.6;
+}
+
+.package-carousel .carousel-indicators .active {
+  background-color: var(--pst-color-primary);
+  opacity: 1;
+}
+
+.package-carousel .carousel-control-prev-icon,
+.package-carousel .carousel-control-next-icon {
+  filter: invert(0.5);
+  background-size: 60%;
+}
+
+/* Push the controls out past the tile edges instead of overlapping it. */
+.package-carousel .carousel-control-prev {
+  left: -2.25rem;
+}
+
+.package-carousel .carousel-control-next {
+  right: -2.25rem;
+}
+
+.blog-tiles {
+  margin-bottom: 2rem;
+}
+
+.blog-tiles-fallback {
+  text-align: center;
+  color: var(--pst-color-text-muted);
+}
+
+.blog-tiles .sd-col {
+  display: flex;
+}
+
+.blog-tile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.blog-tile .sd-card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-tile .sd-card-title {
+  color: var(--pst-color-heading);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-tile .sd-card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-tile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
