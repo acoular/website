@@ -1,4 +1,4 @@
-Welcome to the Acoular Organisation!
+Welcome to the Acoular Organization!
 ====================================
 
 .. toctree::
