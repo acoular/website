@@ -1,0 +1,88 @@
+<div id="packageCarousel" class="carousel slide carousel-dark package-carousel" data-bs-ride="carousel" data-bs-interval="6000">
+
+  <div class="carousel-indicators">
+    {%- for item in packages %}
+    <button type="button" data-bs-target="#packageCarousel" data-bs-slide-to="{{ loop.index0 }}"{% if loop.first %} class="active" aria-current="true"{% endif %} aria-label="{{ item.name }}"></button>
+    {%- endfor %}
+  </div>
+
+  <div class="carousel-inner">
+    {%- for item in packages %}
+    <div class="carousel-item{% if loop.first %} active{% endif %}">
+      <div class="carousel-item-tile">
+        <div class="carousel-item-heading">
+          <h5>{{ item.name }}</h5>
+          <p>{{ item.tagline }}{% if item.link %} <a href="{{ item.link }}">Learn more &rarr;</a>{% endif %}</p>
+        </div>
+        {%- if item.media_kind == 'video' %}
+        <div class="ratio ratio-16x9">
+          <iframe src="{{ item.embed_url }}" title="{{ item.name }}" data-yt-player allowfullscreen></iframe>
+        </div>
+        {%- elif item.media_kind == 'image' %}
+        <div class="ratio ratio-16x9 carousel-item-image">
+          <img src="{{ item.image_src }}" alt="{{ item.image_alt or item.name }}" loading="lazy">
+        </div>
+        {%- endif %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#packageCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#packageCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+</div>
+
+<script>
+(function () {
+  if (window.__packageCarouselYtInit) {
+    return;
+  }
+  window.__packageCarouselYtInit = true;
+
+  function setupPlayers() {
+    var carouselEl = document.getElementById('packageCarousel');
+    if (!carouselEl || !window.bootstrap) {
+      return;
+    }
+    var carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+
+    carouselEl.querySelectorAll('iframe[data-yt-player]').forEach(function (iframe) {
+      new YT.Player(iframe, {
+        events: {
+          onStateChange: function (event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+              carousel.pause();
+            } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+              carousel.cycle();
+            }
+          },
+        },
+      });
+    });
+  }
+
+  if (window.YT && window.YT.Player) {
+    setupPlayers();
+    return;
+  }
+
+  var previousReady = window.onYouTubeIframeAPIReady;
+  window.onYouTubeIframeAPIReady = function () {
+    if (typeof previousReady === 'function') {
+      previousReady();
+    }
+    setupPlayers();
+  };
+
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+})();
+</script>
