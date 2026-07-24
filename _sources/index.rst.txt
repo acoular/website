@@ -1,57 +1,48 @@
 Welcome to the Acoular Organization!
 ====================================
 
-This Home Page is currently under construction.
+.. toctree::
+   :hidden:
+   :caption: Software
+
+   Acoular <https://acoular.org/acoular/>
+   SpectAcoular <https://acoular.github.io/spectacoular/>
+   AcouPipe <https://adku1173.github.io/acoupipe/>
 
 .. toctree::
    :hidden:
+   :caption: Getting started with Acoular
 
-   Contributing <contributing/index>
+   Blog <https://blog.acoular.org>
+   Community <https://github.com/orgs/acoular/discussions>
+   Projects using Acoular <https://github.com/acoular/acoular/network/dependents>
+   contributing/index
 
-Package Documentation
----------------------
+.. toctree::
+   :hidden:
+   :caption: Organisation
 
-.. grid:: 1 1 3 3
-   :gutter: 3
+   about/index
+   funding/index
 
-   .. grid-item-card:: Acoular
-      :link: /acoular/
-      :link-type: url
 
-      Acoustic testing and source mapping software.
+The Acoular Organization develops open-source solutions for (acoustic) beamforming and sensor array signal processing. Acoular currently offers: 
 
-   .. grid-item-card:: SpectAcoular
-      :link: https://acoular.org/spectacoular/
-      :link-type: url
+- `Acoular <https://acoular.org/acoular/>`_: Our flagship python package provides methods for beamforming, deconvolution, source localization and mapping.
+- `SpectAcoular <https://acoular.github.io/spectacoular/>`_: Custom graphical user interfaces for Acoular using the `Bokeh <https://bokeh.org/>`_ visualization library.
+- `AcouPipe <https://adku1173.github.io/acoupipe/>`__: Toolbox for generating microphone array data with Acoular for deep learning tasks
 
-      Extension for in-browser GUI applications with Acoular at minimal programming effort.
+-----------------------------
 
-   .. grid-item-card:: AcouPipe
-      :link: https://adku1173.github.io/acoupipe/
-      :link-type: url
+Getting started with Acoular
+-----------------------------
 
-      Extension for large-scale microphone array data simulation to solve deep learning tasks.
 
-Orga Resources
---------------
+.. package-carousel::
 
-.. grid:: 1 1 3 3
-   :gutter: 3
+-----------------------------
 
-   .. grid-item-card:: Blog
-      :link: https://blog.acoular.org
-      :link-type: url
+From the Acoular Blog
+-----------------------------
 
-      Tutorials, announcements, and longer-form write-ups.
-
-   .. grid-item-card:: Community
-      :link: https://github.com/orgs/acoular/discussions
-      :link-type: url
-
-      Discussions, questions, and community exchange.
-
-   .. grid-item-card:: Contributing
-      :link: contributing/index
-      :link-type: doc
-
-      Organization-level contribution guidance placeholder.
+.. blog-tiles::
