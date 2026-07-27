@@ -1,4 +1,4 @@
-<div id="packageCarousel" class="carousel slide carousel-dark package-carousel" data-bs-ride="carousel" data-bs-interval="6000">
+<div id="packageCarousel" class="carousel slide carousel-dark package-carousel" data-bs-ride="carousel" data-bs-interval="6000" data-bs-pause="false">
 
   <div class="carousel-indicators">
     {%- for item in packages %}
@@ -52,16 +52,35 @@
       return;
     }
     var carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+    var isHovering = false;
+    var isVideoPlaying = false;
+
+    function updateCycleState() {
+      if (isHovering || isVideoPlaying) {
+        carousel.pause();
+      } else {
+        carousel.cycle();
+      }
+    }
+
+    carouselEl.addEventListener('mouseenter', function () {
+      isHovering = true;
+      updateCycleState();
+    });
+    carouselEl.addEventListener('mouseleave', function () {
+      isHovering = false;
+      updateCycleState();
+    });
 
     carouselEl.querySelectorAll('iframe[data-yt-player]').forEach(function (iframe) {
+      var separator = iframe.src.indexOf('?') === -1 ? '?' : '&';
+      iframe.src = iframe.src + separator + 'origin=' + encodeURIComponent(window.location.origin);
+
       new YT.Player(iframe, {
         events: {
           onStateChange: function (event) {
-            if (event.data === YT.PlayerState.PLAYING) {
-              carousel.pause();
-            } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-              carousel.cycle();
-            }
+            isVideoPlaying = event.data === YT.PlayerState.PLAYING;
+            updateCycleState();
           },
         },
       });

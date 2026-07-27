@@ -15,3 +15,11 @@ uv run make -C docs html
 ```
 
 The output is written to `docs/_build/html`.
+
+To preview the site locally, serve the built HTML with Python's built-in web server:
+
+```bash
+python3 -m http.server 8000 --directory docs/_build/html
+```
+
+Then open http://localhost:8000/ in your browser.
