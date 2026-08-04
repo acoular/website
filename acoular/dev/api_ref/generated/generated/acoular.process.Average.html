@@ -859,8 +859,8 @@ The size of the blocks yielded is defined by the <code class="docutils literal n
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
 <dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of averaged blocks to yield at a time. Each block contains the average over
-<a class="reference internal" href="../acoular.process.html#acoular.process.Average.num_per_average" title="acoular.process.Average.num_per_average"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_per_average</span></code></a> time samples or frequency snapshots. The last block may be
-shorter than the specified size if the remaining data is insufficient.</p>
+<a class="reference internal" href="../acoular.process.html#acoular.process.Average.num_per_average" title="acoular.process.Average.num_per_average"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_per_average</span></code></a> time samples or frequency snapshots. The last yielded block
+may contain fewer than <code class="docutils literal notranslate"><span class="pre">num</span></code> averages.</p>
 </dd>
 </dl>
 </dd>
@@ -889,7 +889,10 @@ the average is calculated over <a class="reference internal" href="../acoular.pr
 </li>
 <li><p>The generator will stop yielding when the source data is exhausted.</p></li>
 <li><p>If the source provides fewer than <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">*</span> <span class="pre">num_per_average</span></code> samples,
-the final block may be smaller than the requested <code class="docutils literal notranslate"><span class="pre">num</span></code> size.</p></li>
+the final yielded block may be smaller than the requested <code class="docutils literal notranslate"><span class="pre">num</span></code> size.</p></li>
+<li><p>If the source provides a final block with fewer than <a class="reference internal" href="../acoular.process.html#acoular.process.Average.num_per_average" title="acoular.process.Average.num_per_average"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_per_average</span></code></a> samples,
+these samples are discarded. If the source provides fewer than
+<a class="reference internal" href="../acoular.process.html#acoular.process.Average.num_per_average" title="acoular.process.Average.num_per_average"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_per_average</span></code></a> samples in total, nothing is yielded.</p></li>
 </ul>
 </dd></dl>
 
