@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Funding &#8212; Acoular Organization  documentation</title>
+    <title>Submitting a Pull Request &#8212; Acoular Organization  documentation</title>
   
   
   
@@ -44,13 +44,14 @@
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'funding/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing/pull_request';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <link rel="canonical" href="https://acoular.org/funding/index.html" />
+    <link rel="canonical" href="https://acoular.org/contributing/pull_request.html" />
     <link rel="icon" href="../_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="About Us" href="../about/index.html" />
+    <link rel="next" title="Contribution Checklist" href="checklist.html" />
+    <link rel="prev" title="Deprecation Policy" href="deprecation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -406,25 +407,25 @@
 <li class="toctree-l1"><a class="reference external" href="https://adku1173.github.io/acoupipe/">AcouPipe</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started with Acoular</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://blog.acoular.org">Blog</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/acoular/discussions">Community</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/acoular/acoular/network/dependents">Projects using Acoular</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/install.html">Developer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/quality.html">Code Quality Standards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/documentation.html">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/release.html">Release Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/deprecation.html">Deprecation Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/pull_request.html">Submitting a Pull Request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/checklist.html">Contribution Checklist</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Contributing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Developer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quality.html">Code Quality Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecation.html">Deprecation Policy</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Submitting a Pull Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist.html">Contribution Checklist</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Organisation</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About Us</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funding/index.html">Funding</a></li>
 </ul>
 </div>
 </nav></div>
@@ -465,7 +466,10 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Funding</span></li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Contributing</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Submitting a Pull Request</span></li>
   </ul>
 </nav>
 </div>
@@ -482,12 +486,31 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="funding">
-<h1>Funding<a class="headerlink" href="#funding" title="Link to this heading">#</a></h1>
-<p>Acoular’s development is supported by the following funding bodies.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://gepris.dfg.de/project/528753521">Deutsche Forschungsgemeinschaft (DFG)</a>: This DFG-project (project no. 528753521) aims to expand Acoular’s user base to related fields such as robotics, ultrasound, and hydroacoustics, and to create a sustainable foundation for future community-based development. Planned work includes improving the continuous integration process with better code test coverage to strengthen quality assurance and reproducibility of results; refactoring several submodules to enable new use cases and interfaces to other research software; developing stricter release and deprecation strategies as well as contributor guidelines; expanding the documentation with significantly more worked examples and benchmark datasets; and expanding training offerings for potential users.</p></li>
-</ul>
+  <section id="submitting-a-pull-request">
+<span id="id1"></span><h1>Submitting a Pull Request<a class="headerlink" href="#submitting-a-pull-request" title="Link to this heading">#</a></h1>
+<section id="preparing-a-branch">
+<h2>Preparing a branch<a class="headerlink" href="#preparing-a-branch" title="Link to this heading">#</a></h2>
+<p>Before opening a pull request, sync your fork’s <code class="docutils literal notranslate"><span class="pre">master</span></code> branch with the upstream <a class="reference external" href="https://github.com/acoular/acoular">Acoular repository</a>. GitHub documents how to <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork">sync a fork</a>. Then create a branch for your changes:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>new-branch
+</pre></div>
+</div>
+<p>Run the <a class="reference internal" href="quality.html"><span class="doc">Code Quality Standards</span></a> checks, commit your changes, and push the branch:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class="w"> </span>origin<span class="w"> </span>new-branch
+</pre></div>
+</div>
+</section>
+<section id="creating-a-pull-request-on-github">
+<h2>Creating a pull request on GitHub<a class="headerlink" href="#creating-a-pull-request-on-github" title="Link to this heading">#</a></h2>
+<p>Open your fork on GitHub and select <strong>Contribute</strong> or <strong>Compare &amp; pull request</strong> for the branch.</p>
+<a class="reference internal image-reference" href="../_images/forked_acoular_repository_github_site.png"><img alt="Forked Acoular repository" src="../_images/forked_acoular_repository_github_site.png" style="width: 100%;" />
+</a>
+<p>Describe the change, link the related issue when applicable, and complete the pull request template.</p>
+<a class="reference internal image-reference" href="../_images/pull_request_form_github_site_write.png"><img alt="Pull request form" src="../_images/pull_request_form_github_site_write.png" style="width: 100%;" />
+</a>
+<p>Use the <strong>Preview</strong> tab to review the rendered description before selecting <strong>Create pull request</strong>.</p>
+<a class="reference internal image-reference" href="../_images/pull_request_form_github_site_preview.png"><img alt="Pull request preview" src="../_images/pull_request_form_github_site_preview.png" style="width: 100%;" />
+</a>
+</section>
 </section>
 
 
@@ -501,13 +524,22 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../about/index.html"
+       href="deprecation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">About Us</p>
+        <p class="prev-next-title">Deprecation Policy</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="checklist.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contribution Checklist</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -521,9 +553,22 @@
 
 
   <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-a-branch">Preparing a branch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-pull-request-on-github">Creating a pull request on GitHub</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/funding/index.rst.txt">
+    <a href="../_sources/contributing/pull_request.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

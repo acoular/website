@@ -1,0 +1,10 @@
+Contribution Checklist
+----------------------
+
+Before submitting a pull request, please make sure that you have done the following:
+
+- [ ] Read the :doc:`index` section
+- [ ] Ensure your branch is up-to-date with the `main` branch of the `Acoular <https://github.com/acoular/acoular>`_ repository
+- [ ] Verify that the :doc:`quality` standards are fulfilled 
+- [ ] Updated the `What's new <https://github.com/acoular/acoular/blob/master/docs/news/index.rst>`_ section explaining the changes you made
+- [ ] Append yourself to the author list in the `CITATION.cff <https://github.com/acoular/acoular/blob/master/CITATION.cff>`_ file

@@ -50,7 +50,7 @@
     <link rel="icon" href="../_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="About Us" href="../about/index.html" />
+    <link rel="next" title="Developer Installation" href="install.html" />
     <link rel="prev" title="Welcome to the Acoular Organization!" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -411,7 +411,16 @@
 <li class="toctree-l1"><a class="reference external" href="https://blog.acoular.org">Blog</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/acoular/discussions">Community</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/acoular/acoular/network/dependents">Projects using Acoular</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contributing</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Contributing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Developer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quality.html">Code Quality Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecation.html">Deprecation Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pull_request.html">Submitting a Pull Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist.html">Contribution Checklist</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Organisation</span></p>
 <ul class="nav bd-sidenav">
@@ -476,8 +485,48 @@
                   
   <section id="contributing">
 <h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h1>
-<p>This page is a placeholder for organization-level contribution guidance.</p>
-<p>The long-term goal is to replace package-level contribution guides with one shared Acoular organization guide.</p>
+<p>Thank you for considering contributing to Acoular! There are many ways to contribute to Acoular, and we appreciate all of them:</p>
+<ul class="simple">
+<li><p><strong>Report Issues</strong>: If you find a bug in the source code or the documentation, you can submit an issue to the <a class="reference external" href="https://github.com/acoular/acoular/issues">issue tracker</a> on GitHub. The <a class="reference external" href="https://github.com/orgs/acoular/teams/acoular-development-team">Acoular Development Team</a> will decide on the priority of the problem and when it will be fixed. Note that we cannot always guarantee that an issue be resolved in the next release. Submitting a pull request with a fix can speed up the process and is always encouraged. Simply follow the <a class="reference external" href="https://acoular.org/contributing/#contribution-guidelines">Contribution Guidelines</a> to get started.</p></li>
+<li><p><strong>Taking Part in Discussions</strong>: You can join the <a class="reference external" href="https://github.com/acoular/acoular/discussions">Acoular discussions forum</a> to ask questions, discuss existing and new features. If you have a specific feature request that might be also interesting for the community, you can also submit it <a class="reference external" href="https://github.com/acoular/acoular/issues/new?assignees=&amp;labels=enhancement%2Cnew+feature&amp;projects=&amp;template=feature_request.yml&amp;title=FEATURE+REQUEST%3A+%3CFill+in+a+descriptive+title+for+the+feature+request%3E">here</a>.</p></li>
+<li><p><strong>Contribute Code</strong>: You can contribute code to Acoular by forking the repository and submitting a pull request. It doesn’t need to be a big feature; it can be as simple as fixing a typo in the documentation. Please make sure to first read the <a class="reference external" href="https://acoular.org/contributing/#contribution-guidelines">Contribution Guidelines</a> before submitting a pull request.</p></li>
+</ul>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading">#</a></h2>
+<p>By contributing to <a class="reference external" href="https://github.com/acoular/acoular">Acoular</a>, you grant us permission to publish your code under <a class="reference external" href="https://github.com/acoular/acoular/blob/master/LICENSE">Acoular’s license</a>. You must hold the copyright for your code or have permission from the copyright holder to contribute. Acoular uses the permissive BSD-3 license, allowing both commercial use and derivative works, provided the license and copyright notice are included. You retain full copyright over your code, but once it is published under the BSD license, this cannot be revoked.</p>
+</section>
+<section id="id2">
+<span id="id3"></span><h2>Contribution Guidelines<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Developer Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#creating-a-development-environment">Creating a development environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#system-dependencies">System dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quality.html">Code Quality Standards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quality.html#documentation-compilation">Documentation Compilation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html#user-documentation">User Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html#api-documentation">API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html#examples-and-doctests">Examples and doctests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html#citing-literature">Citing Literature</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deprecation.html">Deprecation Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pull_request.html">Submitting a Pull Request</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pull_request.html#preparing-a-branch">Preparing a branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pull_request.html#creating-a-pull-request-on-github">Creating a pull request on GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="checklist.html">Contribution Checklist</a></li>
+</ul>
+</div>
+</section>
 </section>
 
 
@@ -500,11 +549,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="../about/index.html"
+       href="install.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">About Us</p>
+        <p class="prev-next-title">Developer Installation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -518,6 +567,19 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Contribution Guidelines</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 
