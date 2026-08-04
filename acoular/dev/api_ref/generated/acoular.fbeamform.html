@@ -1980,6 +1980,12 @@ defaults to ‘single’.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="acoular.fbeamform.PointSpreadFunction.cached">
+<span class="sig-name descname"><span class="pre">cached</span></span><a class="headerlink" href="#acoular.fbeamform.PointSpreadFunction.cached" title="Link to this definition">#</a></dt>
+<dd><p>Boolean flag, if ‘True’ (default), the result is cached in h5 files.</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.fbeamform.PointSpreadFunction.digest">
 <span class="sig-name descname"><span class="pre">digest</span></span><a class="headerlink" href="#acoular.fbeamform.PointSpreadFunction.digest" title="Link to this definition">#</a></dt>
 <dd><p>A unique identifier for the object, based on its properties. (read-only)</p>
@@ -1987,7 +1993,7 @@ defaults to ‘single’.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="acoular.fbeamform.PointSpreadFunction.calc_psf">
-<span class="sig-name descname"><span class="pre">calc_psf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoular.fbeamform.PointSpreadFunction.calc_psf" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">calc_psf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoular.fbeamform.PointSpreadFunction.calc_psf" title="Link to this definition">#</a></dt>
 <dd><p>point-spread function calculation.</p>
 </dd></dl>
 
@@ -4551,6 +4557,7 @@ can be used.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.fbeamform.PointSpreadFunction.precision"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunction.precision</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.fbeamform.PointSpreadFunction.psf"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunction.psf</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.fbeamform.PointSpreadFunction.freq"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunction.freq</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.fbeamform.PointSpreadFunction.cached"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunction.cached</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.fbeamform.PointSpreadFunction.digest"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunction.digest</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.fbeamform.PointSpreadFunction.calc_psf"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunction.calc_psf()</span></code></a></li>
 </ul>
