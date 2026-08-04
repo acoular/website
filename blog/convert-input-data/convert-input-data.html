@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Converting Input Data &#8212; Acoular Organization  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=d8b77b5c" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/convert-input-data/convert-input-data';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://acoular.org/blog/convert-input-data/convert-input-data.html" />
+    <link rel="icon" href="../../_static/acoular_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting Started with Acoular – Part 1" href="../getstart/getstart1.html" />
+    <link rel="prev" title="Drone Auralization Example" href="../auralization/drone-auralization-example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/acoular_logo_light.png" class="logo__image only-light" alt="Acoular"/>
+    <img src="../../_static/acoular_logo_dark.png" class="logo__image only-dark pst-js-only" alt="Acoular"/>
+  
+  
+    <p class="title logo__title">Acoular Organization</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/acoular/">
+        Acoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
+        SpectAcoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://adku1173.github.io/acoupipe/">
+        AcouPipe
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://github.com/orgs/acoular/discussions">
+        Community
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/contributing/">
+        Contributing
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/acoular" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/acoular" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item"><nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/acoular/">
+        Acoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
+        SpectAcoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://adku1173.github.io/acoupipe/">
+        AcouPipe
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://github.com/orgs/acoular/discussions">
+        Community
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/contributing/">
+        Contributing
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/acoular" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/acoular" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Acoular Blog</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../auralization/drone-auralization-example.html">Drone Auralization Example</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Converting Input Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getstart/getstart1.html">Getting Started with Acoular – Part 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getstart/getstart2.html">Getting Started with Acoular – Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getstart/getstart3.html">Getting Started with Acoular – Part 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/install.html">Developer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/quality.html">Code Quality Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/release.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/deprecation.html">Deprecation Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/pull_request.html">Submitting a Pull Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/checklist.html">Contribution Checklist</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funding/index.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../history/index.html">History</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Acoular Blog</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Converting Input Data</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="converting-input-data">
+<h1>Converting Input Data<a class="headerlink" href="#converting-input-data" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Acoular is a Python library that processes multichannel data (up to a few hundred channels) from acoustic measurements with a microphone array which is stored in an HDF5 file. This blog post explains how to convert data available in other formats into this file format. As examples for other file formats we will use both .csv (comma separated text files) and .mat (Matlab files).</p>
+<!--more-->
+<p>To demonstrate how to import and convert the data, we first need to get some data. In our case we use data from <a class="reference external" href="https://zenodo.org/record/5809069">Zenodo</a>, where a 64 channel recording of a scene with three sources is available in a number different formats. We use Python’s urllib for the download. Depending on your internet speed this may take a while:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://zenodo.org/record/5809069/files/&#39;</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;three_sources.h5&#39;</span><span class="p">,</span><span class="s1">&#39;three_sources.csv&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;three_sourcesv7.mat&#39;</span><span class="p">,</span><span class="s1">&#39;three_sourcesv73.mat&#39;</span><span class="p">):</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="n">filename</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have the same data in four different formats: Acoular’s HDF5, .csv, Matlab version &lt;= 7 and Matlab versions &gt;=7.3.</p>
+</section>
+<section id="hdf5-format">
+<h2>HDF5 format<a class="headerlink" href="#hdf5-format" title="Link to this heading">#</a></h2>
+<p>HDF5 format is an open all purpose numerical data container file format. Data objects inside HDF5 files are stored in tree-like structure comparable to files and folders in a file system. Lets open the file and explore this structure, which is very simple in this case.</p>
+<p>We use the <a class="reference external" href="https://www.pytables.org/">pytables library</a> to access the file. This the very same library used by Acoular under the hood. Alternatively Acoular can also work with <a class="reference external" href="https://docs.h5py.org/en/stable/quick.html">h5py</a>.</p>
+<p>You could also use an HDF5 file viewer with a GUI (e.g. <a class="reference external" href="https://www.hdfgroup.org/downloads/hdfview/">HDFView</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tables</span>
+<span class="n">h5file</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;three_sources.h5&#39;</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># read only mode</span>
+<span class="n">h5file</span><span class="o">.</span><span class="n">root</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ (RootGroup) &#39;&#39;
+  children := [&#39;time_data&#39; (EArray)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In its root sits just one object (one ‘child’), which is an EArray (extensible array). Lets inspect its properties:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">time_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/time_data (EArray(51200, 64)) &#39;&#39;
+  atom := Float32Atom(shape=(), dflt=0.0)
+  maindim := 0
+  flavor := &#39;numpy&#39;
+  byteorder := &#39;little&#39;
+  chunkshape := (256, 64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that this array has the size of 51200 (samples) by 64 (channels). The values are stored as 32 bit float numbers. While less than the usual 64 bit, 32 bit accuracy is more than enough in this case and it saves file space. The data itself can be accessed just like for a numpy array. As an example, we read the first 10 samples of channel 47.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">time_data</span><span class="p">[:</span><span class="mi">10</span><span class="p">,</span><span class="mi">47</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.5875906 , -0.7917087 ,  3.1555338 ,  1.0036362 , -3.1655273 ,
+       -6.466202  , -0.19289835,  1.7383114 ,  6.901536  ,  2.723017  ],
+      dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Along with the data itself, the object stores also some metadata (‘attributes’).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h5file</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">time_data</span><span class="o">.</span><span class="n">attrs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/time_data._v_attrs (AttributeSet), 5 attributes:
+   [CLASS := &#39;EARRAY&#39;,
+    EXTDIM := 0,
+    TITLE := &#39;&#39;,
+    VERSION := &#39;1.1&#39;,
+    sample_freq := 51200.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is one custom attribute here, which is <code class="docutils literal notranslate"><span class="pre">sample_freq</span></code>. It specifies the sampling frequency. In our case 51200.0 Hz.</p>
+<p>If we now have data in some other format that we want to use with Acoular, there are two options:</p>
+<ol class="arabic simple">
+<li><p>We read that data and convert it into an HDF5 file that follows the specification explained. This is demonstrated in this blog post.</p></li>
+<li><p>We extend Acoular to read the other file format directly. This would mean to subclass the <code class="docutils literal notranslate"><span class="pre">TimeSamples</span></code> class and requires some understanding of Acoular’s code and working mechanism.</p></li>
+</ol>
+</section>
+<section id="import-from-csv-format">
+<h2>Import from CSV format<a class="headerlink" href="#import-from-csv-format" title="Link to this heading">#</a></h2>
+<p>The first option shall now be demonstrated using .csv formatted data. Despite beeing extra inefficient this human-readable text format is widely used. The file contains the same number of floating point numbers separated by commas on each line. Some .csv files have also one or more header lines explaining the data contained in the file. In our case there are no header lines. There are multiple options how to read such file into Python. We are going to use Numpy for this. Be warned, the import of this (relatively small) 80 MByte file takes some time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">datacsv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;three_sources.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+<span class="n">datacsv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.43654928, -4.696499  , -2.9038546 , ..., -0.39481497,
+        -3.7462494 , -3.2238567 ],
+       [ 2.2970407 , -1.9746966 , -4.089035  , ..., -3.8922982 ,
+        -4.8707275 , -3.613382  ],
+       [-2.261127  ,  1.6419717 ,  3.4066103 , ..., -0.732125  ,
+         0.22087638, -1.6310387 ],
+       ...,
+       [-1.530854  , -1.2453959 ,  1.566295  , ..., -3.9039657 ,
+        -0.00989423, -6.0220094 ],
+       [ 0.47992265,  3.8888328 , -0.15509878, ..., -1.2525555 ,
+        -2.5308452 , -3.22349   ],
+       [-1.0162828 ,  1.230733  , -2.4700263 , ..., -5.659823  ,
+        -5.2780933 , -0.36301124]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now the data is stored in the <code class="docutils literal notranslate"><span class="pre">datacsv</span></code> array. the next step is to create a new HFD5 file, store the data into that file and add the attribute for the sampling frequency.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h5filecsv</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;three_sources_from_csv.h5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> 
+                             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;three_sources&#39;</span><span class="p">)</span>
+<span class="n">earraycsv</span> <span class="o">=</span> <span class="n">h5filecsv</span><span class="o">.</span><span class="n">create_earray</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;time_data&#39;</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">datacsv</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">earraycsv</span><span class="p">)</span>
+<span class="n">h5filecsv</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">time_data</span><span class="o">.</span><span class="n">set_attr</span><span class="p">(</span><span class="s1">&#39;sample_freq&#39;</span><span class="p">,</span><span class="mf">51200.0</span><span class="p">)</span>
+<span class="n">h5filecsv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/time_data (EArray(51200, 64)) &#39;&#39;
+  atom := Float32Atom(shape=(), dflt=0.0)
+  maindim := 0
+  flavor := &#39;numpy&#39;
+  byteorder := &#39;little&#39;
+  chunkshape := (256, 64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just as before with the original HDF5 file we now have the data in new HDF5 file that could be used as data source for Acoular. There is one possible pitfall with this approach: the data is completely read into the computer memory before beeing stored into the HDF5 file. If the data is really huge, say hundreds of channels and some minutes of recording, it might not fit into the memory. In this case, a more sophisticated approach is needed, where chunks of data are read and stored consecutively. Because we use an EArray, this is possible, but we would have to modify the code.</p>
+<p>As mentioned before, there are other options to read the .csv data. One that deserves to be mentioned here is <a class="reference external" href="https://pandas.pydata.org/">Pandas</a> which reads a lot of different data formats.</p>
+</section>
+<section id="import-from-matlab">
+<h2>Import from Matlab<a class="headerlink" href="#import-from-matlab" title="Link to this heading">#</a></h2>
+<p>For some reason it is quite popular to store data in the format used by Matlab. However, it is important to know that despite the same extension (.mat), there are different formats. If we have any of the formats used prior to Matlab v7, then we can use Scipy to import this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">loadmat</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">loadmat</span><span class="p">(</span><span class="s1">&#39;three_sourcesv7.mat&#39;</span><span class="p">)[</span><span class="s1">&#39;ans&#39;</span><span class="p">]</span>
+<span class="n">datamat7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+<span class="n">h5filemat7</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;three_sources_from_mat7.h5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> 
+                             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;three_sources&#39;</span><span class="p">)</span>
+<span class="n">earraymat7</span> <span class="o">=</span> <span class="n">h5filemat7</span><span class="o">.</span><span class="n">create_earray</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;time_data&#39;</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">datamat7</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">earraymat7</span><span class="p">)</span>
+<span class="n">h5filemat7</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">time_data</span><span class="o">.</span><span class="n">set_attr</span><span class="p">(</span><span class="s1">&#39;sample_freq&#39;</span><span class="p">,</span><span class="mf">51200.0</span><span class="p">)</span>
+<span class="n">h5filemat7</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/time_data (EArray(51200, 64)) &#39;&#39;
+  atom := Float32Atom(shape=(), dflt=0.0)
+  maindim := 0
+  flavor := &#39;numpy&#39;
+  byteorder := &#39;little&#39;
+  chunkshape := (256, 64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The format of .mat file from version 7.3 onwards is essentially an HDF5 file itself! It just uses another file name extension. Of course the internal structure is different from what Acoular is using. However, we can open it with pytables and read the data in it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matfile73</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;three_sourcesv73.mat&#39;</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1"># be aware of Matlab transposing the array here</span>
+<span class="n">datamat73</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">matfile73</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">ans</span><span class="p">[:,:],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">h5filemat73</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;three_sources_from_mat73.h5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> 
+                             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;three_sources&#39;</span><span class="p">)</span>
+<span class="n">earraymat73</span> <span class="o">=</span> <span class="n">h5filemat73</span><span class="o">.</span><span class="n">create_earray</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;time_data&#39;</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">datamat73</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">earraymat73</span><span class="p">)</span>
+<span class="n">h5filemat73</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">time_data</span><span class="o">.</span><span class="n">set_attr</span><span class="p">(</span><span class="s1">&#39;sample_freq&#39;</span><span class="p">,</span><span class="mf">51200.0</span><span class="p">)</span>
+<span class="n">h5filemat73</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/time_data (EArray(51200, 64)) &#39;&#39;
+  atom := Float32Atom(shape=(), dflt=0.0)
+  maindim := 0
+  flavor := &#39;numpy&#39;
+  byteorder := &#39;little&#39;
+  chunkshape := (256, 64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This blog post has demostrated how to import data from foreign formats into Acoular. It can also be used as a guide how to convert any other formats not explicitly mentioned here.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../auralization/drone-auralization-example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Drone Auralization Example</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../getstart/getstart1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting Started with Acoular – Part 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hdf5-format">HDF5 format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-from-csv-format">Import from CSV format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-from-matlab">Import from Matlab</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/blog/convert-input-data/convert-input-data.ipynb.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Acoular Organization.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
