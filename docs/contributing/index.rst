@@ -1,6 +1,17 @@
-Contributing
-============
+.. include:: overview.rst
 
-This page is a placeholder for organization-level contribution guidance.
+.. _Contribution Guidelines:
 
-The long-term goal is to replace package-level contribution guides with one shared Acoular organization guide.
+Contribution Guidelines
+-----------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   install
+   quality
+   documentation
+   release
+   deprecation
+   pull_request
+   checklist
