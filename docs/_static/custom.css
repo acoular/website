@@ -2,6 +2,10 @@ article.bd-article > section:first-of-type > h1:first-of-type {
   text-align: center;
 }
 
+.landing-page .bd-sidebar-primary {
+  display: none;
+}
+
 .package-carousel {
   max-width: 800px;
   margin: 0 auto 2rem;

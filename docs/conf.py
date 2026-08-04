@@ -24,6 +24,8 @@ html_context = build_html_context()
 html_theme_options = configure_theme_options(use_edit_page_button=False)
 html_baseurl = docs_build['html_baseurl']
 exclude_patterns = ['_build']
+templates_path = ['_templates']
 html_static_path = ['_static']
+html_sidebars = {'index': []}
 html_extra_path = ['_extra']
 html_css_files = ['custom.css']
