@@ -162,8 +162,8 @@ article.bd-article > section:first-of-type > h1:first-of-type {
   overflow: hidden;
 }
 
-.blog-tile-image img {
+.blog-tile-image {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }

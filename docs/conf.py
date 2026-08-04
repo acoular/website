@@ -14,18 +14,22 @@ extensions = [
     'acoular_sphinx',
     'sphinx_design',
     'carousel',
-    'blog_tiles',
+    'myst_nb',
 ]
 
 docs_build = resolve_docs_build_config()
 
 html_theme = 'pydata_sphinx_theme'
 html_context = build_html_context()
+next(link for link in html_context['acoular_nav_links'] if link['label'] == 'Blog').update(
+    url='/blog/', external=False
+)
 html_theme_options = configure_theme_options(use_edit_page_button=False)
 html_baseurl = docs_build['html_baseurl']
 exclude_patterns = ['_build']
 templates_path = ['_templates']
 html_static_path = ['_static']
 html_sidebars = {'index': []}
+nb_execution_mode = 'off'
 html_extra_path = ['_extra']
 html_css_files = ['custom.css']
