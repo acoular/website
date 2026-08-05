@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Computation times &#8212; Acoular 26.04 documentation</title>
+    <title>Computation times &#8212; Acoular 26.07 documentation</title>
   
   
   
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
@@ -43,12 +43,12 @@
     <link rel="stylesheet" type="text/css" href="_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    <script src="_static/documentation_options.js?v=7a881cb0"></script>
+    <script src="_static/documentation_options.js?v=d7d86c7c"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -56,21 +56,15 @@
     <script src="_static/sg-tags.js?v=d80f6fa4"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'sg_execution_times';</script>
-    <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '26.04';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner =
-            true;
-        </script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://acoular.org/acoular/sg_execution_times.html" />
     <link rel="icon" href="_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Jun 11, 2026"/>
+  <meta name="docsearch:version" content="26.07" />
+    <meta name="docbuild:last-update" content="Aug 05, 2026"/>
   
     
     <script src="_static/searchtools.js"></script>
@@ -150,26 +144,6 @@
   
 </a></div>
     
-      <div class="navbar-item">
-<div class="version-switcher__container dropdown pst-js-only">
-  <button id="pst-version-switcher-button-2"
-    type="button"
-    class="version-switcher__button btn btn-sm dropdown-toggle"
-    data-bs-toggle="dropdown"
-    aria-haspopup="listbox"
-    aria-controls="pst-version-switcher-list-2"
-    aria-label="Version switcher list"
-  >
-    Choose version  <!-- this text may get changed later by javascript -->
-    <span class="caret"></span>
-  </button>
-  <div id="pst-version-switcher-list-2"
-    class="version-switcher__menu dropdown-menu list-group-flush py-0"
-    role="listbox" aria-labelledby="pst-version-switcher-button-2">
-    <!-- dropdown will be populated by javascript on page load -->
-  </div>
-</div></div>
-    
   </div>
   
   <div class="col-lg-9 navbar-header-items">
@@ -192,7 +166,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link nav-external" href="https://acoular.org/spectacoular/">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
         SpectAcoular
       </a>
     </li>
@@ -339,7 +313,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link nav-external" href="https://acoular.org/spectacoular/">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
         SpectAcoular
       </a>
     </li>
@@ -435,6 +409,8 @@
 <li class="toctree-l1"><a class="reference internal" href="install/index.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="user_guide/index.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/get_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/lazy_evaluation.html">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/caching.html">Caching</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api_ref/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -529,7 +505,6 @@
 <li class="toctree-l3"><a class="reference internal" href="api_ref/generated/generated/acoular.grids.PolySector.html"><code class="docutils literal notranslate"><span class="pre">PolySector</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api_ref/generated/generated/acoular.grids.ConvexSector.html"><code class="docutils literal notranslate"><span class="pre">ConvexSector</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api_ref/generated/generated/acoular.grids.MultiSector.html"><code class="docutils literal notranslate"><span class="pre">MultiSector</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api_ref/generated/generated/acoular.grids.Polygon.html"><code class="docutils literal notranslate"><span class="pre">Polygon</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api_ref/generated/generated/acoular.grids.in_hull.html"><code class="docutils literal notranslate"><span class="pre">in_hull</span></code></a></li>
 </ul>
 </details></li>
@@ -651,7 +626,9 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="auto_examples/index.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="auto_examples/introductory_examples/index.html">Introductory examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/introductory_examples/example_three_sources.html">Three sources – Generate synthetic microphone array data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/introductory_examples/example_lazy_evaluation.html">Lazy evaluation – Build first, calculate on demand.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/introductory_examples/example_basic_beamforming.html">Basic Beamforming – Generate a map of three sources.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_examples/introductory_examples/example_caching.html">Caching – Reuse calculated results.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/introductory_examples/example_3D_beamforming.html">3D Beamforming with CLEAN-SC deconvolution.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/introductory_examples/example_multisector.html">MultiSector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="auto_examples/introductory_examples/example_sectors.html">Sectors</a></li>
@@ -687,16 +664,6 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="news/index.html">What's new</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="contributing/index.html">Contributing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="contributing/install.html">Developer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/quality.html">Code Quality Standards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/documentation.html">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/release.html">Release Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/deprecation.html">Deprecation Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/pull_request.html">Submitting a pull request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/checklist.html">Contribution Checklist</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="literature/index.html">Literature</a></li>
 </ul>
 </div>
@@ -757,7 +724,7 @@
                   
   <section id="computation-times">
 <span id="sphx-glr-sg-execution-times"></span><h1>Computation times<a class="headerlink" href="#computation-times" title="Link to this heading">#</a></h1>
-<p><strong>00:53.761</strong> total execution time for 20 files <strong>from all galleries</strong>:</p>
+<p><strong>01:14.039</strong> total execution time for 22 files <strong>from all galleries</strong>:</p>
 <div class="docutils container">
 <style scoped>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
@@ -778,84 +745,92 @@ $(document).ready( function () {
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/moving_sources_examples/example_beamforming_with_moving_focus.html#sphx-glr-auto-examples-moving-sources-examples-example-beamforming-with-moving-focus-py"><span class="std std-ref">Beamforming with moving focus</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/moving_sources_examples/example_beamforming_with_moving_focus.py</span></code>)</p></td>
-<td><p>00:10.780</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/wind_tunnel_examples/example_airfoil_in_open_jet_time_domain_methods.html#sphx-glr-auto-examples-wind-tunnel-examples-example-airfoil-in-open-jet-time-domain-methods-py"><span class="std std-ref">Airfoil in open jet – Time domain beamforming methods.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/wind_tunnel_examples/example_airfoil_in_open_jet_time_domain_methods.py</span></code>)</p></td>
+<td><p>00:11.002</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/wind_tunnel_examples/example_airfoil_in_open_jet_time_domain_methods.html#sphx-glr-auto-examples-wind-tunnel-examples-example-airfoil-in-open-jet-time-domain-methods-py"><span class="std std-ref">Airfoil in open jet – Time domain beamforming methods.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/wind_tunnel_examples/example_airfoil_in_open_jet_time_domain_methods.py</span></code>)</p></td>
-<td><p>00:09.922</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/moving_sources_examples/example_beamforming_with_moving_focus.html#sphx-glr-auto-examples-moving-sources-examples-example-beamforming-with-moving-focus-py"><span class="std std-ref">Beamforming with moving focus</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/moving_sources_examples/example_beamforming_with_moving_focus.py</span></code>)</p></td>
+<td><p>00:09.693</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/moving_sources_examples/example_rotating_point_source.html#sphx-glr-auto-examples-moving-sources-examples-example-rotating-point-source-py"><span class="std std-ref">Rotating point source</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/moving_sources_examples/example_rotating_point_source.py</span></code>)</p></td>
-<td><p>00:09.299</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/moving_sources_examples/example_rotating_point_source.html#sphx-glr-auto-examples-moving-sources-examples-example-rotating-point-source-py"><span class="std std-ref">Rotating point source</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/moving_sources_examples/example_rotating_point_source.py</span></code>)</p></td>
+<td><p>00:09.130</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/wind_tunnel_examples/example_airfoil_in_open_jet_freq_domain_methods.html#sphx-glr-auto-examples-wind-tunnel-examples-example-airfoil-in-open-jet-freq-domain-methods-py"><span class="std std-ref">Airfoil in open jet – Frequency domain beamforming methods.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/wind_tunnel_examples/example_airfoil_in_open_jet_freq_domain_methods.py</span></code>)</p></td>
-<td><p>00:04.949</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/wind_tunnel_examples/example_airfoil_in_open_jet_freq_domain_methods.html#sphx-glr-auto-examples-wind-tunnel-examples-example-airfoil-in-open-jet-freq-domain-methods-py"><span class="std std-ref">Airfoil in open jet – Frequency domain beamforming methods.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/wind_tunnel_examples/example_airfoil_in_open_jet_freq_domain_methods.py</span></code>)</p></td>
+<td><p>00:08.634</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_grids.html#sphx-glr-auto-examples-introductory-examples-example-grids-py"><span class="std std-ref">Grids</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/introductory_examples/example_grids.py</span></code>)</p></td>
-<td><p>00:04.222</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_grids.html#sphx-glr-auto-examples-introductory-examples-example-grids-py"><span class="std std-ref">Grids</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/introductory_examples/example_grids.py</span></code>)</p></td>
+<td><p>00:06.767</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/wind_tunnel_examples/example_airfoil_in_open_jet_cmf.html#sphx-glr-auto-examples-wind-tunnel-examples-example-airfoil-in-open-jet-cmf-py"><span class="std std-ref">Airfoil in open jet – Covariance matrix fitting (CMF).</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/wind_tunnel_examples/example_airfoil_in_open_jet_cmf.py</span></code>)</p></td>
-<td><p>00:02.804</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_lazy_evaluation.html#sphx-glr-auto-examples-introductory-examples-example-lazy-evaluation-py"><span class="std std-ref">Lazy evaluation – Build first, calculate on demand.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/introductory_examples/example_lazy_evaluation.py</span></code>)</p></td>
+<td><p>00:06.364</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/io_and_signal_processing_examples/example_sample_splitter_bufferhandling.html#sphx-glr-auto-examples-io-and-signal-processing-examples-example-sample-splitter-bufferhandling-py"><span class="std std-ref">Parallel processing chains – SampleSplitter buffer handling.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/io_and_signal_processing_examples/example_sample_splitter_bufferhandling.py</span></code>)</p></td>
-<td><p>00:01.818</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_3D_beamforming.html#sphx-glr-auto-examples-introductory-examples-example-3d-beamforming-py"><span class="std std-ref">3D Beamforming with CLEAN-SC deconvolution.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/introductory_examples/example_3D_beamforming.py</span></code>)</p></td>
+<td><p>00:04.597</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/wind_tunnel_examples/example_airfoil_in_open_jet_steering_vectors.html#sphx-glr-auto-examples-wind-tunnel-examples-example-airfoil-in-open-jet-steering-vectors-py"><span class="std std-ref">Airfoil in open jet – steering vectors.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/wind_tunnel_examples/example_airfoil_in_open_jet_steering_vectors.py</span></code>)</p></td>
-<td><p>00:01.812</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/wind_tunnel_examples/example_airfoil_in_open_jet_cmf.html#sphx-glr-auto-examples-wind-tunnel-examples-example-airfoil-in-open-jet-cmf-py"><span class="std std-ref">Airfoil in open jet – Covariance matrix fitting (CMF).</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/wind_tunnel_examples/example_airfoil_in_open_jet_cmf.py</span></code>)</p></td>
+<td><p>00:04.200</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/io_and_signal_processing_examples/example_fft.html#sphx-glr-auto-examples-io-and-signal-processing-examples-example-fft-py"><span class="std std-ref">Fast Fourier Transform (FFT) of multichannel time data.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/io_and_signal_processing_examples/example_fft.py</span></code>)</p></td>
-<td><p>00:01.648</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/wind_tunnel_examples/example_airfoil_in_open_jet_steering_vectors.html#sphx-glr-auto-examples-wind-tunnel-examples-example-airfoil-in-open-jet-steering-vectors-py"><span class="std std-ref">Airfoil in open jet – steering vectors.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/wind_tunnel_examples/example_airfoil_in_open_jet_steering_vectors.py</span></code>)</p></td>
+<td><p>00:02.321</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_3D_beamforming.html#sphx-glr-auto-examples-introductory-examples-example-3d-beamforming-py"><span class="std std-ref">3D Beamforming with CLEAN-SC deconvolution.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/introductory_examples/example_3D_beamforming.py</span></code>)</p></td>
-<td><p>00:01.540</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/io_and_signal_processing_examples/example_sample_splitter_bufferhandling.html#sphx-glr-auto-examples-io-and-signal-processing-examples-example-sample-splitter-bufferhandling-py"><span class="std std-ref">Parallel processing chains – SampleSplitter buffer handling.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/io_and_signal_processing_examples/example_sample_splitter_bufferhandling.py</span></code>)</p></td>
+<td><p>00:01.813</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/io_and_signal_processing_examples/example_filter.html#sphx-glr-auto-examples-io-and-signal-processing-examples-example-filter-py"><span class="std std-ref">Show basic filtering capabilities.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/io_and_signal_processing_examples/example_filter.py</span></code>)</p></td>
-<td><p>00:01.537</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/io_and_signal_processing_examples/example_fft.html#sphx-glr-auto-examples-io-and-signal-processing-examples-example-fft-py"><span class="std std-ref">Fast Fourier Transform (FFT) of multichannel time data.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/io_and_signal_processing_examples/example_fft.py</span></code>)</p></td>
+<td><p>00:01.714</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_multisector.html#sphx-glr-auto-examples-introductory-examples-example-multisector-py"><span class="std std-ref">MultiSector</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/introductory_examples/example_multisector.py</span></code>)</p></td>
-<td><p>00:00.819</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_three_sources.html#sphx-glr-auto-examples-introductory-examples-example-three-sources-py"><span class="std std-ref">Three sources – Generate synthetic microphone array data.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/introductory_examples/example_three_sources.py</span></code>)</p></td>
+<td><p>00:01.580</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_sectors.html#sphx-glr-auto-examples-introductory-examples-example-sectors-py"><span class="std std-ref">Sectors</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/introductory_examples/example_sectors.py</span></code>)</p></td>
-<td><p>00:00.646</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_multisector.html#sphx-glr-auto-examples-introductory-examples-example-multisector-py"><span class="std std-ref">MultiSector</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/introductory_examples/example_multisector.py</span></code>)</p></td>
+<td><p>00:01.123</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/wind_tunnel_examples/example_sectors_and_integration.html#sphx-glr-auto-examples-wind-tunnel-examples-example-sectors-and-integration-py"><span class="std std-ref">Sector Integration Example</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/wind_tunnel_examples/example_sectors_and_integration.py</span></code>)</p></td>
-<td><p>00:00.515</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/io_and_signal_processing_examples/example_filter.html#sphx-glr-auto-examples-io-and-signal-processing-examples-example-filter-py"><span class="std std-ref">Show basic filtering capabilities.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/io_and_signal_processing_examples/example_filter.py</span></code>)</p></td>
+<td><p>00:01.064</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_basic_beamforming.html#sphx-glr-auto-examples-introductory-examples-example-basic-beamforming-py"><span class="std std-ref">Basic Beamforming – Generate a map of three sources.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/introductory_examples/example_basic_beamforming.py</span></code>)</p></td>
-<td><p>00:00.496</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_sectors.html#sphx-glr-auto-examples-introductory-examples-example-sectors-py"><span class="std std-ref">Sectors</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/introductory_examples/example_sectors.py</span></code>)</p></td>
+<td><p>00:00.954</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/io_and_signal_processing_examples/example_sample_splitter_multithreading.html#sphx-glr-auto-examples-io-and-signal-processing-examples-example-sample-splitter-multithreading-py"><span class="std std-ref">Parallel processing chains – Multithreading with the SampleSplitter.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/io_and_signal_processing_examples/example_sample_splitter_multithreading.py</span></code>)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/wind_tunnel_examples/example_sectors_and_integration.html#sphx-glr-auto-examples-wind-tunnel-examples-example-sectors-and-integration-py"><span class="std std-ref">Sector Integration Example</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/wind_tunnel_examples/example_sectors_and_integration.py</span></code>)</p></td>
+<td><p>00:00.929</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_caching.html#sphx-glr-auto-examples-introductory-examples-example-caching-py"><span class="std std-ref">Caching – Reuse calculated results.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/introductory_examples/example_caching.py</span></code>)</p></td>
+<td><p>00:00.882</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_basic_beamforming.html#sphx-glr-auto-examples-introductory-examples-example-basic-beamforming-py"><span class="std std-ref">Basic Beamforming – Generate a map of three sources.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/introductory_examples/example_basic_beamforming.py</span></code>)</p></td>
+<td><p>00:00.414</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/tools/example_evaluate.html#sphx-glr-auto-examples-tools-example-evaluate-py"><span class="std std-ref">Evaluate source characterization performance.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/tools/example_evaluate.py</span></code>)</p></td>
+<td><p>00:00.292</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/io_and_signal_processing_examples/example_sample_splitter_multithreading.html#sphx-glr-auto-examples-io-and-signal-processing-examples-example-sample-splitter-multithreading-py"><span class="std std-ref">Parallel processing chains – Multithreading with the SampleSplitter.</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/io_and_signal_processing_examples/example_sample_splitter_multithreading.py</span></code>)</p></td>
 <td><p>00:00.286</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/tools/example_evaluate.html#sphx-glr-auto-examples-tools-example-evaluate-py"><span class="std std-ref">Evaluate source characterization performance.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/tools/example_evaluate.py</span></code>)</p></td>
-<td><p>00:00.273</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/tools/example_tools.html#sphx-glr-auto-examples-tools-example-tools-py"><span class="std std-ref">Tools – Demonstrates barspectrum tool of Acoular</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/tools/example_tools.py</span></code>)</p></td>
+<td><p>00:00.177</p></td>
 <td><p>0.0</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/tools/example_tools.html#sphx-glr-auto-examples-tools-example-tools-py"><span class="std std-ref">Tools – Demonstrates barspectrum tool of Acoular</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/tools/example_tools.py</span></code>)</p></td>
-<td><p>00:00.176</p></td>
-<td><p>0.0</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="auto_examples/introductory_examples/example_three_sources.html#sphx-glr-auto-examples-introductory-examples-example-three-sources-py"><span class="std std-ref">Three sources – Generate synthetic microphone array data.</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/introductory_examples/example_three_sources.py</span></code>)</p></td>
-<td><p>00:00.133</p></td>
-<td><p>0.0</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/io_and_signal_processing_examples/example_power_spectra_import.html#sphx-glr-auto-examples-io-and-signal-processing-examples-example-power-spectra-import-py"><span class="std std-ref">Cross-spectral matrix import</span></a> (<code class="docutils literal notranslate"><span class="pre">../../examples/io_and_signal_processing_examples/example_power_spectra_import.py</span></code>)</p></td>
-<td><p>00:00.088</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="auto_examples/io_and_signal_processing_examples/example_power_spectra_import.html#sphx-glr-auto-examples-io-and-signal-processing-examples-example-power-spectra-import-py"><span class="std std-ref">Cross-spectral matrix import</span></a> (<code class="docutils literal notranslate"><span class="pre">../examples/io_and_signal_processing_examples/example_power_spectra_import.py</span></code>)</p></td>
+<td><p>00:00.101</p></td>
 <td><p>0.0</p></td>
 </tr>
 </tbody>
@@ -914,8 +889,8 @@ $(document).ready( function () {
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -949,7 +924,7 @@ $(document).ready( function () {
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
 </p></div>
       
     </div>

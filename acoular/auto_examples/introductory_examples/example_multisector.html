@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>MultiSector &#8212; Acoular 26.04 documentation</title>
+    <title>MultiSector &#8212; Acoular 26.07 documentation</title>
   
   
   
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
@@ -43,12 +43,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    <script src="../../_static/documentation_options.js?v=7a881cb0"></script>
+    <script src="../../_static/documentation_options.js?v=d7d86c7c"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -56,14 +56,8 @@
     <script src="../../_static/sg-tags.js?v=d80f6fa4"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/introductory_examples/example_multisector';</script>
-    <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '26.04';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner =
-            true;
-        </script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://acoular.org/acoular/auto_examples/introductory_examples/example_multisector.html" />
     <link rel="icon" href="../../_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -71,8 +65,8 @@
     <link rel="prev" title="3D Beamforming with CLEAN-SC deconvolution." href="example_3D_beamforming.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Jun 11, 2026"/>
+  <meta name="docsearch:version" content="26.07" />
+    <meta name="docbuild:last-update" content="Aug 05, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -152,26 +146,6 @@
   
 </a></div>
     
-      <div class="navbar-item">
-<div class="version-switcher__container dropdown pst-js-only">
-  <button id="pst-version-switcher-button-2"
-    type="button"
-    class="version-switcher__button btn btn-sm dropdown-toggle"
-    data-bs-toggle="dropdown"
-    aria-haspopup="listbox"
-    aria-controls="pst-version-switcher-list-2"
-    aria-label="Version switcher list"
-  >
-    Choose version  <!-- this text may get changed later by javascript -->
-    <span class="caret"></span>
-  </button>
-  <div id="pst-version-switcher-list-2"
-    class="version-switcher__menu dropdown-menu list-group-flush py-0"
-    role="listbox" aria-labelledby="pst-version-switcher-button-2">
-    <!-- dropdown will be populated by javascript on page load -->
-  </div>
-</div></div>
-    
   </div>
   
   <div class="col-lg-9 navbar-header-items">
@@ -194,7 +168,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link nav-external" href="https://acoular.org/spectacoular/">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
         SpectAcoular
       </a>
     </li>
@@ -341,7 +315,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link nav-external" href="https://acoular.org/spectacoular/">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
         SpectAcoular
       </a>
     </li>
@@ -437,6 +411,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../user_guide/index.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../user_guide/get_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/lazy_evaluation.html">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/caching.html">Caching</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../api_ref/index.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -531,7 +507,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api_ref/generated/generated/acoular.grids.PolySector.html"><code class="docutils literal notranslate"><span class="pre">PolySector</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api_ref/generated/generated/acoular.grids.ConvexSector.html"><code class="docutils literal notranslate"><span class="pre">ConvexSector</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api_ref/generated/generated/acoular.grids.MultiSector.html"><code class="docutils literal notranslate"><span class="pre">MultiSector</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../api_ref/generated/generated/acoular.grids.Polygon.html"><code class="docutils literal notranslate"><span class="pre">Polygon</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api_ref/generated/generated/acoular.grids.in_hull.html"><code class="docutils literal notranslate"><span class="pre">in_hull</span></code></a></li>
 </ul>
 </details></li>
@@ -653,7 +628,9 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Introductory examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="example_three_sources.html">Three sources – Generate synthetic microphone array data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example_lazy_evaluation.html">Lazy evaluation – Build first, calculate on demand.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="example_basic_beamforming.html">Basic Beamforming – Generate a map of three sources.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example_caching.html">Caching – Reuse calculated results.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="example_3D_beamforming.html">3D Beamforming with CLEAN-SC deconvolution.</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">MultiSector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="example_sectors.html">Sectors</a></li>
@@ -689,16 +666,6 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../news/index.html">What's new</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/install.html">Developer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/quality.html">Code Quality Standards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/documentation.html">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/release.html">Release Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/deprecation.html">Deprecation Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/pull_request.html">Submitting a pull request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/checklist.html">Contribution Checklist</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../literature/index.html">Literature</a></li>
 </ul>
 </div>
@@ -779,10 +746,11 @@ functions from the sectors example for convenience.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class"><span class="n">Path</span></a>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">acoular.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">barspectrum</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">acoular.tools.helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_data_file</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Import Acoular objects and helper functions from the sectors example</span>
 <span class="c1"># from example_sectors import bb, freqs, grid, sector, spl_map</span>
@@ -890,11 +858,11 @@ the third-octova spectrum.</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_example_multisector_002.png" srcset="../../_images/sphx_glr_example_multisector_002.png" alt="MultiSector Integration: Spectrum and Third-Octave Barspectrum" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/pelling/projects/acoular/acoular/tools/helpers.py:213: Warning: Queried frequency band (445.449 to 561.231 Hz) does not include any discrete FFT sample frequencies. Returning zeros.
+<img src="../../_images/sphx_glr_example_multisector_002.png" srcset="../../_images/sphx_glr_example_multisector_002.png" alt="MultiSector Integration: Spectrum and Third-Octave Barspectrum" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/work/acoular/acoular/acoular/tools/helpers.py:215: Warning: Queried frequency band (445.449 to 561.231 Hz) does not include any discrete FFT sample frequencies. Returning zeros.
   p = np.array([synthetic(data, fftfreqs, list(fc[i_low:i_high]), num)])
-/home/pelling/projects/acoular/acoular/tools/helpers.py:213: Warning: Queried frequency band (561.266 to 707.151 Hz) does not include any discrete FFT sample frequencies. Returning zeros.
+/home/runner/work/acoular/acoular/acoular/tools/helpers.py:215: Warning: Queried frequency band (561.266 to 707.151 Hz) does not include any discrete FFT sample frequencies. Returning zeros.
   p = np.array([synthetic(data, fftfreqs, list(fc[i_low:i_high]), num)])
-/home/pelling/projects/acoular/acoular/tools/helpers.py:213: Warning: Queried frequency band (890.899 to 1122.46 Hz) does not include any discrete FFT sample frequencies. Returning zeros.
+/home/runner/work/acoular/acoular/acoular/tools/helpers.py:215: Warning: Queried frequency band (890.899 to 1122.46 Hz) does not include any discrete FFT sample frequencies. Returning zeros.
   p = np.array([synthetic(data, fftfreqs, list(fc[i_low:i_high]), num)])
 </pre></div>
 </div>
@@ -902,7 +870,7 @@ the third-octova spectrum.</p>
 <a class="reference internal" href="../../api_ref/generated/acoular.grids.html#acoular.grids.RectSector" title="acoular.grids.RectSector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RectSector</span></code></a>, <a class="reference internal" href="../../api_ref/generated/acoular.grids.html#acoular.grids.CircSector" title="acoular.grids.CircSector"><code class="xref py py-class docutils literal notranslate"><span class="pre">CircSector</span></code></a>, and
 <a class="reference internal" href="../../api_ref/generated/acoular.grids.html#acoular.grids.PolySector" title="acoular.grids.PolySector"><code class="xref py py-class docutils literal notranslate"><span class="pre">PolySector</span></code></a>.
 This makes it easy to analyze complex regions in your sound field.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.819 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.123 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-introductory-examples-example-multisector-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d01e534c3acecd5c6ced89c8fc1e80b1/example_multisector.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">example_multisector.ipynb</span></code></a></p>
@@ -1000,8 +968,8 @@ This makes it easy to analyze complex regions in your sound field.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1035,7 +1003,7 @@ This makes it easy to analyze complex regions in your sound field.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
 </p></div>
       
     </div>
