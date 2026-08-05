@@ -12,6 +12,7 @@ language = 'en'
 
 extensions = [
     'acoular_sphinx',
+    'sphinx_copybutton',
     'sphinx_design',
     'carousel',
     'myst_nb',
@@ -33,3 +34,6 @@ html_sidebars = {'index': []}
 nb_execution_mode = 'off'
 html_extra_path = ['_extra']
 html_css_files = ['custom.css']
+
+copybutton_prompt_text = r'>>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: '  # strips prompts
+copybutton_prompt_is_regexp = True
