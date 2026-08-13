@@ -1,0 +1,785 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Validating Three-Source Localization with Real Microphone Arrays &#8212; Acoular Organization  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b07a56ae" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=30646c52"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/three-sources-experiment/three_sources_lab_validation';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://acoular.org/blog/three-sources-experiment/three_sources_lab_validation.html" />
+    <link rel="icon" href="../../_static/acoular_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contributing" href="../../contributing/index.html" />
+    <link rel="prev" title="Getting Started with Acoular – Part 3" href="../getstart/getstart3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/acoular_logo_light.png" class="logo__image only-light" alt="Acoular"/>
+    <img src="../../_static/acoular_logo_dark.png" class="logo__image only-dark pst-js-only" alt="Acoular"/>
+  
+  
+    <p class="title logo__title">Acoular Organization</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/acoular/">
+        Acoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
+        SpectAcoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://adku1173.github.io/acoupipe/">
+        AcouPipe
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://github.com/orgs/acoular/discussions">
+        Community
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/contributing/">
+        Contributing
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/acoular" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/acoular" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item"><nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/acoular/">
+        Acoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
+        SpectAcoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://adku1173.github.io/acoupipe/">
+        AcouPipe
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://github.com/orgs/acoular/discussions">
+        Community
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/contributing/">
+        Contributing
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/acoular" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/acoular" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Acoular Blog</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../auralization/drone-auralization-example.html">Drone Auralization Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert-input-data/convert-input-data.html">Converting Input Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getstart/getstart1.html">Getting Started with Acoular – Part 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getstart/getstart2.html">Getting Started with Acoular – Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getstart/getstart3.html">Getting Started with Acoular – Part 3</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Validating Three-Source Localization with Real Microphone Arrays</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/index.html">Contributing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/install.html">Developer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/quality.html">Code Quality Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/release.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/deprecation.html">Deprecation Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/pull_request.html">Submitting a Pull Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/checklist.html">Contribution Checklist</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funding/index.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../history/index.html">History</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Acoular Blog</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Validating Three-Source Localization with Real Microphone Arrays</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="validating-three-source-localization-with-real-microphone-arrays">
+<h1>Validating Three-Source Localization with Real Microphone Arrays<a class="headerlink" href="#validating-three-source-localization-with-real-microphone-arrays" title="Link to this heading">#</a></h1>
+<p><em>An experimental simulation to measurement comparison using a compact UMA-16 and a large-aperture 64-microphone Vogel spiral array</em></p>
+<p>Acoular’s <em>Getting Started – Part 1</em> provides the frequency-domain beamforming workflow, while the example <em>Three sources – Generate synthetic microphone array data</em> provides the method used to create the three-source reference data. Here, both are adapted to laboratory measurements with two different microphone arrays.</p>
+<p>Can the simulated spatial pattern be recovered experimentally? To answer this question the scene was reproduced with three loudspeakers driven by independent white-noise signals and measured successively with a UMA-16 and a 64-microphone Vogel spiral array. SpectAcoular’s Microphone Array Measurement App recorded the multichannel time data, and Acoular produced the conventional frequency-domain beamforming maps. For each array, the measured map was compared with a reference simulation using the same geometry, scan plane and analysis frequency.</p>
+<section id="simulation-method-used-as-reference">
+<h2>Simulation method used as reference<a class="headerlink" href="#simulation-method-used-as-reference" title="Link to this heading">#</a></h2>
+<p>The synthetic reference data were generated by adapting Acoular’s <a class="reference external" href="https://www.acoular.org/auto_examples/introductory_examples/example_three_sources.html"><em>Three sources – Generate synthetic microphone array data</em></a> example. The original example creates three independent white-noise point sources and writes the resulting microphone signals to HDF5. Its relative source-amplitude scale (1.0, 0.7, 0.5) was retained in the adapted simulations.</p>
+<p>Two elements were adapted. First, the original <code class="docutils literal notranslate"><span class="pre">array64</span></code> microphone geometry was replaced by the geometry of the array being evaluated: the UMA-16 for the first comparison and the 64-microphone Vogel spiral for the second. Second, the three source coordinates were adjusted primarily through uniform scaling to match the physical aperture and scan window of each experimental setup while preserving their triangular arrangement and relative directions. A separate synthetic data set was therefore generated for each array. These array specific simulations were then processed with the frequency domain workflow from <a class="reference external" href="https://acoular.github.io/blog/2021/04/01/getstart1.html"><em>Getting Started with Acoular – Part 1</em></a>.</p>
+</section>
+<section id="experimental-principle">
+<h2>Experimental principle<a class="headerlink" href="#experimental-principle" title="Link to this heading">#</a></h2>
+<p>The reference <em>Three sources</em> simulation uses ideal point sources. In the laboratory, each source was replaced by a loudspeaker with a diameter of 8 cm. Their positions were defined relative to the center of the microphone array, with the array lying in the plane $z=0$:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Source</p></th>
+<th class="head text-right"><p>$x$ (m)</p></th>
+<th class="head text-right"><p>$y$ (m)</p></th>
+<th class="head text-right"><p>$z$ (m)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1</p></td>
+<td class="text-right"><p>-0.20</p></td>
+<td class="text-right"><p>-0.20</p></td>
+<td class="text-right"><p>0.60</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>0.30</p></td>
+<td class="text-right"><p>0.00</p></td>
+<td class="text-right"><p>0.60</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>0.00</p></td>
+<td class="text-right"><p>0.20</p></td>
+<td class="text-right"><p>0.60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Unlike a point source, a real loudspeaker occupies physical space. The complete source layout was therefore scaled by a factor of two relative to the reference <em>Three sources</em> simulation: both the lateral source coordinates and the source-to-array distance were doubled. This provided sufficient space for the 8 cm loudspeakers and their supports. Because every source distance was scaled by the same factor, the ratios $x/z$ and $y/z$ remained unchanged, preserving the source directions and the triangular topology of the reference scene.</p>
+</section>
+<section id="measurement-hardware-and-software">
+<h2>Measurement hardware and software<a class="headerlink" href="#measurement-hardware-and-software" title="Link to this heading">#</a></h2>
+<p>The UMA-16 experiment was run on a Raspberry Pi Compute Module 5 (CM5), and the complete measurement proceeded reliably without any issues. For the 64-microphone Vogel spiral array, all microphone channels were acquired simultaneously with a 64-channel SINUS Tornado system.</p>
+<p>The software environment was managed with <code class="docutils literal notranslate"><span class="pre">uv</span></code>. The workflow used Acoular 26.4 for beamforming, SpectAcoular 26.4 for acquisition with the <a class="reference external" href="https://acoular.org/spectacoular/dev/apps/measurementapp.html">Microphone Array Measurement App</a>, and <code class="docutils literal notranslate"><span class="pre">sounddevice</span></code> 0.5.5 for multichannel playback. The uv version is 0.11.25, and the Raspberry Pi runs Linux 6.18.33+rpt-rpi-2712 under Debian GNU/Linux 13.5 (Trixie). These versions were used throughout the experiments and the subsequent analysis.</p>
+</section>
+<section id="generating-three-independent-broadband-sources">
+<h2>Generating three independent broadband sources<a class="headerlink" href="#generating-three-independent-broadband-sources" title="Link to this heading">#</a></h2>
+<p>A different random white-noise sequence was generated for each playback channel with the <code class="docutils literal notranslate"><span class="pre">sounddevice</span></code> library. The first three output channels drove the three loudspeakers; the remaining channels were silent. Because each column is generated independently by <code class="docutils literal notranslate"><span class="pre">numpy.random.randn</span></code>, the three source signals are statistically uncorrelated.</p>
+<p>Playback lasted 60 s at 48 kHz. After normalization by the largest value, the three non-zero channel weights retain the relative amplitude scale 1.0, 0.7 and 0.5 used in the synthetic-data example. These weights describe electrical drive amplitudes, not calibrated sound-pressure levels at the loudspeaker positions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sounddevice</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sd</span>
+
+<span class="n">device_id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sample_rate</span> <span class="o">=</span> <span class="mi">48000</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">channels</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">query_devices</span><span class="p">())</span> <span class="c1"># allow to know the device_id used</span>
+
+<span class="n">volumes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.075</span><span class="p">,</span> <span class="mf">0.150</span><span class="p">,</span> <span class="mf">0.105</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sample_rate</span> <span class="o">*</span> <span class="n">duration</span><span class="p">)</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">channels</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span> <span class="o">*</span> <span class="n">volumes</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Playing noise&quot;</span><span class="p">)</span>
+<span class="n">sd</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">samplerate</span><span class="o">=</span><span class="n">sample_rate</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device_id</span><span class="p">)</span>
+<span class="n">sd</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="measurement-chain-and-calibration">
+<h2>Measurement chain and calibration<a class="headerlink" href="#measurement-chain-and-calibration" title="Link to this heading">#</a></h2>
+<p>SpectAcoular’s Microphone Array Measurement App stored the microphone signals as HDF5 time histories. Before acquisition, all microphones were calibrated with a reference acoustic calibrator to ensure consistent channel weighting. Without this correction, sensitivity differences could be interpreted by the beamformer as spatial level differences.</p>
+<p>Four HDF5 data sets support the two simulation to measurement comparisons. For each array, one file contains the adapted synthetic microphone signals and the other contains the calibrated laboratory measurement:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">data/three_sources_uma16_simulated.h5</span></code> — simulated data generated with the UMA-16 geometry;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">data/three_sources_uma16_measured.h5</span></code> — laboratory measurement with the UMA-16;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">data/three_sources_vogel64_simulated.h5</span></code> — simulated data generated with the Vogel geometry;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">data/three_sources_vogel64_measured.h5</span></code> — laboratory measurement with the 64-microphone Vogel array.</p></li>
+</ul>
+</section>
+<section id="first-measurement-uma-16-minidsp">
+<h2>First measurement: UMA-16 miniDSP<a class="headerlink" href="#first-measurement-uma-16-minidsp" title="Link to this heading">#</a></h2>
+<p>The first measurement used the 4 × 4 UMA-16. Its small aperture limits spatial resolution at low frequencies, so the 7 kHz third-octave band was selected from the broadband recording to separate the three source directions.</p>
+<div style="text-align:center">
+  <img src="picture/first%20experiment.jpeg" width="850" alt="Three loudspeakers measured with the UMA-16">
+  <p><b>Figure 1.</b> First laboratory setup: three loudspeakers facing the compact UMA-16.</p>
+</div><div style="text-align:center">
+  <img src="picture/array16umageom.png" width="500" alt="UMA-16 microphone geometry">
+  <p><b>Figure 2.</b> Planar 4 × 4 geometry of the UMA-16.</p>
+</div><section id="uma-16-result-at-7-khz">
+<h3>UMA-16 result at 7 kHz<a class="headerlink" href="#uma-16-result-at-7-khz" title="Link to this heading">#</a></h3>
+<p>At 7 kHz, the measured map recovers the three sources and their triangular arrangement. However, the maps are not identical: the peaks are slightly shifted, and their shapes and relative levels differ. These differences may result from the finite size of the loudspeakers, positioning uncertainty, room reflections and the UMA-16’s limited aperture. Because the two maps use different decibel scales, the comparison concerns source localization rather than absolute levels.</p>
+<div style="display:flex; gap:20px; justify-content:center; align-items:flex-start;">
+<div style="width:48%; text-align:center;">
+<img src="picture/simuuma7000hzx2.png" style="width:100%;" alt="Simulated UMA-16 map at 7 kHz">
+<p><b>(a)</b> Simulated map at 7 kHz.</p>
+</div>
+<div style="width:48%; text-align:center;">
+<img src="picture/exp7000hzuma16.png" style="width:100%;" alt="Measured UMA-16 map at 7 kHz">
+<p><b>(b)</b> Measured map at 7 kHz.</p>
+</div>
+</div>
+<div style="text-align:center;">
+<p><b>Figure 3.</b> Side-by-side comparison of the simulated and measured UMA-16 maps at 7 kHz, both displayed over a ±0.4 m scan window.</p>
+</div></section>
+</section>
+<section id="second-measurement-64-microphone-vogel-spiral-array">
+<h2>Second measurement: 64-microphone Vogel spiral array<a class="headerlink" href="#second-measurement-64-microphone-vogel-spiral-array" title="Link to this heading">#</a></h2>
+<p>The second measurement used 64 calibrated microphones arranged as a planar Vogel spiral. Its substantially larger aperture provides greater spatial discrimination at lower frequencies. The sources were located 0.6 m from the array plane, and the scan grid covered $-0.4 \leq x,y \leq 0.4$ m.</p>
+<div style="text-align:center">
+  <img src="picture/second%20experiment%20big%20array.jpeg" width="700" alt="Three-source experiment with the 64-microphone Vogel array">
+  <p><b>Figure 4.</b> Scaled three-source scene in front of the 64-microphone Vogel spiral array.</p>
+</div><div style="text-align:center">
+  <img src="picture/array64geom.png" width="520" alt="64-microphone Vogel spiral geometry">
+  <p><b>Figure 5.</b> Measured coordinates of the planar 64-microphone Vogel spiral array.</p>
+</div><section id="vogel-array-result-at-2-5-khz">
+<h3>Vogel-array result at 2.5 kHz<a class="headerlink" href="#vogel-array-result-at-2-5-khz" title="Link to this heading">#</a></h3>
+<p>At 2.5 kHz, both maps show three compact maxima near the prescribed coordinates: one in the lower-left quadrant, one near the positive $x$ axis and one above the center. The Vogel array therefore resolves the same spatial pattern at a substantially lower frequency than the UMA-16.</p>
+<div style="display:flex; gap:20px; justify-content:center; align-items:flex-start;">
+<div style="width:48%; text-align:center;">
+<img src="picture/simu2500hz64arrayvogel.png" style="width:100%;" alt="Simulated Vogel-array map at 2.5 kHz">
+<p><b>(a)</b> Simulated map at 2.5 kHz.</p>
+</div>
+<div style="width:48%; text-align:center;">
+<img src="picture/2500hz64array.png" style="width:100%;" alt="Measured Vogel-array map at 2.5 kHz">
+<p><b>(b)</b> Measured map at 2.5 kHz.</p>
+</div>
+</div>
+<div style="text-align:center;">
+<p><b>Figure 6.</b> Side-by-side comparison of the simulated and measured maps at 2.5 kHz using the 64-microphone Vogel geometry.</p>
+</div></section>
+</section>
+<section id="observations">
+<h2>Observations<a class="headerlink" href="#observations" title="Link to this heading">#</a></h2>
+<p>Three practical lessons emerge from the comparison:</p>
+<ul class="simple">
+<li><p><strong>Array aperture determines the useful frequency range.</strong> The UMA-16 requires a higher analysis frequency to separate the sources, whereas the larger Vogel array provides useful spatial discrimination at 2.5 kHz.</p></li>
+<li><p><strong>Frequency selection is a compromise.</strong> Increasing frequency narrows the main lobe of a compact array, but it also increases the risk of spatial aliasing when the microphone spacing becomes large relative to the wavelength.</p></li>
+<li><p><strong>Measured and simulated maps will not be identical.</strong> Reflections, loudspeaker directivity, background noise and finite recording duration broaden or distort measured maxima but are absent or idealized in the simulation.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>The Acoular three-source workflow was successfully transferred from simulation to two laboratory microphone arrays. The UMA-16 recovered the three-source arrangement at 7 kHz, while the larger Vogel array recovered it at 2.5 kHz with more precise results.</p>
+<p>Together, these results show that the complete workflow can localize the three real sources, from multichannel excitation and microphone acquisition to frequency-domain acoustic imaging. They also show that the <em>Three sources</em> synthetic-data method and the Part 1 processing chain can be adapted to different microphone arrays by using the geometry and processing parameters of each experiment.</p>
+</section>
+<section id="software-and-references">
+<h2>Software and references<a class="headerlink" href="#software-and-references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://acoular.github.io/">Acoular documentation and blog</a></p></li>
+<li><p><a class="reference external" href="https://acoular.github.io/blog/2021/04/01/getstart1.html">Getting started with Acoular — Part 1</a></p></li>
+<li><p><a class="reference external" href="https://www.acoular.org/auto_examples/introductory_examples/example_three_sources.html">Three sources — Generate synthetic microphone array data</a></p></li>
+<li><p><a class="reference external" href="https://acoular.org/spectacoular/dev/apps/measurementapp.html">SpectAcoular Microphone Array Measurement App</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/acoular/">Acoular on PyPI</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/spectacoular/">SpectAcoular on PyPI</a></p></li>
+<li><p><a class="reference external" href="https://python-sounddevice.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">sounddevice</span></code> documentation</a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../getstart/getstart3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Getting Started with Acoular – Part 3</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../contributing/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contributing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-method-used-as-reference">Simulation method used as reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-principle">Experimental principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-hardware-and-software">Measurement hardware and software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-three-independent-broadband-sources">Generating three independent broadband sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-chain-and-calibration">Measurement chain and calibration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-measurement-uma-16-minidsp">First measurement: UMA-16 miniDSP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uma-16-result-at-7-khz">UMA-16 result at 7 kHz</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-measurement-64-microphone-vogel-spiral-array">Second measurement: 64-microphone Vogel spiral array</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vogel-array-result-at-2-5-khz">Vogel-array result at 2.5 kHz</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-and-references">Software and references</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/blog/three-sources-experiment/three_sources_lab_validation.ipynb.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Acoular Organization.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

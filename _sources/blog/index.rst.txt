@@ -12,3 +12,4 @@ Practical Acoular workflows and examples.
    getstart/getstart1
    getstart/getstart2
    getstart/getstart3
+   three-sources-experiment/three_sources_lab_validation
