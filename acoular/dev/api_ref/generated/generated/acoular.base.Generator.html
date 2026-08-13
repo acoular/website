@@ -73,7 +73,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.07" />
-    <meta name="docbuild:last-update" content="Aug 12, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 13, 2026"/>
   
     
     <script src="../../../_static/searchtools.js"></script>
@@ -809,11 +809,15 @@ This is used to check if the object’s internal state has changed.</p>
 </dd>
 <dt class="field-even">Yields<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>Two-dimensional output data block of shape (num, …)</p>
+<dt>numpy.ndarray</dt><dd><p>Two-dimensional output data block of shape (num, …).</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Notes</p>
+<p>Yielded blocks remain stable after the generator advances. Implementations must not modify
+blocks received from their source. Callers should treat blocks as read-only because some
+generators return views to avoid copying.</p>
 </dd></dl>
 
 </dd></dl>
