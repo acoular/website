@@ -73,7 +73,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.07" />
-    <meta name="docbuild:last-update" content="Aug 13, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 14, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -755,6 +755,16 @@
 <h1>What’s new<a class="headerlink" href="#what-s-new" title="Link to this heading">#</a></h1>
 <section id="upcoming">
 <h2>Upcoming<a class="headerlink" href="#upcoming" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><dl class="simple">
+<dt><strong>Internal</strong></dt><dd><ul class="simple">
+<li><p>renames <code class="xref py py-attr docutils literal notranslate"><span class="pre">eva</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">eve</span></code> to <code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvals</span></code> and <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra.eigvecs" title="acoular.spectra.PowerSpectra.eigvecs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvecs</span></code></a>, the old names remain available and raise a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#DeprecationWarning" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a></p></li>
+<li><p>deprecates the <code class="docutils literal notranslate"><span class="pre">calc_ev</span></code>, <code class="docutils literal notranslate"><span class="pre">calc_eva</span></code>, and <code class="docutils literal notranslate"><span class="pre">calc_eve</span></code> methods of <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a>, the eigendecomposition is now computed on access of <code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvals</span></code> or <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra.eigvecs" title="acoular.spectra.PowerSpectra.eigvecs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvecs</span></code></a></p></li>
+<li><p>computes the eigendecomposition of the CSM only once instead of separately for eigenvalues and eigenvectors</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
 </section>
 <section id="id1">
 <h2>26.07<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
