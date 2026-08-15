@@ -74,7 +74,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.07" />
-    <meta name="docbuild:last-update" content="Aug 14, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 15, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -460,6 +460,7 @@
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.InOut.html"><code class="docutils literal notranslate"><span class="pre">InOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.TimeOut.html"><code class="docutils literal notranslate"><span class="pre">TimeOut</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.FiniteTimeOut.html"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.SpectraOut.html"><code class="docutils literal notranslate"><span class="pre">SpectraOut</span></code></a></li>
 </ul>
 </details></li>
@@ -817,7 +818,8 @@ implements the required methods for signal generation.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.signals.SignalGenerator.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.signals.SignalGenerator.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>The number of samples to generate for the signal.</p>
+<dd><p>The number of samples to generate for the signal. Signal generators materialize an array
+and therefore require a known, non-negative length.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -962,7 +964,8 @@ compared to the original <a class="reference internal" href="#acoular.signals.Pe
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.signals.PeriodicSignalGenerator.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.signals.PeriodicSignalGenerator.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>The number of samples to generate for the signal.</p>
+<dd><p>The number of samples to generate for the signal. Signal generators materialize an array
+and therefore require a known, non-negative length.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1058,7 +1061,8 @@ compared to the original <a class="reference internal" href="#acoular.signals.No
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.signals.NoiseGenerator.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.signals.NoiseGenerator.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>The number of samples to generate for the signal.</p>
+<dd><p>The number of samples to generate for the signal. Signal generators materialize an array
+and therefore require a known, non-negative length.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1191,7 +1195,8 @@ to guarantee statistically independent (non-correlated) outputs.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.signals.WNoiseGenerator.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.signals.WNoiseGenerator.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>The number of samples to generate for the signal.</p>
+<dd><p>The number of samples to generate for the signal. Signal generators materialize an array
+and therefore require a known, non-negative length.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1321,7 +1326,8 @@ to guarantee statistically independent (non-correlated) outputs.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.signals.PNoiseGenerator.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.signals.PNoiseGenerator.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>The number of samples to generate for the signal.</p>
+<dd><p>The number of samples to generate for the signal. Signal generators materialize an array
+and therefore require a known, non-negative length.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1506,7 +1512,8 @@ to guarantee statistically independent (non-correlated) outputs.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.signals.FiltWNoiseGenerator.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.signals.FiltWNoiseGenerator.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>The number of samples to generate for the signal.</p>
+<dd><p>The number of samples to generate for the signal. Signal generators materialize an array
+and therefore require a known, non-negative length.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1664,7 +1671,8 @@ compared to the original <a class="reference internal" href="#acoular.signals.Si
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.signals.SineGenerator.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.signals.SineGenerator.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>The number of samples to generate for the signal.</p>
+<dd><p>The number of samples to generate for the signal. Signal generators materialize an array
+and therefore require a known, non-negative length.</p>
 </dd></dl>
 
 </dd></dl>

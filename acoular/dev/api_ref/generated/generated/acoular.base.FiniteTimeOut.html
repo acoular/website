@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TimeConvolve &#8212; Acoular 26.07 documentation</title>
+    <title>FiniteTimeOut &#8212; Acoular 26.07 documentation</title>
   
   
   
@@ -55,8 +55,7 @@
     <script src="../../../_static/copybutton.js?v=30646c52"></script>
     <script src="../../../_static/sg-tags.js?v=d80f6fa4"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api_ref/generated/generated/acoular.tprocess.TimeConvolve';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api_ref/generated/generated/acoular.base.FiniteTimeOut';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/acoular/_static/switcher.json';
@@ -65,12 +64,12 @@
             true;
         </script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <link rel="canonical" href="https://acoular.org/acoular/dev/api_ref/generated/generated/acoular.tprocess.TimeConvolve.html" />
+    <link rel="canonical" href="https://acoular.org/acoular/dev/api_ref/generated/generated/acoular.base.FiniteTimeOut.html" />
     <link rel="icon" href="../../../_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="trajectory" href="../acoular.trajectory.html" />
-    <link rel="prev" title="WriteH5" href="acoular.tprocess.WriteH5.html" />
+    <link rel="next" title="SpectraOut" href="acoular.base.SpectraOut.html" />
+    <link rel="prev" title="TimeOut" href="acoular.base.TimeOut.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.07" />
@@ -454,13 +453,13 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../acoular.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../acoular.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.Generator.html"><code class="docutils literal notranslate"><span class="pre">Generator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SamplesGenerator.html"><code class="docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.InOut.html"><code class="docutils literal notranslate"><span class="pre">InOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.TimeOut.html"><code class="docutils literal notranslate"><span class="pre">TimeOut</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="acoular.base.FiniteTimeOut.html"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SpectraOut.html"><code class="docutils literal notranslate"><span class="pre">SpectraOut</span></code></a></li>
 </ul>
 </details></li>
@@ -624,7 +623,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="../acoular.tprocess.html"><code class="docutils literal notranslate"><span class="pre">tprocess</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../acoular.tprocess.html"><code class="docutils literal notranslate"><span class="pre">tprocess</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="acoular.tprocess.MaskedTimeOut.html"><code class="docutils literal notranslate"><span class="pre">MaskedTimeOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.tprocess.Trigger.html"><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.tprocess.AngleTracker.html"><code class="docutils literal notranslate"><span class="pre">AngleTracker</span></code></a></li>
@@ -645,7 +644,7 @@
 <li class="toctree-l3"><a class="reference internal" href="acoular.tprocess.OctaveFilterBank.html"><code class="docutils literal notranslate"><span class="pre">OctaveFilterBank</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.tprocess.WriteWAV.html"><code class="docutils literal notranslate"><span class="pre">WriteWAV</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.tprocess.WriteH5.html"><code class="docutils literal notranslate"><span class="pre">WriteH5</span></code></a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">TimeConvolve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="acoular.tprocess.TimeConvolve.html"><code class="docutils literal notranslate"><span class="pre">TimeConvolve</span></code></a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../acoular.trajectory.html"><code class="docutils literal notranslate"><span class="pre">trajectory</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -740,9 +739,9 @@
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Reference Manual</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../acoular.tprocess.html" class="nav-link"><code class="docutils literal notranslate"><span class="pre">tprocess</span></code></a></li>
+    <li class="breadcrumb-item"><a href="../acoular.base.html" class="nav-link"><code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="docutils literal notranslate"><span class="pre">TimeConvolve</span></code></span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></span></li>
   </ul>
 </nav>
 </div>
@@ -759,114 +758,63 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="timeconvolve">
-<h1><code class="docutils literal notranslate"><span class="pre">TimeConvolve</span></code><a class="headerlink" href="#timeconvolve" title="Link to this heading">#</a></h1>
+  <section id="finitetimeout">
+<h1><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code><a class="headerlink" href="#finitetimeout" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.tprocess.</span></span><span class="sig-name descname"><span class="pre">TimeConvolve</span></span></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.base.</span></span><span class="sig-name descname"><span class="pre">FiniteTimeOut</span></span></dt>
 <dd><p>Bases: <a class="reference internal" href="../acoular.base.html#acoular.base.TimeOut" title="acoular.base.TimeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeOut</span></code></a></p>
-<p>Perform frequency domain convolution with the uniformly partitioned overlap-save (UPOLS) method.</p>
-<p>This class convolves a source signal with a kernel in the frequency domain. It uses the UPOLS
-method, which efficiently computes convolutions by processing signal blocks and kernel blocks
-separately in the frequency domain. For detailed theoretical background,
-refer to <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../../../literature/index.html#id20" title="F. Wefers. Partitioned Convolution Algorithms for Real-Time Auralization. Logos Verlag, 2015. ISBN 3832539433.">24</a>]</span>.</p>
-<p>Inherits from <a class="reference internal" href="../acoular.base.html#acoular.base.TimeOut" title="acoular.base.TimeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeOut</span></code></a>, which allows the class to process signals
-generated by a source object. The kernel used for convolution can be one-dimensional or
-two-dimensional, and it can be applied across one or more channels of the source signal.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference internal" href="../acoular.base.html#acoular.base.TimeOut" title="acoular.base.TimeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeOut</span></code></a></dt><dd><p>The parent class for signal processing blocks.</p>
-</dd>
-<dt><a class="reference internal" href="../acoular.base.html#acoular.base.SamplesGenerator" title="acoular.base.SamplesGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a></dt><dd><p>The interface for generating multi-channel time-domain signals.</p>
-</dd>
-</dl>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">source</span></span></dt>
-<dd><p>The input data source. It must be an instance of a
-<a class="reference internal" href="../acoular.base.html#acoular.base.SamplesGenerator" title="acoular.base.SamplesGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a>-derived class.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">kernel</span></span></dt>
-<dd><p>Convolution kernel in the time domain.
-The second dimension of the kernel array has to be either <code class="docutils literal notranslate"><span class="pre">1</span></code> or match
-the <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.TimeConvolve.source" title="acoular.tprocess.TimeConvolve.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>’s <a class="reference internal" href="../acoular.base.html#acoular.base.Generator.num_channels" title="acoular.base.Generator.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_channels</span></code></a> attribute.
-If only a single kernel is supplied, it is applied to all channels.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">extend_signal</span></span></dt>
-<dd><p>Controls whether to extend the output to include the full convolution result.</p>
-<ul class="simple">
-<li><p>If <code class="docutils literal notranslate"><span class="pre">False</span></code> (default): Output length is <span class="math notranslate nohighlight">\(\\max(L, M)\)</span>, where <span class="math notranslate nohighlight">\(L\)</span> is the
-kernel length and <span class="math notranslate nohighlight">\(M\)</span> is the signal length. This mode keeps the output length
-equal to the longest input (different from NumPy’s <code class="docutils literal notranslate"><span class="pre">mode='same'</span></code>, since it does not
-pad the output).</p></li>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>: Output length is <span class="math notranslate nohighlight">\(L + M - 1\)</span>, returning the full convolution at
-each overlap point (similar to NumPy’s <code class="docutils literal notranslate"><span class="pre">mode='full'</span></code>).</p></li>
-</ul>
-<p>Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">digest</span></span></dt>
-<dd><p>A unique identifier for the object, based on its properties. (read-only)</p>
-</dd></dl>
-
+<p>Time-domain block that requires a source with a known length.</p>
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Convolve the source signal with the kernel and yield the result in blocks.</p>
-<p>The method generates the convolution of the source signal (length <span class="math notranslate nohighlight">\(M\)</span>) with the kernel
-(length <span class="math notranslate nohighlight">\(L\)</span>) by processing the signal in small blocks, performing the convolution in
-the frequency domain, and yielding the results block by block.</p>
-<dl class="field-list">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Python generator that processes the source data and yields the time-signal block-wise.</p>
+<p>This method needs to be implemented by the derived classes.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block.
-Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>num</strong><span class="classifier">int</span></dt><dd><p>This parameter defines the size of the blocks to be yielded
+(i.e. the number of samples per block)</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Yields<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></dt><dd><p>An array of shape (<code class="docutils literal notranslate"><span class="pre">num</span></code>, <a class="reference internal" href="../acoular.base.html#acoular.base.Generator.num_channels" title="acoular.base.Generator.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_channels</span></code></a>),
-where <a class="reference internal" href="../acoular.base.html#acoular.base.Generator.num_channels" title="acoular.base.Generator.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_channels</span></code></a> is inherited from the
-<a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.TimeConvolve.source" title="acoular.tprocess.TimeConvolve.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>, representing the convolution result in blocks.</p>
+<dt>numpy.ndarray</dt><dd><p>Two-dimensional output data block of shape (num, num_channels)</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><p>The kernel is first validated and reshaped if necessary.</p></li>
-<li><p>The convolution is computed efficiently using the FFT in the frequency domain.</p></li>
-<li><p>The output length is determined by the <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.TimeConvolve.extend_signal" title="acoular.tprocess.TimeConvolve.extend_signal"><code class="xref py py-attr docutils literal notranslate"><span class="pre">extend_signal</span></code></a> property.</p></li>
-</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">source</span></span></dt>
+<dd><p>Data source; <a class="reference internal" href="../acoular.base.html#acoular.base.Generator" title="acoular.base.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a> or derived object.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">sample_freq</span></span></dt>
-<dd><p>Sampling frequency of output signal, as given by <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.TimeConvolve.source" title="acoular.tprocess.TimeConvolve.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+<dd><p>Sampling frequency of output signal, as given by <a class="reference internal" href="../acoular.base.html#acoular.base.FiniteTimeOut.source" title="acoular.base.FiniteTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">num_channels</span></span></dt>
-<dd><p>Number of channels in output, as given by <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.TimeConvolve.source" title="acoular.tprocess.TimeConvolve.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+<dd><p>Number of channels in output, as given by <a class="reference internal" href="../acoular.base.html#acoular.base.FiniteTimeOut.source" title="acoular.base.FiniteTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">num_samples</span></span></dt>
-<dd><p>Number of samples in output, as given by <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.TimeConvolve.source" title="acoular.tprocess.TimeConvolve.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+<dd><p>Number of samples in output, as given by <a class="reference internal" href="../acoular.base.html#acoular.base.FiniteTimeOut.source" title="acoular.base.FiniteTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">digest</span></span></dt>
+<dd><p>A unique identifier for the generator, based on its properties. (read-only)</p>
 </dd></dl>
 
 </dd></dl>
@@ -884,20 +832,20 @@ where <a class="reference internal" href="../acoular.base.html#acoular.base.Gene
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="acoular.tprocess.WriteH5.html"
+       href="acoular.base.TimeOut.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">WriteH5</span></code></p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">TimeOut</span></code></p>
       </div>
     </a>
     <a class="right-next"
-       href="../acoular.trajectory.html"
+       href="acoular.base.SpectraOut.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">trajectory</span></code></p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">SpectraOut</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -916,7 +864,7 @@ where <a class="reference internal" href="../acoular.base.html#acoular.base.Gene
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/acoular/acoular/edit/master/docs/api_ref/generated/generated/acoular.tprocess.TimeConvolve.rst">
+    <a href="https://github.com/acoular/acoular/edit/master/docs/api_ref/generated/generated/acoular.base.FiniteTimeOut.rst">
       <i class="fa-solid fa-pencil"></i>
       
       
