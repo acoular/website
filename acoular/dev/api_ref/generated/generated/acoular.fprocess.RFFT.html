@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>RFFT &#8212; Acoular 26.07 documentation</title>
+    <title>RFFT &#8212; Acoular 26.08 documentation</title>
   
   
   
@@ -48,7 +48,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    <script src="../../../_static/documentation_options.js?v=d7d86c7c"></script>
+    <script src="../../../_static/documentation_options.js?v=a25ad543"></script>
     <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -72,8 +72,8 @@
     <link rel="prev" title="fprocess" href="../acoular.fprocess.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="26.07" />
-    <meta name="docbuild:last-update" content="Aug 15, 2026"/>
+  <meta name="docsearch:version" content="26.08" />
+    <meta name="docbuild:last-update" content="Aug 17, 2026"/>
   
     
     <script src="../../../_static/searchtools.js"></script>
@@ -894,7 +894,7 @@ If <a class="reference internal" href="../acoular.fprocess.html#acoular.fprocess
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">TimeSamples</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">sample_freq</span><span class="o">=</span><span class="mi">51200</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">num_channels</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">sample_freq</span><span class="p">)</span>
 <span class="go">4 1000 51200.0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span> <span class="o">=</span> <span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;Blackman&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span> <span class="o">=</span> <span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">'Blackman'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">()</span>
 <span class="go">array([    0.,   400.,   800.,  1200.,  1600.,  2000.,  2400.,  2800.,</span>
 <span class="go">        3200.,  3600.,  4000.,  4400.,  4800.,  5200.,  5600.,  6000.,</span>

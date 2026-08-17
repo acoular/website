@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lazy Evaluation &#8212; Acoular 26.07 documentation</title>
+    <title>Lazy Evaluation &#8212; Acoular 26.08 documentation</title>
   
   
   
@@ -48,7 +48,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    <script src="../_static/documentation_options.js?v=d7d86c7c"></script>
+    <script src="../_static/documentation_options.js?v=a25ad543"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -72,8 +72,8 @@
     <link rel="prev" title="Getting Started" href="get_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="26.07" />
-    <meta name="docbuild:last-update" content="Aug 15, 2026"/>
+  <meta name="docsearch:version" content="26.08" />
+    <meta name="docbuild:last-update" content="Aug 17, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -780,16 +780,16 @@ result is pulled from it.</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Define paths to geometry and data.</span>
-<span class="n">micgeofile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;xml&#39;</span> <span class="o">/</span> <span class="s1">&#39;array_64.xml&#39;</span>
-<span class="n">datafile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;three_sources.h5&#39;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">datafile</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="s1">&#39;Data file not found, run example_three_sources.py first&#39;</span>
+<span class="n">micgeofile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">'xml'</span> <span class="o">/</span> <span class="s1">'array_64.xml'</span>
+<span class="n">datafile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'three_sources.h5'</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">datafile</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="s1">'Data file not found, run example_three_sources.py first'</span>
 
 <span class="c1"># Load geometry and time data.</span>
 <span class="n">mg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">micgeofile</span><span class="p">)</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">TimeSamples</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">datafile</span><span class="p">)</span>
 
 <span class="c1"># Define spectral processing.</span>
-<span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;Hanning&#39;</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">'Hanning'</span><span class="p">)</span>
 
 <span class="c1"># Define grid and steering vector.</span>
 <span class="n">rg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">RectGrid</span><span class="p">(</span><span class="n">x_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">x_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>

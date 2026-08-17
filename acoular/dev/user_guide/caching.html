@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Caching &#8212; Acoular 26.07 documentation</title>
+    <title>Caching &#8212; Acoular 26.08 documentation</title>
   
   
   
@@ -48,7 +48,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    <script src="../_static/documentation_options.js?v=d7d86c7c"></script>
+    <script src="../_static/documentation_options.js?v=a25ad543"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -72,8 +72,8 @@
     <link rel="prev" title="Lazy Evaluation" href="lazy_evaluation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="26.07" />
-    <meta name="docbuild:last-update" content="Aug 15, 2026"/>
+  <meta name="docsearch:version" content="26.08" />
+    <meta name="docbuild:last-update" content="Aug 17, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -792,16 +792,16 @@ that can be regenerated from the source data and object settings.</p>
 setting, which is available as <code class="docutils literal notranslate"><span class="pre">ac.config.cache_dir</span></code>. If no cache directory is
 set explicitly, Acoular creates and uses a directory named <code class="docutils literal notranslate"><span class="pre">cache</span></code> below the
 current working directory when the cache is first needed.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cache_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cache_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'cache'</span><span class="p">)</span>
 <span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">cache_dir</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">cache_dir</span><span class="p">)</span>
-<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">h5library</span> <span class="o">=</span> <span class="s1">&#39;pytables&#39;</span>
-<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">global_caching</span> <span class="o">=</span> <span class="s1">&#39;individual&#39;</span>
+<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">h5library</span> <span class="o">=</span> <span class="s1">'pytables'</span>
+<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">global_caching</span> <span class="o">=</span> <span class="s1">'individual'</span>
 
 </pre></div>
 </div>
 <p>The remaining examples on this page use the standard introductory setup:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">micgeofile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;xml&#39;</span> <span class="o">/</span> <span class="s1">&#39;array_64.xml&#39;</span>
-<span class="n">datafile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;three_sources.h5&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">micgeofile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">'xml'</span> <span class="o">/</span> <span class="s1">'array_64.xml'</span>
+<span class="n">datafile</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'three_sources.h5'</span><span class="p">)</span>
 <span class="n">mg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">micgeofile</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">datafile</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
@@ -817,7 +817,7 @@ current working directory when the cache is first needed.</p>
 on the original source data. For example, processing data from
 <code class="docutils literal notranslate"><span class="pre">three_sources.h5</span></code> typically creates a cache file named
 <code class="docutils literal notranslate"><span class="pre">three_sources_cache.h5</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cache_file</span> <span class="o">=</span> <span class="n">cache_dir</span> <span class="o">/</span> <span class="s1">&#39;three_sources_cache.h5&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cache_file</span> <span class="o">=</span> <span class="n">cache_dir</span> <span class="o">/</span> <span class="s1">'three_sources_cache.h5'</span>
 
 </pre></div>
 </div>
@@ -871,9 +871,9 @@ result to be recalculated. Use <code class="docutils literal notranslate"><span 
 archived cache directory that should not be modified. Use <code class="docutils literal notranslate"><span class="pre">&quot;overwrite&quot;</span></code> when
 you deliberately want to refresh existing cache entries.</p>
 <p>The following example shows <code class="docutils literal notranslate"><span class="pre">&quot;overwrite&quot;</span></code> in use:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">global_caching</span> <span class="o">=</span> <span class="s1">&#39;overwrite&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">global_caching</span> <span class="o">=</span> <span class="s1">'overwrite'</span>
 <span class="n">pm_overwrite</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">synthetic</span><span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">global_caching</span> <span class="o">=</span> <span class="s1">&#39;individual&#39;</span>
+<span class="n">ac</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">global_caching</span> <span class="o">=</span> <span class="s1">'individual'</span>
 
 </pre></div>
 </div>
@@ -883,7 +883,7 @@ you deliberately want to refresh existing cache entries.</p>
 <p>Some classes also provide a <code class="docutils literal notranslate"><span class="pre">cached</span></code> trait. In the default
 <code class="docutils literal notranslate"><span class="pre">global_caching=&quot;individual&quot;</span></code> mode, this trait controls whether that object
 uses the file cache.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;Hanning&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">'Hanning'</span><span class="p">)</span>
 <span class="n">ps</span><span class="o">.</span><span class="n">cached</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="n">bb</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">BeamformerBase</span><span class="p">(</span><span class="n">freq_data</span><span class="o">=</span><span class="n">ps</span><span class="p">,</span> <span class="n">steer</span><span class="o">=</span><span class="n">st</span><span class="p">,</span> <span class="n">cached</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
