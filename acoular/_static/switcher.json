@@ -6,11 +6,17 @@
     "type": "branch"
   },
   {
-    "name": "v26.07 (stable)",
-    "version": "26.07",
+    "name": "v26.08 (stable)",
+    "version": "26.08",
     "url": "/acoular/",
     "type": "tag",
     "preferred": true
+  },
+  {
+    "name": "v26.07",
+    "version": "26.07",
+    "url": "/acoular/v26.07/",
+    "type": "tag"
   },
   {
     "name": "v26.04",
