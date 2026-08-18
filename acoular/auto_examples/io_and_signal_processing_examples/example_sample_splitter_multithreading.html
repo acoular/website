@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Parallel processing chains – Multithreading with the SampleSplitter. &#8212; Acoular 26.07 documentation</title>
+    <title>Parallel processing chains – Multithreading with the SampleSplitter. &#8212; Acoular 26.08 documentation</title>
   
   
   
@@ -48,7 +48,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    <script src="../../_static/documentation_options.js?v=d7d86c7c"></script>
+    <script src="../../_static/documentation_options.js?v=a25ad543"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,7 +59,7 @@
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/acoular/_static/switcher.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '26.07';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '26.08';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             true;
         </script>
@@ -72,8 +72,8 @@
     <link rel="prev" title="Cross-spectral matrix import" href="example_power_spectra_import.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="26.07" />
-    <meta name="docbuild:last-update" content="Aug 13, 2026"/>
+  <meta name="docsearch:version" content="26.08" />
+    <meta name="docbuild:last-update" content="Aug 18, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -459,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api_ref/generated/generated/acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api_ref/generated/generated/acoular.base.InOut.html"><code class="docutils literal notranslate"><span class="pre">InOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api_ref/generated/generated/acoular.base.TimeOut.html"><code class="docutils literal notranslate"><span class="pre">TimeOut</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api_ref/generated/generated/acoular.base.FiniteTimeOut.html"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api_ref/generated/generated/acoular.base.SpectraOut.html"><code class="docutils literal notranslate"><span class="pre">SpectraOut</span></code></a></li>
 </ul>
 </details></li>
@@ -799,34 +800,34 @@ is used to split the data stream for parallel processing.</p>
 the SampleSplitter buffers. Three different functions are defined to
 simulate different processing speeds (fast, mid, slow).</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_number_of_blocks_in_block_buffers</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prints the number of data blocks in SampleSplitter-buffers. For each</span>
+<span class="w">    </span><span class="sd">"""Prints the number of data blocks in SampleSplitter-buffers. For each</span>
 <span class="sd">    subsequent object, a buffer exist.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">buffers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ss</span><span class="o">.</span><span class="n">block_buffer</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
     <span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span> <span class="k">for</span> <span class="n">buf</span> <span class="ow">in</span> <span class="n">buffers</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;num blocks in buffers: </span><span class="si">{</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="s2">&quot;tp1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tp2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tp3&quot;</span><span class="p">],</span><span class="w"> </span><span class="n">elements</span><span class="p">,</span><span class="w"> </span><span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'num blocks in buffers: </span><span class="si">{</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="s2">"tp1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tp2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tp3"</span><span class="p">],</span><span class="w"> </span><span class="n">elements</span><span class="p">,</span><span class="w"> </span><span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_data_fast</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>  <span class="c1"># not time consuming function</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets data fast (pause 0.03 seconds)&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Gets data fast (pause 0.03 seconds)"""</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="mi">2048</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tp1 calls sample splitter&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'tp1 calls sample splitter'</span><span class="p">)</span>
         <span class="n">print_number_of_blocks_in_block_buffers</span><span class="p">()</span>
         <a href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">sleep</span></a><span class="p">(</span><span class="mf">0.03</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_data_mid</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>  <span class="c1"># not time consuming function</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets data mid speed (pause 0.05 seconds)&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Gets data mid speed (pause 0.05 seconds)"""</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="mi">2048</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tp2 calls sample splitter&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'tp2 calls sample splitter'</span><span class="p">)</span>
         <span class="n">print_number_of_blocks_in_block_buffers</span><span class="p">()</span>
         <a href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">sleep</span></a><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_data_slow</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>  <span class="c1"># more time consuming function</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets data slow (pause 0.07 seconds)&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Gets data slow (pause 0.07 seconds)"""</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="mi">2048</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tp3 calls sample splitter&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'tp3 calls sample splitter'</span><span class="p">)</span>
         <span class="n">print_number_of_blocks_in_block_buffers</span><span class="p">()</span>
         <a href="https://docs.python.org/3/library/time.html#time.sleep" title="time.sleep" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">sleep</span></a><span class="p">(</span><span class="mf">0.07</span><span class="p">)</span>
 </pre></div>
@@ -836,7 +837,7 @@ simulate different processing speeds (fast, mid, slow).</p>
 <a href="https://docs.python.org/3/library/threading.html#threading.Thread" title="threading.Thread" class="sphx-glr-backref-module-threading sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">worker2</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/threading.html#threading.Thread" title="threading.Thread" class="sphx-glr-backref-module-threading sphx-glr-backref-type-py-class"><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span></a><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">get_data_mid</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">tp2</span><span class="p">,))</span>
 <a href="https://docs.python.org/3/library/threading.html#threading.Thread" title="threading.Thread" class="sphx-glr-backref-module-threading sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">worker3</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/threading.html#threading.Thread" title="threading.Thread" class="sphx-glr-backref-module-threading sphx-glr-backref-type-py-class"><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span></a><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">get_data_slow</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">tp3</span><span class="p">,))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;start threads&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'start threads'</span><span class="p">)</span>
 
 <a href="https://docs.python.org/3/library/threading.html#threading.Thread.start" title="threading.Thread.start" class="sphx-glr-backref-module-threading sphx-glr-backref-type-py-method"><span class="n">worker1</span><span class="o">.</span><span class="n">start</span></a><span class="p">()</span>
 <a href="https://docs.python.org/3/library/threading.html#threading.Thread.start" title="threading.Thread.start" class="sphx-glr-backref-module-threading sphx-glr-backref-type-py-method"><span class="n">worker2</span><span class="o">.</span><span class="n">start</span></a><span class="p">()</span>
@@ -844,34 +845,34 @@ simulate different processing speeds (fast, mid, slow).</p>
 
 <span class="p">[</span><span class="n">thr</span><span class="o">.</span><span class="n">join</span><span class="p">()</span> <span class="k">for</span> <span class="n">thr</span> <span class="ow">in</span> <span class="p">[</span><a href="https://docs.python.org/3/library/threading.html#threading.Thread" title="threading.Thread" class="sphx-glr-backref-module-threading sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">worker1</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/threading.html#threading.Thread" title="threading.Thread" class="sphx-glr-backref-module-threading sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">worker2</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/threading.html#threading.Thread" title="threading.Thread" class="sphx-glr-backref-module-threading sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">worker3</span></a><span class="p">]]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;threads finished&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'threads finished'</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>start threads
 tp1 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 1, &#39;tp3&#39;: 1}
+num blocks in buffers: {'tp1': 0, 'tp2': 1, 'tp3': 1}
 tp2 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 0, &#39;tp3&#39;: 1}
+num blocks in buffers: {'tp1': 0, 'tp2': 0, 'tp3': 1}
 tp3 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 0, &#39;tp3&#39;: 0}
+num blocks in buffers: {'tp1': 0, 'tp2': 0, 'tp3': 0}
 tp1 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 1, &#39;tp3&#39;: 1}
+num blocks in buffers: {'tp1': 0, 'tp2': 1, 'tp3': 1}
 tp2 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 0, &#39;tp3&#39;: 1}
+num blocks in buffers: {'tp1': 0, 'tp2': 0, 'tp3': 1}
 tp1 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 1, &#39;tp3&#39;: 2}
+num blocks in buffers: {'tp1': 0, 'tp2': 1, 'tp3': 2}
 tp3 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 1, &#39;tp3&#39;: 1}
+num blocks in buffers: {'tp1': 0, 'tp2': 1, 'tp3': 1}
 tp1 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 2, &#39;tp3&#39;: 2}
+num blocks in buffers: {'tp1': 0, 'tp2': 2, 'tp3': 2}
 tp2 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 1, &#39;tp3&#39;: 2}
+num blocks in buffers: {'tp1': 0, 'tp2': 1, 'tp3': 2}
 tp3 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 1, &#39;tp3&#39;: 1}
+num blocks in buffers: {'tp1': 0, 'tp2': 1, 'tp3': 1}
 tp2 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 0, &#39;tp3&#39;: 1}
+num blocks in buffers: {'tp1': 0, 'tp2': 0, 'tp3': 1}
 tp3 calls sample splitter
-num blocks in buffers: {&#39;tp1&#39;: 0, &#39;tp2&#39;: 0, &#39;tp3&#39;: 0}
+num blocks in buffers: {'tp1': 0, 'tp2': 0, 'tp3': 0}
 threads finished
 </pre></div>
 </div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>UncorrelatedNoiseSource &#8212; Acoular 26.08 documentation</title>
+    <title>FiniteTimeOut &#8212; Acoular 26.08 documentation</title>
   
   
   
@@ -55,7 +55,7 @@
     <script src="../../../_static/copybutton.js?v=30646c52"></script>
     <script src="../../../_static/sg-tags.js?v=d80f6fa4"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api_ref/generated/generated/acoular.sources.UncorrelatedNoiseSource';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api_ref/generated/generated/acoular.base.FiniteTimeOut';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/acoular/_static/switcher.json';
@@ -64,12 +64,12 @@
             true;
         </script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <link rel="canonical" href="https://acoular.org/acoular/api_ref/generated/generated/acoular.sources.UncorrelatedNoiseSource.html" />
+    <link rel="canonical" href="https://acoular.org/acoular/api_ref/generated/generated/acoular.base.FiniteTimeOut.html" />
     <link rel="icon" href="../../../_static/acoular_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="SourceMixer" href="acoular.sources.SourceMixer.html" />
-    <link rel="prev" title="MovingLineSource" href="acoular.sources.MovingLineSource.html" />
+    <link rel="next" title="SpectraOut" href="acoular.base.SpectraOut.html" />
+    <link rel="prev" title="TimeOut" href="acoular.base.TimeOut.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
@@ -453,13 +453,13 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../acoular.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../acoular.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.Generator.html"><code class="docutils literal notranslate"><span class="pre">Generator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SamplesGenerator.html"><code class="docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.InOut.html"><code class="docutils literal notranslate"><span class="pre">InOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.TimeOut.html"><code class="docutils literal notranslate"><span class="pre">TimeOut</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="acoular.base.FiniteTimeOut.html"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SpectraOut.html"><code class="docutils literal notranslate"><span class="pre">SpectraOut</span></code></a></li>
 </ul>
 </details></li>
@@ -564,7 +564,7 @@
 <li class="toctree-l3"><a class="reference internal" href="acoular.signals.GenericSignalGenerator.html"><code class="docutils literal notranslate"><span class="pre">GenericSignalGenerator</span></code></a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="../acoular.sources.html"><code class="docutils literal notranslate"><span class="pre">sources</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../acoular.sources.html"><code class="docutils literal notranslate"><span class="pre">sources</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="acoular.sources.TimeSamples.html"><code class="docutils literal notranslate"><span class="pre">TimeSamples</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.sources.MaskedTimeSamples.html"><code class="docutils literal notranslate"><span class="pre">MaskedTimeSamples</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.sources.PointSource.html"><code class="docutils literal notranslate"><span class="pre">PointSource</span></code></a></li>
@@ -574,7 +574,7 @@
 <li class="toctree-l3"><a class="reference internal" href="acoular.sources.MovingPointSource.html"><code class="docutils literal notranslate"><span class="pre">MovingPointSource</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.sources.MovingPointSourceDipole.html"><code class="docutils literal notranslate"><span class="pre">MovingPointSourceDipole</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.sources.MovingLineSource.html"><code class="docutils literal notranslate"><span class="pre">MovingLineSource</span></code></a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">UncorrelatedNoiseSource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="acoular.sources.UncorrelatedNoiseSource.html"><code class="docutils literal notranslate"><span class="pre">UncorrelatedNoiseSource</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.sources.SourceMixer.html"><code class="docutils literal notranslate"><span class="pre">SourceMixer</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.sources.PointSourceConvolve.html"><code class="docutils literal notranslate"><span class="pre">PointSourceConvolve</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.sources.spherical_hn1.html"><code class="docutils literal notranslate"><span class="pre">spherical_hn1</span></code></a></li>
@@ -739,9 +739,9 @@
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Reference Manual</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../acoular.sources.html" class="nav-link"><code class="docutils literal notranslate"><span class="pre">sources</span></code></a></li>
+    <li class="breadcrumb-item"><a href="../acoular.base.html" class="nav-link"><code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="docutils literal notranslate"><span class="pre">UncorrelatedNoiseSource</span></code></span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></span></li>
   </ul>
 </nav>
 </div>
@@ -758,162 +758,63 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="uncorrelatednoisesource">
-<h1><code class="docutils literal notranslate"><span class="pre">UncorrelatedNoiseSource</span></code><a class="headerlink" href="#uncorrelatednoisesource" title="Link to this heading">#</a></h1>
+  <section id="finitetimeout">
+<h1><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code><a class="headerlink" href="#finitetimeout" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.sources.</span></span><span class="sig-name descname"><span class="pre">UncorrelatedNoiseSource</span></span></dt>
-<dd><p>Bases: <a class="reference internal" href="../acoular.base.html#acoular.base.SamplesGenerator" title="acoular.base.SamplesGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a></p>
-<p>Simulate uncorrelated white or pink noise signals at multiple channels.</p>
-<p>The <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource" title="acoular.sources.UncorrelatedNoiseSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">UncorrelatedNoiseSource</span></code></a> class generates noise signals (e.g., white or pink noise)
-independently at each channel. It supports a user-defined random seed for reproducibility and
-adapts the number of channels based on the provided microphone geometry. The output is
-generated block-by-block through the <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.result" title="acoular.sources.UncorrelatedNoiseSource.result"><code class="xref py py-meth docutils literal notranslate"><span class="pre">result()</span></code></a> generator.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference internal" href="../acoular.signals.html#acoular.signals.SignalGenerator" title="acoular.signals.SignalGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalGenerator</span></code></a></dt><dd><p>For defining noise types and properties.</p>
-</dd>
-<dt><a class="reference internal" href="../acoular.microphones.html#acoular.microphones.MicGeom" title="acoular.microphones.MicGeom"><code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code></a></dt><dd><p>For specifying microphone geometries.</p>
-</dd>
-</dl>
-</div>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><p>The type of noise is defined by the <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.signal" title="acoular.sources.UncorrelatedNoiseSource.signal"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signal</span></code></a> attribute, which must be an instance of
-a <a class="reference internal" href="../acoular.signals.html#acoular.signals.SignalGenerator" title="acoular.signals.SignalGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalGenerator</span></code></a>-derived class that supports a <code class="docutils literal notranslate"><span class="pre">seed</span></code> parameter.</p></li>
-<li><p>Each channel generates independent noise, with optional pre-defined random seeds via the
-<a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.seed" title="acoular.sources.UncorrelatedNoiseSource.seed"><code class="xref py py-attr docutils literal notranslate"><span class="pre">seed</span></code></a> attribute.</p></li>
-<li><p>If no seeds are provided, they are generated automatically based on the number of channels
-and the signal seed.</p></li>
-</ul>
-<p class="rubric">Examples</p>
-<p>To simulate uncorrelated white noise at multiple channels:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="kn">import</span> <span class="n">UncorrelatedNoiseSource</span><span class="p">,</span> <span class="n">WNoiseGenerator</span><span class="p">,</span> <span class="n">MicGeom</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define microphone geometry</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mic_positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># Three microphones</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mics</span> <span class="o">=</span> <span class="n">MicGeom</span><span class="p">(</span><span class="n">pos_total</span><span class="o">=</span><span class="n">mic_positions</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define white noise generator</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">noise_gen</span> <span class="o">=</span> <span class="n">WNoiseGenerator</span><span class="p">(</span><span class="n">sample_freq</span><span class="o">=</span><span class="mi">51200</span><span class="p">,</span> <span class="n">num_samples</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">rms</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create the noise source</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">noise_source</span> <span class="o">=</span> <span class="n">UncorrelatedNoiseSource</span><span class="p">(</span><span class="n">signal</span><span class="o">=</span><span class="n">noise_gen</span><span class="p">,</span> <span class="n">mics</span><span class="o">=</span><span class="n">mics</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Generate noise output block-by-block</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">noise_source</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">block</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="go">(256, 3)</span>
-<span class="go">(256, 3)</span>
-<span class="go">(256, 3)</span>
-<span class="go">(256, 3)</span>
-</pre></div>
-</div>
-<p>The output blocks contain noise signals for each of the 3 channels. The number of blocks
-depends on the total number of samples and the block size.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">signal</span></span></dt>
-<dd><p>Instance of a <a class="reference internal" href="../acoular.signals.html#acoular.signals.NoiseGenerator" title="acoular.signals.NoiseGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NoiseGenerator</span></code></a>-derived class. For example:
-- <a class="reference internal" href="../acoular.signals.html#acoular.signals.WNoiseGenerator" title="acoular.signals.WNoiseGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">WNoiseGenerator</span></code></a> for white noise.
-- <a class="reference internal" href="../acoular.signals.html#acoular.signals.PNoiseGenerator" title="acoular.signals.PNoiseGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">PNoiseGenerator</span></code></a> for pink noise.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">seed</span></span></dt>
-<dd><p>Array of random seed values for generating uncorrelated noise at each channel. If left empty,
-seeds will be automatically generated as <code class="docutils literal notranslate"><span class="pre">np.arange(self.num_channels)</span> <span class="pre">+</span> <span class="pre">signal.seed</span></code>. The
-size of the array must match the <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.num_channels" title="acoular.sources.UncorrelatedNoiseSource.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">output</span> <span class="pre">channels</span></code></a>.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">num_channels</span></span></dt>
-<dd><p>Number of output channels, automatically determined by the number of microphones
-defined in the <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.mics" title="acoular.sources.UncorrelatedNoiseSource.mics"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mics</span></code></a> attribute. Corresponds to the number of uncorrelated noise
-signals generated.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">mics</span></span></dt>
-<dd><p><a class="reference internal" href="../acoular.microphones.html#acoular.microphones.MicGeom" title="acoular.microphones.MicGeom"><code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code></a> object specifying the positions of microphones.
-This attribute is used to define the microphone geometry and the
-<a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.num_channels" title="acoular.sources.UncorrelatedNoiseSource.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">channels</span></code></a>.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">start_t</span></span></dt>
-<dd><p>Start time of the generated noise signal in seconds. Determines the time offset for the noise
-output relative to the start of data acquisition. Default is <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">start</span></span></dt>
-<dd><p>Start time of data acquisition at the microphones in seconds. This value determines when the
-generated noise begins relative to the acquisition process.  Default is <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">num_samples</span></span></dt>
-<dd><p>Total number of samples in the noise signal, derived from the <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.signal" title="acoular.sources.UncorrelatedNoiseSource.signal"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signal</span></code></a> generator.
-This value determines the length of the output signal for all channels.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">sample_freq</span></span></dt>
-<dd><p>Sampling frequency of the generated noise signal in Hz, derived from the <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.signal" title="acoular.sources.UncorrelatedNoiseSource.signal"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signal</span></code></a>
-generator. This value defines the temporal resolution of the noise output.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">digest</span></span></dt>
-<dd><p>A unique identifier for the current state of the source, based on its properties. (read-only)</p>
-</dd></dl>
-
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.base.</span></span><span class="sig-name descname"><span class="pre">FiniteTimeOut</span></span></dt>
+<dd><p>Bases: <a class="reference internal" href="../acoular.base.html#acoular.base.TimeOut" title="acoular.base.TimeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeOut</span></code></a></p>
+<p>Time-domain block that requires a source with a known length.</p>
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Generate uncorrelated noise signals at microphones in blocks.</p>
-<p>The <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.result" title="acoular.sources.UncorrelatedNoiseSource.result"><code class="xref py py-meth docutils literal notranslate"><span class="pre">result()</span></code></a> method produces a Python generator that yields blocks of noise signals
-generated independently for each channel. This method supports customizable block sizes and
-ensures that the last block may have fewer samples if the total number of samples is not an
-exact multiple of the block size.</p>
-<dl class="field-list">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Python generator that processes the source data and yields the time-signal block-wise.</p>
+<p>This method needs to be implemented by the derived classes.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to be yielded. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>num</strong><span class="classifier">int</span></dt><dd><p>This parameter defines the size of the blocks to be yielded
+(i.e. the number of samples per block)</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Yields<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></dt><dd><p>A 2D array of shape (<code class="docutils literal notranslate"><span class="pre">num</span></code>, <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.num_channels" title="acoular.sources.UncorrelatedNoiseSource.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_channels</span></code></a>) containing uncorrelated noise
-signals. The last block may be shorter if the total number of samples is not a
-multiple of <code class="docutils literal notranslate"><span class="pre">num</span></code>.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the shape of the <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.seed" title="acoular.sources.UncorrelatedNoiseSource.seed"><code class="xref py py-attr docutils literal notranslate"><span class="pre">seed</span></code></a> array does not match the number of channels.</p>
+<dt>numpy.ndarray</dt><dd><p>Two-dimensional output data block of shape (num, num_channels)</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><p>Each channel’s noise signal is generated using a unique random seed.</p></li>
-<li><p>The type and characteristics of the noise are defined by the <a class="reference internal" href="../acoular.sources.html#acoular.sources.UncorrelatedNoiseSource.signal" title="acoular.sources.UncorrelatedNoiseSource.signal"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signal</span></code></a> attribute.</p></li>
-</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">source</span></span></dt>
+<dd><p>Data source; <a class="reference internal" href="../acoular.base.html#acoular.base.Generator" title="acoular.base.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a> or derived object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sample_freq</span></span></dt>
+<dd><p>Sampling frequency of output signal, as given by <a class="reference internal" href="../acoular.base.html#acoular.base.FiniteTimeOut.source" title="acoular.base.FiniteTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_channels</span></span></dt>
+<dd><p>Number of channels in output, as given by <a class="reference internal" href="../acoular.base.html#acoular.base.FiniteTimeOut.source" title="acoular.base.FiniteTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_samples</span></span></dt>
+<dd><p>Number of samples in output, as given by <a class="reference internal" href="../acoular.base.html#acoular.base.FiniteTimeOut.source" title="acoular.base.FiniteTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">digest</span></span></dt>
+<dd><p>A unique identifier for the generator, based on its properties. (read-only)</p>
 </dd></dl>
 
 </dd></dl>
@@ -931,20 +832,20 @@ multiple of <code class="docutils literal notranslate"><span class="pre">num</sp
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="acoular.sources.MovingLineSource.html"
+       href="acoular.base.TimeOut.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">MovingLineSource</span></code></p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">TimeOut</span></code></p>
       </div>
     </a>
     <a class="right-next"
-       href="acoular.sources.SourceMixer.html"
+       href="acoular.base.SpectraOut.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">SourceMixer</span></code></p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">SpectraOut</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -963,7 +864,7 @@ multiple of <code class="docutils literal notranslate"><span class="pre">num</sp
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/acoular/acoular/edit/master/docs/api_ref/generated/generated/acoular.sources.UncorrelatedNoiseSource.rst">
+    <a href="https://github.com/acoular/acoular/edit/master/docs/api_ref/generated/generated/acoular.base.FiniteTimeOut.rst">
       <i class="fa-solid fa-pencil"></i>
       
       

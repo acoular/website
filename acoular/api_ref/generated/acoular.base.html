@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>base &#8212; Acoular 26.07 documentation</title>
+    <title>base &#8212; Acoular 26.08 documentation</title>
   
   
   
@@ -48,7 +48,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    <script src="../../_static/documentation_options.js?v=d7d86c7c"></script>
+    <script src="../../_static/documentation_options.js?v=a25ad543"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,7 +59,7 @@
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/acoular/_static/switcher.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '26.07';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '26.08';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             true;
         </script>
@@ -72,8 +72,8 @@
     <link rel="prev" title="MicAIAABenchmark" href="generated/generated/acoular.aiaa.aiaa.MicAIAABenchmark.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="26.07" />
-    <meta name="docbuild:last-update" content="Aug 13, 2026"/>
+  <meta name="docsearch:version" content="26.08" />
+    <meta name="docbuild:last-update" content="Aug 18, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -459,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.InOut.html"><code class="docutils literal notranslate"><span class="pre">InOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.TimeOut.html"><code class="docutils literal notranslate"><span class="pre">TimeOut</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.FiniteTimeOut.html"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.SpectraOut.html"><code class="docutils literal notranslate"><span class="pre">SpectraOut</span></code></a></li>
 </ul>
 </details></li>
@@ -760,7 +761,7 @@
 <p>The classes in this module are abstract base classes that provide a common interface for all classes
 that generate an output via the <code class="docutils literal notranslate"><span class="pre">result</span></code> generator in block-wise manner. They are not intended to
 be used directly, but to be subclassed by classes that implement the actual signal processing.</p>
-<div class="graphviz"><object data="../../_images/inheritance-7292e0c950178904df281bf3b083f47d451c68ac.svg" type="image/svg+xml" class="inheritance graphviz">
+<div class="graphviz"><object data="../../_images/inheritance-6e73ae734ddb2d12ec43cb24c86cc1d8ad53a598.svg" type="image/svg+xml" class="inheritance graphviz">
 <p class="warning">Inheritance diagram of acoular.base</p></object></div>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
@@ -779,7 +780,10 @@ be used directly, but to be subclassed by classes that implement the actual sign
 <tr class="row-odd"><td><p><a class="reference internal" href="#acoular.base.TimeOut" title="acoular.base.TimeOut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeOut</span></code></a></p></td>
 <td><p>Abstract base class receiving from a <code class="docutils literal notranslate"><span class="pre">source</span></code> and returning time domain signals.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#acoular.base.SpectraOut" title="acoular.base.SpectraOut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpectraOut</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#acoular.base.FiniteTimeOut" title="acoular.base.FiniteTimeOut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></p></td>
+<td><p>Time-domain block that requires a source with a known length.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#acoular.base.SpectraOut" title="acoular.base.SpectraOut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpectraOut</span></code></a></p></td>
 <td><p>Abstract base class receiving from a <code class="docutils literal notranslate"><span class="pre">source</span></code> and returning frequency domain signals.</p></td>
 </tr>
 </tbody>
@@ -806,7 +810,7 @@ This is used to check if the object’s internal state has changed.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.base.Generator.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.base.Generator.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>Number of signal samples</p>
+<dd><p>Number of signal samples. <code class="docutils literal notranslate"><span class="pre">-1</span></code> denotes an indefinite stream.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -835,11 +839,15 @@ This is used to check if the object’s internal state has changed.</p>
 </dd>
 <dt class="field-even">Yields<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>Two-dimensional output data block of shape (num, …)</p>
+<dt>numpy.ndarray</dt><dd><p>Two-dimensional output data block of shape (num, …).</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Notes</p>
+<p>Yielded blocks remain stable after the generator advances. Implementations must not modify
+blocks received from their source. Callers should treat blocks as read-only because some
+generators return views to avoid copying.</p>
 </dd></dl>
 
 </dd></dl>
@@ -888,7 +896,7 @@ own and should not be used directly.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.base.SamplesGenerator.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.base.SamplesGenerator.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>Number of signal samples</p>
+<dd><p>Number of signal samples. <code class="docutils literal notranslate"><span class="pre">-1</span></code> denotes an indefinite stream.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -968,7 +976,7 @@ data by snapshot, frequency, and channel.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.base.SpectraGenerator.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.base.SpectraGenerator.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>Number of signal samples</p>
+<dd><p>Number of signal samples. <code class="docutils literal notranslate"><span class="pre">-1</span></code> denotes an indefinite stream.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -1037,6 +1045,65 @@ generator in block-wise manner.</p>
 </dl>
 </dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="acoular.base.FiniteTimeOut">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.base.</span></span><span class="sig-name descname"><span class="pre">FiniteTimeOut</span></span><a class="headerlink" href="#acoular.base.FiniteTimeOut" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#acoular.base.TimeOut" title="acoular.base.TimeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeOut</span></code></a></p>
+<p>Time-domain block that requires a source with a known length.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="acoular.base.FiniteTimeOut.result">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoular.base.FiniteTimeOut.result" title="Link to this definition">#</a></dt>
+<dd><p>Python generator that processes the source data and yields the time-signal block-wise.</p>
+<p>This method needs to be implemented by the derived classes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>num</strong><span class="classifier">int</span></dt><dd><p>This parameter defines the size of the blocks to be yielded
+(i.e. the number of samples per block)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>Two-dimensional output data block of shape (num, num_channels)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="acoular.base.FiniteTimeOut.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#acoular.base.FiniteTimeOut.source" title="Link to this definition">#</a></dt>
+<dd><p>Data source; <a class="reference internal" href="#acoular.base.Generator" title="acoular.base.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a> or derived object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="acoular.base.FiniteTimeOut.sample_freq">
+<span class="sig-name descname"><span class="pre">sample_freq</span></span><a class="headerlink" href="#acoular.base.FiniteTimeOut.sample_freq" title="Link to this definition">#</a></dt>
+<dd><p>Sampling frequency of output signal, as given by <a class="reference internal" href="#acoular.base.FiniteTimeOut.source" title="acoular.base.FiniteTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="acoular.base.FiniteTimeOut.num_channels">
+<span class="sig-name descname"><span class="pre">num_channels</span></span><a class="headerlink" href="#acoular.base.FiniteTimeOut.num_channels" title="Link to this definition">#</a></dt>
+<dd><p>Number of channels in output, as given by <a class="reference internal" href="#acoular.base.FiniteTimeOut.source" title="acoular.base.FiniteTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="acoular.base.FiniteTimeOut.num_samples">
+<span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#acoular.base.FiniteTimeOut.num_samples" title="Link to this definition">#</a></dt>
+<dd><p>Number of samples in output, as given by <a class="reference internal" href="#acoular.base.FiniteTimeOut.source" title="acoular.base.FiniteTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="acoular.base.FiniteTimeOut.digest">
+<span class="sig-name descname"><span class="pre">digest</span></span><a class="headerlink" href="#acoular.base.FiniteTimeOut.digest" title="Link to this definition">#</a></dt>
+<dd><p>A unique identifier for the generator, based on its properties. (read-only)</p>
 </dd></dl>
 
 </dd></dl>
@@ -1290,6 +1357,15 @@ block-wise manner.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.TimeOut.num_samples"><code class="docutils literal notranslate"><span class="pre">TimeOut.num_samples</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.TimeOut.digest"><code class="docutils literal notranslate"><span class="pre">TimeOut.digest</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.TimeOut.result"><code class="docutils literal notranslate"><span class="pre">TimeOut.result()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.FiniteTimeOut"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.FiniteTimeOut.result"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut.result()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.FiniteTimeOut.source"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut.source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.FiniteTimeOut.sample_freq"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut.sample_freq</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.FiniteTimeOut.num_channels"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut.num_channels</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.FiniteTimeOut.num_samples"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut.num_samples</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.FiniteTimeOut.digest"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut.digest</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoular.base.SpectraOut"><code class="docutils literal notranslate"><span class="pre">SpectraOut</span></code></a><ul class="nav section-nav flex-column">

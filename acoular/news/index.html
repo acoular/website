@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>What’s new &#8212; Acoular 26.07 documentation</title>
+    <title>What’s new &#8212; Acoular 26.08 documentation</title>
   
   
   
@@ -48,7 +48,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    <script src="../_static/documentation_options.js?v=d7d86c7c"></script>
+    <script src="../_static/documentation_options.js?v=a25ad543"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,7 +59,7 @@
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/acoular/_static/switcher.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '26.07';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '26.08';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             true;
         </script>
@@ -72,8 +72,8 @@
     <link rel="prev" title="Evaluate source characterization performance." href="../auto_examples/tools/example_evaluate.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="26.07" />
-    <meta name="docbuild:last-update" content="Aug 13, 2026"/>
+  <meta name="docsearch:version" content="26.08" />
+    <meta name="docbuild:last-update" content="Aug 18, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -459,6 +459,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/acoular.base.InOut.html"><code class="docutils literal notranslate"><span class="pre">InOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/acoular.base.TimeOut.html"><code class="docutils literal notranslate"><span class="pre">TimeOut</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/acoular.base.FiniteTimeOut.html"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/acoular.base.SpectraOut.html"><code class="docutils literal notranslate"><span class="pre">SpectraOut</span></code></a></li>
 </ul>
 </details></li>
@@ -757,7 +758,23 @@
 <h2>Upcoming<a class="headerlink" href="#upcoming" title="Link to this heading">#</a></h2>
 </section>
 <section id="id1">
-<h2>26.07<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>26.08<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><dl class="simple">
+<dt><strong>Internal</strong></dt><dd><ul class="simple">
+<li><p>renames <code class="xref py py-attr docutils literal notranslate"><span class="pre">eva</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">eve</span></code> to <code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvals</span></code> and <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra.eigvecs" title="acoular.spectra.PowerSpectra.eigvecs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvecs</span></code></a>, the old names remain available and raise a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#DeprecationWarning" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a></p></li>
+<li><p>deprecates the <code class="docutils literal notranslate"><span class="pre">calc_ev</span></code>, <code class="docutils literal notranslate"><span class="pre">calc_eva</span></code>, and <code class="docutils literal notranslate"><span class="pre">calc_eve</span></code> methods of <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a>, the eigendecomposition is now computed on access of <code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvals</span></code> or <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra.eigvecs" title="acoular.spectra.PowerSpectra.eigvecs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvecs</span></code></a></p></li>
+<li><p>computes the eigendecomposition of the CSM only once instead of separately for eigenvalues and eigenvectors</p></li>
+<li><p>adds <a class="reference internal" href="../api_ref/generated/acoular.base.html#acoular.base.FiniteTimeOut" title="acoular.base.FiniteTimeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a> for finite time processes</p></li>
+<li><p>fixes several egde-case bugs and block shapes related to infinite streams</p></li>
+<li><p>adds proper error handling to classes that cannot handle infinite streams</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="id2">
+<h2>26.07<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><blockquote>
 <div><dl class="simple">
@@ -789,8 +806,8 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="id2">
-<h2>26.04<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2>26.04<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><dl class="simple">
 <dt><strong>Documentation</strong></dt><dd><ul class="simple">
@@ -813,8 +830,8 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="id3">
-<h2>26.01<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2>26.01<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><dl class="simple">
 <dt><strong>New features</strong></dt><dd><ul class="simple">
@@ -853,8 +870,8 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="id4">
-<h2>25.10<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h2>25.10<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><dl class="simple">
 <dt><strong>Documentation</strong></dt><dd><ul class="simple">
@@ -884,8 +901,8 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="id5">
-<h2>25.07<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="id6">
+<h2>25.07<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><dl class="simple">
 <dt><strong>New features</strong></dt><dd><ul class="simple">
@@ -927,8 +944,8 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="id6">
-<h2>25.04<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h2>25.04<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><dl class="simple">
 <dt><strong>Tests</strong></dt><dd><ul class="simple">
@@ -942,8 +959,8 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="id7">
-<h2>25.03<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h2>25.03<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><dl class="simple">
 <dt><strong>New features:</strong></dt><dd><ul class="simple">
@@ -962,8 +979,8 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="id8">
-<h2>25.01<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h2>25.01<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><dl class="simple">
 <dt><strong>New features:</strong></dt><dd><ul class="simple">
@@ -1027,8 +1044,8 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="id9">
-<h2>24.10<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h2>24.10<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><dl class="simple">
 <dt><strong>New features:</strong></dt><dd><ul class="simple">
@@ -1106,8 +1123,8 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="id10">
-<h2>24.07<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<section id="id11">
+<h2>24.07<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><dl class="simple">
 <dt>New features:</dt><dd><ul class="simple">
@@ -1136,8 +1153,8 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="id11">
-<h2>24.05<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<section id="id12">
+<h2>24.05<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>adds support for Python version 3.12 on Linux, MacOS, Windows</p></li>
@@ -1177,8 +1194,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id12">
-<h2>24.03<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<section id="id13">
+<h2>24.03<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Improve test coverage for <a class="reference internal" href="../api_ref/generated/acoular.fbeamform.html#acoular.fbeamform.BeamformerCMF" title="acoular.fbeamform.BeamformerCMF"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerCMF</span></code></a></p></li>
@@ -1215,8 +1232,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id13">
-<h2>23.11<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<section id="id14">
+<h2>23.11<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>New class <a class="reference internal" href="../api_ref/generated/generated/acoular.tools.metrics.html#acoular.tools.metrics.MetricEvaluator" title="acoular.tools.metrics.MetricEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetricEvaluator</span></code></a> to evaluate the performance of source mapping methods according to Herold and Sarradj (2017)</p></li>
@@ -1239,8 +1256,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id14">
-<h2>23.6<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<section id="id15">
+<h2>23.6<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Supports Python 3.7, 3.8, 3.9, 3.10, 3.11 on Linux, MacOS, Windows</p></li>
@@ -1271,8 +1288,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id15">
-<h2>22.3<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
+<section id="id16">
+<h2>22.3<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>New class <a class="reference internal" href="../api_ref/generated/acoular.fbeamform.html#acoular.fbeamform.BeamformerSODIX" title="acoular.fbeamform.BeamformerSODIX"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerSODIX</span></code></a></p></li>
@@ -1297,8 +1314,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id16">
-<h2>21.05<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<section id="id17">
+<h2>21.05<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Supports Python 3.6, 3.7, 3.8, 3.9 on Linux, MacOS, Windows</p></li>
@@ -1326,8 +1343,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id17">
-<h2>20.10<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
+<section id="id18">
+<h2>20.10<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Supports Python 3.6, 3.7, 3.8</p></li>
@@ -1355,8 +1372,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id18">
-<h2>20.02<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<section id="id19">
+<h2>20.02<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Adds gradient-based solver for BeamformerCMF (L_BFGS_B)</p></li>
@@ -1368,8 +1385,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id19">
-<h2>19.11<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
+<section id="id20">
+<h2>19.11<a class="headerlink" href="#id20" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Adds new classes for handling rotating data, including detection of trigger signals and interpolation of sensor data for virtual array emulation (<a class="reference internal" href="../api_ref/generated/acoular.tprocess.html#acoular.tprocess.Trigger" title="acoular.tprocess.Trigger"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trigger</span></code></a>, <a class="reference internal" href="../api_ref/generated/acoular.tprocess.html#acoular.tprocess.AngleTracker" title="acoular.tprocess.AngleTracker"><code class="xref py py-class docutils literal notranslate"><span class="pre">AngleTracker</span></code></a>, <a class="reference internal" href="../api_ref/generated/acoular.tprocess.html#acoular.tprocess.SpatialInterpolator" title="acoular.tprocess.SpatialInterpolator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialInterpolator</span></code></a>, <a class="reference internal" href="../api_ref/generated/acoular.tprocess.html#acoular.tprocess.SpatialInterpolatorRotation" title="acoular.tprocess.SpatialInterpolatorRotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialInterpolatorRotation</span></code></a>, <a class="reference internal" href="../api_ref/generated/acoular.tprocess.html#acoular.tprocess.SpatialInterpolatorConstantRotation" title="acoular.tprocess.SpatialInterpolatorConstantRotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialInterpolatorConstantRotation</span></code></a>)</p></li>
@@ -1383,8 +1400,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id20">
-<h2>19.08<a class="headerlink" href="#id20" title="Link to this heading">#</a></h2>
+<section id="id21">
+<h2>19.08<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Supports Python 3.5, 3.6, 3.7</p></li>
@@ -1398,8 +1415,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id21">
-<h2>19.02<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
+<section id="id22">
+<h2>19.02<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Adds support for Python 3.7</p></li>
@@ -1411,8 +1428,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id22">
-<h2>18.01<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
+<section id="id23">
+<h2>18.01<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Added new DAMAS solving strategies (BeamformerDamasPlus)</p></li>
@@ -1427,8 +1444,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id23">
-<h2>17.11<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
+<section id="id24">
+<h2>17.11<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Added support for Python 3.4, 3.5 and 3.6</p></li>
@@ -1487,29 +1504,30 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upcoming">Upcoming</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">26.07</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">26.04</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">26.01</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">25.10</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">25.07</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">25.04</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">25.03</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">25.01</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">24.10</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">24.07</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">24.05</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">24.03</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">23.11</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">23.6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">22.3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">21.05</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">20.10</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">20.02</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">19.11</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">19.08</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">19.02</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">18.01</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">17.11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">26.08</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">26.07</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">26.04</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">26.01</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">25.10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">25.07</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">25.04</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">25.03</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">25.01</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">24.10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">24.07</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">24.05</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">24.03</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">23.11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">23.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">22.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">21.05</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">20.10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">20.02</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">19.11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">19.08</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">19.02</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">18.01</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">17.11</a></li>
 </ul>
   </nav></div>
 

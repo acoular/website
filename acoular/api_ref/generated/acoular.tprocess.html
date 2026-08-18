@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>tprocess &#8212; Acoular 26.07 documentation</title>
+    <title>tprocess &#8212; Acoular 26.08 documentation</title>
   
   
   
@@ -48,7 +48,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    <script src="../../_static/documentation_options.js?v=d7d86c7c"></script>
+    <script src="../../_static/documentation_options.js?v=a25ad543"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -60,7 +60,7 @@
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/acoular/_static/switcher.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '26.07';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '26.08';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             true;
         </script>
@@ -73,8 +73,8 @@
     <link rel="prev" title="Polygon" href="generated/generated/acoular.tools.utils.Polygon.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="26.07" />
-    <meta name="docbuild:last-update" content="Aug 13, 2026"/>
+  <meta name="docsearch:version" content="26.08" />
+    <meta name="docbuild:last-update" content="Aug 18, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -460,6 +460,7 @@
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.InOut.html"><code class="docutils literal notranslate"><span class="pre">InOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.TimeOut.html"><code class="docutils literal notranslate"><span class="pre">TimeOut</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.FiniteTimeOut.html"><code class="docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.SpectraOut.html"><code class="docutils literal notranslate"><span class="pre">SpectraOut</span></code></a></li>
 </ul>
 </details></li>
@@ -758,7 +759,7 @@
   <section id="module-acoular.tprocess">
 <span id="tprocess"></span><h1><code class="docutils literal notranslate"><span class="pre">tprocess</span></code><a class="headerlink" href="#module-acoular.tprocess" title="Link to this heading">#</a></h1>
 <p>Implement blockwise processing in the time domain.</p>
-<div class="graphviz"><object data="../../_images/inheritance-6d147d668a1b72b1c774994078d951780ee1ef03.svg" type="image/svg+xml" class="inheritance graphviz">
+<div class="graphviz"><object data="../../_images/inheritance-2ab6a98e6a3644ffdc7feba4cb7de6f65afc98e1.svg" type="image/svg+xml" class="inheritance graphviz">
 <p class="warning">Inheritance diagram of acoular.tprocess</p></object></div>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
@@ -2231,7 +2232,7 @@ the total number of samples up to that point.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="acoular.tprocess.TimeReverse">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.tprocess.</span></span><span class="sig-name descname"><span class="pre">TimeReverse</span></span><a class="headerlink" href="#acoular.tprocess.TimeReverse" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="acoular.base.html#acoular.base.TimeOut" title="acoular.base.TimeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeOut</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="acoular.base.html#acoular.base.FiniteTimeOut" title="acoular.base.FiniteTimeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a></p>
 <p>Calculates the time-reversed signal of a source.</p>
 <p>This class takes the input signal from a source and computes the time-reversed version of the
 signal. It processes the signal in blocks, yielding the time-reversed signal block by block.
@@ -2501,7 +2502,7 @@ a multiple of <code class="docutils literal notranslate"><span class="pre">num</
 <dl class="py class">
 <dt class="sig sig-object py" id="acoular.tprocess.FiltFiltOctave">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.tprocess.</span></span><span class="sig-name descname"><span class="pre">FiltFiltOctave</span></span><a class="headerlink" href="#acoular.tprocess.FiltFiltOctave" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#acoular.tprocess.FiltOctave" title="acoular.tprocess.FiltOctave"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiltOctave</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="acoular.base.html#acoular.base.FiniteTimeOut" title="acoular.base.FiniteTimeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a>, <a class="reference internal" href="#acoular.tprocess.FiltOctave" title="acoular.tprocess.FiltOctave"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiltOctave</span></code></a></p>
 <p>Octave or third-octave bandpass filter with zero-phase distortion.</p>
 <p>This filter applies an IIR bandpass filter in both forward and reverse directions, effectively
 eliminating phase distortion. It provides zero-phase filtering but requires significantly more
