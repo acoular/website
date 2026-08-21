@@ -85,7 +85,7 @@ From the Acoular Blog
 About Us
 --------
 
-We are based at the `Engineering Acoustics Group <https://www.tu.berlin/akustik>`_ at Technical University Berlin.
+We are based at the `Department of Engineering Acoustics <https://www.tu.berlin/akustik>`_ at Technical University Berlin.
 
 .. grid:: 1 1 2 2
    :gutter: 3
