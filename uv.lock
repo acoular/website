@@ -22,7 +22,7 @@ source = { git = "https://github.com/acoular/ci.git?subdirectory=packages%2Facou
 [[package]]
 name = "acoular-sphinx"
 version = "0.1.5"
-source = { git = "https://github.com/acoular/ci.git?subdirectory=packages%2Facoular-sphinx&tag=sphinx-v1.5#18e3a7cc9f5725113be7a4cc650343987f40960b" }
+source = { git = "https://github.com/acoular/ci.git?subdirectory=packages%2Facoular-sphinx&tag=sphinx-v1.6#666dfe5bd1efcfb51ca94bfd16f7a0460abbdfd6" }
 dependencies = [
     { name = "acoular-brand" },
     { name = "graphviz" },
@@ -1599,7 +1599,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "acoular-sphinx", git = "https://github.com/acoular/ci.git?subdirectory=packages%2Facoular-sphinx&tag=sphinx-v1.5" },
+    { name = "acoular-sphinx", git = "https://github.com/acoular/ci.git?subdirectory=packages%2Facoular-sphinx&tag=sphinx-v1.6" },
     { name = "myst-nb", specifier = ">=1.4.0" },
 ]
 
