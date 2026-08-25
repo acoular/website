@@ -2,6 +2,10 @@ article.bd-article > section:first-of-type > h1:first-of-type {
   text-align: center;
 }
 
+.website-version-switcher-spacer {
+  visibility: hidden;
+}
+
 /* PyData 0.18 retains the primary-sidebar container for mobile navigation. */
 @media (min-width: 992px) {
   html[data-content_root="./"] .bd-sidebar-primary {
