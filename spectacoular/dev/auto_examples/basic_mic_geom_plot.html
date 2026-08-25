@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/basic_mic_geom_plot';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/spectacoular/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -71,7 +71,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Aug 06, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 25, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -441,10 +441,21 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../apps/micgeomexample.html">MicGeom example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_apps.html">Custom applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/audio_stream_controls.html">Audio-stream controllers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../apps/index.html">Applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/micgeomexample.html">Microphone Geometry App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/freqbeamformingexample.html">Beamforming example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/slm.html">Sound Level Meter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/measurementapp.html">Measurement App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/timesamplesexample.html">Time Signal Exploration App</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../api_ref/index_apiref.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api_ref/generated/spectacoular.apps.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_ref/generated/spectacoular.apps.controls.html"><code class="docutils literal notranslate"><span class="pre">controls</span></code></a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../api_ref/generated/spectacoular.bokehview.html"><code class="docutils literal notranslate"><span class="pre">bokehview</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.bokehview.add_bokeh_attr.html"><code class="docutils literal notranslate"><span class="pre">add_bokeh_attr</span></code></a></li>
 </ul>
@@ -541,9 +552,10 @@
 to download the full example code.</p>
 </div>
 <p class="sphx-glr-example-title" id="sphx-glr-auto-examples-basic-mic-geom-plot-py">Basic plotting with Bokeh.</p>
+<hr class="docutils" />
 <p id="basic-mic-geom-plot">This example creates a simple plot of a microphone array geometry loaded
 from an XML file using Acoular and Bokeh.</p>
-<div style="height:600px;"><script src="bokeh-content-0b730a3da3cb4ce288bac8d042b77a1d-auto_examples-basic_mic_geom_plot.js" id="b1906a85-ce72-426e-b3cf-80d0f8451916"></script></div><div class="admonition note">
+<div style="height:600px;"><script src="bokeh-content-b1c3d9665e444e73acb5e130be7522ad-auto_examples-basic_mic_geom_plot.js" id="c2d3a50a-d8c6-4407-9185-f186deca95a5"></script></div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This example creates a standalone Bokeh document and can be run directly with Python.
 It does not require a Bokeh server.</p>
@@ -553,62 +565,62 @@ It does not require a Bokeh server.</p>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColumnDataSource</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">figure</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/io.html#bokeh.io.show" title="bokeh.io.show" class="sphx-glr-backref-module-bokeh-io sphx-glr-backref-type-py-function"><span class="n">show</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="bokeh.models.ColumnDataSource" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ColumnDataSource</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a>
 </pre></div>
 </div>
 <p>Next, we set up the microphone geometry with Acoular’s
-<code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code> class.
+<a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.microphones.html#acoular.microphones.MicGeom" title="(in Acoular v26.08)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code></a> class.
 For demonstration purposes, we use a 64 channel Vogel’s spiral microphone
 array geometry stored in an XML file that is part of the Acoular package.
 To locate the
 <a class="reference external" href="https://github.com/acoular/acoular/tree/master/acoular/xml">XML directory</a>
 in the Acoular package, we use the <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a> object to
 dynamically construct the path relative to the Acoular package location.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mics</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;xml&#39;</span> <span class="o">/</span> <span class="s1">&#39;tub_vogel64.xml&#39;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mics</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">'xml'</span> <span class="o">/</span> <span class="s1">'tub_vogel64.xml'</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code> class stores the microphone positions in an attribute
-called <code class="xref py py-attr docutils literal notranslate"><span class="pre">pos_total</span></code>, which is a NumPy array containing the 3D
+<p>The <a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.microphones.html#acoular.microphones.MicGeom" title="(in Acoular v26.08)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code></a> class stores the microphone positions in an attribute
+called <a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.microphones.html#acoular.microphones.MicGeom.pos_total" title="(in Acoular v26.08)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pos_total</span></code></a>, which is a NumPy array containing the 3D
 coordinates of each microphone in the array.</p>
-<p>Now, let’s create a Bokeh <code class="xref py py-class docutils literal notranslate"><span class="pre">figure</span></code> to visualize the microphone positions.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Microphone Geometry&#39;</span><span class="p">,</span>
-    <span class="n">tools</span><span class="o">=</span><span class="s1">&#39;hover,zoom_in,zoom_out,reset,lasso_select&#39;</span><span class="p">,</span>
-    <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_width&#39;</span><span class="p">,</span>
+<p>Now, let’s create a Bokeh <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">figure</span></code></a> to visualize the microphone positions.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Microphone Geometry'</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="s1">'hover,zoom_in,zoom_out,reset,lasso_select'</span><span class="p">,</span>
+    <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">'stretch_width'</span><span class="p">,</span>
     <span class="n">match_aspect</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <p>A convenient way to provide data to a Bokeh
 <code class="xref py py-class docutils literal notranslate"><span class="pre">Plot</span></code> is to use a
-<code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code>, which allows us to update the
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a>, which allows us to update the
 data in the plot easily. Since we create a 2D plot, we only need the <em>x</em>
 and <em>y</em> coordinates of the microphones.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">mics</span><span class="o">.</span><span class="n">pos_total</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">mics</span><span class="o">.</span><span class="n">pos_total</span><span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="bokeh.models.ColumnDataSource" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ColumnDataSource</span></a><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">mics</span><span class="o">.</span><span class="n">pos_total</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">'y'</span><span class="p">:</span> <span class="n">mics</span><span class="o">.</span><span class="n">pos_total</span><span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
 </pre></div>
 </div>
 <p>In addition, we need to decide which
-<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs.html#module-bokeh.models.glyphs">glyph</a>
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs.html">glyph</a>
 to use. Glyphs are the basic building blocks of Bokeh plots and define
 how the data is visualized. In this case, we use the
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">circle()</span></code> method to create a
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Circle</span></code> that represents the microphones.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure.circle" title="(in Bokeh v3.10.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">circle()</span></code></a> method to create a
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs/Circle/index.html#bokeh.models.Circle" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Circle</span></code></a> that represents the microphones.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure.circle" title="bokeh.plotting.figure.circle" class="sphx-glr-backref-module-bokeh-plotting-figure sphx-glr-backref-type-py-method"><span class="n">figure</span><span class="o">.</span><span class="n">circle</span></a><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span>
     <span class="n">radius</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>
-    <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
-    <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;#1F77B4&#39;</span><span class="p">,</span>
+    <span class="n">line_color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span>
+    <span class="n">fill_color</span><span class="o">=</span><span class="s1">'#1F77B4'</span><span class="p">,</span>
     <span class="n">fill_alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
     <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>Finally, we can show the plot using Bokeh’s <code class="xref py py-func docutils literal notranslate"><span class="pre">show()</span></code> function. This will open a new
+<p>Finally, we can show the plot using Bokeh’s <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/io.html#bokeh.io.show" title="(in Bokeh v3.10.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">show()</span></code></a> function. This will open a new
 browser window and display the plot with the microphone positions.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>  <span class="c1"># Show the plot in a new browser window (standalone HTML)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.bokeh.org/en/latest/docs/reference/io.html#bokeh.io.show" title="bokeh.io.show" class="sphx-glr-backref-module-bokeh-io sphx-glr-backref-type-py-function"><span class="n">show</span></a><span class="p">(</span><a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a><span class="p">)</span>  <span class="c1"># Show the plot in a new browser window (standalone HTML)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-basic-mic-geom-plot-py">
@@ -704,8 +716,8 @@ browser window and display the plot with the microphone positions.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -739,7 +751,7 @@ browser window and display the plot with the microphone positions.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
 </p></div>
       
     </div>

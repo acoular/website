@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="../../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api_ref/generated/spectacoular.consumer';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/spectacoular/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -71,7 +71,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Aug 06, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 25, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -441,10 +441,21 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../../apps/micgeomexample.html">MicGeom example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/custom_apps.html">Custom applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/audio_stream_controls.html">Audio-stream controllers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../apps/index.html">Applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/micgeomexample.html">Microphone Geometry App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/freqbeamformingexample.html">Beamforming example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/slm.html">Sound Level Meter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/measurementapp.html">Measurement App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/timesamplesexample.html">Time Signal Exploration App</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index_apiref.html">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="spectacoular.apps.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectacoular.apps.controls.html"><code class="docutils literal notranslate"><span class="pre">controls</span></code></a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="spectacoular.bokehview.html"><code class="docutils literal notranslate"><span class="pre">bokehview</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="generated/spectacoular.bokehview.add_bokeh_attr.html"><code class="docutils literal notranslate"><span class="pre">add_bokeh_attr</span></code></a></li>
 </ul>
@@ -540,10 +551,10 @@
 <p>Implement consumer classes that provide Acoular data to Bokeh data sources.</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer" title="spectacoular.consumer.TimeConsumer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeConsumer</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spectacoular.consumer.TimeConsumer" title="spectacoular.consumer.TimeConsumer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeConsumer</span></code></a></p></td>
 <td><p>Provide Acoular time data to a Bokeh <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer" title="spectacoular.consumer.TimeBandsConsumer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeBandsConsumer</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#spectacoular.consumer.TimeBandsConsumer" title="spectacoular.consumer.TimeBandsConsumer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeBandsConsumer</span></code></a></p></td>
 <td><p>Provide frequency-band data to a Bokeh <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code>.</p></td>
 </tr>
 </tbody>
@@ -552,18 +563,18 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeConsumer">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">spectacoular.consumer.</span></span><span class="sig-name descname"><span class="pre">TimeConsumer</span></span><a class="headerlink" href="#spectacoular.consumer.TimeConsumer" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeOut</span></code></p>
+<dd><p>Bases: <a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.base.html#acoular.base.TimeOut" title="(in Acoular v26.08)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeOut</span></code></a></p>
 <p>Provide Acoular time data to a Bokeh <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code>.</p>
 <p>This <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeOut</span></code>-derived class builds an interface from Acoular’s
 generator pipelines to Bokeh’s <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> model for plots and
 tables.</p>
-<p><a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.consume" title="spectacoular.consumer.TimeConsumer.consume"><code class="xref py py-meth docutils literal notranslate"><span class="pre">consume()</span></code></a> runs in an extra non-GUI <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.thread" title="spectacoular.consumer.TimeConsumer.thread"><code class="xref py py-attr docutils literal notranslate"><span class="pre">thread</span></code></a> and fetches blocks
-of data with length <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.num" title="spectacoular.consumer.TimeConsumer.num"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num</span></code></a> from <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.source" title="spectacoular.consumer.TimeConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>. These blocks are stored
-in <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.data" title="spectacoular.consumer.TimeConsumer.data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code></a>, and <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.update" title="spectacoular.consumer.TimeConsumer.update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update()</span></code></a> is then registered as a callback for the
-GUI event loop. <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.update" title="spectacoular.consumer.TimeConsumer.update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update()</span></code></a> sends the data, downsampled by a factor
-<a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.down" title="spectacoular.consumer.TimeConsumer.down"><code class="xref py py-attr docutils literal notranslate"><span class="pre">down</span></code></a>, to <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.ds" title="spectacoular.consumer.TimeConsumer.ds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ds</span></code></a>, which holds an overall length of
-<a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.rollover" title="spectacoular.consumer.TimeConsumer.rollover"><code class="xref py py-attr docutils literal notranslate"><span class="pre">rollover</span></code></a> samples. The elapsed time in seconds is stored in
-<a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.elapsed" title="spectacoular.consumer.TimeConsumer.elapsed"><code class="xref py py-attr docutils literal notranslate"><span class="pre">elapsed</span></code></a>.</p>
+<p><a class="reference internal" href="#spectacoular.consumer.TimeConsumer.consume" title="spectacoular.consumer.TimeConsumer.consume"><code class="xref py py-meth docutils literal notranslate"><span class="pre">consume()</span></code></a> runs in an extra non-GUI <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.thread" title="spectacoular.consumer.TimeConsumer.thread"><code class="xref py py-attr docutils literal notranslate"><span class="pre">thread</span></code></a> and fetches blocks
+of data with length <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.num" title="spectacoular.consumer.TimeConsumer.num"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num</span></code></a> from <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.source" title="spectacoular.consumer.TimeConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>. These blocks are stored
+in <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.data" title="spectacoular.consumer.TimeConsumer.data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code></a>, and <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.update" title="spectacoular.consumer.TimeConsumer.update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update()</span></code></a> is then registered as a callback for the
+GUI event loop. <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.update" title="spectacoular.consumer.TimeConsumer.update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update()</span></code></a> sends the data, downsampled by a factor
+<a class="reference internal" href="#spectacoular.consumer.TimeConsumer.down" title="spectacoular.consumer.TimeConsumer.down"><code class="xref py py-attr docutils literal notranslate"><span class="pre">down</span></code></a>, to <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.ds" title="spectacoular.consumer.TimeConsumer.ds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ds</span></code></a>, which holds an overall length of
+<a class="reference internal" href="#spectacoular.consumer.TimeConsumer.rollover" title="spectacoular.consumer.TimeConsumer.rollover"><code class="xref py py-attr docutils literal notranslate"><span class="pre">rollover</span></code></a> samples. The elapsed time in seconds is stored in
+<a class="reference internal" href="#spectacoular.consumer.TimeConsumer.elapsed" title="spectacoular.consumer.TimeConsumer.elapsed"><code class="xref py py-attr docutils literal notranslate"><span class="pre">elapsed</span></code></a>.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeConsumer.ds">
 <span class="sig-name descname"><span class="pre">ds</span></span><a class="headerlink" href="#spectacoular.consumer.TimeConsumer.ds" title="Link to this definition">#</a></dt>
@@ -597,7 +608,7 @@ GUI event loop. <a class="reference internal" href="../spectacoular.consumer.htm
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeConsumer.thread">
 <span class="sig-name descname"><span class="pre">thread</span></span><a class="headerlink" href="#spectacoular.consumer.TimeConsumer.thread" title="Link to this definition">#</a></dt>
-<dd><p>thread in which <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.consume" title="spectacoular.consumer.TimeConsumer.consume"><code class="xref py py-meth docutils literal notranslate"><span class="pre">consume()</span></code></a> runs</p>
+<dd><p>thread in which <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.consume" title="spectacoular.consumer.TimeConsumer.consume"><code class="xref py py-meth docutils literal notranslate"><span class="pre">consume()</span></code></a> runs</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -660,25 +671,25 @@ GUI event loop. <a class="reference internal" href="../spectacoular.consumer.htm
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeConsumer.source">
 <span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#spectacoular.consumer.TimeConsumer.source" title="Link to this definition">#</a></dt>
-<dd><p>Data source; <code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code> or derived object.</p>
+<dd><p>Data source; <a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.base.html#acoular.base.Generator" title="(in Acoular v26.08)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a> or derived object.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeConsumer.sample_freq">
 <span class="sig-name descname"><span class="pre">sample_freq</span></span><a class="headerlink" href="#spectacoular.consumer.TimeConsumer.sample_freq" title="Link to this definition">#</a></dt>
-<dd><p>Sampling frequency of output signal, as given by <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.source" title="spectacoular.consumer.TimeConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+<dd><p>Sampling frequency of output signal, as given by <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.source" title="spectacoular.consumer.TimeConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeConsumer.num_channels">
 <span class="sig-name descname"><span class="pre">num_channels</span></span><a class="headerlink" href="#spectacoular.consumer.TimeConsumer.num_channels" title="Link to this definition">#</a></dt>
-<dd><p>Number of channels in output, as given by <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.source" title="spectacoular.consumer.TimeConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+<dd><p>Number of channels in output, as given by <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.source" title="spectacoular.consumer.TimeConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeConsumer.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#spectacoular.consumer.TimeConsumer.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>Number of samples in output, as given by <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.source" title="spectacoular.consumer.TimeConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+<dd><p>Number of samples in output, as given by <a class="reference internal" href="#spectacoular.consumer.TimeConsumer.source" title="spectacoular.consumer.TimeConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -692,15 +703,15 @@ GUI event loop. <a class="reference internal" href="../spectacoular.consumer.htm
 <dl class="py class">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeBandsConsumer">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">spectacoular.consumer.</span></span><span class="sig-name descname"><span class="pre">TimeBandsConsumer</span></span><a class="headerlink" href="#spectacoular.consumer.TimeBandsConsumer" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer" title="spectacoular.consumer.TimeConsumer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeConsumer</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#spectacoular.consumer.TimeConsumer" title="spectacoular.consumer.TimeConsumer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeConsumer</span></code></a></p>
 <p>Provide frequency-band data to a Bokeh <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code>.</p>
-<p>This <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer" title="spectacoular.consumer.TimeConsumer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeConsumer</span></code></a>-derived class specializes in plots over
+<p>This <a class="reference internal" href="#spectacoular.consumer.TimeConsumer" title="spectacoular.consumer.TimeConsumer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeConsumer</span></code></a>-derived class specializes in plots over
 frequency bands, such as octave spectra.</p>
-<p>It works like <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeConsumer" title="spectacoular.consumer.TimeConsumer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeConsumer</span></code></a>, but ignores <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.down" title="spectacoular.consumer.TimeBandsConsumer.down"><code class="xref py py-attr docutils literal notranslate"><span class="pre">down</span></code></a> and
-<a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.rollover" title="spectacoular.consumer.TimeBandsConsumer.rollover"><code class="xref py py-attr docutils literal notranslate"><span class="pre">rollover</span></code></a>. Instead, only the first sample of each block is taken
-from the input. <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.ds" title="spectacoular.consumer.TimeBandsConsumer.ds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ds</span></code></a> has a column for each input channel with one
-frequency-band value in each row. <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.bands" title="spectacoular.consumer.TimeBandsConsumer.bands"><code class="xref py py-attr docutils literal notranslate"><span class="pre">bands</span></code></a> gives the bands, and
-<a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.lfunc" title="spectacoular.consumer.TimeBandsConsumer.lfunc"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lfunc</span></code></a> can be used to convert them to human-readable label strings.</p>
+<p>It works like <a class="reference internal" href="#spectacoular.consumer.TimeConsumer" title="spectacoular.consumer.TimeConsumer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeConsumer</span></code></a>, but ignores <a class="reference internal" href="#spectacoular.consumer.TimeBandsConsumer.down" title="spectacoular.consumer.TimeBandsConsumer.down"><code class="xref py py-attr docutils literal notranslate"><span class="pre">down</span></code></a> and
+<a class="reference internal" href="#spectacoular.consumer.TimeBandsConsumer.rollover" title="spectacoular.consumer.TimeBandsConsumer.rollover"><code class="xref py py-attr docutils literal notranslate"><span class="pre">rollover</span></code></a>. Instead, only the first sample of each block is taken
+from the input. <a class="reference internal" href="#spectacoular.consumer.TimeBandsConsumer.ds" title="spectacoular.consumer.TimeBandsConsumer.ds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ds</span></code></a> has a column for each input channel with one
+frequency-band value in each row. <a class="reference internal" href="#spectacoular.consumer.TimeBandsConsumer.bands" title="spectacoular.consumer.TimeBandsConsumer.bands"><code class="xref py py-attr docutils literal notranslate"><span class="pre">bands</span></code></a> gives the bands, and
+<a class="reference internal" href="#spectacoular.consumer.TimeBandsConsumer.lfunc" title="spectacoular.consumer.TimeBandsConsumer.lfunc"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lfunc</span></code></a> can be used to convert them to human-readable label strings.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeBandsConsumer.lfunc">
 <span class="sig-name descname"><span class="pre">lfunc</span></span><a class="headerlink" href="#spectacoular.consumer.TimeBandsConsumer.lfunc" title="Link to this definition">#</a></dt>
@@ -791,7 +802,7 @@ frequency-band value in each row. <a class="reference internal" href="../spectac
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeBandsConsumer.thread">
 <span class="sig-name descname"><span class="pre">thread</span></span><a class="headerlink" href="#spectacoular.consumer.TimeBandsConsumer.thread" title="Link to this definition">#</a></dt>
-<dd><p>thread in which <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.consume" title="spectacoular.consumer.TimeBandsConsumer.consume"><code class="xref py py-meth docutils literal notranslate"><span class="pre">consume()</span></code></a> runs</p>
+<dd><p>thread in which <a class="reference internal" href="#spectacoular.consumer.TimeBandsConsumer.consume" title="spectacoular.consumer.TimeBandsConsumer.consume"><code class="xref py py-meth docutils literal notranslate"><span class="pre">consume()</span></code></a> runs</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -815,25 +826,25 @@ frequency-band value in each row. <a class="reference internal" href="../spectac
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeBandsConsumer.source">
 <span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#spectacoular.consumer.TimeBandsConsumer.source" title="Link to this definition">#</a></dt>
-<dd><p>Data source; <code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code> or derived object.</p>
+<dd><p>Data source; <a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.base.html#acoular.base.Generator" title="(in Acoular v26.08)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a> or derived object.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeBandsConsumer.sample_freq">
 <span class="sig-name descname"><span class="pre">sample_freq</span></span><a class="headerlink" href="#spectacoular.consumer.TimeBandsConsumer.sample_freq" title="Link to this definition">#</a></dt>
-<dd><p>Sampling frequency of output signal, as given by <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.source" title="spectacoular.consumer.TimeBandsConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+<dd><p>Sampling frequency of output signal, as given by <a class="reference internal" href="#spectacoular.consumer.TimeBandsConsumer.source" title="spectacoular.consumer.TimeBandsConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeBandsConsumer.num_channels">
 <span class="sig-name descname"><span class="pre">num_channels</span></span><a class="headerlink" href="#spectacoular.consumer.TimeBandsConsumer.num_channels" title="Link to this definition">#</a></dt>
-<dd><p>Number of channels in output, as given by <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.source" title="spectacoular.consumer.TimeBandsConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+<dd><p>Number of channels in output, as given by <a class="reference internal" href="#spectacoular.consumer.TimeBandsConsumer.source" title="spectacoular.consumer.TimeBandsConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="spectacoular.consumer.TimeBandsConsumer.num_samples">
 <span class="sig-name descname"><span class="pre">num_samples</span></span><a class="headerlink" href="#spectacoular.consumer.TimeBandsConsumer.num_samples" title="Link to this definition">#</a></dt>
-<dd><p>Number of samples in output, as given by <a class="reference internal" href="../spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.source" title="spectacoular.consumer.TimeBandsConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
+<dd><p>Number of samples in output, as given by <a class="reference internal" href="#spectacoular.consumer.TimeBandsConsumer.source" title="spectacoular.consumer.TimeBandsConsumer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -972,8 +983,8 @@ frequency-band value in each row. <a class="reference internal" href="../spectac
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1007,7 +1018,7 @@ frequency-band value in each row. <a class="reference internal" href="../spectac
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
 </p></div>
       
     </div>

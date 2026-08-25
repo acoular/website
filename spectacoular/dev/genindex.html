@@ -26,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="_static/documentation_options.js?v=7f41d439"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
@@ -54,7 +54,7 @@
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/spectacoular/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -68,7 +68,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Aug 06, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 25, 2026"/>
   
     
     <script src="_static/searchtools.js"></script>
@@ -434,10 +434,21 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="apps/micgeomexample.html">MicGeom example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/custom_apps.html">Custom applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/audio_stream_controls.html">Audio-stream controllers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="apps/index.html">Applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="apps/micgeomexample.html">Microphone Geometry App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/freqbeamformingexample.html">Beamforming example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/slm.html">Sound Level Meter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/measurementapp.html">Measurement App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/timesamplesexample.html">Time Signal Exploration App</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api_ref/index_apiref.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_ref/generated/spectacoular.apps.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_ref/generated/spectacoular.apps.controls.html"><code class="docutils literal notranslate"><span class="pre">controls</span></code></a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="api_ref/generated/spectacoular.bokehview.html"><code class="docutils literal notranslate"><span class="pre">bokehview</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="api_ref/generated/generated/spectacoular.bokehview.add_bokeh_attr.html"><code class="docutils literal notranslate"><span class="pre">add_bokeh_attr</span></code></a></li>
 </ul>
@@ -516,6 +527,7 @@
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
@@ -528,13 +540,15 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.bokehview.html#spectacoular.bokehview.add_bokeh_attr">add_bokeh_attr() (in module spectacoular.bokehview)</a>, <a href="api_ref/spectacoular.bokehview.html#spectacoular.bokehview.add_bokeh_attr">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.bokehview.html#spectacoular.bokehview.add_bokeh_attr">add_bokeh_attr() (in module spectacoular.bokehview)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.adjust_calib_values">adjust_calib_values() (spectacoular.lprocess.CalibHelper method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.adjust_calib_values">adjust_calib_values() (spectacoular.lprocess.CalibHelper method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.adjust_calib_values">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.as_str_list">as_str_list() (in module spectacoular.factory)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.as_str_list">as_str_list() (in module spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.as_str_list">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.AudioStreamApp">AudioStreamApp (class in spectacoular.apps.base)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -542,19 +556,39 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.bands">bands (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.bands">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.bands">bands (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.basename">basename (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.basename">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.BaseApp">BaseApp (class in spectacoular.apps.base)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter">BasePresenter (class in spectacoular.dprocess)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl">BaseAudioStreamControl (class in spectacoular.apps.controls)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.basename">basename (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter">BasePresenter (class in spectacoular.dprocess)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular">BaseSpectacoular (class in spectacoular.factory)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter">BeamformerPresenter (class in spectacoular.dprocess)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular">BaseSpectacoular (class in spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.buffer_size">buffer_size (spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter">BeamformerPresenter (class in spectacoular.dprocess)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.build_loading_widget">build_loading_widget() (spectacoular.apps.controls.BaseAudioStreamControl method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.build_loading_widget">(spectacoular.apps.controls.PhantomControl method)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.buffer_size">buffer_size (spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.buffer_size">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.build_loading_widget">(spectacoular.apps.controls.SoundDeviceControl method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.AudioStreamApp.build_root">build_root() (spectacoular.apps.base.AudioStreamApp method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.BaseApp.build_root">(spectacoular.apps.base.BaseApp method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.AudioStreamApp.build_stream_content">build_stream_content() (spectacoular.apps.base.AudioStreamApp method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -562,110 +596,130 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.calibdata">calibdata (spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.calibdata">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.calibdata">calibdata (spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.calibfactor">calibfactor (spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.calibfactor">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.calibfactor">calibfactor (spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper">CalibHelper (class in spectacoular.lprocess)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper">CalibHelper (class in spectacoular.lprocess)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.calibstd">calibstd (spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.calibstd">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.calibstd">calibstd (spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.cdsource">cdsource (spectacoular.dprocess.BasePresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.cdsource">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.cdsource">cdsource (spectacoular.dprocess.BasePresenter attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.cdsource">(spectacoular.dprocess.BeamformerPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.cdsource">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.cdsource">(spectacoular.dprocess.BeamformerPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.cdsource">(spectacoular.dprocess.MicGeomPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.cdsource">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.cdsource">(spectacoular.dprocess.MicGeomPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.cdsource">(spectacoular.dprocess.PointSpreadFunctionPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.cdsource">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.cdsource">(spectacoular.dprocess.PointSpreadFunctionPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.cdsource">(spectacoular.dprocess.TimeSamplesPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.cdsource">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.cdsource">(spectacoular.dprocess.TimeSamplesPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.cdsource">(spectacoular.lprocess.TimeOutPresenter attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.cdsource">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.cdsource">(spectacoular.lprocess.TimeOutPresenter attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.ch_names">ch_names() (spectacoular.consumer.TimeBandsConsumer method)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.ch_names">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.ch_names">ch_names() (spectacoular.consumer.TimeBandsConsumer method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.ch_names">(spectacoular.consumer.TimeConsumer method)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.ch_names">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.ch_names">(spectacoular.consumer.TimeConsumer method)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.channels">channels (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.channels">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.channels">channels (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.channels">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.channels">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.channels">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.channels">(spectacoular.dprocess.TimeSamplesPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.channels">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.channels">(spectacoular.dprocess.TimeSamplesPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.channels">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.channels">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.channels">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.channels">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.channels">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.channels">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.collect_samples">collect_samples (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.collect_samples">[1]</a>
-</li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.consume">consume() (spectacoular.consumer.TimeBandsConsumer method)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.consume">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.AudioStreamApp.close">close() (spectacoular.apps.base.AudioStreamApp method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.consume">(spectacoular.consumer.TimeConsumer method)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.consume">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.close">(spectacoular.apps.controls.BaseAudioStreamControl method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.close">(spectacoular.apps.controls.PhantomControl method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.close">(spectacoular.apps.controls.SoundDeviceControl method)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_columns">create_columns() (spectacoular.factory.DataTableMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_columns">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.collect_samples">collect_samples (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.create_filename">create_filename() (spectacoular.lprocess.CalibHelper method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.create_filename">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.consume">consume() (spectacoular.consumer.TimeBandsConsumer method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.consume">(spectacoular.consumer.TimeConsumer method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_columns">create_columns() (spectacoular.factory.DataTableMapper method)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.create_filename">create_filename() (spectacoular.lprocess.CalibHelper method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_trait_setter_func">create_trait_setter_func() (spectacoular.factory.DataTableMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_trait_setter_func">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.create_phantom_rotation_data">create_phantom_rotation_data() (in module spectacoular.apps.controls)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.create_source">create_source() (spectacoular.apps.controls.BaseAudioStreamControl method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.create_trait_setter_func">(spectacoular.factory.MultiSelectMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.create_trait_setter_func">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.create_source">(spectacoular.apps.controls.PhantomControl method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.create_trait_setter_func">(spectacoular.factory.NumericInputMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.create_trait_setter_func">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SelectMapper.create_trait_setter_func">(spectacoular.factory.SelectMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.SelectMapper.create_trait_setter_func">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SliderMapper.create_trait_setter_func">(spectacoular.factory.SliderMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.SliderMapper.create_trait_setter_func">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TextInputMapper.create_trait_setter_func">(spectacoular.factory.TextInputMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.TextInputMapper.create_trait_setter_func">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.ToggleMapper.create_trait_setter_func">(spectacoular.factory.ToggleMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.ToggleMapper.create_trait_setter_func">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TraitWidgetMapper.create_trait_setter_func">(spectacoular.factory.TraitWidgetMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.TraitWidgetMapper.create_trait_setter_func">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.create_source">(spectacoular.apps.controls.SoundDeviceControl method)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_widget">create_widget() (spectacoular.factory.DataTableMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_widget">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_trait_setter_func">create_trait_setter_func() (spectacoular.factory.DataTableMapper method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.create_widget">(spectacoular.factory.MultiSelectMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.create_widget">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.create_trait_setter_func">(spectacoular.factory.MultiSelectMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.create_widget">(spectacoular.factory.NumericInputMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.create_widget">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.create_trait_setter_func">(spectacoular.factory.NumericInputMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SelectMapper.create_widget">(spectacoular.factory.SelectMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.SelectMapper.create_widget">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SelectMapper.create_trait_setter_func">(spectacoular.factory.SelectMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SliderMapper.create_widget">(spectacoular.factory.SliderMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.SliderMapper.create_widget">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SliderMapper.create_trait_setter_func">(spectacoular.factory.SliderMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TextInputMapper.create_widget">(spectacoular.factory.TextInputMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.TextInputMapper.create_widget">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TextInputMapper.create_trait_setter_func">(spectacoular.factory.TextInputMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.ToggleMapper.create_widget">(spectacoular.factory.ToggleMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.ToggleMapper.create_widget">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.ToggleMapper.create_trait_setter_func">(spectacoular.factory.ToggleMapper method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TraitWidgetMapper.create_trait_setter_func">(spectacoular.factory.TraitWidgetMapper method)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_widget_setter_func">create_widget_setter_func() (spectacoular.factory.DataTableMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_widget_setter_func">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_widget">create_widget() (spectacoular.factory.DataTableMapper method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.create_widget_setter_func">(spectacoular.factory.MultiSelectMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.create_widget_setter_func">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.create_widget">(spectacoular.factory.MultiSelectMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.create_widget_setter_func">(spectacoular.factory.NumericInputMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.create_widget_setter_func">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.create_widget">(spectacoular.factory.NumericInputMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SelectMapper.create_widget_setter_func">(spectacoular.factory.SelectMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.SelectMapper.create_widget_setter_func">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SelectMapper.create_widget">(spectacoular.factory.SelectMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SliderMapper.create_widget_setter_func">(spectacoular.factory.SliderMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.SliderMapper.create_widget_setter_func">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SliderMapper.create_widget">(spectacoular.factory.SliderMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TextInputMapper.create_widget_setter_func">(spectacoular.factory.TextInputMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.TextInputMapper.create_widget_setter_func">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TextInputMapper.create_widget">(spectacoular.factory.TextInputMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.ToggleMapper.create_widget_setter_func">(spectacoular.factory.ToggleMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.ToggleMapper.create_widget_setter_func">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.ToggleMapper.create_widget">(spectacoular.factory.ToggleMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TraitWidgetMapper.create_widget_setter_func">(spectacoular.factory.TraitWidgetMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.TraitWidgetMapper.create_widget_setter_func">[1]</a>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper.create_widget_setter_func">create_widget_setter_func() (spectacoular.factory.DataTableMapper method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.create_widget_setter_func">(spectacoular.factory.MultiSelectMapper method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.create_widget_setter_func">(spectacoular.factory.NumericInputMapper method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SelectMapper.create_widget_setter_func">(spectacoular.factory.SelectMapper method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SliderMapper.create_widget_setter_func">(spectacoular.factory.SliderMapper method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TextInputMapper.create_widget_setter_func">(spectacoular.factory.TextInputMapper method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.ToggleMapper.create_widget_setter_func">(spectacoular.factory.ToggleMapper method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TraitWidgetMapper.create_widget_setter_func">(spectacoular.factory.TraitWidgetMapper method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -674,46 +728,48 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.data">data (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.data">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.data">data (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.data">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.data">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.data">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.data">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.data">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.data">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper">DataTableMapper (class in spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.DataTableMapper">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper">DataTableMapper (class in spectacoular.factory)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.delta">delta (spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.delta">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.delta">delta (spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.device">device (spectacoular.lprocess.TimeSamplesPlayback attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.device">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.device">device (spectacoular.lprocess.TimeSamplesPlayback attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.digest">digest (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.digest">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.digest">digest (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.digest">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.digest">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.digest">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.digest">(spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.digest">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.digest">(spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.digest">(spectacoular.lprocess.TimeOutPresenter attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.digest">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.digest">(spectacoular.lprocess.TimeOutPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.digest">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.digest">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.digest">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.digest">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.digest">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.digest">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.down">down (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.down">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.discover_controls">discover_controls() (in module spectacoular.apps.controls)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.down">down (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.down">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.down">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.down">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.ds">ds (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.ds">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.ds">ds (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.ds">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.ds">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.ds">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -722,10 +778,10 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.elapsed">elapsed (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.elapsed">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.elapsed">elapsed (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.elapsed">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.elapsed">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.elapsed">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -734,15 +790,15 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.file">file (spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.file">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.file">file (spectacoular.lprocess.CalibHelper attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.file">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.file">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.file">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.freq">freq (spectacoular.dprocess.BeamformerPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.freq">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.freq">freq (spectacoular.dprocess.BeamformerPresenter attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -750,32 +806,38 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.get_mic_files">get_mic_files() (in module spectacoular.layouts)</a>, <a href="api_ref/spectacoular.layouts.html#spectacoular.layouts.get_mic_files">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.get_mic_files">get_mic_files() (in module spectacoular.layouts)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.get_widgets">get_widgets() (in module spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.get_widgets">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.get_widgets">get_widgets() (in module spectacoular.factory)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.get_widgets">(spectacoular.dprocess.BasePresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.get_widgets">(spectacoular.apps.controls.BaseAudioStreamControl method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.get_widgets">(spectacoular.dprocess.BeamformerPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.get_widgets">(spectacoular.apps.controls.PhantomControl method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.get_widgets">(spectacoular.dprocess.MicGeomPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.get_widgets">(spectacoular.apps.controls.SoundDeviceControl method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.get_widgets">(spectacoular.dprocess.PointSpreadFunctionPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.get_widgets">(spectacoular.dprocess.BasePresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.get_widgets">(spectacoular.dprocess.TimeSamplesPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.get_widgets">(spectacoular.dprocess.BeamformerPresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.get_widgets">(spectacoular.factory.BaseSpectacoular method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.get_widgets">(spectacoular.dprocess.MicGeomPresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.get_widgets">(spectacoular.layouts.MicGeomComponent method)</a>, <a href="api_ref/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.get_widgets">(spectacoular.dprocess.PointSpreadFunctionPresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.get_widgets">(spectacoular.lprocess.CalibHelper method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.get_widgets">(spectacoular.dprocess.TimeSamplesPresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.get_widgets">(spectacoular.lprocess.TimeOutPresenter method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.get_widgets">(spectacoular.factory.BaseSpectacoular method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.get_widgets">(spectacoular.lprocess.TimeSamplesPhantom method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.get_widgets">(spectacoular.layouts.MicGeomComponent method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.get_widgets">(spectacoular.lprocess.TimeSamplesPlayback method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.get_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.get_widgets">(spectacoular.lprocess.CalibHelper method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.get_widgets">(spectacoular.lprocess.TimeOutPresenter method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.get_widgets">(spectacoular.lprocess.TimeSamplesPhantom method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.get_widgets">(spectacoular.lprocess.TimeSamplesPlayback method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -784,15 +846,23 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.init_ds">init_ds() (spectacoular.consumer.TimeBandsConsumer method)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.init_ds">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.init_ds">init_ds() (spectacoular.consumer.TimeBandsConsumer method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.init_ds">(spectacoular.consumer.TimeConsumer method)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.init_ds">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.init_ds">(spectacoular.consumer.TimeConsumer method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.initialize_source">initialize_source() (spectacoular.apps.controls.BaseAudioStreamControl method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.initialize_source">(spectacoular.apps.controls.PhantomControl method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.initialize_source">(spectacoular.apps.controls.SoundDeviceControl method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.invalid_channels">invalid_channels (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.invalid_channels">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.invalid_channels">invalid_channels (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -800,48 +870,60 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.lfunc">lfunc (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.lfunc">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.lfunc">lfunc (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 </li>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.loading_finished">loading_finished() (spectacoular.apps.controls.BaseAudioStreamControl method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.loading_finished">(spectacoular.apps.controls.PhantomControl method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.loading_finished">(spectacoular.apps.controls.SoundDeviceControl method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.magnitude">magnitude (spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.magnitude">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.magnitude">magnitude (spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.metadata">metadata (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.metadata">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.metadata">metadata (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent">MicGeomComponent (class in spectacoular.layouts)</a>, <a href="api_ref/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent">MicGeomComponent (class in spectacoular.layouts)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter">MicGeomPresenter (class in spectacoular.dprocess)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter">MicGeomPresenter (class in spectacoular.dprocess)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.mics_trait_widget_args">mics_trait_widget_args (spectacoular.layouts.MicGeomComponent attribute)</a>, <a href="api_ref/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.mics_trait_widget_args">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.mics_trait_widget_args">mics_trait_widget_args (spectacoular.layouts.MicGeomComponent attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.mics_trait_widget_mapper">mics_trait_widget_mapper (spectacoular.layouts.MicGeomComponent attribute)</a>, <a href="api_ref/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.mics_trait_widget_mapper">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.mics_trait_widget_mapper">mics_trait_widget_mapper (spectacoular.layouts.MicGeomComponent attribute)</a>
 </li>
       <li>
     module
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.bokehview.html#module-spectacoular.bokehview">spectacoular.bokehview</a>, <a href="api_ref/spectacoular.bokehview.html#module-spectacoular.bokehview">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.base.html#module-spectacoular.apps.base">spectacoular.apps.base</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#module-spectacoular.consumer">spectacoular.consumer</a>, <a href="api_ref/spectacoular.consumer.html#module-spectacoular.consumer">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#module-spectacoular.apps.controls">spectacoular.apps.controls</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.controller.html#module-spectacoular.controller">spectacoular.controller</a>, <a href="api_ref/spectacoular.controller.html#module-spectacoular.controller">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.bokehview.html#module-spectacoular.bokehview">spectacoular.bokehview</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#module-spectacoular.dprocess">spectacoular.dprocess</a>, <a href="api_ref/spectacoular.dprocess.html#module-spectacoular.dprocess">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#module-spectacoular.consumer">spectacoular.consumer</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#module-spectacoular.factory">spectacoular.factory</a>, <a href="api_ref/spectacoular.factory.html#module-spectacoular.factory">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.controller.html#module-spectacoular.controller">spectacoular.controller</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.layouts.html#module-spectacoular.layouts">spectacoular.layouts</a>, <a href="api_ref/spectacoular.layouts.html#module-spectacoular.layouts">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#module-spectacoular.dprocess">spectacoular.dprocess</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#module-spectacoular.lprocess">spectacoular.lprocess</a>, <a href="api_ref/spectacoular.lprocess.html#module-spectacoular.lprocess">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#module-spectacoular.factory">spectacoular.factory</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.layouts.html#module-spectacoular.layouts">spectacoular.layouts</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#module-spectacoular.lprocess">spectacoular.lprocess</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper">MultiSelectMapper (class in spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper">MultiSelectMapper (class in spectacoular.factory)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -849,63 +931,79 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.num">num (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.num">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.num">num (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.num">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.num">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.num">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.num">(spectacoular.dprocess.BeamformerPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.num">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.num">(spectacoular.dprocess.BeamformerPresenter attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.num_channels">num_channels (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.num_channels">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.num_channels">num_channels (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.num_channels">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.num_channels">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.num_channels">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.num_channels">(spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.num_channels">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.num_channels">(spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.num_channels">(spectacoular.lprocess.TimeOutPresenter attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.num_channels">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.num_channels">(spectacoular.lprocess.TimeOutPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_channels">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_channels">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_channels">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.num_channels">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.num_channels">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.num_channels">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_channels_total">num_channels_total (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_channels_total">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_channels_total">num_channels_total (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.num_samples">num_samples (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.num_samples">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.num_samples">num_samples (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.num_samples">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.num_samples">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.num_samples">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.num_samples">(spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.num_samples">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.num_samples">(spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.num_samples">(spectacoular.lprocess.TimeOutPresenter attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.num_samples">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.num_samples">(spectacoular.lprocess.TimeOutPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_samples">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_samples">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_samples">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.num_samples">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.num_samples">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.num_samples">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_samples_total">num_samples_total (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_samples_total">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.num_samples_total">num_samples_total (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.numbands">numbands (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.numbands">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.numbands">numbands (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.NumericInputMapper">NumericInputMapper (class in spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.NumericInputMapper">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.NumericInputMapper">NumericInputMapper (class in spectacoular.factory)</a>
 </li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.on_source_changed">on_source_changed() (spectacoular.apps.controls.BaseAudioStreamControl method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.on_source_changed">(spectacoular.apps.controls.PhantomControl method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.on_source_changed">(spectacoular.apps.controls.SoundDeviceControl method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.play">play() (spectacoular.lprocess.TimeSamplesPlayback method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.play">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl">PhantomControl (class in spectacoular.apps.controls)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter">PointSpreadFunctionPresenter (class in spectacoular.dprocess)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.play">play() (spectacoular.lprocess.TimeSamplesPlayback method)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter">PointSpreadFunctionPresenter (class in spectacoular.dprocess)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -913,26 +1011,30 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.result">result() (spectacoular.consumer.TimeBandsConsumer method)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.result">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.AudioStreamApp.rebuild_stream_content">rebuild_stream_content() (spectacoular.apps.base.AudioStreamApp method)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.repeat">repeat (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.result">result() (spectacoular.consumer.TimeBandsConsumer method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.result">(spectacoular.consumer.TimeConsumer method)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.result">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.result">(spectacoular.consumer.TimeConsumer method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.result">(spectacoular.lprocess.CalibHelper method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.result">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.result">(spectacoular.lprocess.CalibHelper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.result">(spectacoular.lprocess.TimeOutPresenter method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.result">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.result">(spectacoular.lprocess.TimeOutPresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.result">(spectacoular.lprocess.TimeSamplesPhantom method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.result">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.result">(spectacoular.lprocess.TimeSamplesPhantom method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.result">(spectacoular.lprocess.TimeSamplesPlayback method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.result">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.result">(spectacoular.lprocess.TimeSamplesPlayback method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.rollover">rollover (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.rollover">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.rollover">rollover (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.rollover">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.rollover">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.rollover">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -941,148 +1043,216 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.sample_freq">sample_freq (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.sample_freq">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.sample_freq">sample_freq (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.sample_freq">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.sample_freq">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.sample_freq">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.sample_freq">(spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.sample_freq">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.sample_freq">(spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.sample_freq">(spectacoular.lprocess.TimeOutPresenter attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.sample_freq">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.sample_freq">(spectacoular.lprocess.TimeOutPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.sample_freq">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.sample_freq">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.sample_freq">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.sample_freq">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.sample_freq">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.sample_freq">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.save">save() (spectacoular.lprocess.CalibHelper method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.save">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.save">save() (spectacoular.lprocess.CalibHelper method)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SelectMapper">SelectMapper (class in spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.SelectMapper">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SelectMapper">SelectMapper (class in spectacoular.factory)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.controller.html#spectacoular.controller.set_calc_button_callback">set_calc_button_callback() (in module spectacoular.controller)</a>, <a href="api_ref/spectacoular.controller.html#spectacoular.controller.set_calc_button_callback">[1]</a>
-</li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper.set_widget">set_widget() (spectacoular.factory.DataTableMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.DataTableMapper.set_widget">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.AudioStreamApp.server_doc">server_doc() (spectacoular.apps.base.AudioStreamApp method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.set_widget">(spectacoular.factory.MultiSelectMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.set_widget">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.set_widget">(spectacoular.factory.NumericInputMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.set_widget">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SelectMapper.set_widget">(spectacoular.factory.SelectMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.SelectMapper.set_widget">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SliderMapper.set_widget">(spectacoular.factory.SliderMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.SliderMapper.set_widget">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TextInputMapper.set_widget">(spectacoular.factory.TextInputMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.TextInputMapper.set_widget">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.ToggleMapper.set_widget">(spectacoular.factory.ToggleMapper method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.ToggleMapper.set_widget">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.BaseApp.server_doc">(spectacoular.apps.base.BaseApp method)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.set_widgets">set_widgets() (in module spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.set_widgets">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.controller.html#spectacoular.controller.set_calc_button_callback">set_calc_button_callback() (in module spectacoular.controller)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.set_config_enabled">set_config_enabled() (spectacoular.apps.controls.BaseAudioStreamControl method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.set_widgets">(spectacoular.dprocess.BasePresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.set_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.set_config_enabled">(spectacoular.apps.controls.PhantomControl method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.set_widgets">(spectacoular.dprocess.BeamformerPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.set_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.set_config_enabled">(spectacoular.apps.controls.SoundDeviceControl method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.set_widgets">(spectacoular.dprocess.MicGeomPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.set_widgets">[1]</a>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.DataTableMapper.set_widget">set_widget() (spectacoular.factory.DataTableMapper method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.MultiSelectMapper.set_widget">(spectacoular.factory.MultiSelectMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.set_widgets">(spectacoular.dprocess.PointSpreadFunctionPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.set_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.NumericInputMapper.set_widget">(spectacoular.factory.NumericInputMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.set_widgets">(spectacoular.dprocess.TimeSamplesPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.set_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SelectMapper.set_widget">(spectacoular.factory.SelectMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.set_widgets">(spectacoular.factory.BaseSpectacoular method)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.set_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SliderMapper.set_widget">(spectacoular.factory.SliderMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.set_widgets">(spectacoular.layouts.MicGeomComponent method)</a>, <a href="api_ref/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.set_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TextInputMapper.set_widget">(spectacoular.factory.TextInputMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.set_widgets">(spectacoular.lprocess.CalibHelper method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.set_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.ToggleMapper.set_widget">(spectacoular.factory.ToggleMapper method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.set_widgets">(spectacoular.lprocess.TimeOutPresenter method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.set_widgets">[1]</a>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.set_widgets">set_widgets() (in module spectacoular.factory)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.set_widgets">(spectacoular.dprocess.BasePresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.set_widgets">(spectacoular.lprocess.TimeSamplesPhantom method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.set_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.set_widgets">(spectacoular.dprocess.BeamformerPresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.set_widgets">(spectacoular.lprocess.TimeSamplesPlayback method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.set_widgets">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.set_widgets">(spectacoular.dprocess.MicGeomPresenter method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.set_widgets">(spectacoular.dprocess.PointSpreadFunctionPresenter method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.set_widgets">(spectacoular.dprocess.TimeSamplesPresenter method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.set_widgets">(spectacoular.factory.BaseSpectacoular method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.set_widgets">(spectacoular.layouts.MicGeomComponent method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.set_widgets">(spectacoular.lprocess.CalibHelper method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.set_widgets">(spectacoular.lprocess.TimeOutPresenter method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.set_widgets">(spectacoular.lprocess.TimeSamplesPhantom method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.set_widgets">(spectacoular.lprocess.TimeSamplesPlayback method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SliderMapper">SliderMapper (class in spectacoular.factory)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl">SoundDeviceControl (class in spectacoular.apps.controls)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.source">source (spectacoular.consumer.TimeBandsConsumer attribute)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.source">(spectacoular.consumer.TimeConsumer attribute)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.source">(spectacoular.dprocess.BasePresenter attribute)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.source">(spectacoular.dprocess.BeamformerPresenter attribute)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.source">(spectacoular.dprocess.MicGeomPresenter attribute)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.source">(spectacoular.dprocess.PointSpreadFunctionPresenter attribute)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.source">(spectacoular.dprocess.TimeSamplesPresenter attribute)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.source">(spectacoular.lprocess.CalibHelper attribute)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.source">(spectacoular.lprocess.TimeOutPresenter attribute)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.source">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.SliderMapper">SliderMapper (class in spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.SliderMapper">[1]</a>
-</li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.source">source (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.source">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.source_changed">source_changed() (spectacoular.apps.controls.BaseAudioStreamControl method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.source">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.source">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.source_changed">(spectacoular.apps.controls.PhantomControl method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.source">(spectacoular.dprocess.BasePresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.source">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.source_changed">(spectacoular.apps.controls.SoundDeviceControl method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.source">(spectacoular.dprocess.BeamformerPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.source">[1]</a>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.source_initialized">source_initialized() (spectacoular.apps.controls.BaseAudioStreamControl method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.source_initialized">(spectacoular.apps.controls.PhantomControl method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.source">(spectacoular.dprocess.MicGeomPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.source">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.source_initialized">(spectacoular.apps.controls.SoundDeviceControl method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.source">(spectacoular.dprocess.PointSpreadFunctionPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.source">[1]</a>
+      </ul></li>
+      <li>
+    spectacoular.apps.base
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.base.html#module-spectacoular.apps.base">module</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.source">(spectacoular.dprocess.TimeSamplesPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.source">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.source">(spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.source">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.source">(spectacoular.lprocess.TimeOutPresenter attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.source">[1]</a>
-</li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.source">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.source">[1]</a>
+      </ul></li>
+      <li>
+    spectacoular.apps.controls
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#module-spectacoular.apps.controls">module</a>
 </li>
       </ul></li>
       <li>
     spectacoular.bokehview
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.bokehview.html#module-spectacoular.bokehview">module</a>, <a href="api_ref/spectacoular.bokehview.html#module-spectacoular.bokehview">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.bokehview.html#module-spectacoular.bokehview">module</a>
 </li>
       </ul></li>
       <li>
     spectacoular.consumer
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#module-spectacoular.consumer">module</a>, <a href="api_ref/spectacoular.consumer.html#module-spectacoular.consumer">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#module-spectacoular.consumer">module</a>
 </li>
       </ul></li>
       <li>
     spectacoular.controller
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.controller.html#module-spectacoular.controller">module</a>, <a href="api_ref/spectacoular.controller.html#module-spectacoular.controller">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.controller.html#module-spectacoular.controller">module</a>
 </li>
       </ul></li>
       <li>
     spectacoular.dprocess
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#module-spectacoular.dprocess">module</a>, <a href="api_ref/spectacoular.dprocess.html#module-spectacoular.dprocess">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#module-spectacoular.dprocess">module</a>
 </li>
       </ul></li>
       <li>
     spectacoular.factory
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.factory.html#module-spectacoular.factory">module</a>, <a href="api_ref/spectacoular.factory.html#module-spectacoular.factory">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#module-spectacoular.factory">module</a>
 </li>
       </ul></li>
       <li>
     spectacoular.layouts
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.layouts.html#module-spectacoular.layouts">module</a>, <a href="api_ref/spectacoular.layouts.html#module-spectacoular.layouts">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.layouts.html#module-spectacoular.layouts">module</a>
 </li>
       </ul></li>
       <li>
     spectacoular.lprocess
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#module-spectacoular.lprocess">module</a>, <a href="api_ref/spectacoular.lprocess.html#module-spectacoular.lprocess">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#module-spectacoular.lprocess">module</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.start">start (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.start">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.start">start (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.stop">stop (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.stop">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.AudioStreamApp.start">start() (spectacoular.apps.base.AudioStreamApp method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.start">(spectacoular.apps.controls.BaseAudioStreamControl method)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.stop">stop() (spectacoular.lprocess.TimeSamplesPlayback method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.stop">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.start">(spectacoular.apps.controls.PhantomControl method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.start">(spectacoular.apps.controls.SoundDeviceControl method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.stop">stop (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.AudioStreamApp.stop">stop() (spectacoular.apps.base.AudioStreamApp method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.stop">(spectacoular.apps.controls.BaseAudioStreamControl method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.stop">(spectacoular.apps.controls.PhantomControl method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.stop">(spectacoular.apps.controls.SoundDeviceControl method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.stop">(spectacoular.lprocess.TimeSamplesPlayback method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.AudioStreamApp.stop_consumers">stop_consumers() (spectacoular.apps.base.AudioStreamApp method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1090,83 +1260,83 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TextInputMapper">TextInputMapper (class in spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.TextInputMapper">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TextInputMapper">TextInputMapper (class in spectacoular.factory)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.thread">thread (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.thread">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.thread">thread (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.thread">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.thread">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.thread">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.time_delay">time_delay (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.time_delay">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.time_delay">time_delay (spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer">TimeBandsConsumer (class in spectacoular.consumer)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer">TimeBandsConsumer (class in spectacoular.consumer)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer">TimeConsumer (class in spectacoular.consumer)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer">TimeConsumer (class in spectacoular.consumer)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter">TimeOutPresenter (class in spectacoular.lprocess)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter">TimeOutPresenter (class in spectacoular.lprocess)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom">TimeSamplesPhantom (class in spectacoular.lprocess)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom">TimeSamplesPhantom (class in spectacoular.lprocess)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback">TimeSamplesPlayback (class in spectacoular.lprocess)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback">TimeSamplesPlayback (class in spectacoular.lprocess)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter">TimeSamplesPresenter (class in spectacoular.dprocess)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter">TimeSamplesPresenter (class in spectacoular.dprocess)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.to_pa">to_pa() (spectacoular.lprocess.CalibHelper method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.to_pa">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.to_pa">to_pa() (spectacoular.lprocess.CalibHelper method)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.ToggleMapper">ToggleMapper (class in spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.ToggleMapper">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.ToggleMapper">ToggleMapper (class in spectacoular.factory)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.trait_widget_args">trait_widget_args (spectacoular.dprocess.BasePresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.trait_widget_args">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.trait_widget_args">trait_widget_args (spectacoular.dprocess.BasePresenter attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.trait_widget_args">(spectacoular.dprocess.BeamformerPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.trait_widget_args">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.trait_widget_args">(spectacoular.dprocess.BeamformerPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.trait_widget_args">(spectacoular.dprocess.MicGeomPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.trait_widget_args">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.trait_widget_args">(spectacoular.dprocess.MicGeomPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_args">(spectacoular.dprocess.PointSpreadFunctionPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_args">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_args">(spectacoular.dprocess.PointSpreadFunctionPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_args">(spectacoular.dprocess.TimeSamplesPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_args">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_args">(spectacoular.dprocess.TimeSamplesPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.trait_widget_args">(spectacoular.factory.BaseSpectacoular attribute)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.trait_widget_args">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.trait_widget_args">(spectacoular.factory.BaseSpectacoular attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.trait_widget_args">(spectacoular.layouts.MicGeomComponent attribute)</a>, <a href="api_ref/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.trait_widget_args">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.trait_widget_args">(spectacoular.layouts.MicGeomComponent attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.trait_widget_args">(spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.trait_widget_args">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.trait_widget_args">(spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.trait_widget_args">(spectacoular.lprocess.TimeOutPresenter attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.trait_widget_args">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.trait_widget_args">(spectacoular.lprocess.TimeOutPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.trait_widget_args">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.trait_widget_args">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.trait_widget_args">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.trait_widget_args">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.trait_widget_args">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.trait_widget_args">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.trait_widget_mapper">trait_widget_mapper (spectacoular.dprocess.BasePresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.trait_widget_mapper">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.trait_widget_mapper">trait_widget_mapper (spectacoular.dprocess.BasePresenter attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.trait_widget_mapper">(spectacoular.dprocess.BeamformerPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.trait_widget_mapper">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.trait_widget_mapper">(spectacoular.dprocess.BeamformerPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.trait_widget_mapper">(spectacoular.dprocess.MicGeomPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.trait_widget_mapper">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.trait_widget_mapper">(spectacoular.dprocess.MicGeomPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_mapper">(spectacoular.dprocess.PointSpreadFunctionPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_mapper">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.trait_widget_mapper">(spectacoular.dprocess.PointSpreadFunctionPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_mapper">(spectacoular.dprocess.TimeSamplesPresenter attribute)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_mapper">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.trait_widget_mapper">(spectacoular.dprocess.TimeSamplesPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.trait_widget_mapper">(spectacoular.factory.BaseSpectacoular attribute)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.trait_widget_mapper">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular.trait_widget_mapper">(spectacoular.factory.BaseSpectacoular attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.trait_widget_mapper">(spectacoular.layouts.MicGeomComponent attribute)</a>, <a href="api_ref/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.trait_widget_mapper">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.trait_widget_mapper">(spectacoular.layouts.MicGeomComponent attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.trait_widget_mapper">(spectacoular.lprocess.CalibHelper attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.trait_widget_mapper">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.CalibHelper.trait_widget_mapper">(spectacoular.lprocess.CalibHelper attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.trait_widget_mapper">(spectacoular.lprocess.TimeOutPresenter attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.trait_widget_mapper">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.trait_widget_mapper">(spectacoular.lprocess.TimeOutPresenter attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.trait_widget_mapper">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.trait_widget_mapper">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPhantom.trait_widget_mapper">(spectacoular.lprocess.TimeSamplesPhantom attribute)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.trait_widget_mapper">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.trait_widget_mapper">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeSamplesPlayback.trait_widget_mapper">(spectacoular.lprocess.TimeSamplesPlayback attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TraitWidgetMapper">TraitWidgetMapper (class in spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.TraitWidgetMapper">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.TraitWidgetMapper">TraitWidgetMapper (class in spectacoular.factory)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1174,32 +1344,34 @@
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.update">update() (spectacoular.consumer.TimeBandsConsumer method)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.update">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.update">update() (spectacoular.consumer.TimeBandsConsumer method)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.update">(spectacoular.consumer.TimeConsumer method)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.update">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.update">(spectacoular.consumer.TimeConsumer method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.update">(spectacoular.dprocess.BasePresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.update">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BasePresenter.update">(spectacoular.dprocess.BasePresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.update">(spectacoular.dprocess.BeamformerPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.update">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.BeamformerPresenter.update">(spectacoular.dprocess.BeamformerPresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.update">(spectacoular.dprocess.MicGeomPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.update">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.MicGeomPresenter.update">(spectacoular.dprocess.MicGeomPresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.update">(spectacoular.dprocess.PointSpreadFunctionPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.update">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.PointSpreadFunctionPresenter.update">(spectacoular.dprocess.PointSpreadFunctionPresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.update">(spectacoular.dprocess.TimeSamplesPresenter method)</a>, <a href="api_ref/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.update">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.dprocess.html#spectacoular.dprocess.TimeSamplesPresenter.update">(spectacoular.dprocess.TimeSamplesPresenter method)</a>
 </li>
-        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.update">(spectacoular.lprocess.TimeOutPresenter method)</a>, <a href="api_ref/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.update">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.lprocess.html#spectacoular.lprocess.TimeOutPresenter.update">(spectacoular.lprocess.TimeOutPresenter method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.update_mic_size">update_mic_size() (spectacoular.layouts.MicGeomComponent method)</a>, <a href="api_ref/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.update_mic_size">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.layouts.html#spectacoular.layouts.MicGeomComponent.update_mic_size">update_mic_size() (spectacoular.layouts.MicGeomComponent method)</a>
 </li>
-      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.updated">updated (spectacoular.consumer.TimeBandsConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.updated">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.apps.base.html#spectacoular.apps.base.AudioStreamApp.update_period_ms">update_period_ms (spectacoular.apps.base.AudioStreamApp property)</a>
+</li>
+      <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeBandsConsumer.updated">updated (spectacoular.consumer.TimeBandsConsumer attribute)</a>
 
       <ul>
-        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.updated">(spectacoular.consumer.TimeConsumer attribute)</a>, <a href="api_ref/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.updated">[1]</a>
+        <li><a href="api_ref/generated/spectacoular.consumer.html#spectacoular.consumer.TimeConsumer.updated">(spectacoular.consumer.TimeConsumer attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1208,7 +1380,7 @@
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.validate_mapping_is_allowed">validate_mapping_is_allowed() (in module spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.validate_mapping_is_allowed">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.validate_mapping_is_allowed">validate_mapping_is_allowed() (in module spectacoular.factory)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1216,8 +1388,16 @@
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.widget_mapper_factory">widget_mapper_factory() (in module spectacoular.factory)</a>, <a href="api_ref/spectacoular.factory.html#spectacoular.factory.widget_mapper_factory">[1]</a>
+      <li><a href="api_ref/generated/spectacoular.factory.html#spectacoular.factory.widget_mapper_factory">widget_mapper_factory() (in module spectacoular.factory)</a>
 </li>
+      <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.BaseAudioStreamControl.widget_panel">widget_panel() (spectacoular.apps.controls.BaseAudioStreamControl method)</a>
+
+      <ul>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.PhantomControl.widget_panel">(spectacoular.apps.controls.PhantomControl method)</a>
+</li>
+        <li><a href="api_ref/generated/spectacoular.apps.controls.html#spectacoular.apps.controls.SoundDeviceControl.widget_panel">(spectacoular.apps.controls.SoundDeviceControl method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -1250,8 +1430,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1285,7 +1465,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
 </p></div>
       
     </div>

@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/interactive_apps';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/spectacoular/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -66,12 +66,12 @@
     <link rel="icon" href="../_static/acoular_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Microphone Array Geometry App" href="../apps/micgeomexample.html" />
+    <link rel="next" title="Custom applications" href="../user_guide/custom_apps.html" />
     <link rel="prev" title="Set up the microphone geometry plot" href="basic_mic_geom_widgets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Aug 06, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 25, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -441,10 +441,21 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../apps/micgeomexample.html">MicGeom example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_apps.html">Custom applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/audio_stream_controls.html">Audio-stream controllers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../apps/index.html">Applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/micgeomexample.html">Microphone Geometry App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/freqbeamformingexample.html">Beamforming example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/slm.html">Sound Level Meter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/measurementapp.html">Measurement App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/timesamplesexample.html">Time Signal Exploration App</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../api_ref/index_apiref.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api_ref/generated/spectacoular.apps.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_ref/generated/spectacoular.apps.controls.html"><code class="docutils literal notranslate"><span class="pre">controls</span></code></a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../api_ref/generated/spectacoular.bokehview.html"><code class="docutils literal notranslate"><span class="pre">bokehview</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.bokehview.add_bokeh_attr.html"><code class="docutils literal notranslate"><span class="pre">add_bokeh_attr</span></code></a></li>
 </ul>
@@ -541,6 +552,7 @@
 to download the full example code.</p>
 </div>
 <p class="sphx-glr-example-title" id="sphx-glr-auto-examples-interactive-apps-py">Interactive server applications with SpectAcoular.</p>
+<hr class="docutils" />
 <p id="interactive-apps">Standalone HTML documents are often not sufficient for full interactivity,
 especially when Python-side computations are needed to update displayed
 results. Bokeh can host applications in a web browser and provide
@@ -549,7 +561,7 @@ real-time updates.</p>
 </a>
 <p>This example creates an interactive application to visualize the
 beamforming result for Acoular’s three sources example.
-See the <a class="reference external" href="https://www.acoular.org/auto_examples/introductory_examples/example_basic_beamforming.html">Acoular example documentation</a>.
+See the <a class="reference external" href="https://acoular.org/acoular/auto_examples/introductory_examples/example_basic_beamforming.html">Acoular example documentation</a>.
 As the HTML document below shows, changing the frequency or grid
 parameters will <strong>not</strong> update the plot because the document is static and
 cannot interact with the Python code. To get updates, the Python code must
@@ -558,7 +570,7 @@ run in a Bokeh server application to which the client can listen.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>bokeh<span class="w"> </span>serve<span class="w"> </span>--show<span class="w"> </span>examples/interactive_apps.py
 </pre></div>
 </div>
-<script src="bokeh-content-5a144cc1faa74b0da2a1c4244f800486-auto_examples-interactive_apps.js" id="b2c804c8-71fb-450b-b38b-6814d6189668"></script><section id="create-three-sources-example">
+<script src="bokeh-content-55d6ec06bdc848bd9e10eaac16c2346a-auto_examples-interactive_apps.js" id="f1a333c5-e230-4245-9917-ef2146b65828"></script><section id="create-three-sources-example">
 <h1>Create three sources example<a class="headerlink" href="#create-three-sources-example" title="Link to this heading">#</a></h1>
 <p>Let’s begin with the necessary imports and the simulation pipeline
 for the three sources example.</p>
@@ -567,30 +579,30 @@ for the three sources example.</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">curdoc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span><span class="p">,</span> <span class="n">gridplot</span><span class="p">,</span> <span class="n">row</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">LinearColorMapper</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.palettes</span><span class="w"> </span><span class="kn">import</span> <span class="n">viridis</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">figure</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/io.html#bokeh.io.curdoc" title="bokeh.io.curdoc" class="sphx-glr-backref-module-bokeh-io sphx-glr-backref-type-py-function"><span class="n">curdoc</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.column" title="bokeh.layouts.column" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">column</span></a><span class="p">,</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.gridplot" title="bokeh.layouts.gridplot" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">gridplot</span></a><span class="p">,</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.row" title="bokeh.layouts.row" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">row</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="bokeh.models.ColumnDataSource" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ColumnDataSource</span></a><span class="p">,</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/mappers/LinearColorMapper/index.html#bokeh.models.LinearColorMapper" title="bokeh.models.LinearColorMapper" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">LinearColorMapper</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/sliders/Slider/index.html#bokeh.models.Slider" title="bokeh.models.Slider" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Slider</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.palettes</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/palettes.html#bokeh.palettes.viridis" title="bokeh.palettes.viridis" class="sphx-glr-backref-module-bokeh-palettes sphx-glr-backref-type-py-function"><span class="n">viridis</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a>
 
-<span class="n">mg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;xml&#39;</span> <span class="o">/</span> <span class="s1">&#39;array_64.xml&#39;</span><span class="p">)</span>
+<span class="n">mg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">'xml'</span> <span class="o">/</span> <span class="s1">'array_64.xml'</span><span class="p">)</span>
 
 <span class="c1"># create time data source</span>
-<span class="n">three_sources</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">demo</span><span class="o">.</span><span class="n">create_three_sources</span><span class="p">(</span><span class="n">mg</span><span class="p">)</span>
+<span class="n">three_sources</span> <span class="o">=</span> <a href="https://acoular.org/acoular/api_ref/generated/acoular.demo.html#acoular.demo.create_three_sources" title="acoular.demo.create_three_sources" class="sphx-glr-backref-module-acoular-demo sphx-glr-backref-type-py-function"><span class="n">ac</span><span class="o">.</span><span class="n">demo</span><span class="o">.</span><span class="n">create_three_sources</span></a><span class="p">(</span><span class="n">mg</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Next, we define a rectangular grid
-(<code class="xref py py-class docutils literal notranslate"><span class="pre">RectGrid</span></code>) that discretizes the source area.
+(<a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.grids.html#acoular.grids.RectGrid" title="(in Acoular v26.08)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RectGrid</span></code></a>) that discretizes the source area.
 To obtain a source map at 4 kHz (one-third octave) associated with the
 defined grid, we use conventional beamforming
-(<code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerBase</span></code>).</p>
+(<a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.fbeamform.html#acoular.fbeamform.BeamformerBase" title="(in Acoular v26.08)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerBase</span></code></a>).</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up the rectangular grid</span>
 <span class="n">rg</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">RectGrid</span><span class="p">(</span><span class="n">x_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">x_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">y_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
 
 <span class="c1"># set up the beamformer</span>
 <span class="n">bb</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">BeamformerBase</span><span class="p">(</span>
-    <span class="n">freq_data</span><span class="o">=</span><span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">three_sources</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;Hanning&#39;</span><span class="p">),</span>
+    <span class="n">freq_data</span><span class="o">=</span><span class="n">ac</span><span class="o">.</span><span class="n">PowerSpectra</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">three_sources</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">'Hanning'</span><span class="p">),</span>
     <span class="n">steer</span><span class="o">=</span><span class="n">ac</span><span class="o">.</span><span class="n">SteeringVector</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">rg</span><span class="p">,</span> <span class="n">mics</span><span class="o">=</span><span class="n">mg</span><span class="p">),</span>
 <span class="p">)</span>
 
@@ -603,42 +615,42 @@ defined grid, we use conventional beamforming
 <h1>Create widgets<a class="headerlink" href="#create-widgets" title="Link to this heading">#</a></h1>
 <p>To enable interactive changes to the beamforming result, we will create some widgets based on the
 existing processing chain, arranged in a grid layout.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">grid_grid</span> <span class="o">=</span> <span class="n">gridplot</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">rg</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">grid_grid</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.gridplot" title="bokeh.layouts.gridplot" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">gridplot</span></a><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">rg</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="plot-the-beamforming-result">
 <h1>Plot the beamforming result<a class="headerlink" href="#plot-the-beamforming-result" title="Link to this heading">#</a></h1>
 <p>To visualize the beamforming result, we create a figure and use
-Bokeh’s <code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code> glyph, which displays 2D source
-mappings. The <code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code> glyph requires the <em>x</em> and
+Bokeh’s <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs/Image/index.html#bokeh.models.Image" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> glyph, which displays 2D source
+mappings. The <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs/Image/index.html#bokeh.models.Image" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> glyph requires the <em>x</em> and
 <em>y</em> coordinates of the bottom-left grid corner, the width and height of
 the grid, and the sound pressure to be displayed.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">source_plot</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Acoular Three Sources&#39;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s1">&#39;hover,reset,pan,wheel_zoom&#39;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">source_plot</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Acoular Three Sources'</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s1">'hover,reset,pan,wheel_zoom'</span><span class="p">)</span>
 
-<span class="n">cds</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span>
+<span class="n">cds</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="bokeh.models.ColumnDataSource" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ColumnDataSource</span></a><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">&#39;bfdata&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">res</span><span class="p">],</span>
-        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">rg</span><span class="o">.</span><span class="n">x_min</span><span class="p">],</span>
-        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">rg</span><span class="o">.</span><span class="n">y_min</span><span class="p">],</span>
-        <span class="s1">&#39;dw&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">rg</span><span class="o">.</span><span class="n">x_max</span> <span class="o">-</span> <span class="n">rg</span><span class="o">.</span><span class="n">x_min</span><span class="p">],</span>
-        <span class="s1">&#39;dh&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">rg</span><span class="o">.</span><span class="n">y_max</span> <span class="o">-</span> <span class="n">rg</span><span class="o">.</span><span class="n">y_min</span><span class="p">],</span>
+        <span class="s1">'bfdata'</span><span class="p">:</span> <span class="p">[</span><span class="n">res</span><span class="p">],</span>
+        <span class="s1">'x'</span><span class="p">:</span> <span class="p">[</span><span class="n">rg</span><span class="o">.</span><span class="n">x_min</span><span class="p">],</span>
+        <span class="s1">'y'</span><span class="p">:</span> <span class="p">[</span><span class="n">rg</span><span class="o">.</span><span class="n">y_min</span><span class="p">],</span>
+        <span class="s1">'dw'</span><span class="p">:</span> <span class="p">[</span><span class="n">rg</span><span class="o">.</span><span class="n">x_max</span> <span class="o">-</span> <span class="n">rg</span><span class="o">.</span><span class="n">x_min</span><span class="p">],</span>
+        <span class="s1">'dh'</span><span class="p">:</span> <span class="p">[</span><span class="n">rg</span><span class="o">.</span><span class="n">y_max</span> <span class="o">-</span> <span class="n">rg</span><span class="o">.</span><span class="n">y_min</span><span class="p">],</span>
     <span class="p">}</span>
 <span class="p">)</span>
 
-<span class="n">color_mapper</span> <span class="o">=</span> <span class="n">LinearColorMapper</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="n">viridis</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">low</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">color_mapper</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/mappers/LinearColorMapper/index.html#bokeh.models.LinearColorMapper" title="bokeh.models.LinearColorMapper" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">LinearColorMapper</span></a><span class="p">(</span><span class="n">palette</span><span class="o">=</span><a href="https://docs.bokeh.org/en/latest/docs/reference/palettes.html#bokeh.palettes.viridis" title="bokeh.palettes.viridis" class="sphx-glr-backref-module-bokeh-palettes sphx-glr-backref-type-py-function"><span class="n">viridis</span></a><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">low</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 
 
 <span class="n">source_plot</span><span class="o">.</span><span class="n">image</span><span class="p">(</span>
     <span class="n">color_mapper</span><span class="o">=</span><span class="n">color_mapper</span><span class="p">,</span>
-    <span class="n">image</span><span class="o">=</span><span class="s1">&#39;bfdata&#39;</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
-    <span class="n">dw</span><span class="o">=</span><span class="s1">&#39;dw&#39;</span><span class="p">,</span>
-    <span class="n">dh</span><span class="o">=</span><span class="s1">&#39;dh&#39;</span><span class="p">,</span>
+    <span class="n">image</span><span class="o">=</span><span class="s1">'bfdata'</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span>
+    <span class="n">dw</span><span class="o">=</span><span class="s1">'dw'</span><span class="p">,</span>
+    <span class="n">dh</span><span class="o">=</span><span class="s1">'dh'</span><span class="p">,</span>
     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
-    <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;bottom_left&#39;</span><span class="p">,</span>
-    <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;bottom_left&#39;</span><span class="p">,</span>
+    <span class="n">anchor</span><span class="o">=</span><span class="s1">'bottom_left'</span><span class="p">,</span>
+    <span class="n">origin</span><span class="o">=</span><span class="s1">'bottom_left'</span><span class="p">,</span>
     <span class="n">source</span><span class="o">=</span><span class="n">cds</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -647,11 +659,11 @@ the grid, and the sound pressure to be displayed.</p>
 <section id="the-presenter-class">
 <h1>The Presenter class<a class="headerlink" href="#the-presenter-class" title="Link to this heading">#</a></h1>
 <p>SpectAcoular provides Presenter classes that automatically handle
-updates of <code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> data whenever the
+updates of <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a> data whenever the
 desired evaluation parameters change. Here, we use the
 <code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerPresenter</span></code> class with
 <code class="docutils literal notranslate"><span class="pre">auto_update=True</span></code>, which means that the data in the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> is updated automatically
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a> is updated automatically
 whenever the internal state of the beamformer changes.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">bf_presenter</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">BeamformerPresenter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">bb</span><span class="p">,</span>
@@ -664,24 +676,24 @@ whenever the internal state of the beamformer changes.</p>
 </div>
 <p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerPresenter</span></code> class provides two traits, <cite>freq</cite> and <cite>num</cite> that
 can be used to control the frequency and the frequency band width of the beamforming result. As
-with all <a class="reference internal" href="../api_ref/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> classes, we could use the
-<a class="reference internal" href="../api_ref/spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> function to create Bokeh widgets for these traits.
+with all <a class="reference internal" href="../api_ref/generated/spectacoular.factory.html#spectacoular.factory.BaseSpectacoular" title="spectacoular.factory.BaseSpectacoular"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpectacoular</span></code></a> classes, we could use the
+<a class="reference internal" href="../api_ref/generated/spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> function to create Bokeh widgets for these traits.
 However, this time, we will take a different approach and assign an existing widget to the <cite>freq</cite>
-trait via the <a class="reference internal" href="../api_ref/spectacoular.factory.html#spectacoular.factory.set_widgets" title="spectacoular.factory.set_widgets"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_widgets()</span></code></a> function.</p>
+trait via the <a class="reference internal" href="../api_ref/generated/spectacoular.factory.html#spectacoular.factory.set_widgets" title="spectacoular.factory.set_widgets"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_widgets()</span></code></a> function.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">freqs</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="n">freq_data</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">()</span>
 <span class="n">df</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">bb</span><span class="o">.</span><span class="n">freq_data</span><span class="o">.</span><span class="n">sample_freq</span> <span class="o">/</span> <span class="n">bb</span><span class="o">.</span><span class="n">freq_data</span><span class="o">.</span><span class="n">block_size</span><span class="p">)</span>
 
 
-<span class="n">freq_slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;f/Hz&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">bf_presenter</span><span class="o">.</span><span class="n">freq</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">freqs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="n">freqs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">freq_slider</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/sliders/Slider/index.html#bokeh.models.Slider" title="bokeh.models.Slider" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Slider</span></a><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'f/Hz'</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">bf_presenter</span><span class="o">.</span><span class="n">freq</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">freqs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="n">freqs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
 
 <span class="n">bf_presenter</span><span class="o">.</span><span class="n">set_widgets</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="n">freq_slider</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To handle interaction, we will use the Bokeh <cite>curdoc()</cite> function to add the layout to the current
 document, which allows for interaction with the widgets and the figure in a web browser.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">widget_layout</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span><span class="n">freq_slider</span><span class="p">,</span> <span class="n">grid_grid</span><span class="p">)</span>
-<span class="n">layout</span> <span class="o">=</span> <span class="n">row</span><span class="p">(</span><span class="n">widget_layout</span><span class="p">,</span> <span class="n">source_plot</span><span class="p">)</span>
-<span class="n">curdoc</span><span class="p">()</span><span class="o">.</span><span class="n">add_root</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">widget_layout</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.column" title="bokeh.layouts.column" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">column</span></a><span class="p">(</span><span class="n">freq_slider</span><span class="p">,</span> <span class="n">grid_grid</span><span class="p">)</span>
+<span class="n">layout</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.row" title="bokeh.layouts.row" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">row</span></a><span class="p">(</span><span class="n">widget_layout</span><span class="p">,</span> <span class="n">source_plot</span><span class="p">)</span>
+<a href="https://docs.bokeh.org/en/latest/docs/reference/io.html#bokeh.io.curdoc" title="bokeh.io.curdoc" class="sphx-glr-backref-module-bokeh-io sphx-glr-backref-type-py-function"><span class="n">curdoc</span></a><span class="p">()</span><span class="o">.</span><span class="n">add_root</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-interactive-apps-py">
@@ -718,11 +730,11 @@ document, which allows for interaction with the widgets and the figure in a web 
       </div>
     </a>
     <a class="right-next"
-       href="../apps/micgeomexample.html"
+       href="../user_guide/custom_apps.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Microphone Array Geometry App</p>
+        <p class="prev-next-title">Custom applications</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -782,8 +794,8 @@ document, which allows for interaction with the widgets and the figure in a web 
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -817,7 +829,7 @@ document, which allows for interaction with the widgets and the figure in a web 
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
 </p></div>
       
     </div>

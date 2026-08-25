@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api_ref/index_apiref';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/spectacoular/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -66,12 +66,12 @@
     <link rel="icon" href="../_static/acoular_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="bokehview" href="generated/spectacoular.bokehview.html" />
-    <link rel="prev" title="Microphone Array Geometry App" href="../apps/micgeomexample.html" />
+    <link rel="next" title="base" href="generated/spectacoular.apps.base.html" />
+    <link rel="prev" title="Time Signal Exploration App" href="../apps/timesamplesexample.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.04" />
-    <meta name="docbuild:last-update" content="Aug 06, 2026"/>
+    <meta name="docbuild:last-update" content="Aug 25, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -441,10 +441,21 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../apps/micgeomexample.html">MicGeom example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_apps.html">Custom applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/audio_stream_controls.html">Audio-stream controllers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../apps/index.html">Applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/micgeomexample.html">Microphone Geometry App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/freqbeamformingexample.html">Beamforming example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/slm.html">Sound Level Meter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/measurementapp.html">Measurement App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/timesamplesexample.html">Time Signal Exploration App</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">API Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/spectacoular.apps.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/spectacoular.apps.controls.html"><code class="docutils literal notranslate"><span class="pre">controls</span></code></a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="generated/spectacoular.bokehview.html"><code class="docutils literal notranslate"><span class="pre">bokehview</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="generated/generated/spectacoular.bokehview.add_bokeh_attr.html"><code class="docutils literal notranslate"><span class="pre">add_bokeh_attr</span></code></a></li>
 </ul>
@@ -539,25 +550,31 @@
 <p>The following modules are part of SpectAcoular:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bokehview</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spectacoular.apps.base.html#module-spectacoular.apps.base" title="spectacoular.apps.base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apps.base</span></code></a></p></td>
+<td><p>Shared Bokeh application and audio-stream lifecycle classes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spectacoular.apps.controls.html#module-spectacoular.apps.controls" title="spectacoular.apps.controls"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apps.controls</span></code></a></p></td>
+<td><p>Reusable audio-stream controls and their extension-point discovery.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spectacoular.bokehview.html#module-spectacoular.bokehview" title="spectacoular.bokehview"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bokehview</span></code></a></p></td>
 <td><p>Implement trait-widget mapping functionality for Acoular classes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spectacoular.consumer.html#module-spectacoular.consumer" title="spectacoular.consumer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">consumer</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spectacoular.consumer.html#module-spectacoular.consumer" title="spectacoular.consumer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">consumer</span></code></a></p></td>
 <td><p>Implement consumer classes that provide Acoular data to Bokeh data sources.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spectacoular.controller.html#module-spectacoular.controller" title="spectacoular.controller"><code class="xref py py-obj docutils literal notranslate"><span class="pre">controller</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spectacoular.controller.html#module-spectacoular.controller" title="spectacoular.controller"><code class="xref py py-obj docutils literal notranslate"><span class="pre">controller</span></code></a></p></td>
 <td><p>Implement controller classes and functions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spectacoular.dprocess.html#module-spectacoular.dprocess" title="spectacoular.dprocess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dprocess</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spectacoular.dprocess.html#module-spectacoular.dprocess" title="spectacoular.dprocess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dprocess</span></code></a></p></td>
 <td><p>Implements data processing classes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spectacoular.factory.html#module-spectacoular.factory" title="spectacoular.factory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">factory</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spectacoular.factory.html#module-spectacoular.factory" title="spectacoular.factory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">factory</span></code></a></p></td>
 <td><p>Implements factory for trait to widget translation.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spectacoular.layouts.html#module-spectacoular.layouts" title="spectacoular.layouts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layouts</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spectacoular.layouts.html#module-spectacoular.layouts" title="spectacoular.layouts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layouts</span></code></a></p></td>
 <td><p>Provide ready-to-use layout components for Acoular visualization.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spectacoular.lprocess.html#module-spectacoular.lprocess" title="spectacoular.lprocess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lprocess</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spectacoular.lprocess.html#module-spectacoular.lprocess" title="spectacoular.lprocess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lprocess</span></code></a></p></td>
 <td><p>Implement classes for use in live processing applications.</p></td>
 </tr>
 </tbody>
@@ -577,20 +594,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../apps/micgeomexample.html"
+       href="../apps/timesamplesexample.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Microphone Array Geometry App</p>
+        <p class="prev-next-title">Time Signal Exploration App</p>
       </div>
     </a>
     <a class="right-next"
-       href="generated/spectacoular.bokehview.html"
+       href="generated/spectacoular.apps.base.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">bokehview</span></code></p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">base</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -646,8 +663,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -681,7 +698,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
 </p></div>
       
     </div>
