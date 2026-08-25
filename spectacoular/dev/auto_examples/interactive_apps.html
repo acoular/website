@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Create three sources example &#8212; SpectAcoular  documentation</title>
+    <title>Interactive server applications with SpectAcoular. &#8212; SpectAcoular  documentation</title>
   
   
   
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -36,15 +36,15 @@
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydata.css?v=df04542c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_gallery.css?v=f3715e10" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom_pydata_sphinx_theme.css?v=ac99e154" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/interactive_apps';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://acoular.org/spectacoular/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -67,10 +67,10 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Custom applications" href="../user_guide/custom_apps.html" />
-    <link rel="prev" title="Set up the microphone geometry plot" href="basic_mic_geom_widgets.html" />
+    <link rel="prev" title="Creating widgets with SpectAcoular." href="basic_mic_geom_widgets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="26.04" />
+  <meta name="docsearch:version" content="26.08" />
     <meta name="docbuild:last-update" content="Aug 25, 2026"/>
   
     
@@ -143,8 +143,8 @@
       
     
     
-    <img src="../_static/acoular_logo_light.png" class="logo__image only-light" alt="SpectAcoular - Home"/>
-    <img src="../_static/acoular_logo_dark.png" class="logo__image only-dark pst-js-only" alt="SpectAcoular - Home"/>
+    <img src="../_static/acoular_logo.svg" class="logo__image only-light" alt="SpectAcoular - Home"/>
+    <img src="../_static/acoular_logo_dark_inverted.svg" class="logo__image only-dark pst-js-only" alt="SpectAcoular - Home"/>
   
   
     <p class="title logo__title">SpectAcoular</p>
@@ -193,7 +193,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
+      <a class="nav-link" href="/spectacoular/">
         SpectAcoular
       </a>
     </li>
@@ -340,7 +340,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link nav-external" href="https://acoular.github.io/spectacoular/">
+      <a class="nav-link" href="/spectacoular/">
         SpectAcoular
       </a>
     </li>
@@ -435,12 +435,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../user_guide/index.html">User Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="basic_mic_geom_widgets.html">Set up the microphone geometry plot</a></li>
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Create three sources example</a></li>
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="basic_mic_geom_plot.html">Basic plotting with Bokeh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_mic_geom_widgets.html">Basic widget building</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Basic interactive applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_apps.html">Custom applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/audio_stream_controls.html">Audio-stream controllers</a></li>
 </ul>
@@ -529,7 +526,7 @@
     
     <li class="breadcrumb-item"><a href="../user_guide/index.html" class="nav-link">User Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Create three sources example</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Interactive server applications with SpectAcoular.</span></li>
   </ul>
 </nav>
 </div>
@@ -551,8 +548,8 @@
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-interactive-apps-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code.</p>
 </div>
-<p class="sphx-glr-example-title" id="sphx-glr-auto-examples-interactive-apps-py">Interactive server applications with SpectAcoular.</p>
-<hr class="docutils" />
+<section class="sphx-glr-example-title" id="interactive-server-applications-with-spectacoular">
+<span id="sphx-glr-auto-examples-interactive-apps-py"></span><h1>Interactive server applications with SpectAcoular.<a class="headerlink" href="#interactive-server-applications-with-spectacoular" title="Link to this heading">#</a></h1>
 <p id="interactive-apps">Standalone HTML documents are often not sufficient for full interactivity,
 especially when Python-side computations are needed to update displayed
 results. Bokeh can host applications in a web browser and provide
@@ -570,8 +567,8 @@ run in a Bokeh server application to which the client can listen.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>bokeh<span class="w"> </span>serve<span class="w"> </span>--show<span class="w"> </span>examples/interactive_apps.py
 </pre></div>
 </div>
-<script src="bokeh-content-55d6ec06bdc848bd9e10eaac16c2346a-auto_examples-interactive_apps.js" id="f1a333c5-e230-4245-9917-ef2146b65828"></script><section id="create-three-sources-example">
-<h1>Create three sources example<a class="headerlink" href="#create-three-sources-example" title="Link to this heading">#</a></h1>
+<script src="bokeh-content-82cef2855f294c9990ddb2cffbd53eab-auto_examples-interactive_apps.js" id="bafb9b29-645b-4509-aaeb-2fb8eab5510c"></script><section id="create-three-sources-example">
+<h2>Create three sources example<a class="headerlink" href="#create-three-sources-example" title="Link to this heading">#</a></h2>
 <p>Let’s begin with the necessary imports and the simulation pipeline
 for the three sources example.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a>
@@ -612,7 +609,7 @@ defined grid, we use conventional beamforming
 </div>
 </section>
 <section id="create-widgets">
-<h1>Create widgets<a class="headerlink" href="#create-widgets" title="Link to this heading">#</a></h1>
+<h2>Create widgets<a class="headerlink" href="#create-widgets" title="Link to this heading">#</a></h2>
 <p>To enable interactive changes to the beamforming result, we will create some widgets based on the
 existing processing chain, arranged in a grid layout.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">grid_grid</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.gridplot" title="bokeh.layouts.gridplot" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">gridplot</span></a><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span><span class="n">rg</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
@@ -620,7 +617,7 @@ existing processing chain, arranged in a grid layout.</p>
 </div>
 </section>
 <section id="plot-the-beamforming-result">
-<h1>Plot the beamforming result<a class="headerlink" href="#plot-the-beamforming-result" title="Link to this heading">#</a></h1>
+<h2>Plot the beamforming result<a class="headerlink" href="#plot-the-beamforming-result" title="Link to this heading">#</a></h2>
 <p>To visualize the beamforming result, we create a figure and use
 Bokeh’s <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs/Image/index.html#bokeh.models.Image" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> glyph, which displays 2D source
 mappings. The <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs/Image/index.html#bokeh.models.Image" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> glyph requires the <em>x</em> and
@@ -657,7 +654,7 @@ the grid, and the sound pressure to be displayed.</p>
 </div>
 </section>
 <section id="the-presenter-class">
-<h1>The Presenter class<a class="headerlink" href="#the-presenter-class" title="Link to this heading">#</a></h1>
+<h2>The Presenter class<a class="headerlink" href="#the-presenter-class" title="Link to this heading">#</a></h2>
 <p>SpectAcoular provides Presenter classes that automatically handle
 updates of <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a> data whenever the
 desired evaluation parameters change. Here, we use the
@@ -709,6 +706,7 @@ document, which allows for interaction with the widgets and the figure in a web 
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
+</section>
 
 
                 </article>
@@ -726,7 +724,7 @@ document, which allows for interaction with the widgets and the figure in a web 
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Set up the microphone geometry plot</p>
+        <p class="prev-next-title">Creating widgets with SpectAcoular.</p>
       </div>
     </a>
     <a class="right-next"
@@ -757,12 +755,11 @@ document, which allows for interaction with the widgets and the figure in a web 
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Create three sources example</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-widgets">Create widgets</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-beamforming-result">Plot the beamforming result</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-presenter-class">The Presenter class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-three-sources-example">Create three sources example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-widgets">Create widgets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-beamforming-result">Plot the beamforming result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-presenter-class">The Presenter class</a></li>
 </ul>
-
   </nav></div>
 
   <div class="sidebar-secondary-item">
@@ -794,8 +791,8 @@ document, which allows for interaction with the widgets and the figure in a web 
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -829,7 +826,7 @@ document, which allows for interaction with the widgets and the figure in a web 
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>
