@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -38,10 +38,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b07a56ae" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -395,7 +395,8 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
     <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
   </svg>
   <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
@@ -532,12 +533,12 @@ some higher harmonics and broadband noise.</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">traits.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">cached_property</span><span class="p">,</span> <span class="n">Int</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Property</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">DroneSignalGenerator</span><span class="p">(</span> <span class="n">ac</span><span class="o">.</span><span class="n">NoiseGenerator</span> <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Class for generating a synthetic multicopter drone signal. </span>
 <span class="sd">    This is just a basic example class for demonstration purposes </span>
 <span class="sd">    with only few settable and some arbitrary fixed parameters.</span>
 <span class="sd">    It is not intended to create perfectly realistic signals.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="c1"># List with rotor speeds (for each rotor independently)</span>
     <span class="c1"># Default: 1 rotor, 15000 rpm</span>
@@ -548,16 +549,16 @@ some higher harmonics and broadband noise.</p>
     <span class="n">num_blades_per_rotor</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="c1"># internal identifier</span>
-    <span class="n">digest</span> <span class="o">=</span> <span class="n">Property</span><span class="p">(</span><span class="n">depends_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;rms&#39;</span><span class="p">,</span> <span class="s1">&#39;seed&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_freq&#39;</span><span class="p">,</span> <span class="s1">&#39;num_samples&#39;</span><span class="p">,</span> <span class="s1">&#39;rpm_list&#39;</span><span class="p">,</span> <span class="s1">&#39;num_blades_per_rotor&#39;</span><span class="p">])</span>
+    <span class="n">digest</span> <span class="o">=</span> <span class="n">Property</span><span class="p">(</span><span class="n">depends_on</span><span class="o">=</span><span class="p">[</span><span class="s1">'rms'</span><span class="p">,</span> <span class="s1">'seed'</span><span class="p">,</span> <span class="s1">'sample_freq'</span><span class="p">,</span> <span class="s1">'num_samples'</span><span class="p">,</span> <span class="s1">'rpm_list'</span><span class="p">,</span> <span class="s1">'num_blades_per_rotor'</span><span class="p">])</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">_get_digest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">digest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         
     <span class="k">def</span><span class="w"> </span><span class="nf">signal</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        function that returns the full signal</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="c1"># initialize a random generator for noise generation</span>
         <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
         <span class="c1"># use 1/f² broadband noise as basis for the signal</span>
@@ -578,7 +579,7 @@ some higher harmonics and broadband noise.</p>
             
             <span class="c1"># calculate higher harmonics up to 50 times the rotor speed</span>
             <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
-                <span class="c1"># if we&#39;re looking at a blade passing frequency, make it louder</span>
+                <span class="c1"># if we're looking at a blade passing frequency, make it louder</span>
                 <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_blades_per_rotor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="n">amp</span> <span class="o">=</span> <span class="mi">1</span>
                 <span class="k">else</span><span class="p">:</span>
@@ -615,7 +616,7 @@ The strength of the signal can be set via the (also inherited) <code class="docu
                                     <span class="n">sample_freq</span> <span class="o">=</span> <span class="n">f_sample</span><span class="p">,</span> 
                                     <span class="n">num_samples</span> <span class="o">=</span> <span class="n">f_sample</span><span class="o">*</span><span class="n">t_msm</span><span class="p">)</span>
 
-<span class="c1"># If you&#39;re running the example in an interactive environment, you might want</span>
+<span class="c1"># If you're running the example in an interactive environment, you might want</span>
 <span class="c1"># to listen to the pure signal by uncommenting the two following lines:</span>
 <span class="c1">#from IPython.display import Audio</span>
 <span class="c1">#display(Audio(drone_signal.signal(),rate = f_sample))</span>
@@ -691,21 +692,21 @@ The absolute speed will be a little higher, since we slightly and randomly vary 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 
 <span class="c1"># plot observer</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">m</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">,:],</span> <span class="s1">&#39;rx&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;observer&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">m</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">,:],</span> <span class="s1">'rx'</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">'observer'</span><span class="p">)</span>
 
 <span class="c1"># plot trajectory</span>
 <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">,</span> <span class="n">zt</span> <span class="o">=</span> <span class="n">traj</span><span class="o">.</span><span class="n">location</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;trajectory&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">'trajectory'</span><span class="p">)</span>
 
 <span class="c1"># plot the predefined waypoints</span>
 <span class="n">xwp</span><span class="p">,</span> <span class="n">ywp</span><span class="p">,</span> <span class="n">zwp</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">traj</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xwp</span><span class="p">,</span> <span class="n">ywp</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;traj. waypoints&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xwp</span><span class="p">,</span> <span class="n">ywp</span><span class="p">,</span> <span class="s1">'&gt;'</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">'traj. waypoints'</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$ / m&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$ / m&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'$x$ / m'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$y$ / m'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -724,14 +725,14 @@ For calculating the observed sound pressure, i.e. for taking into account the so
 In our case, we just define a resting fluid with a speed of sound of 343 m/s.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We&#39;ll keep the environment simple for now: just air at standard conditions with speed of sound 343 m/s</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We'll keep the environment simple for now: just air at standard conditions with speed of sound 343 m/s</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">Environment</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mf">343.</span><span class="p">)</span>
 
 <span class="c1"># Define point source</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">MovingPointSourceDipole</span><span class="p">(</span><span class="n">signal</span> <span class="o">=</span> <span class="n">drone_signal</span><span class="p">,</span> <span class="c1"># the signal of the source</span>
                                <span class="n">trajectory</span> <span class="o">=</span> <span class="n">traj</span><span class="p">,</span>     <span class="c1"># set trajectory</span>
                                <span class="n">conv_amp</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>       <span class="c1"># take into account convective amplification</span>
-                               <span class="n">mics</span> <span class="o">=</span> <span class="n">m</span><span class="p">,</span>              <span class="c1"># set the &quot;array&quot; with which to measure the sound field</span>
+                               <span class="n">mics</span> <span class="o">=</span> <span class="n">m</span><span class="p">,</span>              <span class="c1"># set the "array" with which to measure the sound field</span>
                                <span class="n">start</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>           <span class="c1"># observation starts 0.5 seconds after signal starts at drone</span>
                                <span class="n">env</span> <span class="o">=</span> <span class="n">e</span><span class="p">)</span>               <span class="c1"># the environment the source is moving in</span>
 </pre></div>
@@ -772,12 +773,12 @@ The export may take a few minutes, so don’t be alarmed if you don’t immediat
 The reason for this is that we do not need to recalculate everything if we happen to need the exact same data at a later point in time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write data stream onto disk for later re-use. This step is not necessary if runtime isn&#39;t an issue.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write data stream onto disk for later re-use. This step is not necessary if runtime isn't an issue.</span>
 <span class="n">cached_signals</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">Cache</span><span class="p">(</span><span class="n">source</span> <span class="o">=</span> <span class="n">drone_above_ground</span><span class="p">)</span>
 
 <span class="c1"># Prepare wav output.</span>
-<span class="c1"># If you don&#39;t need caching, you can directly put &quot;source = drone_above_ground&quot; here.</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">WriteWAV</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;drone_flyby_with_ground_reflection.wav&#39;</span><span class="p">,</span>
+<span class="c1"># If you don't need caching, you can directly put "source = drone_above_ground" here.</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">WriteWAV</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s1">'drone_flyby_with_ground_reflection.wav'</span><span class="p">,</span>
                      <span class="n">source</span> <span class="o">=</span> <span class="n">cached_signals</span><span class="p">,</span> 
                      <span class="n">channels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># export both channels as stereo</span>
 
@@ -805,8 +806,8 @@ We use Acoular’s <a class="reference external" href="https://www.acoular.org/a
              <span class="n">vmax</span><span class="o">=-</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5000</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ / s&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$f$ / Hz&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'$t$ / s'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$f$ / Hz'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -828,9 +829,9 @@ We use Acoular’s <a class="reference external" href="https://www.acoular.org/a
              <span class="n">vmax</span><span class="o">=-</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5000</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ / s&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$f$ / Hz&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;thumb_drone_spectrogram.png&quot;</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'$t$ / s'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$f$ / Hz'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"thumb_drone_spectrogram.png"</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -917,8 +918,8 @@ We use Acoular’s <a class="reference external" href="https://www.acoular.org/a
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -952,7 +953,7 @@ We use Acoular’s <a class="reference external" href="https://www.acoular.org/a
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>
