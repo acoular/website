@@ -4,5 +4,12 @@
     "version": "dev",
     "url": "/spectacoular/dev/",
     "type": "branch"
+  },
+  {
+    "name": "v26.08 (stable)",
+    "version": "26.08",
+    "url": "/spectacoular/",
+    "type": "tag",
+    "preferred": true
   }
 ]
