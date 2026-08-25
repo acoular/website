@@ -1,0 +1,175 @@
+# ------------------------------------------------------------------------------
+# Copyright (c) Acoular Development Team.
+# ------------------------------------------------------------------------------
+# ruff: noqa: D205
+"""Interactive server applications with SpectAcoular.
+===================================================
+
+.. _interactive_apps:
+
+Standalone HTML documents are often not sufficient for full interactivity,
+especially when Python-side computations are needed to update displayed
+results. Bokeh can host applications in a web browser and provide
+real-time updates.
+
+.. image:: https://docs.bokeh.org/en/latest/_images/bokeh_serve.svg
+    :width: 600px
+    :align: center
+    :alt: Bokeh Server Application (see: `Bokeh documentation <https://docs.bokeh.org/en/latest/docs/user_guide/server/app.html#ug-server-apps>`_)
+
+This example creates an interactive application to visualize the
+beamforming result for Acoular's three sources example.
+See the `Acoular example documentation <https://acoular.org/acoular/auto_examples/introductory_examples/example_basic_beamforming.html>`_.
+As the HTML document below shows, changing the frequency or grid
+parameters will **not** update the plot because the document is static and
+cannot interact with the Python code. To get updates, the Python code must
+run in a Bokeh server application to which the client can listen.
+
+To start the Bokeh server, run the following command in the terminal:
+
+.. code-block:: console
+
+    $ bokeh serve --show examples/interactive_apps.py
+
+.. bokeh-plot:: ../examples/interactive_apps.py
+   :source-position: none
+
+"""
+
+# %%
+# Create three sources example
+# -----------------------------
+#
+# Let's begin with the necessary imports and the simulation pipeline
+# for the three sources example.
+
+from pathlib import Path
+
+import acoular as ac
+import spectacoular as sp
+
+from bokeh.io import curdoc
+from bokeh.layouts import column, gridplot, row
+from bokeh.models import ColumnDataSource, LinearColorMapper
+from bokeh.models.widgets import Slider
+from bokeh.palettes import viridis
+from bokeh.plotting import figure
+
+mg = ac.MicGeom(file=Path(ac.__file__).parent / 'xml' / 'array_64.xml')
+
+# create time data source
+three_sources = ac.demo.create_three_sources(mg)
+
+
+# %%
+# Next, we define a rectangular grid
+# (:class:`~acoular.grids.RectGrid`) that discretizes the source area.
+# To obtain a source map at 4 kHz (one-third octave) associated with the
+# defined grid, we use conventional beamforming
+# (:class:`~acoular.fbeamform.BeamformerBase`).
+
+# set up the rectangular grid
+rg = ac.RectGrid(x_min=-0.2, x_max=0.2, y_min=-0.2, y_max=0.2, z=-0.3, increment=0.01)
+
+# set up the beamformer
+bb = ac.BeamformerBase(
+    freq_data=ac.PowerSpectra(source=three_sources, block_size=128, window='Hanning'),
+    steer=ac.SteeringVector(grid=rg, mics=mg),
+)
+
+# calculate the beamforming result as sound pressure level (Lp/dB)
+res = ac.L_p(bb.synthetic(f=4000, num=3)).T
+
+# %%
+# Create widgets
+# ----------------
+#
+# To enable interactive changes to the beamforming result, we will create some widgets based on the
+# existing processing chain, arranged in a grid layout.
+
+grid_grid = gridplot(list(sp.get_widgets(rg).values()), ncols=2, width=150)
+
+
+# %%
+# Plot the beamforming result
+# ---------------------------
+#
+# To visualize the beamforming result, we create a figure and use
+# Bokeh's :class:`~bokeh.models.Image` glyph, which displays 2D source
+# mappings. The :class:`~bokeh.models.Image` glyph requires the *x* and
+# *y* coordinates of the bottom-left grid corner, the width and height of
+# the grid, and the sound pressure to be displayed.
+
+source_plot = figure(title='Acoular Three Sources', tools='hover,reset,pan,wheel_zoom')
+
+cds = ColumnDataSource(
+    data={
+        'bfdata': [res],
+        'x': [rg.x_min],
+        'y': [rg.y_min],
+        'dw': [rg.x_max - rg.x_min],
+        'dh': [rg.y_max - rg.y_min],
+    }
+)
+
+color_mapper = LinearColorMapper(palette=viridis(100), low=res.max() - 20, high=res.max())
+
+
+source_plot.image(
+    color_mapper=color_mapper,
+    image='bfdata',
+    x='x',
+    y='y',
+    dw='dw',
+    dh='dh',
+    alpha=0.9,
+    anchor='bottom_left',
+    origin='bottom_left',
+    source=cds,
+)
+
+
+# %%
+# The Presenter class
+# -------------------
+#
+# SpectAcoular provides Presenter classes that automatically handle
+# updates of :class:`~bokeh.models.ColumnDataSource` data whenever the
+# desired evaluation parameters change. Here, we use the
+# :class:`~spectacoular.BeamformerPresenter` class with
+# ``auto_update=True``, which means that the data in the
+# :class:`~bokeh.models.ColumnDataSource` is updated automatically
+# whenever the internal state of the beamformer changes.
+
+bf_presenter = sp.BeamformerPresenter(
+    source=bb,
+    cdsource=cds,
+    freq=4000,
+    num=3,
+    auto_update=True,
+)
+
+# %%
+# The :class:`~spectacoular.BeamformerPresenter` class provides two traits, `freq` and `num` that
+# can be used to control the frequency and the frequency band width of the beamforming result. As
+# with all :class:`~spectacoular.factory.BaseSpectacoular` classes, we could use the
+# :func:`~spectacoular.factory.get_widgets` function to create Bokeh widgets for these traits.
+# However, this time, we will take a different approach and assign an existing widget to the `freq`
+# trait via the :func:`~spectacoular.factory.set_widgets` function.
+
+freqs = bb.freq_data.fftfreq()
+df = int(bb.freq_data.sample_freq / bb.freq_data.block_size)
+
+
+freq_slider = Slider(title='f/Hz', value=bf_presenter.freq, start=freqs[1], end=freqs[-1], step=df)
+
+bf_presenter.set_widgets(freq=freq_slider)
+
+# %%
+# To handle interaction, we will use the Bokeh `curdoc()` function to add the layout to the current
+# document, which allows for interaction with the widgets and the figure in a web browser.
+#
+
+widget_layout = column(freq_slider, grid_grid)
+layout = row(widget_layout, source_plot)
+curdoc().add_root(layout)
