@@ -12,7 +12,7 @@ Welcome to the Acoular Organization!
 The Acoular Organization develops open source solutions for (acoustic) beamforming and sensor array signal processing. Acoular currently offers:
 
 - `Acoular <https://acoular.org/acoular/>`_: Our flagship Python package for beamforming, deconvolution, source localization and mapping.
-- `SpectAcoular <https://acoular.github.io/spectacoular/>`_: Custom graphical user interfaces for Acoular using the `Bokeh <https://bokeh.org/>`_ visualization library.
+- `SpectAcoular <https://acoular.org/spectacoular/>`_: Custom graphical user interfaces for Acoular using the `Bokeh <https://bokeh.org/>`_ visualization library.
 - `AcouPipe <https://adku1173.github.io/acoupipe/>`__: Toolbox for generating microphone array data with Acoular for deep learning tasks.
 
 -----------------------------
