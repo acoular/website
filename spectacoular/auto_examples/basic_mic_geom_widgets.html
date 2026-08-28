@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Creating widgets with SpectAcoular. &#8212; SpectAcoular  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydata.css?v=df04542c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_gallery.css?v=f3715e10" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script src="../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/basic_mic_geom_widgets';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://acoular.org/spectacoular/auto_examples/basic_mic_geom_widgets.html" />
+    <link rel="icon" href="../_static/acoular_logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Interactive server applications with SpectAcoular." href="interactive_apps.html" />
+    <link rel="prev" title="Basic plotting with Bokeh." href="basic_mic_geom_plot.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="26.08" />
+    <meta name="docbuild:last-update" content="Aug 28, 2026"/>
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/acoular_logo.svg" class="logo__image only-light" alt="SpectAcoular - Home"/>
+    <img src="../_static/acoular_logo_dark_inverted.svg" class="logo__image only-dark pst-js-only" alt="SpectAcoular - Home"/>
+  
+  
+    <p class="title logo__title">SpectAcoular</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/acoular/">
+        Acoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/spectacoular/">
+        SpectAcoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://adku1173.github.io/acoupipe/">
+        AcouPipe
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://blog.acoular.org">
+        Blog
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://github.com/orgs/acoular/discussions">
+        Community
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/contributing/">
+        Contributing
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/acoular/spectacoular" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/spectacoular" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item"><nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/acoular/">
+        Acoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/spectacoular/">
+        SpectAcoular
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://adku1173.github.io/acoupipe/">
+        AcouPipe
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://blog.acoular.org">
+        Blog
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link nav-external" href="https://github.com/orgs/acoular/discussions">
+        Community
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/contributing/">
+        Contributing
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/acoular/spectacoular" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/spectacoular" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../user_guide/index.html">User Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic_mic_geom_plot.html">Basic plotting with Bokeh</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Basic widget building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interactive_apps.html">Basic interactive applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_apps.html">Custom applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/audio_stream_controls.html">Audio-stream controllers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../apps/index.html">Applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/micgeomexample.html">Microphone Geometry App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/freqbeamformingexample.html">Beamforming example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/slm.html">Sound Level Meter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/measurementapp.html">Measurement App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/timesamplesexample.html">Time Signal Exploration App</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api_ref/index_apiref.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api_ref/generated/spectacoular.apps.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_ref/generated/spectacoular.apps.controls.html"><code class="docutils literal notranslate"><span class="pre">controls</span></code></a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api_ref/generated/spectacoular.bokehview.html"><code class="docutils literal notranslate"><span class="pre">bokehview</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.bokehview.add_bokeh_attr.html"><code class="docutils literal notranslate"><span class="pre">add_bokeh_attr</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api_ref/generated/spectacoular.consumer.html"><code class="docutils literal notranslate"><span class="pre">consumer</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.consumer.TimeConsumer.html"><code class="docutils literal notranslate"><span class="pre">TimeConsumer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.consumer.TimeBandsConsumer.html"><code class="docutils literal notranslate"><span class="pre">TimeBandsConsumer</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_ref/generated/spectacoular.controller.html"><code class="docutils literal notranslate"><span class="pre">controller</span></code></a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api_ref/generated/spectacoular.dprocess.html"><code class="docutils literal notranslate"><span class="pre">dprocess</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.dprocess.BasePresenter.html"><code class="docutils literal notranslate"><span class="pre">BasePresenter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.dprocess.MicGeomPresenter.html"><code class="docutils literal notranslate"><span class="pre">MicGeomPresenter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.dprocess.BeamformerPresenter.html"><code class="docutils literal notranslate"><span class="pre">BeamformerPresenter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.dprocess.PointSpreadFunctionPresenter.html"><code class="docutils literal notranslate"><span class="pre">PointSpreadFunctionPresenter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.dprocess.TimeSamplesPresenter.html"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPresenter</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_ref/generated/spectacoular.factory.html"><code class="docutils literal notranslate"><span class="pre">factory</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_ref/generated/spectacoular.layouts.html"><code class="docutils literal notranslate"><span class="pre">layouts</span></code></a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api_ref/generated/spectacoular.lprocess.html"><code class="docutils literal notranslate"><span class="pre">lprocess</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.lprocess.TimeSamplesPhantom.html"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPhantom</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.lprocess.TimeOutPresenter.html"><code class="docutils literal notranslate"><span class="pre">TimeOutPresenter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.lprocess.CalibHelper.html"><code class="docutils literal notranslate"><span class="pre">CalibHelper</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/spectacoular.lprocess.TimeSamplesPlayback.html"><code class="docutils literal notranslate"><span class="pre">TimeSamplesPlayback</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">What's new</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../user_guide/index.html" class="nav-link">User Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Creating widgets with SpectAcoular.</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-basic-mic-geom-widgets-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="creating-widgets-with-spectacoular">
+<span id="sphx-glr-auto-examples-basic-mic-geom-widgets-py"></span><h1>Creating widgets with SpectAcoular.<a class="headerlink" href="#creating-widgets-with-spectacoular" title="Link to this heading">#</a></h1>
+<p id="basic-mic-geom-widgets">This example creates an interactive plot of a microphone array geometry
+with additional control widgets using the SpectAcoular package.</p>
+<script src="bokeh-content-a962dfe59a8a4e0b9328589b1f3758d2-auto_examples-basic_mic_geom_widgets.js" id="f19a197a-9b24-4e77-8d53-8c77fbe77360"></script><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example can be rendered as a standalone Bokeh document, but full interactivity
+with Python callbacks requires running it as a Bokeh server application.</p>
+</div>
+<section id="set-up-the-microphone-geometry-plot">
+<h2>Set up the microphone geometry plot<a class="headerlink" href="#set-up-the-microphone-geometry-plot" title="Link to this heading">#</a></h2>
+<p>Similar to <a class="reference internal" href="basic_mic_geom_plot.html"><span class="doc">Basic plotting with Bokeh.</span></a>, we will first import the necessary modules and set up
+the microphone geometry plot.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">acoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ac</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">spectacoular</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/io.html#bokeh.io.curdoc" title="bokeh.io.curdoc" class="sphx-glr-backref-module-bokeh-io sphx-glr-backref-type-py-function"><span class="n">curdoc</span></a><span class="p">,</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/io.html#bokeh.io.show" title="bokeh.io.show" class="sphx-glr-backref-module-bokeh-io sphx-glr-backref-type-py-function"><span class="n">show</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.column" title="bokeh.layouts.column" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">column</span></a><span class="p">,</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.row" title="bokeh.layouts.row" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">row</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="bokeh.models.ColumnDataSource" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ColumnDataSource</span></a><span class="p">,</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/NumberEditor/index.html#bokeh.models.NumberEditor" title="bokeh.models.NumberEditor" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NumberEditor</span></a><span class="p">,</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/tools/PointDrawTool/index.html#bokeh.models.PointDrawTool" title="bokeh.models.PointDrawTool" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">PointDrawTool</span></a><span class="p">,</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/TableColumn/index.html#bokeh.models.TableColumn" title="bokeh.models.TableColumn" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TableColumn</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models.widgets</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/DataTable/index.html#bokeh.models.DataTable" title="bokeh.models.DataTable" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">DataTable</span></a><span class="p">,</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/inputs/NumericInput/index.html#bokeh.models.NumericInput" title="bokeh.models.NumericInput" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NumericInput</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a>
+
+<span class="c1"># set up the figure</span>
+<a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Microphone Geometry'</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="s1">'hover,zoom_in,zoom_out,reset,lasso_select'</span><span class="p">,</span>
+    <span class="n">match_aspect</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># set up the microphone geometry</span>
+<span class="n">default_xml_file</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">'xml'</span> <span class="o">/</span> <span class="s1">'tub_vogel64.xml'</span>
+<span class="n">mics</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MicGeom</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">default_xml_file</span><span class="p">)</span>
+
+<span class="c1"># add circles to the figure to represent the microphones</span>
+<span class="n">cds</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="bokeh.models.ColumnDataSource" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ColumnDataSource</span></a><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">mics</span><span class="o">.</span><span class="n">pos_total</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">'y'</span><span class="p">:</span> <span class="n">mics</span><span class="o">.</span><span class="n">pos_total</span><span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
+<span class="n">glyph</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure.circle" title="bokeh.plotting.figure.circle" class="sphx-glr-backref-module-bokeh-plotting-figure sphx-glr-backref-type-py-method"><span class="n">figure</span><span class="o">.</span><span class="n">circle</span></a><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span>
+    <span class="n">radius</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>
+    <span class="n">line_color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span>
+    <span class="n">fill_color</span><span class="o">=</span><span class="s1">'#1F77B4'</span><span class="p">,</span>
+    <span class="n">fill_alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">cds</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-widgets-for-micgeom">
+<h2>Create widgets for MicGeom<a class="headerlink" href="#create-widgets-for-micgeom" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.microphones.html#acoular.microphones.MicGeom" title="(in Acoular v26.08)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MicGeom</span></code></a> class provides several
+attributes, known as traits, that can either provide additional
+information about the microphone array or modify the geometry. In this
+example, we focus on the most relevant ones for widget creation:
+<a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.microphones.html#acoular.microphones.MicGeom.num_mics" title="(in Acoular v26.08)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_mics</span></code></a>,
+<a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.microphones.html#acoular.microphones.MicGeom.aperture" title="(in Acoular v26.08)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">aperture</span></code></a>, and
+<a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.microphones.html#acoular.microphones.MicGeom.pos_total" title="(in Acoular v26.08)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pos_total</span></code></a>.</p>
+<p>If we want to inspect the number of microphones
+(<a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.microphones.html#acoular.microphones.MicGeom.num_mics" title="(in Acoular v26.08)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_mics</span></code></a>) and the aperture of the
+microphone array (<a class="reference external" href="https://acoular.org/acoular/api_ref/generated/acoular.microphones.html#acoular.microphones.MicGeom.aperture" title="(in Acoular v26.08)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">aperture</span></code></a>), we can
+use SpectAcoular’s <a class="reference internal" href="../api_ref/generated/spectacoular.factory.html#spectacoular.factory.get_widgets" title="spectacoular.factory.get_widgets"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_widgets()</span></code></a> function to
+translate each attribute into a Bokeh widget.</p>
+<p>Defining each trait to widget mapping individually can become
+cumbersome, and not all widgets are suitable for all traits.
+Therefore, SpectAcoular provides default widget mapping for most of
+Acoular’s classes.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">numeric_widgets</span> <span class="o">=</span> <span class="n">mics</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span>
+    <span class="p">{</span><span class="s1">'aperture'</span><span class="p">:</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/inputs/NumericInput/index.html#bokeh.models.NumericInput" title="bokeh.models.NumericInput" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NumericInput</span></a><span class="p">,</span> <span class="s1">'num_mics'</span><span class="p">:</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/inputs/NumericInput/index.html#bokeh.models.NumericInput" title="bokeh.models.NumericInput" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NumericInput</span></a><span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s1">'aperture'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Aperture/m'</span><span class="p">,</span> <span class="s1">'disabled'</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="s1">'num_mics'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Number of Mics'</span><span class="p">,</span> <span class="s1">'disabled'</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>It would also be beneficial to have a widget that allows the user to edit the microphone positions
+and to display the coodinates in a table format. Both can be achieved by using Bokeh’s
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/DataTable/index.html#bokeh.models.DataTable" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataTable</span></code></a> widget. In addition, we will use the
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/NumberEditor/index.html#bokeh.models.NumberEditor" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumberEditor</span></code></a> to allow the user to edit the values in the table.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">editor</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/NumberEditor/index.html#bokeh.models.NumberEditor" title="bokeh.models.NumberEditor" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NumberEditor</span></a><span class="p">()</span>
+<span class="n">pos_table</span> <span class="o">=</span> <span class="p">[</span>
+    <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/TableColumn/index.html#bokeh.models.TableColumn" title="bokeh.models.TableColumn" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TableColumn</span></a><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'x/m'</span><span class="p">,</span> <span class="n">editor</span><span class="o">=</span><span class="n">editor</span><span class="p">),</span>
+    <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/TableColumn/index.html#bokeh.models.TableColumn" title="bokeh.models.TableColumn" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TableColumn</span></a><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'y/m'</span><span class="p">,</span> <span class="n">editor</span><span class="o">=</span><span class="n">editor</span><span class="p">),</span>
+    <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/TableColumn/index.html#bokeh.models.TableColumn" title="bokeh.models.TableColumn" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TableColumn</span></a><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">'z'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'z/m'</span><span class="p">,</span> <span class="n">editor</span><span class="o">=</span><span class="n">editor</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># get the widgets for the MicGeom instance</span>
+<span class="n">data_table_widget</span> <span class="o">=</span> <span class="n">mics</span><span class="o">.</span><span class="n">get_widgets</span><span class="p">(</span>
+    <span class="p">{</span><span class="s1">'pos_total'</span><span class="p">:</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/DataTable/index.html#bokeh.models.DataTable" title="bokeh.models.DataTable" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">DataTable</span></a><span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s1">'pos_total'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'height'</span><span class="p">:</span> <span class="mi">450</span><span class="p">,</span>
+            <span class="s1">'transposed'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s1">'columns'</span><span class="p">:</span> <span class="n">pos_table</span><span class="p">,</span>
+            <span class="s1">'source'</span><span class="p">:</span> <span class="n">cds</span><span class="p">,</span>
+            <span class="s1">'editable'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, we want to allow the user to add or remove microphones from the microphone array.
+Therefore, we will use the <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/tools/PointDrawTool/index.html#bokeh.models.PointDrawTool" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointDrawTool</span></code></a>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">draw_tool</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/tools/PointDrawTool/index.html#bokeh.models.PointDrawTool" title="bokeh.models.PointDrawTool" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">PointDrawTool</span></a><span class="p">(</span><span class="n">renderers</span><span class="o">=</span><span class="p">[</span><span class="n">glyph</span><span class="p">],</span> <span class="n">empty_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+<a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure.add_tools" title="bokeh.plotting.figure.add_tools" class="sphx-glr-backref-module-bokeh-plotting-figure sphx-glr-backref-type-py-method"><span class="n">figure</span><span class="o">.</span><span class="n">add_tools</span></a><span class="p">(</span><span class="n">draw_tool</span><span class="p">)</span>
+<a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a><span class="o">.</span><span class="n">toolbar</span><span class="o">.</span><span class="n">active_tap</span> <span class="o">=</span> <span class="n">draw_tool</span>
+</pre></div>
+</div>
+<p>Let’s create a layout that contains the figure and the widgets.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">widget_column</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.column" title="bokeh.layouts.column" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">column</span></a><span class="p">(</span><span class="o">*</span><span class="n">numeric_widgets</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="o">*</span><span class="n">data_table_widget</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">layout</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/layouts.html#bokeh.layouts.row" title="bokeh.layouts.row" class="sphx-glr-backref-module-bokeh-layouts sphx-glr-backref-type-py-function"><span class="n">row</span></a><span class="p">(</span><a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a><span class="p">,</span> <span class="n">widget_column</span><span class="p">)</span>
+<a href="https://docs.bokeh.org/en/latest/docs/reference/io.html#bokeh.io.show" title="bokeh.io.show" class="sphx-glr-backref-module-bokeh-io sphx-glr-backref-type-py-function"><span class="n">show</span></a><span class="p">(</span><span class="n">layout</span><span class="p">)</span>  <span class="c1"># Show the plot in a new browser window</span>
+</pre></div>
+</div>
+<p>The following code is for Bokeh server apps only.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.bokeh.org/en/latest/docs/reference/io.html#bokeh.io.curdoc" title="bokeh.io.curdoc" class="sphx-glr-backref-module-bokeh-io sphx-glr-backref-type-py-function"><span class="n">curdoc</span></a><span class="p">()</span><span class="o">.</span><span class="n">add_root</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>  <span class="c1"># Add the layout to the current document for Bokeh server apps</span>
+</pre></div>
+</div>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-basic-mic-geom-widgets-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/bf69e4464daa8191b871b5e74550386e/basic_mic_geom_widgets.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">basic_mic_geom_widgets.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/3c2d6bef29f90c16ce77577c1ff637fa/basic_mic_geom_widgets.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">basic_mic_geom_widgets.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/2866b62d971723a0f3e9c347ccb3406b/basic_mic_geom_widgets.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">basic_mic_geom_widgets.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="basic_mic_geom_plot.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Basic plotting with Bokeh.</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="interactive_apps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Interactive server applications with SpectAcoular.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-the-microphone-geometry-plot">Set up the microphone geometry plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-widgets-for-micgeom">Create widgets for MicGeom</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/acoular/spectacoular/edit/master/docs/auto_examples/basic_mic_geom_widgets.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2015-2026, Acoular Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
