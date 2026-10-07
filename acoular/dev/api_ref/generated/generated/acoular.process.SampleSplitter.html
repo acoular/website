@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Sep 09, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 07, 2026"/>
   
     
     <script src="../../../_static/searchtools.js"></script>
@@ -877,13 +877,13 @@ assigned a dedicated buffer with customizable size and overflow behavior.</p>
 <dt><strong>objects_to_register</strong><span class="classifier"><a class="reference internal" href="../acoular.base.html#acoular.base.Generator" title="acoular.base.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a> or list of <a class="reference internal" href="../acoular.base.html#acoular.base.Generator" title="acoular.base.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a></span></dt><dd><p>A single object or a list of objects derived from <a class="reference internal" href="../acoular.base.html#acoular.base.Generator" title="acoular.base.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a> to be
 registered as targets for data distribution.</p>
 </dd>
-<dt><strong>buffer_size</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The maximum number of data blocks each object’s buffer can hold. If not specified,
+<dt><strong>buffer_size</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The maximum number of data blocks each object’s buffer can hold. If not specified,
 the default buffer size (100 blocks) is used, or a globally defined size if
 <code class="docutils literal notranslate"><span class="pre">buffer_size</span></code> is a dictionary.</p>
 </dd>
-<dt><strong>buffer_overflow_treatment</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Defines the behavior when a buffer exceeds its maximum size. Options are:</p>
+<dt><strong>buffer_overflow_treatment</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Defines the behavior when a buffer exceeds its maximum size. Options are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">'error'</span></code>: Raises an <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOError</span></code></a> when the buffer overflows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'error'</span></code>: Raises an <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#IOError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOError</span></code></a> when the buffer overflows.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'warning'</span></code>: Issues a warning and may result in data loss.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'none'</span></code>: Silently discards the oldest data blocks to make room for new ones.
 If not specified, the default behavior is <code class="docutils literal notranslate"><span class="pre">'error'</span></code>.</p></li>
@@ -893,7 +893,7 @@ If not specified, the default behavior is <code class="docutils literal notransl
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If any of the specified objects is already registered.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If any of the specified objects is already registered.</p>
 </dd>
 </dl>
 </dd>
@@ -918,7 +918,7 @@ If no objects are provided, all registered objects will be removed.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KeyError</span></code></a></dt><dd><p>If any of the specified objects are not currently registered.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#KeyError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KeyError</span></code></a></dt><dd><p>If any of the specified objects are not currently registered.</p>
 </dd>
 </dl>
 </dd>
@@ -942,7 +942,7 @@ all registered objects in a block-wise manner.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The size of each block to be yielded, defined as the number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The size of each block to be yielded, defined as the number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -955,9 +955,9 @@ The last block may be shorter than <code class="docutils literal notranslate"><s
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If the calling object is not registered with the <a class="reference internal" href="../acoular.process.html#acoular.process.SampleSplitter" title="acoular.process.SampleSplitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">SampleSplitter</span></code></a>.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If the calling object is not registered with the <a class="reference internal" href="../acoular.process.html#acoular.process.SampleSplitter" title="acoular.process.SampleSplitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">SampleSplitter</span></code></a>.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If the block buffer reaches its maximum size and the overflow handling
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If the block buffer reaches its maximum size and the overflow handling
 policy is set to <code class="docutils literal notranslate"><span class="pre">'error'</span></code>.</p>
 </dd>
 </dl>

@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Sep 09, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 07, 2026"/>
   
     
     <script src="../../../_static/searchtools.js"></script>
@@ -788,7 +788,7 @@ It provides the multi-channel time-domain signals that will be mixed.</p>
 <dd><p>An array of amplitude weight factors applied to each input channel before summation.
 If not explicitly set, all channels are weighted equally (delault is <code class="docutils literal notranslate"><span class="pre">1</span></code>).
 The shape of <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.ChannelMixer.weights" title="acoular.tprocess.ChannelMixer.weights"><code class="xref py py-attr docutils literal notranslate"><span class="pre">weights</span></code></a> must match the <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.ChannelMixer.num_channels" title="acoular.tprocess.ChannelMixer.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">input</span> <span class="pre">channels</span></code></a>.
-If an incompatible shape is provided, a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> will be raised.</p>
+If an incompatible shape is provided, a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> will be raised.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -814,7 +814,7 @@ is processed and yielded in block-wise fashion for efficient memory handling.</p
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -828,8 +828,8 @@ a multiple of <code class="docutils literal notranslate"><span class="pre">num</
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.ChannelMixer.weights" title="acoular.tprocess.ChannelMixer.weights"><code class="xref py py-attr docutils literal notranslate"><span class="pre">weights</span></code></a> array is provided but its shape does not match the expected shape
-(<a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.ChannelMixer.num_channels" title="acoular.tprocess.ChannelMixer.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_channels</span></code></a>,) or (<code class="docutils literal notranslate"><span class="pre">1</span></code>,), a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised indicating that the
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.ChannelMixer.weights" title="acoular.tprocess.ChannelMixer.weights"><code class="xref py py-attr docutils literal notranslate"><span class="pre">weights</span></code></a> array is provided but its shape does not match the expected shape
+(<a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.ChannelMixer.num_channels" title="acoular.tprocess.ChannelMixer.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_channels</span></code></a>,) or (<code class="docutils literal notranslate"><span class="pre">1</span></code>,), a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised indicating that the
 weights cannot be broadcasted properly.</p>
 </dd>
 </dl>

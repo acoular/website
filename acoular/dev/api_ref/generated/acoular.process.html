@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Sep 09, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 07, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -780,7 +780,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="acoular.process.LockedGenerator">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.process.</span></span><span class="sig-name descname"><span class="pre">LockedGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">it</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#acoular.process.LockedGenerator" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Thread-safe wrapper for an iterator or generator.</p>
 <p>The <a class="reference internal" href="#acoular.process.LockedGenerator" title="acoular.process.LockedGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LockedGenerator</span></code></a> class ensures that calls to the <code class="docutils literal notranslate"><span class="pre">__next__</span></code> method of the
 given iterator or generator are thread-safe, preventing race conditions when accessed by
@@ -840,7 +840,7 @@ signal can be calculated:</p>
 </pre></div>
 </div>
 <p>Here, each evaluation of the generator created by the <a class="reference internal" href="#acoular.process.Average.result" title="acoular.process.Average.result"><code class="xref py py-meth docutils literal notranslate"><span class="pre">result()</span></code></a> method of the
-<a class="reference internal" href="#acoular.process.Average" title="acoular.process.Average"><code class="xref py py-class docutils literal notranslate"><span class="pre">Average</span></code></a> object via the <a class="reference external" href="https://docs.python.org/3/library/functions.html#next" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">next()</span></code></a> function returns <code class="code docutils literal notranslate"><span class="pre">num=1</span></code> average across a
+<a class="reference internal" href="#acoular.process.Average" title="acoular.process.Average"><code class="xref py py-class docutils literal notranslate"><span class="pre">Average</span></code></a> object via the <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#next" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">next()</span></code></a> function returns <code class="code docutils literal notranslate"><span class="pre">num=1</span></code> average across a
 snapshot of 512 time samples.</p>
 <p>If the source is a frequency domain source, the average is calculated over a certain number
 of frequency snapshots, defined by <a class="reference internal" href="#acoular.process.Average.num_per_average" title="acoular.process.Average.num_per_average"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_per_average</span></code></a>.</p>
@@ -893,7 +893,7 @@ The size of the blocks yielded is defined by the <code class="docutils literal n
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of averaged blocks to yield at a time. Each block contains the average over
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of averaged blocks to yield at a time. Each block contains the average over
 <a class="reference internal" href="#acoular.process.Average.num_per_average" title="acoular.process.Average.num_per_average"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_per_average</span></code></a> time samples or frequency snapshots. The last yielded block
 may contain fewer than <code class="docutils literal notranslate"><span class="pre">num</span></code> averages.</p>
 </dd>
@@ -1029,7 +1029,7 @@ reusing the source’s output.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of time samples or frequency snapshots per block to yield.
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of time samples or frequency snapshots per block to yield.
 The final block may be smaller if there is insufficient data.</p>
 </dd>
 </dl>
@@ -1221,13 +1221,13 @@ assigned a dedicated buffer with customizable size and overflow behavior.</p>
 <dt><strong>objects_to_register</strong><span class="classifier"><a class="reference internal" href="acoular.base.html#acoular.base.Generator" title="acoular.base.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a> or list of <a class="reference internal" href="acoular.base.html#acoular.base.Generator" title="acoular.base.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a></span></dt><dd><p>A single object or a list of objects derived from <a class="reference internal" href="acoular.base.html#acoular.base.Generator" title="acoular.base.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></a> to be
 registered as targets for data distribution.</p>
 </dd>
-<dt><strong>buffer_size</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The maximum number of data blocks each object’s buffer can hold. If not specified,
+<dt><strong>buffer_size</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The maximum number of data blocks each object’s buffer can hold. If not specified,
 the default buffer size (100 blocks) is used, or a globally defined size if
 <code class="docutils literal notranslate"><span class="pre">buffer_size</span></code> is a dictionary.</p>
 </dd>
-<dt><strong>buffer_overflow_treatment</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Defines the behavior when a buffer exceeds its maximum size. Options are:</p>
+<dt><strong>buffer_overflow_treatment</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Defines the behavior when a buffer exceeds its maximum size. Options are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">'error'</span></code>: Raises an <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOError</span></code></a> when the buffer overflows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'error'</span></code>: Raises an <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#IOError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IOError</span></code></a> when the buffer overflows.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'warning'</span></code>: Issues a warning and may result in data loss.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'none'</span></code>: Silently discards the oldest data blocks to make room for new ones.
 If not specified, the default behavior is <code class="docutils literal notranslate"><span class="pre">'error'</span></code>.</p></li>
@@ -1237,7 +1237,7 @@ If not specified, the default behavior is <code class="docutils literal notransl
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If any of the specified objects is already registered.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If any of the specified objects is already registered.</p>
 </dd>
 </dl>
 </dd>
@@ -1262,7 +1262,7 @@ If no objects are provided, all registered objects will be removed.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KeyError</span></code></a></dt><dd><p>If any of the specified objects are not currently registered.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#KeyError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KeyError</span></code></a></dt><dd><p>If any of the specified objects are not currently registered.</p>
 </dd>
 </dl>
 </dd>
@@ -1286,7 +1286,7 @@ all registered objects in a block-wise manner.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The size of each block to be yielded, defined as the number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The size of each block to be yielded, defined as the number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -1299,9 +1299,9 @@ The last block may be shorter than <code class="docutils literal notranslate"><s
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If the calling object is not registered with the <a class="reference internal" href="#acoular.process.SampleSplitter" title="acoular.process.SampleSplitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">SampleSplitter</span></code></a>.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If the calling object is not registered with the <a class="reference internal" href="#acoular.process.SampleSplitter" title="acoular.process.SampleSplitter"><code class="xref py py-class docutils literal notranslate"><span class="pre">SampleSplitter</span></code></a>.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If the block buffer reaches its maximum size and the overflow handling
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If the block buffer reaches its maximum size and the overflow handling
 policy is set to <code class="docutils literal notranslate"><span class="pre">'error'</span></code>.</p>
 </dd>
 </dl>
@@ -1471,7 +1471,7 @@ accordingly to accommodate the increase.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of samples by which to increase the buffer size.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of samples by which to increase the buffer size.</p>
 </dd>
 </dl>
 </dd>
@@ -1489,7 +1489,7 @@ setting.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of samples to read from the buffer.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of samples to read from the buffer.</p>
 </dd>
 </dl>
 </dd>
@@ -1527,13 +1527,13 @@ accordingly.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>snum</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of samples to retrieve from the source in each iteration.</p>
+<dt><strong>snum</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of samples to retrieve from the source in each iteration.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Yields<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></dt><dd><p>This method is a generator and yields control back after filling the buffer.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></dt><dd><p>This method is a generator and yields control back after filling the buffer.</p>
 </dd>
 </dl>
 </dd>
@@ -1560,7 +1560,7 @@ enough data. Once the buffer is full, it will return the requested blocks of sam
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of samples to return in each block.
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of samples to return in each block.
 This value specifies the size of the blocks to be yielded from the buffer.</p>
 </dd>
 </dl>

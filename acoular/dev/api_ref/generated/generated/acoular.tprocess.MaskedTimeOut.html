@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Sep 09, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 07, 2026"/>
   
     
     <script src="../../../_static/searchtools.js"></script>
@@ -794,7 +794,7 @@ This object provides the raw time-domain signals that will be filtered based on 
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">stop</span></span></dt>
 <dd><p>The index of the last valid sample (exclusive).
-If set to <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, the selection continues until the end of the available data.</p>
+If set to <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, the selection continues until the end of the available data.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -851,7 +851,7 @@ data is then yielded in block-wise fashion to facilitate efficient streaming.</p
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -866,7 +866,7 @@ inherited directly and may be smaller than the <a class="reference internal" hre
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If no valid samples are available within the defined <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.MaskedTimeOut.start" title="acoular.tprocess.MaskedTimeOut.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> and <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.MaskedTimeOut.stop" title="acoular.tprocess.MaskedTimeOut.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If no valid samples are available within the defined <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.MaskedTimeOut.start" title="acoular.tprocess.MaskedTimeOut.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> and <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.MaskedTimeOut.stop" title="acoular.tprocess.MaskedTimeOut.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a>
 range. This can occur if <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.MaskedTimeOut.start" title="acoular.tprocess.MaskedTimeOut.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> is greater than or equal to <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.MaskedTimeOut.stop" title="acoular.tprocess.MaskedTimeOut.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a> or if
 the <a class="reference internal" href="../acoular.tprocess.html#acoular.tprocess.MaskedTimeOut.source" title="acoular.tprocess.MaskedTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a> is not containing any valid samples in the given range.</p>
 </dd>

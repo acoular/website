@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Sep 09, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 07, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -830,9 +830,9 @@
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>n</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, array_like</span></dt><dd><p>Order of the spherical Hankel function. Must be a non-negative integer.</p>
+<dt><strong>n</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, array_like</span></dt><dd><p>Order of the spherical Hankel function. Must be a non-negative integer.</p>
 </dd>
-<dt><strong>z</strong><span class="classifier">complex or <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, array_like</span></dt><dd><p>Argument of the spherical Hankel function. Can be real or complex.</p>
+<dt><strong>z</strong><span class="classifier">complex or <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, array_like</span></dt><dd><p>Argument of the spherical Hankel function. Can be real or complex.</p>
 </dd>
 </dl>
 </dd>
@@ -947,7 +947,7 @@ orientation (<code class="docutils literal notranslate"><span class="pre">direct
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>lOrder</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The maximum order of spherical harmonics to compute. The resulting modes will include all
+<dt><strong>lOrder</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The maximum order of spherical harmonics to compute. The resulting modes will include all
 orders up to and including <code class="docutils literal notranslate"><span class="pre">lOrder</span></code>.</p>
 </dd>
 <dt><strong>direction</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(3,)</span></code></span></dt><dd><p>Unit vector representing the orientation of the spherical harmonics. Should contain the
@@ -1107,7 +1107,7 @@ or from a NumPy array (if <a class="reference internal" href="#acoular.sources.T
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The size of each block to be yielded, representing the number of time-domain
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The size of each block to be yielded, representing the number of time-domain
 samples per block.</p>
 </dd>
 </dl>
@@ -1122,7 +1122,7 @@ of samples is not a multiple of <code class="docutils literal notranslate"><span
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If no samples are available (i.e., <a class="reference internal" href="#acoular.sources.TimeSamples.num_samples" title="acoular.sources.TimeSamples.num_samples"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_samples</span></code></a> is <code class="docutils literal notranslate"><span class="pre">0</span></code>).</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If no samples are available (i.e., <a class="reference internal" href="#acoular.sources.TimeSamples.num_samples" title="acoular.sources.TimeSamples.num_samples"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_samples</span></code></a> is <code class="docutils literal notranslate"><span class="pre">0</span></code>).</p>
 </dd>
 </dl>
 </dd>
@@ -1264,7 +1264,7 @@ based on the specified <a class="reference internal" href="#acoular.sources.Mask
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The size of each block to be yielded, representing the number of time-domain samples
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The size of each block to be yielded, representing the number of time-domain samples
 per block. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
@@ -1279,7 +1279,7 @@ time-domain data. The last block may have fewer than <code class="docutils liter
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If no valid samples are available (i.e., <a class="reference internal" href="#acoular.sources.MaskedTimeSamples.start" title="acoular.sources.MaskedTimeSamples.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> and <a class="reference internal" href="#acoular.sources.MaskedTimeSamples.stop" title="acoular.sources.MaskedTimeSamples.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a> indices result
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If no valid samples are available (i.e., <a class="reference internal" href="#acoular.sources.MaskedTimeSamples.start" title="acoular.sources.MaskedTimeSamples.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> and <a class="reference internal" href="#acoular.sources.MaskedTimeSamples.stop" title="acoular.sources.MaskedTimeSamples.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a> indices result
 in an empty range).</p>
 </dd>
 </dl>
@@ -1494,7 +1494,7 @@ well as any environmental propagation effects.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to be yielded. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to be yielded. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -1508,9 +1508,9 @@ multiple of <code class="docutils literal notranslate"><span class="pre">num</sp
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the source and a microphone are located at the same position.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the source and a microphone are located at the same position.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></dt><dd><p>If signal processing or propagation cannot be performed.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#RuntimeError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></dt><dd><p>If signal processing or propagation cannot be performed.</p>
 </dd>
 </dl>
 </dd>
@@ -1609,7 +1609,7 @@ well as any environmental propagation effects.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to be yielded. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to be yielded. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -1623,7 +1623,7 @@ detected at the microphones. The last block may have fewer samples if
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IndexError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IndexError</span></code></a></dt><dd><p>If no more samples are available from the signal source.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#IndexError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IndexError</span></code></a></dt><dd><p>If no more samples are available from the signal source.</p>
 </dd>
 </dl>
 </dd>
@@ -1753,7 +1753,7 @@ translation is applied. Otherwise, the method incorporates rotation into the cal
 <dd class="field-odd"><dl>
 <dt><strong>direction</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></span></dt><dd><p>The initial orientation of the source, specified as a three-dimensional array.</p>
 </dd>
-<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>The time at which the <a class="reference internal" href="#acoular.sources.MovingPointSource.trajectory" title="acoular.sources.MovingPointSource.trajectory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trajectory</span></code></a> position and velocity are
+<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>The time at which the <a class="reference internal" href="#acoular.sources.MovingPointSource.trajectory" title="acoular.sources.MovingPointSource.trajectory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trajectory</span></code></a> position and velocity are
 evaluated. Defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 </dd>
 </dl>
@@ -1788,7 +1788,7 @@ amplification (if enabled), and environmental propagation effects.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to be yielded. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to be yielded. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -1802,7 +1802,7 @@ detected at the microphones. The last block may have fewer samples if
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IndexError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IndexError</span></code></a></dt><dd><p>If no more samples are available from the signal source.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#IndexError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IndexError</span></code></a></dt><dd><p>If no more samples are available from the signal source.</p>
 </dd>
 </dl>
 </dd>
@@ -1935,7 +1935,7 @@ Default is <code class="docutils literal notranslate"><span class="pre">'loop'</
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to yield. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to yield. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -1949,7 +1949,7 @@ detected at the microphones. The last block may have fewer samples if
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IndexError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IndexError</span></code></a></dt><dd><p>If no more samples are available from the source.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#IndexError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IndexError</span></code></a></dt><dd><p>If no more samples are available from the source.</p>
 </dd>
 </dl>
 </dd>
@@ -2074,7 +2074,7 @@ along the <a class="reference internal" href="#acoular.sources.MovingPointSource
 <dd class="field-odd"><dl>
 <dt><strong>t</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></span></dt><dd><p>The current receiving time at the microphones.</p>
 </dd>
-<dt><strong>direction</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></span></dt><dd><p>Direction vector for the source’s dipole directivity.</p>
+<dt><strong>direction</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></span></dt><dd><p>Direction vector for the source’s dipole directivity.</p>
 </dd>
 </dl>
 </dd>
@@ -2125,7 +2125,7 @@ or after 100 iterations.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to yield. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to yield. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -2156,7 +2156,7 @@ translation is applied. Otherwise, the method incorporates rotation into the cal
 <dd class="field-odd"><dl>
 <dt><strong>direction</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></span></dt><dd><p>The initial orientation of the source, specified as a three-dimensional array.</p>
 </dd>
-<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>The time at which the <a class="reference internal" href="#acoular.sources.MovingPointSource.trajectory" title="acoular.sources.MovingPointSource.trajectory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trajectory</span></code></a> position and velocity are
+<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>The time at which the <a class="reference internal" href="#acoular.sources.MovingPointSource.trajectory" title="acoular.sources.MovingPointSource.trajectory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trajectory</span></code></a> position and velocity are
 evaluated. Defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 </dd>
 </dl>
@@ -2350,7 +2350,7 @@ coherence between them can be controlled.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to yield. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to yield. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -2494,7 +2494,7 @@ accounts for the Doppler effect due to the motion of the source.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>t</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>The current receiving time at the microphones, specified in seconds.</p>
+<dt><strong>t</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>The current receiving time at the microphones, specified in seconds.</p>
 </dd>
 <dt><strong>direction</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></span></dt><dd><p>The current direction vector of the line source, specified as a 3-element array
 representing the orientation of the line.</p>
@@ -2537,7 +2537,7 @@ the current time is sufficiently small (within a defined threshold).</p></li>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to yield. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to yield. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -2565,7 +2565,7 @@ translation is applied. Otherwise, the method incorporates rotation into the cal
 <dd class="field-odd"><dl>
 <dt><strong>direction</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></span></dt><dd><p>The initial orientation of the source, specified as a three-dimensional array.</p>
 </dd>
-<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>The time at which the <a class="reference internal" href="#acoular.sources.MovingPointSource.trajectory" title="acoular.sources.MovingPointSource.trajectory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trajectory</span></code></a> position and velocity are
+<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>The time at which the <a class="reference internal" href="#acoular.sources.MovingPointSource.trajectory" title="acoular.sources.MovingPointSource.trajectory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trajectory</span></code></a> position and velocity are
 evaluated. Defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 </dd>
 </dl>
@@ -2836,7 +2836,7 @@ exact multiple of the block size.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to be yielded. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block to be yielded. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -2850,7 +2850,7 @@ multiple of <code class="docutils literal notranslate"><span class="pre">num</sp
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the shape of the <a class="reference internal" href="#acoular.sources.UncorrelatedNoiseSource.seed" title="acoular.sources.UncorrelatedNoiseSource.seed"><code class="xref py py-attr docutils literal notranslate"><span class="pre">seed</span></code></a> array does not match the number of channels.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the shape of the <a class="reference internal" href="#acoular.sources.UncorrelatedNoiseSource.seed" title="acoular.sources.UncorrelatedNoiseSource.seed"><code class="xref py py-attr docutils literal notranslate"><span class="pre">seed</span></code></a> array does not match the number of channels.</p>
 </dd>
 </dl>
 </dd>
@@ -3014,11 +3014,11 @@ based on the states of the sources and the weights. (read-only)</p>
 <dd><p>Ensure that all sources are compatible for mixing.</p>
 <p>This method checks that all sources in <a class="reference internal" href="#acoular.sources.SourceMixer.sources" title="acoular.sources.SourceMixer.sources"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sources</span></code></a> have the same
 sampling frequency, number of channels, and number of samples. A
-<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised if any mismatch is detected.</p>
+<a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised if any mismatch is detected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If any source has incompatible attributes.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If any source has incompatible attributes.</p>
 </dd>
 </dl>
 </dd>
@@ -3035,7 +3035,7 @@ the mixed signal for all channels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block to be yielded.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block to be yielded.</p>
 </dd>
 </dl>
 </dd>
@@ -3049,7 +3049,7 @@ is not a multiple of <code class="docutils literal notranslate"><span class="pre
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the sources are not compatible for mixing.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the sources are not compatible for mixing.</p>
 </dd>
 </dl>
 </dd>
@@ -3182,7 +3182,7 @@ contains the signal for all output channels (microphones).</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The number of samples per block to yield. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The number of samples per block to yield. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
 </dd>

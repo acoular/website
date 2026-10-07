@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Sep 09, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 07, 2026"/>
   
     
     <script src="../../../_static/searchtools.js"></script>
@@ -798,7 +798,7 @@ signal can be calculated:</p>
 </pre></div>
 </div>
 <p>Here, each evaluation of the generator created by the <a class="reference internal" href="../acoular.process.html#acoular.process.Average.result" title="acoular.process.Average.result"><code class="xref py py-meth docutils literal notranslate"><span class="pre">result()</span></code></a> method of the
-<a class="reference internal" href="../acoular.process.html#acoular.process.Average" title="acoular.process.Average"><code class="xref py py-class docutils literal notranslate"><span class="pre">Average</span></code></a> object via the <a class="reference external" href="https://docs.python.org/3/library/functions.html#next" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">next()</span></code></a> function returns <code class="code docutils literal notranslate"><span class="pre">num=1</span></code> average across a
+<a class="reference internal" href="../acoular.process.html#acoular.process.Average" title="acoular.process.Average"><code class="xref py py-class docutils literal notranslate"><span class="pre">Average</span></code></a> object via the <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#next" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">next()</span></code></a> function returns <code class="code docutils literal notranslate"><span class="pre">num=1</span></code> average across a
 snapshot of 512 time samples.</p>
 <p>If the source is a frequency domain source, the average is calculated over a certain number
 of frequency snapshots, defined by <a class="reference internal" href="../acoular.process.html#acoular.process.Average.num_per_average" title="acoular.process.Average.num_per_average"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_per_average</span></code></a>.</p>
@@ -851,7 +851,7 @@ The size of the blocks yielded is defined by the <code class="docutils literal n
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of averaged blocks to yield at a time. Each block contains the average over
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of averaged blocks to yield at a time. Each block contains the average over
 <a class="reference internal" href="../acoular.process.html#acoular.process.Average.num_per_average" title="acoular.process.Average.num_per_average"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_per_average</span></code></a> time samples or frequency snapshots. The last yielded block
 may contain fewer than <code class="docutils literal notranslate"><span class="pre">num</span></code> averages.</p>
 </dd>
