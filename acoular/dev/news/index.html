@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Oct 07, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 16, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -770,13 +770,19 @@
 <li><p>use new Acoular themeing for the docs and examples</p></li>
 </ul>
 </div></blockquote>
+<p><strong>Bugfixes</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>fixes the sign of the radial Mach number in <a class="reference internal" href="../api_ref/generated/acoular.tbeamform.html#acoular.tbeamform.BeamformerTimeTraj" title="acoular.tbeamform.BeamformerTimeTraj"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerTimeTraj</span></code></a> (and derived classes) used for <code class="docutils literal notranslate"><span class="pre">conv_amp=True</span></code>, which is now consistent with <a class="reference internal" href="../api_ref/generated/acoular.sources.html#acoular.sources.MovingPointSource" title="acoular.sources.MovingPointSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">MovingPointSource</span></code></a>; results of the trajectory beamformers with <code class="docutils literal notranslate"><span class="pre">conv_amp=True</span></code> change</p></li>
+</ul>
+</div></blockquote>
 </section>
 <section id="id1">
 <h2>26.08<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p><strong>**Internal</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>renames <code class="xref py py-attr docutils literal notranslate"><span class="pre">eva</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">eve</span></code> to <code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvals</span></code> and <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra.eigvecs" title="acoular.spectra.PowerSpectra.eigvecs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvecs</span></code></a>, the old names remain available and raise a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#DeprecationWarning" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a></p></li>
+<li><p>renames <code class="xref py py-attr docutils literal notranslate"><span class="pre">eva</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">eve</span></code> to <code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvals</span></code> and <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra.eigvecs" title="acoular.spectra.PowerSpectra.eigvecs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvecs</span></code></a>, the old names remain available and raise a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#DeprecationWarning" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a></p></li>
 <li><p>deprecates the <code class="docutils literal notranslate"><span class="pre">calc_ev</span></code>, <code class="docutils literal notranslate"><span class="pre">calc_eva</span></code>, and <code class="docutils literal notranslate"><span class="pre">calc_eve</span></code> methods of <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a>, the eigendecomposition is now computed on access of <code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvals</span></code> or <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra.eigvecs" title="acoular.spectra.PowerSpectra.eigvecs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">eigvecs</span></code></a></p></li>
 <li><p>computes the eigendecomposition of the CSM only once instead of separately for eigenvalues and eigenvectors</p></li>
 <li><p>adds <a class="reference internal" href="../api_ref/generated/acoular.base.html#acoular.base.FiniteTimeOut" title="acoular.base.FiniteTimeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiniteTimeOut</span></code></a> for finite time processes</p></li>

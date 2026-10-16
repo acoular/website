@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Oct 07, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 16, 2026"/>
   
     
     <script src="../../../_static/searchtools.js"></script>
@@ -858,9 +858,9 @@ trajectory, based on the keys in <a class="reference internal" href="../acoular.
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>t</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> or array of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Time instant(s) at which to compute the position(s) or derivative(s).</p>
+<dt><strong>t</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> or array of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>Time instant(s) at which to compute the position(s) or derivative(s).</p>
 </dd>
-<dt><strong>der</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><dl class="simple">
+<dt><strong>der</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><dl class="simple">
 <dt>Order of the derivative to compute:</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> for positions (default),</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> for velocities,</p></li>
@@ -899,11 +899,11 @@ time(s). The shape matches that of <code class="docutils literal notranslate"><s
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>t_start</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Start time for the trajectory. Default is earliest key in <a class="reference internal" href="../acoular.trajectory.html#acoular.trajectory.Trajectory.points" title="acoular.trajectory.Trajectory.points"><code class="xref py py-attr docutils literal notranslate"><span class="pre">points</span></code></a>.</p>
+<dt><strong>t_start</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Start time for the trajectory. Default is earliest key in <a class="reference internal" href="../acoular.trajectory.html#acoular.trajectory.Trajectory.points" title="acoular.trajectory.Trajectory.points"><code class="xref py py-attr docutils literal notranslate"><span class="pre">points</span></code></a>.</p>
 </dd>
-<dt><strong>t_end</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>End time of the trajectory. Default is the latest key in <a class="reference internal" href="../acoular.trajectory.html#acoular.trajectory.Trajectory.points" title="acoular.trajectory.Trajectory.points"><code class="xref py py-attr docutils literal notranslate"><span class="pre">points</span></code></a>.</p>
+<dt><strong>t_end</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>End time of the trajectory. Default is the latest key in <a class="reference internal" href="../acoular.trajectory.html#acoular.trajectory.Trajectory.points" title="acoular.trajectory.Trajectory.points"><code class="xref py py-attr docutils literal notranslate"><span class="pre">points</span></code></a>.</p>
 </dd>
-<dt><strong>delta_t</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>Time interval between consecutive points to yield. Default is the value of <code class="docutils literal notranslate"><span class="pre">t_start</span></code>.</p>
+<dt><strong>delta_t</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>Time interval between consecutive points to yield. Default is the value of <code class="docutils literal notranslate"><span class="pre">t_start</span></code>.</p>
 </dd>
 <dt><strong>der</strong><span class="classifier">int, optional</span></dt><dd><dl class="simple">
 <dt>Order of the derivative to compute:</dt><dd><ul class="simple">
@@ -918,7 +918,7 @@ time(s). The shape matches that of <code class="docutils literal notranslate"><s
 </dd>
 <dt class="field-even">Yields<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> positions or derivatives at the specified time intervals.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">floats</span></code></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> positions or derivatives at the specified time intervals.</p>
 </dd>
 </dl>
 </dd>

@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Oct 07, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 16, 2026"/>
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -863,7 +863,7 @@ This object provides the raw time-domain signals that will be filtered based on 
 <dt class="sig sig-object py" id="acoular.tprocess.MaskedTimeOut.stop">
 <span class="sig-name descname"><span class="pre">stop</span></span><a class="headerlink" href="#acoular.tprocess.MaskedTimeOut.stop" title="Link to this definition">#</a></dt>
 <dd><p>The index of the last valid sample (exclusive).
-If set to <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, the selection continues until the end of the available data.</p>
+If set to <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, the selection continues until the end of the available data.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -920,7 +920,7 @@ data is then yielded in block-wise fashion to facilitate efficient streaming.</p
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -935,7 +935,7 @@ inherited directly and may be smaller than the <a class="reference internal" hre
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If no valid samples are available within the defined <a class="reference internal" href="#acoular.tprocess.MaskedTimeOut.start" title="acoular.tprocess.MaskedTimeOut.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> and <a class="reference internal" href="#acoular.tprocess.MaskedTimeOut.stop" title="acoular.tprocess.MaskedTimeOut.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If no valid samples are available within the defined <a class="reference internal" href="#acoular.tprocess.MaskedTimeOut.start" title="acoular.tprocess.MaskedTimeOut.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> and <a class="reference internal" href="#acoular.tprocess.MaskedTimeOut.stop" title="acoular.tprocess.MaskedTimeOut.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a>
 range. This can occur if <a class="reference internal" href="#acoular.tprocess.MaskedTimeOut.start" title="acoular.tprocess.MaskedTimeOut.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> is greater than or equal to <a class="reference internal" href="#acoular.tprocess.MaskedTimeOut.stop" title="acoular.tprocess.MaskedTimeOut.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a> or if
 the <a class="reference internal" href="#acoular.tprocess.MaskedTimeOut.source" title="acoular.tprocess.MaskedTimeOut.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a> is not containing any valid samples in the given range.</p>
 </dd>
@@ -978,7 +978,7 @@ It provides the multi-channel time-domain signals that will be mixed.</p>
 <dd><p>An array of amplitude weight factors applied to each input channel before summation.
 If not explicitly set, all channels are weighted equally (delault is <code class="docutils literal notranslate"><span class="pre">1</span></code>).
 The shape of <a class="reference internal" href="#acoular.tprocess.ChannelMixer.weights" title="acoular.tprocess.ChannelMixer.weights"><code class="xref py py-attr docutils literal notranslate"><span class="pre">weights</span></code></a> must match the <a class="reference internal" href="#acoular.tprocess.ChannelMixer.num_channels" title="acoular.tprocess.ChannelMixer.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">input</span> <span class="pre">channels</span></code></a>.
-If an incompatible shape is provided, a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> will be raised.</p>
+If an incompatible shape is provided, a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> will be raised.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -1004,7 +1004,7 @@ is processed and yielded in block-wise fashion for efficient memory handling.</p
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -1018,8 +1018,8 @@ a multiple of <code class="docutils literal notranslate"><span class="pre">num</
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the <a class="reference internal" href="#acoular.tprocess.ChannelMixer.weights" title="acoular.tprocess.ChannelMixer.weights"><code class="xref py py-attr docutils literal notranslate"><span class="pre">weights</span></code></a> array is provided but its shape does not match the expected shape
-(<a class="reference internal" href="#acoular.tprocess.ChannelMixer.num_channels" title="acoular.tprocess.ChannelMixer.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_channels</span></code></a>,) or (<code class="docutils literal notranslate"><span class="pre">1</span></code>,), a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised indicating that the
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the <a class="reference internal" href="#acoular.tprocess.ChannelMixer.weights" title="acoular.tprocess.ChannelMixer.weights"><code class="xref py py-attr docutils literal notranslate"><span class="pre">weights</span></code></a> array is provided but its shape does not match the expected shape
+(<a class="reference internal" href="#acoular.tprocess.ChannelMixer.num_channels" title="acoular.tprocess.ChannelMixer.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_channels</span></code></a>,) or (<code class="docutils literal notranslate"><span class="pre">1</span></code>,), a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised indicating that the
 weights cannot be broadcasted properly.</p>
 </dd>
 </dl>
@@ -1081,8 +1081,8 @@ on the trigger type (:attr;`trigger_type`). The sign is relevant:</p>
 <li><p>A positive threshold detects peaks above this value.</p></li>
 <li><p>A negative threshold detects peaks below this value.</p></li>
 </ul>
-<p>If <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, an estimated threshold is used, calculated as 75% of the extreme deviation
-from the mean signal value. Default is <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p>
+<p>If <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, an estimated threshold is used, calculated as 75% of the extreme deviation
+from the mean signal value. Default is <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p>
 <p>E.g: If the mean value is <span class="math notranslate nohighlight">\(0\)</span> and there are positive extrema at <span class="math notranslate nohighlight">\(400\)</span> and
 negative extrema at <span class="math notranslate nohighlight">\(-800\)</span>. Then the estimated threshold would be
 <span class="math notranslate nohighlight">\(0.75 \cdot (-800) = -600\)</span>.</p>
@@ -1156,7 +1156,7 @@ transformations to the data.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -1284,7 +1284,7 @@ data is then yielded in block-wise fashion to facilitate efficient streaming.</p
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -1299,7 +1299,7 @@ inherited directly and may be smaller than the <a class="reference internal" hre
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If no valid samples are available within the defined <a class="reference internal" href="#acoular.tprocess.AngleTracker.start" title="acoular.tprocess.AngleTracker.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> and <a class="reference internal" href="#acoular.tprocess.AngleTracker.stop" title="acoular.tprocess.AngleTracker.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#OSError" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>If no valid samples are available within the defined <a class="reference internal" href="#acoular.tprocess.AngleTracker.start" title="acoular.tprocess.AngleTracker.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> and <a class="reference internal" href="#acoular.tprocess.AngleTracker.stop" title="acoular.tprocess.AngleTracker.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a>
 range. This can occur if <a class="reference internal" href="#acoular.tprocess.AngleTracker.start" title="acoular.tprocess.AngleTracker.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> is greater than or equal to <a class="reference internal" href="#acoular.tprocess.AngleTracker.stop" title="acoular.tprocess.AngleTracker.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a> or if
 the <a class="reference internal" href="#acoular.tprocess.AngleTracker.source" title="acoular.tprocess.AngleTracker.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a> is not containing any valid samples in the given range.</p>
 </dd>
@@ -1327,7 +1327,7 @@ This object provides the raw time-domain signals that will be filtered based on 
 <dt class="sig sig-object py" id="acoular.tprocess.AngleTracker.stop">
 <span class="sig-name descname"><span class="pre">stop</span></span><a class="headerlink" href="#acoular.tprocess.AngleTracker.stop" title="Link to this definition">#</a></dt>
 <dd><p>The index of the last valid sample (exclusive).
-If set to <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, the selection continues until the end of the available data.</p>
+If set to <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, the selection continues until the end of the available data.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -1525,7 +1525,7 @@ microphone positions, ensuring accurate signal approximation.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>r</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The radial distance(s) at which to evaluate the sinc function, typically representing
+<dt><strong>r</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The radial distance(s) at which to evaluate the sinc function, typically representing
 the spatial separation between real and virtual microphone positions.</p>
 </dd>
 </dl>
@@ -1549,7 +1549,7 @@ The interpolation method is determined by <a class="reference internal" href="#a
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -1608,7 +1608,7 @@ spatially interpolated based on rotational movement.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block. Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -1637,7 +1637,7 @@ microphone positions, ensuring accurate signal approximation.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>r</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The radial distance(s) at which to evaluate the sinc function, typically representing
+<dt><strong>r</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The radial distance(s) at which to evaluate the sinc function, typically representing
 the spatial separation between real and virtual microphone positions.</p>
 </dd>
 </dl>
@@ -1809,7 +1809,7 @@ applied to the signal.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block.
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block.
 Default is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 </dd>
 </dl>
@@ -1839,7 +1839,7 @@ microphone positions, ensuring accurate signal approximation.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>r</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The radial distance(s) at which to evaluate the sinc function, typically representing
+<dt><strong>r</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floats</span></code></a></span></dt><dd><p>The radial distance(s) at which to evaluate the sinc function, typically representing
 the spatial separation between real and virtual microphone positions.</p>
 </dd>
 </dl>
@@ -2027,11 +2027,11 @@ the <a class="reference internal" href="#acoular.tprocess.Mixer.sources" title="
 <span class="sig-name descname"><span class="pre">validate_sources</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acoular.tprocess.Mixer.validate_sources" title="Link to this definition">#</a></dt>
 <dd><p>Validate whether the additional sources are compatible with the primary source.</p>
 <p>This method checks if all sources have the same sampling frequency and the same number of
-channels. If a mismatch is detected, a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised.</p>
+channels. If a mismatch is detected, a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If any source in <a class="reference internal" href="#acoular.tprocess.Mixer.sources" title="acoular.tprocess.Mixer.sources"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sources</span></code></a> has a different sampling frequency or
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If any source in <a class="reference internal" href="#acoular.tprocess.Mixer.sources" title="acoular.tprocess.Mixer.sources"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sources</span></code></a> has a different sampling frequency or
 number of channels than <a class="reference internal" href="#acoular.tprocess.Mixer.source" title="acoular.tprocess.Mixer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>.</p>
 </dd>
 </dl>
@@ -2056,7 +2056,7 @@ of the mixed time signal yielded.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -2112,7 +2112,7 @@ facilitate processing large signals in chunks.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -2183,7 +2183,7 @@ that sample.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -2258,7 +2258,7 @@ The signal is reversed in time by flipping the order of samples within each bloc
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -2348,7 +2348,7 @@ is performed in a streaming fashion, yielding blocks of filtered signal data.</p
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -2457,7 +2457,7 @@ is performed in a streaming fashion, yielding blocks of filtered signal data.</p
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -2547,7 +2547,7 @@ directions to achieve zero-phase distortion. The processed signal is yielded in 
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -2673,7 +2673,7 @@ is performed in a streaming fashion, yielding blocks of filtered signal data.</p
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -2773,7 +2773,7 @@ is performed in a streaming fashion, yielding blocks of filtered signal data.</p
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -2877,7 +2877,7 @@ samples provided by the source in blocks. The result is returned as a generator.
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Maximum number of time samples per block to yield.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Maximum number of time samples per block to yield.</p>
 </dd>
 </dl>
 </dd>
@@ -2996,7 +2996,7 @@ samples provided by the source in blocks. The result is returned as a generator.
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Maximum number of time samples per block to yield.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Maximum number of time samples per block to yield.</p>
 </dd>
 </dl>
 </dd>
@@ -3067,7 +3067,7 @@ with automatic or user-defined file naming.</p>
 </dd>
 <dt><a class="reference internal" href="acoular.base.html#acoular.base.SamplesGenerator" title="acoular.base.SamplesGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a></dt><dd><p>Interface for generating multi-channel time domain signal processing blocks.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/wave.html#module-wave" title="(in Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wave</span></code></a></dt><dd><p>Python module for handling WAV files.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/wave.html#module-wave" title="(in Python v3.15)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wave</span></code></a></dt><dd><p>Python module for handling WAV files.</p>
 </dd>
 </dl>
 </div>
@@ -3121,7 +3121,7 @@ allowing for streaming or real-time processing.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block to write and yield.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block to write and yield.</p>
 </dd>
 </dl>
 </dd>
@@ -3134,9 +3134,9 @@ allowing for streaming or real-time processing.</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If no channels are specified for output.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If no channels are specified for output.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#Warning" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Warning</span></code></a></dt><dd><p>If more than two channels are specified, or if the sample frequency is not an integer.
+<dt><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#Warning" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Warning</span></code></a></dt><dd><p>If more than two channels are specified, or if the sample frequency is not an integer.
 Also warns if clipping occurs due to data range limitations.</p>
 </dd>
 </dl>
@@ -3314,7 +3314,7 @@ It yields the processed blocks while the data is being written.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of samples per block.</p>
 </dd>
 </dl>
 </dd>
@@ -3425,7 +3425,7 @@ the frequency domain, and yielding the results block by block.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block.
+<dt><strong>num</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of samples per block.
 Default is <code class="docutils literal notranslate"><span class="pre">128</span></code>.</p>
 </dd>
 </dl>
