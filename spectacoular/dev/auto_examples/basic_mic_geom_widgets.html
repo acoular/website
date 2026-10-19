@@ -71,7 +71,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Aug 31, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 19, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -552,7 +552,7 @@ to download the full example code.</p>
 <span id="sphx-glr-auto-examples-basic-mic-geom-widgets-py"></span><h1>Creating widgets with SpectAcoular.<a class="headerlink" href="#creating-widgets-with-spectacoular" title="Link to this heading">#</a></h1>
 <p id="basic-mic-geom-widgets">This example creates an interactive plot of a microphone array geometry
 with additional control widgets using the SpectAcoular package.</p>
-<script src="bokeh-content-db0f8b3a6f124f2c8dfffd220312b846-auto_examples-basic_mic_geom_widgets.js" id="f884ac68-2f7b-4b00-86aa-942295c6af3f"></script><div class="admonition note">
+<script src="bokeh-content-ebac3712d4ac41e5bcfe17873c9ab809-auto_examples-basic_mic_geom_widgets.js" id="aedc4df1-40bf-4862-b549-c9e06488c0b3"></script><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This example can be rendered as a standalone Bokeh document, but full interactivity
 with Python callbacks requires running it as a Bokeh server application.</p>
@@ -626,8 +626,8 @@ Acoular’s classes.</p>
 </div>
 <p>It would also be beneficial to have a widget that allows the user to edit the microphone positions
 and to display the coodinates in a table format. Both can be achieved by using Bokeh’s
-<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/DataTable/index.html#bokeh.models.DataTable" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataTable</span></code></a> widget. In addition, we will use the
-<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/NumberEditor/index.html#bokeh.models.NumberEditor" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumberEditor</span></code></a> to allow the user to edit the values in the table.</p>
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/DataTable/index.html#bokeh.models.DataTable" title="(in Bokeh v3.10.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataTable</span></code></a> widget. In addition, we will use the
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/NumberEditor/index.html#bokeh.models.NumberEditor" title="(in Bokeh v3.10.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumberEditor</span></code></a> to allow the user to edit the values in the table.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">editor</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/NumberEditor/index.html#bokeh.models.NumberEditor" title="bokeh.models.NumberEditor" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NumberEditor</span></a><span class="p">()</span>
 <span class="n">pos_table</span> <span class="o">=</span> <span class="p">[</span>
     <a href="https://docs.bokeh.org/en/latest/docs/reference/models/widgets/tables/TableColumn/index.html#bokeh.models.TableColumn" title="bokeh.models.TableColumn" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TableColumn</span></a><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'x/m'</span><span class="p">,</span> <span class="n">editor</span><span class="o">=</span><span class="n">editor</span><span class="p">),</span>
@@ -651,7 +651,7 @@ and to display the coodinates in a table format. Both can be achieved by using B
 </pre></div>
 </div>
 <p>Finally, we want to allow the user to add or remove microphones from the microphone array.
-Therefore, we will use the <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/tools/PointDrawTool/index.html#bokeh.models.PointDrawTool" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointDrawTool</span></code></a>.</p>
+Therefore, we will use the <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/tools/PointDrawTool/index.html#bokeh.models.PointDrawTool" title="(in Bokeh v3.10.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointDrawTool</span></code></a>.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">draw_tool</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/models/tools/PointDrawTool/index.html#bokeh.models.PointDrawTool" title="bokeh.models.PointDrawTool" class="sphx-glr-backref-module-bokeh-models sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">PointDrawTool</span></a><span class="p">(</span><span class="n">renderers</span><span class="o">=</span><span class="p">[</span><span class="n">glyph</span><span class="p">],</span> <span class="n">empty_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
 
 <a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure.add_tools" title="bokeh.plotting.figure.add_tools" class="sphx-glr-backref-module-bokeh-plotting-figure sphx-glr-backref-type-py-method"><span class="n">figure</span><span class="o">.</span><span class="n">add_tools</span></a><span class="p">(</span><span class="n">draw_tool</span><span class="p">)</span>

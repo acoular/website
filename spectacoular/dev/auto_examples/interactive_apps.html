@@ -71,7 +71,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Aug 31, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 19, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -567,7 +567,7 @@ run in a Bokeh server application to which the client can listen.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>bokeh<span class="w"> </span>serve<span class="w"> </span>--show<span class="w"> </span>examples/interactive_apps.py
 </pre></div>
 </div>
-<script src="bokeh-content-b8b06d41042142f8a7d54f8d6872e214-auto_examples-interactive_apps.js" id="d38b4dec-df16-4219-9d4d-e06ca25284b2"></script><section id="create-three-sources-example">
+<script src="bokeh-content-a5e284730b044655a21851bd19e395ea-auto_examples-interactive_apps.js" id="a1212acc-71e0-4e39-a8bb-0bb89eb1a70e"></script><section id="create-three-sources-example">
 <h2>Create three sources example<a class="headerlink" href="#create-three-sources-example" title="Link to this heading">#</a></h2>
 <p>Let’s begin with the necessary imports and the simulation pipeline
 for the three sources example.</p>
@@ -619,8 +619,8 @@ existing processing chain, arranged in a grid layout.</p>
 <section id="plot-the-beamforming-result">
 <h2>Plot the beamforming result<a class="headerlink" href="#plot-the-beamforming-result" title="Link to this heading">#</a></h2>
 <p>To visualize the beamforming result, we create a figure and use
-Bokeh’s <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs/Image/index.html#bokeh.models.Image" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> glyph, which displays 2D source
-mappings. The <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs/Image/index.html#bokeh.models.Image" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> glyph requires the <em>x</em> and
+Bokeh’s <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs/Image/index.html#bokeh.models.Image" title="(in Bokeh v3.10.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> glyph, which displays 2D source
+mappings. The <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/glyphs/Image/index.html#bokeh.models.Image" title="(in Bokeh v3.10.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> glyph requires the <em>x</em> and
 <em>y</em> coordinates of the bottom-left grid corner, the width and height of
 the grid, and the sound pressure to be displayed.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">source_plot</span> <span class="o">=</span> <a href="https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plotting.figure" title="bokeh.plotting.figure" class="sphx-glr-backref-module-bokeh-plotting sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figure</span></a><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Acoular Three Sources'</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s1">'hover,reset,pan,wheel_zoom'</span><span class="p">)</span>
@@ -656,11 +656,11 @@ the grid, and the sound pressure to be displayed.</p>
 <section id="the-presenter-class">
 <h2>The Presenter class<a class="headerlink" href="#the-presenter-class" title="Link to this heading">#</a></h2>
 <p>SpectAcoular provides Presenter classes that automatically handle
-updates of <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a> data whenever the
+updates of <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="(in Bokeh v3.10.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a> data whenever the
 desired evaluation parameters change. Here, we use the
 <code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerPresenter</span></code> class with
 <code class="docutils literal notranslate"><span class="pre">auto_update=True</span></code>, which means that the data in the
-<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="(in Bokeh v3.10.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a> is updated automatically
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/reference/models/sources/ColumnDataSource/index.html#bokeh.models.ColumnDataSource" title="(in Bokeh v3.10.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a> is updated automatically
 whenever the internal state of the beamformer changes.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">bf_presenter</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">BeamformerPresenter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">bb</span><span class="p">,</span>
