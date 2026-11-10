@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
-    <meta name="docbuild:last-update" content="Oct 24, 2026"/>
+    <meta name="docbuild:last-update" content="Nov 10, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -770,10 +770,18 @@
 <li><p>use new Acoular themeing for the docs and examples</p></li>
 </ul>
 </div></blockquote>
+<p><strong>Internal</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>minor code cleanup in <a class="reference internal" href="../api_ref/generated/acoular.tbeamform.html#acoular.tbeamform.BeamformerTimeTraj" title="acoular.tbeamform.BeamformerTimeTraj"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerTimeTraj</span></code></a> for clarity and speedup</p></li>
+</ul>
+</div></blockquote>
 <p><strong>Bugfixes</strong></p>
 <blockquote>
 <div><ul class="simple">
+<li><p>preserves yielded <a class="reference internal" href="../api_ref/generated/acoular.fprocess.html#acoular.fprocess.RFFT" title="acoular.fprocess.RFFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">RFFT</span></code></a> spectral blocks when the generator advances, so retained full and partial batches remain valid</p></li>
 <li><p>fixes the sign of the radial Mach number in <a class="reference internal" href="../api_ref/generated/acoular.tbeamform.html#acoular.tbeamform.BeamformerTimeTraj" title="acoular.tbeamform.BeamformerTimeTraj"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerTimeTraj</span></code></a> (and derived classes) used for <code class="docutils literal notranslate"><span class="pre">conv_amp=True</span></code>, which is now consistent with <a class="reference internal" href="../api_ref/generated/acoular.sources.html#acoular.sources.MovingPointSource" title="acoular.sources.MovingPointSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">MovingPointSource</span></code></a>; results of the trajectory beamformers with <code class="docutils literal notranslate"><span class="pre">conv_amp=True</span></code> change</p></li>
+<li><p>preserves blocks returned by <a class="reference internal" href="../api_ref/generated/acoular.process.html#acoular.process.SamplesBuffer" title="acoular.process.SamplesBuffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">SamplesBuffer</span></code></a> across refills, including buffered <a class="reference internal" href="../api_ref/generated/acoular.fprocess.html#acoular.fprocess.IRFFT" title="acoular.fprocess.IRFFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">IRFFT</span></code></a> output</p></li>
 </ul>
 </div></blockquote>
 </section>
