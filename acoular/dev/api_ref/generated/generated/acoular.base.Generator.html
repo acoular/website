@@ -71,7 +71,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="SamplesGenerator" href="acoular.base.SamplesGenerator.html" />
-    <link rel="prev" title="base" href="../acoular.base.html" />
+    <link rel="prev" title="AcoularBase" href="acoular.base.AcoularBase.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="26.08" />
@@ -456,6 +456,7 @@
 </ul>
 </details></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../acoular.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="acoular.base.AcoularBase.html"><code class="docutils literal notranslate"><span class="pre">AcoularBase</span></code></a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Generator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SamplesGenerator.html"><code class="docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
@@ -765,7 +766,7 @@
 <dl class="py class">
 <dt class="sig sig-object py">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.base.</span></span><span class="sig-name descname"><span class="pre">Generator</span></span></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.ABCHasStrictTraits" title="(in traits v7.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABCHasStrictTraits</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../acoular.base.html#acoular.base.AcoularBase" title="acoular.base.AcoularBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoularBase</span></code></a></p>
 <p>Interface for any generating signal processing block.</p>
 <p>It provides a common interface for all classes, which generate an output via the generator
 <a class="reference internal" href="../acoular.base.html#acoular.base.Generator.result" title="acoular.base.Generator.result"><code class="xref py py-meth docutils literal notranslate"><span class="pre">result()</span></code></a> in block-wise manner. It has a common set of traits that are used by all classes
@@ -773,7 +774,9 @@ that implement this interface. This includes the sampling frequency of the signa
 (<a class="reference internal" href="../acoular.base.html#acoular.base.Generator.sample_freq" title="acoular.base.Generator.sample_freq"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sample_freq</span></code></a>), the number of samples (<a class="reference internal" href="../acoular.base.html#acoular.base.Generator.num_samples" title="acoular.base.Generator.num_samples"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_samples</span></code></a>), and the number of channels
 (<a class="reference internal" href="../acoular.base.html#acoular.base.Generator.num_channels" title="acoular.base.Generator.num_channels"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_channels</span></code></a>). A private trait <a class="reference internal" href="../acoular.base.html#acoular.base.Generator.digest" title="acoular.base.Generator.digest"><code class="xref py py-attr docutils literal notranslate"><span class="pre">digest</span></code></a> is used to store the internal identifier
 of the object, which is a hash of the object’s attributes.
-This is used to check if the object’s internal state has changed.</p>
+This is used to check if the object’s internal state has changed. The digest is cached until
+a declared dependency changes. Subclasses with computed metadata properties must declare those
+properties’ dependencies so that changes invalidate the digest.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">sample_freq</span></span></dt>
@@ -838,12 +841,12 @@ generators return views to avoid copying.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../acoular.base.html"
+       href="acoular.base.AcoularBase.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">base</span></code></p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">AcoularBase</span></code></p>
       </div>
     </a>
     <a class="right-next"

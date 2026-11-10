@@ -1,0 +1,179 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="593pt" height="138pt" viewBox="0.00 0.00 593.00 138.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 134)">
+<ns0:title>inheritance3b6775efa9</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>ABCHasStrictTraits</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.ABCHasStrictTraits" ns1:title="A HasTraits subclass which behaves like HasStrictTraits but" target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="472,-19 365,-19 365,0 472,0 472,-19" />
+<ns0:text text-anchor="middle" x="418.5" y="-7" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">ABCHasStrictTraits</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>AcoularBase</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../api_ref/generated/acoular.base.html#acoular.base.AcoularBase" ns1:title="Common base class for Acoular objects with dependency-based digests." target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="585,-19 508,-19 508,0 585,0 585,-19" />
+<ns0:text text-anchor="middle" x="546.5" y="-7" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">AcoularBase</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>ABCHasStrictTraits-&gt;AcoularBase</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M472.21,-9.5C482.43,-9.5 493.02,-9.5 502.87,-9.5" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="502.95,-11.25 507.95,-9.5 502.95,-7.75 502.95,-11.25" />
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>ABCHasTraits</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.ABCHasTraits" ns1:title="A HasTraits subclass which enables the features of Abstract" target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="329,-19 247,-19 247,0 329,0 329,-19" />
+<ns0:text text-anchor="middle" x="288" y="-7" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">ABCHasTraits</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>ABCHasTraits-&gt;ABCHasStrictTraits</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M329.31,-9.5C338.92,-9.5 349.37,-9.5 359.6,-9.5" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="359.6,-11.25 364.6,-9.5 359.6,-7.75 359.6,-11.25" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>HasTraits</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.HasTraits" ns1:title="Enables any Python class derived from it to have trait attributes." target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="188.5,-19 126.5,-19 126.5,0 188.5,0 188.5,-19" />
+<ns0:text text-anchor="middle" x="157.5" y="-7" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">HasTraits</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>HasTraits-&gt;ABCHasTraits</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M188.63,-9.5C204.36,-9.5 223.93,-9.5 241.47,-9.5" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="241.84,-11.25 246.84,-9.5 241.84,-7.75 241.84,-11.25" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>CHasTraits</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="https://docs.enthought.com/traits/traits_api_reference/ctraits.html#traits.ctraits.CHasTraits" ns1:title="Base class for HasTraits." target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="68,-19 0,-19 0,0 68,0 68,-19" />
+<ns0:text text-anchor="middle" x="34" y="-7" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">CHasTraits</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>CHasTraits-&gt;HasTraits</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M68.2,-9.5C84.63,-9.5 104.47,-9.5 121.17,-9.5" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="121.25,-11.25 126.25,-9.5 121.25,-7.75 121.25,-11.25" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>FiniteTimeOut</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../api_ref/generated/acoular.base.html#acoular.base.FiniteTimeOut" ns1:title="Time-domain block that requires a source with a known length." target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="461.5,-130 375.5,-130 375.5,-111 461.5,-111 461.5,-130" />
+<ns0:text text-anchor="middle" x="418.5" y="-118" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">FiniteTimeOut</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>TimeOut</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:href="../api_ref/generated/acoular.base.html#acoular.base.TimeOut" ns1:title="Abstract base class receiving from a ``source`` and returning time domain signals." target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="317.5,-130 258.5,-130 258.5,-111 317.5,-111 317.5,-130" />
+<ns0:text text-anchor="middle" x="288" y="-118" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">TimeOut</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>TimeOut-&gt;FiniteTimeOut</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M317.52,-120.5C332.93,-120.5 352.36,-120.5 369.99,-120.5" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="370.4,-122.25 375.4,-120.5 370.4,-118.75 370.4,-122.25" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>Generator</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:href="../api_ref/generated/acoular.base.html#acoular.base.Generator" ns1:title="Interface for any generating signal processing block." target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="66.5,-92 1.5,-92 1.5,-73 66.5,-73 66.5,-92" />
+<ns0:text text-anchor="middle" x="34" y="-80" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">Generator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node10" class="node">
+<ns0:title>SamplesGenerator</ns0:title>
+<ns0:g id="a_node10"><ns0:a ns1:href="../api_ref/generated/acoular.base.html#acoular.base.SamplesGenerator" ns1:title="Interface for any generating multi-channel time domain signal processing block." target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="211,-111 104,-111 104,-92 211,-92 211,-111" />
+<ns0:text text-anchor="middle" x="157.5" y="-99" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">SamplesGenerator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>Generator-&gt;SamplesGenerator</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M66.61,-87.44C76.48,-88.99 87.71,-90.74 98.8,-92.48" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="98.67,-94.23 103.88,-93.27 99.21,-90.77 98.67,-94.23" />
+</ns0:g>
+
+<ns0:g id="node11" class="node">
+<ns0:title>SpectraGenerator</ns0:title>
+<ns0:g id="a_node11"><ns0:a ns1:href="../api_ref/generated/acoular.base.html#acoular.base.SpectraGenerator" ns1:title="Interface for any generating multi-channel signal frequency domain processing block." target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="208.5,-74 106.5,-74 106.5,-55 208.5,-55 208.5,-74" />
+<ns0:text text-anchor="middle" x="157.5" y="-62" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">SpectraGenerator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge9" class="edge">
+<ns0:title>Generator-&gt;SpectraGenerator</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M66.61,-77.82C77.19,-76.25 89.32,-74.45 101.17,-72.7" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="101.53,-74.41 106.22,-71.95 101.02,-70.95 101.53,-74.41" />
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>InOut</ns0:title>
+<ns0:g id="a_node9"><ns0:a ns1:href="../api_ref/generated/acoular.base.html#acoular.base.InOut" ns1:title="Abstract base class receiving from a ``source`` and returning signals in the same domain." target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="315,-93 261,-93 261,-74 315,-74 315,-93" />
+<ns0:text text-anchor="middle" x="288" y="-81" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">InOut</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge11" class="edge">
+<ns0:title>SamplesGenerator-&gt;TimeOut</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M211.14,-109.28C225.33,-111.38 240.31,-113.6 253.17,-115.5" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="252.97,-117.24 258.18,-116.24 253.49,-113.78 252.97,-117.24" />
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>SamplesGenerator-&gt;InOut</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M211.14,-94.13C226.19,-92.02 242.12,-89.79 255.48,-87.92" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="255.94,-89.62 260.65,-87.19 255.46,-86.15 255.94,-89.62" />
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>SpectraGenerator-&gt;InOut</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M208.55,-71.9C224.49,-74.26 241.66,-76.8 255.86,-78.9" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="255.75,-80.65 260.95,-79.65 256.26,-77.19 255.75,-80.65" />
+</ns0:g>
+
+<ns0:g id="node12" class="node">
+<ns0:title>SpectraOut</ns0:title>
+<ns0:g id="a_node12"><ns0:a ns1:href="../api_ref/generated/acoular.base.html#acoular.base.SpectraOut" ns1:title="Abstract base class receiving from a ``source`` and returning frequency domain signals." target="_top">
+<ns0:polygon fill="white" stroke="black" stroke-width="0.5" points="323.5,-56 252.5,-56 252.5,-37 323.5,-37 323.5,-56" />
+<ns0:text text-anchor="middle" x="288" y="-44" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">SpectraOut</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge10" class="edge">
+<ns0:title>SpectraGenerator-&gt;SpectraOut</ns0:title>
+<ns0:path fill="none" stroke="black" stroke-width="0.5" d="M208.55,-57.49C221.37,-55.69 235,-53.78 247.22,-52.07" />
+<ns0:polygon fill="black" stroke="black" stroke-width="0.5" points="247.67,-53.78 252.37,-51.35 247.18,-50.31 247.67,-53.78" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

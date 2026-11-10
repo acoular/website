@@ -456,6 +456,7 @@
 </ul>
 </details></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../acoular.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="acoular.base.AcoularBase.html"><code class="docutils literal notranslate"><span class="pre">AcoularBase</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.Generator.html"><code class="docutils literal notranslate"><span class="pre">Generator</span></code></a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
@@ -770,12 +771,6 @@
 <p>It provides a common interface for all SamplesGenerator classes, which generate an output via
 the generator <a class="reference internal" href="../acoular.base.html#acoular.base.SamplesGenerator.result" title="acoular.base.SamplesGenerator.result"><code class="xref py py-meth docutils literal notranslate"><span class="pre">result()</span></code></a> in block-wise manner. This class has no real functionality on its
 own and should not be used directly.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">digest</span></span></dt>
-<dd><p>A unique identifier for the generator, based on its properties. (read-only)</p>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span></dt>
@@ -813,6 +808,12 @@ own and should not be used directly.</p>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">num_channels</span></span></dt>
 <dd><p>Number of channels</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">digest</span></span></dt>
+<dd><p>A unique identifier for the generator, based on its properties. (read-only)</p>
 </dd></dl>
 
 </dd></dl>

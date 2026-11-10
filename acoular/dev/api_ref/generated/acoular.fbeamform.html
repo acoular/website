@@ -457,6 +457,7 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="acoular.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.AcoularBase.html"><code class="docutils literal notranslate"><span class="pre">AcoularBase</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.Generator.html"><code class="docutils literal notranslate"><span class="pre">Generator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.SamplesGenerator.html"><code class="docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="generated/acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
@@ -828,7 +829,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="acoular.fbeamform.SteeringVector">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.fbeamform.</span></span><span class="sig-name descname"><span class="pre">SteeringVector</span></span><a class="headerlink" href="#acoular.fbeamform.SteeringVector" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.HasStrictTraits" title="(in traits v7.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasStrictTraits</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="acoular.base.html#acoular.base.AcoularBase" title="acoular.base.AcoularBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoularBase</span></code></a></p>
 <p>Basic class for implementing steering vectors with monopole source transfer models.</p>
 <p>Handles four different steering vector formulations. See <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../../literature/index.html#id17" title="E. Sarradj. Three-dimensional acoustic source mapping with different beamforming steering vector formulations. Advances in Acoustics and Vibration, 2012:1-12, 2012. doi:10.1155/2012/292695.">3</a>]</span> for details.</p>
 <dl class="py attribute">
@@ -955,7 +956,7 @@ where not the full transfer matrix is needed</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="acoular.fbeamform.BeamformerBase">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.fbeamform.</span></span><span class="sig-name descname"><span class="pre">BeamformerBase</span></span><a class="headerlink" href="#acoular.fbeamform.BeamformerBase" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.HasStrictTraits" title="(in traits v7.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasStrictTraits</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="acoular.base.html#acoular.base.AcoularBase" title="acoular.base.AcoularBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoularBase</span></code></a></p>
 <p>Beamforming using the basic delay-and-sum algorithm in the frequency domain.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="acoular.fbeamform.BeamformerBase.steer">
@@ -1903,7 +1904,7 @@ of floats. Values can only be accessed via the index operator [].</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="acoular.fbeamform.PointSpreadFunction">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.fbeamform.</span></span><span class="sig-name descname"><span class="pre">PointSpreadFunction</span></span><a class="headerlink" href="#acoular.fbeamform.PointSpreadFunction" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.HasStrictTraits" title="(in traits v7.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasStrictTraits</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="acoular.base.html#acoular.base.AcoularBase" title="acoular.base.AcoularBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoularBase</span></code></a></p>
 <p>The point spread function.</p>
 <p>This class provides tools to calculate the PSF depending on the used
 microphone geometry, focus grid, flow environment, etc.

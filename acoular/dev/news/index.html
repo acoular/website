@@ -456,6 +456,7 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../api_ref/generated/acoular.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/acoular.base.AcoularBase.html"><code class="docutils literal notranslate"><span class="pre">AcoularBase</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/acoular.base.Generator.html"><code class="docutils literal notranslate"><span class="pre">Generator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/acoular.base.SamplesGenerator.html"><code class="docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api_ref/generated/generated/acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
@@ -773,6 +774,19 @@
 <p><strong>Internal</strong></p>
 <blockquote>
 <div><ul class="simple">
+<li><p>adds <a class="reference internal" href="../api_ref/generated/acoular.base.html#acoular.base.AcoularBase" title="acoular.base.AcoularBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoularBase</span></code></a> and removes duplicate cached digest getters</p></li>
+<li><p>caches digests in the generator base classes, <a class="reference internal" href="../api_ref/generated/acoular.tbeamform.html#acoular.tbeamform.BeamformerTime" title="acoular.tbeamform.BeamformerTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerTime</span></code></a>,
+and <a class="reference internal" href="../api_ref/generated/acoular.environments.html#acoular.environments.Environment" title="acoular.environments.Environment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Environment</span></code></a> without changing digest values</p></li>
+<li><p>centralizes the disk-cache policy for <a class="reference internal" href="../api_ref/generated/acoular.spectra.html#acoular.spectra.PowerSpectra" title="acoular.spectra.PowerSpectra"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerSpectra</span></code></a>;
+imported spectra continue to bypass disk caching</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Bugfixes</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>updates the cached eigenvalue index in <a class="reference internal" href="../api_ref/generated/acoular.fbeamform.html#acoular.fbeamform.BeamformerEig" title="acoular.fbeamform.BeamformerEig"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerEig</span></code></a>,
+<a class="reference internal" href="../api_ref/generated/acoular.fbeamform.html#acoular.fbeamform.BeamformerMusic" title="acoular.fbeamform.BeamformerMusic"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerMusic</span></code></a>, and <a class="reference internal" href="../api_ref/generated/acoular.fbeamform.html#acoular.fbeamform.BeamformerGIB" title="acoular.fbeamform.BeamformerGIB"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerGIB</span></code></a>
+when the microphone count changes, including channel exclusion or restoration</p></li>
 <li><p>minor code cleanup in <a class="reference internal" href="../api_ref/generated/acoular.tbeamform.html#acoular.tbeamform.BeamformerTimeTraj" title="acoular.tbeamform.BeamformerTimeTraj"><code class="xref py py-class docutils literal notranslate"><span class="pre">BeamformerTimeTraj</span></code></a> for clarity and speedup</p></li>
 </ul>
 </div></blockquote>

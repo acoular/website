@@ -456,6 +456,7 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../acoular.base.html"><code class="docutils literal notranslate"><span class="pre">base</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="acoular.base.AcoularBase.html"><code class="docutils literal notranslate"><span class="pre">AcoularBase</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.Generator.html"><code class="docutils literal notranslate"><span class="pre">Generator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SamplesGenerator.html"><code class="docutils literal notranslate"><span class="pre">SamplesGenerator</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="acoular.base.SpectraGenerator.html"><code class="docutils literal notranslate"><span class="pre">SpectraGenerator</span></code></a></li>
@@ -765,12 +766,12 @@
 <dl class="py class">
 <dt class="sig sig-object py">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">acoular.signals.</span></span><span class="sig-name descname"><span class="pre">SignalGenerator</span></span></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.enthought.com/traits/traits_api_reference/has_traits.html#traits.has_traits.ABCHasStrictTraits" title="(in traits v7.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABCHasStrictTraits</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../acoular.base.html#acoular.base.AcoularBase" title="acoular.base.AcoularBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoularBase</span></code></a></p>
 <p>ABC for a simple one-channel signal generator.</p>
 <p>This ABC defines the common interface and attributes for all signal generator implementations.
 It provides a template for generating one-channel signals with specified amplitude,
-sampling frequency, and duration. Subclasses should implement the core functionality,
-including signal generation and computation of the internal identifier.</p>
+sampling frequency, and duration. Subclasses implement signal generation and declare any
+additional digest dependencies.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
